@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "gr.ekke.youwho"
+    },
+    "jhipsterVersion": "6.2.0",
+    "applicationType": "monolith",
+    "baseName": "youwho",
+    "packageName": "gr.ekke.youwho",
+    "packageFolder": "gr/ekke/youwho",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "N2MwZTljYTU4N2E5Y2QyODU5Mjg1N2MzMzQyNjE5NmJhOGUzMWZmMTUwOTdlNzU4OTU0MzMwZDEwZGE1NWQ4ZDUwNTg3YWM0MTk5ODNmNzY5Mjg5NWNhOTRiNmJjMjRhMjllMDg2MTQ2M2IwN2RmZmFlMjJjNDljZDIxMzE5NDg=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "flatly",
+    "clientThemeVariant": "light",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
