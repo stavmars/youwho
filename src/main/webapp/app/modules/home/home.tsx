@@ -4,22 +4,27 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { ChatBot } from 'app/modules/chatbot/chatbot';
 import { IRootState } from 'app/shared/reducers';
+import _ from 'lodash';
 
 export type IHomeProp = StateProps;
 
 export class Home extends React.Component<IHomeProp> {
   render() {
     const { surveysByName } = this.props;
-    const youWhoSurvey = surveysByName['youWho'];
-    console.log(youWhoSurvey);
 
-    return (
-      <div>
-        <h1>{youWhoSurvey && youWhoSurvey.name}</h1>
-        <p>{youWhoSurvey && youWhoSurvey.description}</p>
-        <ChatBot survey={youWhoSurvey && youWhoSurvey} />
-      </div>
-    );
+    if (_.isEmpty(surveysByName)) {
+      return null;
+    } else {
+      const youWhoSurvey = surveysByName['youWho'];
+
+      return (
+        <div>
+          <h1>{youWhoSurvey.name}</h1>
+          <p>{youWhoSurvey.description}</p>
+          <ChatBot survey={youWhoSurvey} />
+        </div>
+      );
+    }
   }
 }
 
