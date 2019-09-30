@@ -38,13 +38,13 @@ export const configureStep = questions => {
             <img src={question.imageURL} alt="message" className="images" />
           </div>
         ),
-        trigger: question.id === 'last_question' ? null : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
+        trigger: question.id === 'last_question' ? '' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
       });
     } else if (question.type !== 'info_text') {
       steps.push({
         id: question.id,
         component: <span style={{ fontFamily: 'TTNormsProBold' }}>{question.text}</span>,
-        trigger: question.id === 'last_question' ? null : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
+        trigger: question.id === 'last_question' ? '' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
         asMessage: true,
         delay: 1500
       });
@@ -52,7 +52,7 @@ export const configureStep = questions => {
       steps.push({
         id: question.id,
         message: question.text,
-        trigger: question.id === 'last_question' ? null : questions[index + 1].id,
+        trigger: question.id === 'last_question' ? '' : questions[index + 1].id,
         end: question.id === 'last_question' ? true : null,
         delay: 1500
       });
@@ -62,7 +62,7 @@ export const configureStep = questions => {
       const options = [];
       const reactions = [];
       const responses = [];
-      const trigger = question.id !== 'last_question' ? questions[index + 1].id : null;
+      const trigger = question.id !== 'last_question' ? questions[index + 1].id : '';
       // Create an array of JSON objects for the choices of the question.
       for (let choice = 0; choice < question.responseChoices.length; choice++) {
         const option = question.responseChoices[choice];
@@ -99,7 +99,7 @@ export const configureStep = questions => {
                 }}
               />
             ),
-            trigger: { trigger }
+            trigger: `${trigger}`
           });
         }
         // Create an array of JSON objects for the reactions of the Grandma.
