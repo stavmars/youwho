@@ -32,6 +32,7 @@ describe('Entities reducer tests', () => {
     errorMessage: null,
     entities: [] as ReadonlyArray<ISurvey>,
     entity: defaultValue,
+    entitiesByName: {},
     updating: false,
     updateSuccess: false
   };
