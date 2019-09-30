@@ -26,7 +26,7 @@ export const Handle = ({ handle: { id, value, percent }, getHandleProps }) => (
 
 // TODO: Make it look as a ruler OR place option.texts on slider
 
-export interface ISliderInputProps extends IComponentProps {}
+export type ISliderInputProps = IComponentProps;
 
 export class SliderInput extends React.Component<ISliderInputProps> {
   onChange = x => {

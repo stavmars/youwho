@@ -1,7 +1,6 @@
 import './chatbot.scss';
 
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { ChatBot as SimpleChatBot } from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import { configureStep } from 'app/modules/chatbot/configure-steps';
@@ -14,7 +13,7 @@ export interface IChatBotProps {
 export class ChatBot extends React.Component<IChatBotProps> {
   render() {
     const { survey } = this.props;
-    const steps = configureStep(survey && survey.questions);
+    const steps = configureStep(survey.questions);
 
     return (
       <ThemeProvider

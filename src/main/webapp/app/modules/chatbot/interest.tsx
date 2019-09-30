@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import { IComponentProps } from 'app/modules/chatbot/configure-steps';
 // tslint:disable:jsx-no-lambda
 
-export interface IInterestProps extends IComponentProps {}
+export type IInterestProps = IComponentProps;
 
 export class Interest extends React.Component<IInterestProps> {
   render() {

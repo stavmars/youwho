@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import { IComponentProps } from 'app/modules/chatbot/configure-steps';
 // tslint:disable:jsx-no-lambda
 
-export interface ISingleSelectProps extends IComponentProps {}
+export type ISingleSelectProps = IComponentProps;
 
 export class SingleSelect extends React.Component<ISingleSelectProps> {
   render() {
