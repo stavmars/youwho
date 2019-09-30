@@ -11,6 +11,7 @@ import { hot } from 'react-hot-loader';
 import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
 import { getProfile } from 'app/shared/reducers/application-profile';
+import { getEntities } from 'app/entities/survey/survey.reducer';
 import Header from 'app/shared/layout/header/header';
 import Footer from 'app/shared/layout/footer/footer';
 import { hasAnyAuthority } from 'app/shared/auth/private-route';
@@ -29,6 +30,7 @@ export const App = (props: IAppProps) => {
   useEffect(() => {
     props.getSession();
     props.getProfile();
+    props.getEntities();
   }, []);
 
   const paddingTop = '60px';
@@ -66,7 +68,7 @@ const mapStateToProps = ({ authentication, applicationProfile }: IRootState) => 
   isSwaggerEnabled: applicationProfile.isSwaggerEnabled
 });
 
-const mapDispatchToProps = { getSession, getProfile };
+const mapDispatchToProps = { getSession, getProfile, getEntities };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
