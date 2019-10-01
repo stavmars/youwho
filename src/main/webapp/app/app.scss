@@ -71,6 +71,21 @@
   src: local('TTNormsProThinItalic'), url(/content/fonts/TTNormsProThinItalic.ttf) format('truetype');
 }
 
+.app-container {
+  box-sizing: border-box;
+  .view-container {
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    .view-routes {
+      height: 100%;
+      > div {
+        height: 100%;
+      }
+    }
+  }
+}
 // Override Boostrap variables
 @import '~bootswatch/dist/flatly/variables';
 // Import Bootstrap source files from node_modules
@@ -95,33 +110,12 @@ a {
   }
 }
 
-.app-container {
-  box-sizing: border-box;
-  .view-container {
-    width: 100%;
-    height: calc(100% - 40px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1rem;
-    .card {
-      padding: 1rem;
-    }
-    .view-routes {
-      height: 100%;
-      > div {
-        height: 100%;
-      }
-    }
-  }
-}
-
 .fullscreen {
   position: fixed;
   top: 100px;
   left: 0px;
   width: 99% !important;
   height: calc(100vh - 110px) !important;
-  margin: 5px;
   z-index: 1000;
   padding: 5px 25px 50px 25px !important;
 }

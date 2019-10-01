@@ -37,27 +37,14 @@ export class Home extends React.Component<IHomeProp> {
             hideUserAvatar
             botAvatar="/content/images/granny.png"
             footerStyle={{ display: 'none' }}
-            headerComponent={
-              <div style={{ height: '70px', backgroundColor: '#FFFFFF' }}>
-                <img
-                  src="/content/images/MobileLogo.svg"
-                  alt="YouWho"
-                  style={{
-                    top: 0,
-                    position: 'fixed',
-                    margin: '20px 0 0 20px'
-                  }}
-                />
-                <img src="/content/images/dots.png" alt="Dots" style={{ float: 'right', margin: '25px 20px 0 0' }} />
-              </div>
-            }
+            hideHeader
             steps={steps}
             style={{
-              height: '100vh',
+              height: 'calc(100vh - 80px)',
               userSelect: 'none'
             }}
             contentStyle={{
-              height: 'calc(100% - 70px )',
+              height: '80%',
               width: window.innerWidth > 414 ? '380px' : '100%',
               marginLeft: window.innerWidth > 414 ? '40%' : '0'
             }}
