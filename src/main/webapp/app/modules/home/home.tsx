@@ -1,4 +1,5 @@
 import './home.scss';
+import './chatbot.scss';
 
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
