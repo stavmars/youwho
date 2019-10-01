@@ -41,7 +41,8 @@ export class Home extends React.Component<IHomeProp> {
             steps={steps}
             style={{
               height: 'calc(100vh - 80px)',
-              userSelect: 'none'
+              userSelect: 'none',
+              borderRadius: '0px'
             }}
             contentStyle={{
               height: '80%',
