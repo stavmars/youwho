@@ -99,12 +99,12 @@ export const configureStep = questions => {
                 }}
               />
             ),
-            trigger: `${trigger}`
+            trigger
           });
         }
         // Create an array of JSON objects for the reactions of the Grandma.
         if (option.responseReaction) {
-          if (option.responseReaction.includes('./chat-images/')) {
+          if (option.responseReaction.includes('/chat-images/')) {
             reactions.push({
               id: 'reaction_' + question.id + '_' + option.id,
               component: (
@@ -138,7 +138,7 @@ export const configureStep = questions => {
       }
       steps.push({
         id: 'option_' + question.id,
-        component: { component },
+        component,
         waitAction: true,
         replace: true
       });
