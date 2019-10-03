@@ -1,9 +1,13 @@
 import React from 'react';
 import { Checkbox, Form } from 'semantic-ui-react';
 import { IComponentProps } from 'app/modules/chatbot/configure-steps';
+import { IRootState } from 'app/shared/reducers';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { connect } from 'react-redux';
+import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
-export interface IMultiSelectProps extends IComponentProps {
+export interface IMultiSelectProps extends IComponentProps, StateProps, DispatchProps {
   questionId: string;
 }
 
@@ -23,6 +27,7 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
 
   componentDidMount() {
     this.setState({ optChecked: new Array(this.props.options.length).fill(false) });
+    this.props.initiateQuestionTimer();
   }
 
   checkBox = index => {
@@ -33,6 +38,14 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
   };
 
   submitChoices = () => {
+    this.props.addQuestionResponse({
+      questionId: this.props.questionId,
+      startTime: this.props.questionStartTime,
+      endTime: moment(),
+      choiceIds: this.props.options.map((option, index) => {
+        if (this.state.optChecked[index]) return option.value;
+      })
+    });
     // @ts-ignore
     this.props.triggerNextStep({ trigger: 'res_' + this.props.questionId });
   };
@@ -85,4 +98,19 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
   }
 }
 
-export default MultiSelect;
+const mapStateToProps = (storeState: IRootState) => ({
+  questionStartTime: storeState.chatBot.questionStartTime
+});
+
+const mapDispatchToProps = {
+  initiateQuestionTimer,
+  addQuestionResponse
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MultiSelect);

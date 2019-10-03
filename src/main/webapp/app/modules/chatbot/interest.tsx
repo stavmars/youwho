@@ -1,11 +1,30 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-import { IComponentProps } from 'app/modules/chatbot/configure-steps';
+import { IComponentProps, IOption } from 'app/modules/chatbot/configure-steps';
+import { IRootState } from 'app/shared/reducers';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { connect } from 'react-redux';
+import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
-export type IInterestProps = IComponentProps;
+export interface IInterestProps extends IComponentProps, StateProps, DispatchProps {}
 
 export class Interest extends React.Component<IInterestProps> {
+  componentDidMount(): void {
+    this.props.initiateQuestionTimer();
+  }
+
+  commitChoice(option: IOption): void {
+    this.props.addQuestionResponse({
+      questionId: option.questionId,
+      startTime: this.props.questionStartTime,
+      endTime: moment(),
+      choiceIds: [option.value]
+    });
+    // @ts-ignore
+    this.props.triggerNextStep({ trigger: option.trigger });
+  }
+
   render() {
     const { options } = this.props;
 
@@ -17,8 +36,7 @@ export class Interest extends React.Component<IInterestProps> {
               className={`interest-button opt${index}`}
               key={option.trigger}
               content={option.text}
-              // @ts-ignore
-              onClick={() => this.props.triggerNextStep({ trigger: option.trigger })}
+              onClick={() => this.commitChoice(option)}
             />
           ))}
         </Button.Group>
@@ -34,4 +52,19 @@ export class Interest extends React.Component<IInterestProps> {
   }
 }
 
-export default Interest;
+const mapStateToProps = (storeState: IRootState) => ({
+  questionStartTime: storeState.chatBot.questionStartTime
+});
+
+const mapDispatchToProps = {
+  initiateQuestionTimer,
+  addQuestionResponse
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Interest);

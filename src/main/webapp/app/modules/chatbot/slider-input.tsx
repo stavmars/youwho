@@ -1,6 +1,10 @@
 import React from 'react';
 import { Slider, Handles, Rail } from 'react-compound-slider';
-import { IComponentProps } from 'app/modules/chatbot/configure-steps';
+import { IComponentProps, IOption } from 'app/modules/chatbot/configure-steps';
+import { IRootState } from 'app/shared/reducers';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { connect } from 'react-redux';
+import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
 export const Handle = ({ handle: { id, value, percent }, getHandleProps }) => (
@@ -26,15 +30,26 @@ export const Handle = ({ handle: { id, value, percent }, getHandleProps }) => (
 
 // TODO: Make it look as a ruler OR place option.texts on slider
 
-export type ISliderInputProps = IComponentProps;
+export interface ISliderInputProps extends IComponentProps, StateProps, DispatchProps {}
 
 export class SliderInput extends React.Component<ISliderInputProps> {
+  componentDidMount(): void {
+    this.props.initiateQuestionTimer();
+  }
+
   onChange = x => {
-    this.props.options.map(
-      option =>
+    this.props.options.map(option => {
+      if (option.value === `${x}`) {
+        this.props.addQuestionResponse({
+          questionId: option.questionId,
+          startTime: this.props.questionStartTime,
+          endTime: moment(),
+          choiceIds: [option.value]
+        });
         // @ts-ignore
-        option.value === `${x}` && this.props.triggerNextStep({ trigger: option.trigger })
-    );
+        this.props.triggerNextStep({ trigger: option.trigger });
+      }
+    });
   };
 
   render() {
@@ -101,4 +116,19 @@ export class SliderInput extends React.Component<ISliderInputProps> {
   }
 }
 
-export default SliderInput;
+const mapStateToProps = (storeState: IRootState) => ({
+  questionStartTime: storeState.chatBot.questionStartTime
+});
+
+const mapDispatchToProps = {
+  initiateQuestionTimer,
+  addQuestionResponse
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SliderInput);
