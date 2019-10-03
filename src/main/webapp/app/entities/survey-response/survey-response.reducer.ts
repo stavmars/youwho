@@ -117,14 +117,11 @@ export const getEntity: ICrudGetAction<ISurveyResponse> = id => {
   };
 };
 
-export const createEntity: ICrudPutAction<ISurveyResponse> = entity => async dispatch => {
-  const result = await dispatch({
+export const createEntity: ICrudPutAction<ISurveyResponse> = entity => async dispatch =>
+  dispatch({
     type: ACTION_TYPES.CREATE_SURVEYRESPONSE,
     payload: axios.post(apiUrl, cleanEntity(entity))
   });
-  dispatch(getEntities());
-  return result;
-};
 
 export const updateEntity: ICrudPutAction<ISurveyResponse> = entity => async dispatch => {
   const result = await dispatch({
