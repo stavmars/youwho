@@ -18,6 +18,14 @@ export interface IAnswer {
   questionId: string;
 }
 
+export interface IOption {
+  questionId: string;
+  value: string;
+  text: string;
+  description?: string;
+  trigger: string;
+}
+
 export const configureStep = questions => {
   const steps = [];
 
@@ -67,6 +75,7 @@ export const configureStep = questions => {
       for (let choice = 0; choice < question.responseChoices.length; choice++) {
         const option = question.responseChoices[choice];
         options.push({
+          questionId: question.id,
           value: option.id,
           text: option.text,
           description: option.description,
