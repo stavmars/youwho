@@ -1,4 +1,5 @@
 import pick from 'lodash/pick';
+import { IQuestionResponse } from 'app/shared/model/question-response.model';
 
 /**
  * Removes fields with an 'id' field that equals ''.
@@ -22,3 +23,13 @@ export const cleanEntity = entity => {
  */
 export const mapIdList = (idList: ReadonlyArray<any>) =>
   idList.filter((entityId: any) => entityId !== '').map((entityId: any) => ({ id: entityId }));
+
+export const addNewResponse = (responses: ReadonlyArray<IQuestionResponse>, response: IQuestionResponse): IQuestionResponse[] => {
+  if (responses.length) {
+    const lastResponse = responses.slice(-1).pop();
+    if (lastResponse.questionId === response.questionId) {
+      return responses.slice(0, -1).concat(response);
+    }
+  }
+  return responses.concat(response);
+};
