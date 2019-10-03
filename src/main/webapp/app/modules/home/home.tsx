@@ -9,8 +9,11 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import { configureStep } from 'app/modules/chatbot/configure-steps';
 import _ from 'lodash';
+import { initiateSurveyResponse, storeSurveyResponse } from 'app/modules/chatbot/chatbot.reducer';
+import moment from 'moment';
+// tslint:disable:jsx-no-lambda
 
-export type IHomeProp = StateProps;
+export interface IHomeProp extends StateProps, DispatchProps {}
 
 export class Home extends React.Component<IHomeProp> {
   render() {
@@ -20,6 +23,7 @@ export class Home extends React.Component<IHomeProp> {
       return null;
     } else {
       const youWhoSurvey = surveysByName['youWho'];
+      this.props.initiateSurveyResponse(youWhoSurvey, moment());
       const steps = configureStep(youWhoSurvey.questions);
 
       return (
@@ -38,6 +42,7 @@ export class Home extends React.Component<IHomeProp> {
             botAvatar="/content/images/granny.png"
             footerStyle={{ display: 'none' }}
             hideHeader
+            handleEnd={() => this.props.storeSurveyResponse()}
             steps={steps}
             style={{
               height: 'calc(100vh - 80px)',
@@ -72,6 +77,15 @@ const mapStateToProps = (storeState: IRootState) => ({
   surveysByName: storeState.survey.entitiesByName
 });
 
-type StateProps = ReturnType<typeof mapStateToProps>;
+const mapDispatchToProps = {
+  initiateSurveyResponse,
+  storeSurveyResponse
+};
 
-export default connect(mapStateToProps)(Home);
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
