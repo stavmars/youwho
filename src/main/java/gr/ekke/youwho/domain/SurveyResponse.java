@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * A SurveyResponse.
@@ -131,5 +132,17 @@ public class SurveyResponse implements Serializable {
             ", surveyId='" + surveyId + '\'' +
             ", questionResponses=" + questionResponses +
             '}';
+    }
+
+    public SurveyResponse addQuestionResponse(QuestionResponse questionResponse) {
+        if (!this.questionResponses.isEmpty()) {
+            QuestionResponse lastResponse = this.questionResponses.get(this.questionResponses.size() - 1);
+            if(lastResponse.getQuestionId().equals(questionResponse.getQuestionId())) {
+                this.questionResponses.set(this.questionResponses.indexOf(lastResponse), questionResponse);
+                return this;
+            }
+        }
+        this.questionResponses.add(questionResponse);
+        return this;
     }
 }
