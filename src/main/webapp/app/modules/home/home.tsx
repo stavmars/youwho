@@ -50,7 +50,7 @@ export class Home extends React.Component<IHomeProp> {
               borderRadius: '0px'
             }}
             contentStyle={{
-              height: '70%',
+              height: window.innerWidth > 414 ? '70%' : '100%',
               width: window.innerWidth > 414 ? '380px' : '100%',
               marginLeft: window.innerWidth > 414 ? '40%' : '0'
             }}
