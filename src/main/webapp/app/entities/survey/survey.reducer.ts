@@ -5,6 +5,7 @@ import { cleanEntity } from 'app/shared/util/entity-utils';
 import { REQUEST, SUCCESS, FAILURE } from 'app/shared/reducers/action-type.util';
 
 import { ISurvey, defaultValue } from 'app/shared/model/survey.model';
+import _ from 'lodash';
 
 export const ACTION_TYPES = {
   FETCH_SURVEY_LIST: 'survey/FETCH_SURVEY_LIST',
@@ -20,6 +21,7 @@ const initialState = {
   errorMessage: null,
   entities: [] as ReadonlyArray<ISurvey>,
   entity: defaultValue,
+  entitiesByName: {},
   updating: false,
   updateSuccess: false
 };
@@ -63,7 +65,8 @@ export default (state: SurveyState = initialState, action): SurveyState => {
       return {
         ...state,
         loading: false,
-        entities: action.payload.data
+        entities: action.payload.data,
+        entitiesByName: _.keyBy(action.payload.data, 'name')
       };
     case SUCCESS(ACTION_TYPES.FETCH_SURVEY):
       return {

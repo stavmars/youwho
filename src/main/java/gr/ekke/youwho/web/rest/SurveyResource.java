@@ -49,9 +49,6 @@ public class SurveyResource {
     @PostMapping("/surveys")
     public ResponseEntity<Survey> createSurvey(@Valid @RequestBody Survey survey) throws URISyntaxException {
         log.debug("REST request to save Survey : {}", survey);
-        if (survey.getId() != null) {
-            throw new BadRequestAlertException("A new survey cannot already have an ID", ENTITY_NAME, "idexists");
-        }
         Survey result = surveyService.save(survey);
         return ResponseEntity.created(new URI("/api/surveys/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))

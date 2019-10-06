@@ -12,6 +12,7 @@ public class Question implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @NotNull
     private String id;
 
     @NotBlank
@@ -23,6 +24,8 @@ public class Question implements Serializable {
     private String displayType;
 
     private String category;
+
+    private String imageURL;
 
     private List<ResponseChoice> responseChoices;
 
@@ -64,6 +67,14 @@ public class Question implements Serializable {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public List<ResponseChoice> getResponseChoices() {

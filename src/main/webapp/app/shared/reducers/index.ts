@@ -11,14 +11,9 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
-// prettier-ignore
-import survey, {
-  SurveyState
-} from 'app/entities/survey/survey.reducer';
-// prettier-ignore
-import surveyResponse, {
-  SurveyResponseState
-} from 'app/entities/survey-response/survey-response.reducer';
+import survey, { SurveyState } from 'app/entities/survey/survey.reducer';
+import surveyResponse, { SurveyResponseState } from 'app/entities/survey-response/survey-response.reducer';
+import chatBot, { ChatBotState } from 'app/modules/chatbot/chatbot.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -33,6 +28,7 @@ export interface IRootState {
   readonly settings: SettingsState;
   readonly survey: SurveyState;
   readonly surveyResponse: SurveyResponseState;
+  readonly chatBot: ChatBotState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -49,6 +45,7 @@ const rootReducer = combineReducers<IRootState>({
   settings,
   survey,
   surveyResponse,
+  chatBot,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });

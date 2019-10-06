@@ -1,5 +1,6 @@
 package gr.ekke.youwho.service;
 
+import gr.ekke.youwho.domain.QuestionResponse;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.repository.SurveyResponseRepository;
 import org.slf4j.Logger;
@@ -67,5 +68,17 @@ public class SurveyResponseService {
     public void delete(String id) {
         log.debug("Request to delete SurveyResponse : {}", id);
         surveyResponseRepository.deleteById(id);
+    }
+
+    /**
+     * Add new question to the surveyResponse id.
+     *
+     * @param id the id of the entity.
+     * @param questionResponse the question to be added
+     */
+    public SurveyResponse addQuestionResponse(String id, QuestionResponse questionResponse) {
+        log.debug("Request to add QuestionResponse : {} to SurveyResponse : {}", questionResponse, id);
+        SurveyResponse surveyResponse = surveyResponseRepository.findById(id).get();
+        return surveyResponseRepository.save(surveyResponse.addQuestionResponse(questionResponse));
     }
 }

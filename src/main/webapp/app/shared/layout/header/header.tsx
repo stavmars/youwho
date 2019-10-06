@@ -1,11 +1,8 @@
 import './header.scss';
 
 import React, { useState } from 'react';
+import { Image, Menu, Responsive } from 'semantic-ui-react';
 
-import { Navbar, Nav, NavbarToggler, NavbarBrand, Collapse } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { NavLink as Link } from 'react-router-dom';
 import LoadingBar from 'react-redux-loading-bar';
 
 import { Home, Brand } from './header-components';
@@ -34,21 +31,39 @@ const Header = (props: IHeaderProps) => {
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
   return (
-    <div id="app-header">
+    <div className="app-header">
       {renderDevRibbon()}
       <LoadingBar className="loading-bar" />
-      <Navbar light expand="sm" fixed="top" className="bg-light">
-        <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
-        <Brand />
-        <Collapse isOpen={menuOpen} navbar>
-          <Nav id="header-tabs" className="ml-auto" navbar>
-            <Home />
-            {props.isAuthenticated && <EntitiesMenu />}
-            {props.isAuthenticated && props.isAdmin && <AdminMenu showSwagger={props.isSwaggerEnabled} />}
-            <AccountMenu isAuthenticated={props.isAuthenticated} />
-          </Nav>
-        </Collapse>
-      </Navbar>
+      <Menu>
+        <Menu.Item style={{ float: 'left', margin: '20px 0 0 25px' }}>
+          <Responsive {...Responsive.onlyMobile}>
+            <Image src="/content/images/MobileLogo.svg" />
+          </Responsive>
+          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+            <Image src="/content/images/HeaderLogo.svg" />
+          </Responsive>
+        </Menu.Item>
+        <Menu.Item style={{ float: 'right', margin: '25px 25px 0 0' }}>
+          <Responsive {...Responsive.onlyMobile}>
+            <Image src="/content/images/dots.png" />
+          </Responsive>
+          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+            <span
+              style={{
+                marginRight: '100px',
+                fontFamily: 'TTNormsProBoldItalic',
+                fontSize: '16px'
+              }}
+            >
+              Αποτελέσματα
+            </span>
+            <Image src="/content/images/instagram.svg" />
+            <Image src="/content/images/twitter.svg" />
+            <Image src="/content/images/facebook.svg" style={{ marginRight: '55px' }} />
+            <Image src="/content/images/HamburgerMenu.svg" style={{ width: '30px', height: '30px' }} />
+          </Responsive>
+        </Menu.Item>
+      </Menu>
     </div>
   );
 };

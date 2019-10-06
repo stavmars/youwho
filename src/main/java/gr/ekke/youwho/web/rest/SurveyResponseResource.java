@@ -1,5 +1,6 @@
 package gr.ekke.youwho.web.rest;
 
+import gr.ekke.youwho.domain.QuestionResponse;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.service.SurveyResponseService;
 import gr.ekke.youwho.web.rest.errors.BadRequestAlertException;
@@ -125,5 +126,18 @@ public class SurveyResponseResource {
         log.debug("REST request to delete SurveyResponse : {}", id);
         surveyResponseService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id)).build();
+    }
+
+    /**
+     * {@code PUT /survey-responses/:id/response}
+     *
+     * @param id the id of the surveyResponse to update
+     * @param questionResponse to add
+     * @return the updated surveyResponse.
+     */
+    @PutMapping("/survey-responses/{id}/response")
+    public SurveyResponse addQuestionResponse(@PathVariable String id, @RequestBody QuestionResponse questionResponse) {
+        log.debug("REST request to add QuestionResponse : {} to SurveyRespons : {}", questionResponse, id);
+        return surveyResponseService.addQuestionResponse(id, questionResponse);
     }
 }
