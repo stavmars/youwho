@@ -1,13 +1,15 @@
 package gr.ekke.youwho.config.dbmigrations;
 
-import gr.ekke.youwho.domain.Authority;
-import gr.ekke.youwho.domain.User;
-import gr.ekke.youwho.security.AuthoritiesConstants;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.mongobee.changeset.ChangeLog;
 import com.github.mongobee.changeset.ChangeSet;
+import gr.ekke.youwho.domain.Authority;
+import gr.ekke.youwho.domain.Survey;
+import gr.ekke.youwho.domain.User;
+import gr.ekke.youwho.security.AuthoritiesConstants;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
+import java.io.IOException;
 import java.time.Instant;
 
 /**
@@ -89,5 +91,13 @@ public class InitialSetupMigration {
         userUser.setCreatedDate(Instant.now());
         userUser.getAuthorities().add(userAuthority);
         mongoTemplate.save(userUser);
+    }
+
+    @ChangeSet(order = "03", author = "initiator", id = "03-addYouWhoSurvey")
+    public void addYouWhoSurvey(MongoTemplate mongoTemplate) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        Survey survey = mapper.readValue(getClass()
+            .getClassLoader().getResourceAsStream("youWho.json"), Survey.class);
+        mongoTemplate.save(survey);
     }
 }

@@ -1,7 +1,6 @@
 {
   "id": "youWho",
   "name": "youWho",
-  "type": "youthWebPlatform",
   "description": "Πόσο youWho είσαι;(Νεόι 17-30)",
   "questions": [
     {
