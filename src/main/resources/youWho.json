@@ -8,7 +8,7 @@
       "text": "Γεια σου παιδί μου!",
       "type": "info_text",
       "category": "Εισαγωγή",
-      "imageURL": "/content/images/chat-images/granny_intro.gif"
+      "imageURL": "content/images/chat-images/granny_intro.gif"
     },
     {
       "id": "info_text_2",
@@ -21,7 +21,7 @@
       "text": "Θα σου κάνω μερικές ερωτήσεις και στο τέλος θα μάθουμε πόσο YouWho είσαι. Σε 10-15' θα τα έχουμε πει όλα.",
       "type": "info_text",
       "category": "Εισαγωγή",
-      "imageURL": "/content/images/chat-images/granny_youwho.gif"
+      "imageURL": "content/images/chat-images/granny_youwho.gif"
     },
     {
       "id": "2",
@@ -50,67 +50,67 @@
         {
           "id": "1",
           "text": "1990",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "2",
           "text": "1991",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "3",
           "text": "1992",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "4",
           "text": "1993",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "5",
           "text": "1994",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "6",
           "text": "1995",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "7",
           "text": "1996",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "8",
           "text": "1997",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "9",
           "text": "1998",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "10",
           "text": "1999",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "11",
           "text": "2000",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "12",
           "text": "2001",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
           "id": "13",
           "text": "2002",
-          "responseReaction": "/content/images/chat-images/granny_wow.gif"
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         }
       ]
     },
@@ -1227,7 +1227,7 @@
       "id": "info_text_16",
       "text": "Έλα παιδί μου, λίγες ερωτήσεις έχουν μείνει...",
       "type": "info_text",
-      "imageURL": "/content/images/chat-images/granny_loco.gif"
+      "imageURL": "content/images/chat-images/granny_loco.gif"
     },
     {
       "id": "info_text_18",
@@ -1379,7 +1379,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/tsipras_gkrou.jpeg",
+      "imageURL": "content/images/chat-images/tsipras_gkrou.jpeg",
       "responseChoices": [
         {
           "id": "1",
@@ -1419,7 +1419,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/syl_macedonia.jpg",
+      "imageURL": "content/images/chat-images/syl_macedonia.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1459,7 +1459,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/polakis.jpg",
+      "imageURL": "content/images/chat-images/polakis.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1499,7 +1499,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/kerameos_papas.jpg",
+      "imageURL": "content/images/chat-images/kerameos_papas.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1539,7 +1539,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/tsipras_mati.jpg",
+      "imageURL": "content/images/chat-images/tsipras_mati.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1579,7 +1579,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/mitsotakis_euvoia.jpg",
+      "imageURL": "content/images/chat-images/mitsotakis_euvoia.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1754,7 +1754,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/greek_freak.gif",
+      "imageURL": "content/images/chat-images/greek_freak.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1789,7 +1789,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/poiotita.gif",
+      "imageURL": "content/images/chat-images/poiotita.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1824,7 +1824,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/lexaros.jpg",
+      "imageURL": "content/images/chat-images/lexaros.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1859,7 +1859,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/mara_samartzi.gif",
+      "imageURL": "content/images/chat-images/mara_samartzi.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1894,7 +1894,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/manos.gif",
+      "imageURL": "content/images/chat-images/manos.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1929,7 +1929,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/foureira.gif",
+      "imageURL": "content/images/chat-images/foureira.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1964,7 +1964,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/sinboy.gif",
+      "imageURL": "content/images/chat-images/sinboy.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1999,7 +1999,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/iliana.gif",
+      "imageURL": "content/images/chat-images/iliana.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -2034,7 +2034,7 @@
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "/content/images/chat-images/lanthimos.gif",
+      "imageURL": "content/images/chat-images/lanthimos.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -2279,13 +2279,13 @@
           "id": "1",
           "text": "👍",
           "description": "Ναι",
-          "responseReaction": "/content/images/chat-images/granny_tattoo.gif"
+          "responseReaction": "content/images/chat-images/granny_tattoo.gif"
         },
         {
           "id": "2",
           "text": "👎",
           "description": "Όχι",
-          "responseReaction": "/content/images/chat-images/granny_tattoo.gif"
+          "responseReaction": "content/images/chat-images/granny_tattoo.gif"
         }
       ]
     },
@@ -2377,7 +2377,7 @@
       "text": "Εμένα μου αρέσει να πλέκω",
       "category": "Lifestyle",
       "type": "info_text",
-      "imageURL": "/content/images/chat-images/granny_plekei.gif"
+      "imageURL": "content/images/chat-images/granny_plekei.gif"
     },
     {
       "id": "info_text_24",
@@ -2943,7 +2943,7 @@
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/eksarxeia_mat.jpg",
+      "imageURL": "content/images/chat-images/eksarxeia_mat.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -2983,7 +2983,7 @@
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/panepistimio-athinon-mat.jpg",
+      "imageURL": "content/images/chat-images/panepistimio-athinon-mat.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3023,7 +3023,7 @@
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/vegan_protest.jpg",
+      "imageURL": "content/images/chat-images/vegan_protest.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3063,7 +3063,7 @@
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/arni_pasxa.jpg",
+      "imageURL": "content/images/chat-images/arni_pasxa.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3103,7 +3103,7 @@
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/17noembri.jpg",
+      "imageURL": "content/images/chat-images/17noembri.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3143,7 +3143,7 @@
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "/content/images/chat-images/parelasi.jpg",
+      "imageURL": "content/images/chat-images/parelasi.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3182,7 +3182,7 @@
       "text": "Αυτό ήταν! Πάμε να δούμε ποιος YouWho είσαι τελικά!",
       "category": "Exit",
       "type": "info_text",
-      "imageURL": "/content/images/chat-images/granny_finish.gif"
+      "imageURL": "content/images/chat-images/granny_finish.gif"
     }
   ]
 }
