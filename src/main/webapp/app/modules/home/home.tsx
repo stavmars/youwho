@@ -39,7 +39,7 @@ export class Home extends React.Component<IHomeProp> {
         >
           <ChatBot
             hideUserAvatar
-            botAvatar="/content/images/granny.png"
+            botAvatar="content/images/granny.png"
             footerStyle={{ display: 'none' }}
             hideHeader
             handleEnd={() => this.props.storeSurveyResponse()}
