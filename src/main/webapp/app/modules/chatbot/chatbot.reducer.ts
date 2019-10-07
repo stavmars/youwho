@@ -84,7 +84,7 @@ export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dis
 
   return dispatch({
     type: ACTION_TYPES.ADD_QUESTION_RESPONSE,
-    payload: axios.put(`/api/survey-responses/${currentSurveyResponse.id}/response`, questionResponse).then(res => res.data)
+    payload: axios.put(`api/survey-responses/${currentSurveyResponse.id}/response`, questionResponse).then(res => res.data)
   });
 };
 
@@ -94,7 +94,7 @@ export const storeSurveyResponse = () => (dispatch, getState) => {
   return dispatch({
     type: ACTION_TYPES.STORE_SURVEY_RESPONSE,
     payload: axios
-      .put('/api/survey-responses', {
+      .put('api/survey-responses', {
         ...currentSurveyResponse,
         endTime: moment(),
         status: 'completed'
