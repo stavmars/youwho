@@ -46,7 +46,8 @@ export const configureStep = questions => {
             <img src={question.imageURL} alt="message" className="images" />
           </div>
         ),
-        trigger: question.id === 'last_question' ? '' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
+        trigger: question.id === 'last_question' ? '' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
+        end: question.id === 'last_question' ? true : null
       });
     } else if (question.type !== 'info_text') {
       steps.push({
