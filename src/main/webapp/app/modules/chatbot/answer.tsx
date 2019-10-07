@@ -23,7 +23,7 @@ export class Answer extends React.Component<IAnswerProps> {
         <Button.Group>
           {lastQuestionId === answer.questionId && (
             <Image
-              src="/content/images/noun_Refresh_854003.svg"
+              src="content/images/noun_Refresh_854003.svg"
               as={Button}
               className="reset"
               // @ts-ignore

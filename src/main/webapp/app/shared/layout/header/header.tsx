@@ -37,15 +37,15 @@ const Header = (props: IHeaderProps) => {
       <Menu>
         <Menu.Item style={{ float: 'left', margin: '20px 0 0 25px' }}>
           <Responsive {...Responsive.onlyMobile}>
-            <Image src="/content/images/MobileLogo.svg" />
+            <Image src="content/images/MobileLogo.svg" />
           </Responsive>
           <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-            <Image src="/content/images/HeaderLogo.svg" />
+            <Image src="content/images/HeaderLogo.svg" />
           </Responsive>
         </Menu.Item>
         <Menu.Item style={{ float: 'right', margin: '25px 25px 0 0' }}>
           <Responsive {...Responsive.onlyMobile}>
-            <Image src="/content/images/dots.png" />
+            <Image src="content/images/dots.png" />
           </Responsive>
           <Responsive minWidth={Responsive.onlyTablet.minWidth}>
             <span
@@ -57,10 +57,10 @@ const Header = (props: IHeaderProps) => {
             >
               Αποτελέσματα
             </span>
-            <Image src="/content/images/instagram.svg" />
-            <Image src="/content/images/twitter.svg" />
-            <Image src="/content/images/facebook.svg" style={{ marginRight: '55px' }} />
-            <Image src="/content/images/HamburgerMenu.svg" style={{ width: '30px', height: '30px' }} />
+            <Image src="content/images/instagram.svg" />
+            <Image src="content/images/twitter.svg" />
+            <Image src="content/images/facebook.svg" style={{ marginRight: '55px' }} />
+            <Image src="content/images/HamburgerMenu.svg" style={{ width: '30px', height: '30px' }} />
           </Responsive>
         </Menu.Item>
       </Menu>
