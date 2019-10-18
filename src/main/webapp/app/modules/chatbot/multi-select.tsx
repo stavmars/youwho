@@ -42,7 +42,7 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
       questionId: this.props.questionId,
       startTime: this.props.questionStartTime,
       endTime: moment(),
-      choiceIds: this.props.options.map((option, index) => {
+      choiceIds: this.props.options.filter((option, index) => {
         if (this.state.optChecked[index]) return option.value;
       })
     });
