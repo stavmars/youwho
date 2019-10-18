@@ -42,9 +42,11 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
       questionId: this.props.questionId,
       startTime: this.props.questionStartTime,
       endTime: moment(),
-      choiceIds: this.props.options.filter((option, index) => {
-        if (this.state.optChecked[index]) return option.value;
-      })
+      choiceIds: this.props.options
+        .map((option, index) => {
+          if (this.state.optChecked[index]) return option.value;
+        })
+        .filter(el => el)
     });
     // @ts-ignore
     this.props.triggerNextStep({ trigger: 'res_' + this.props.questionId });
