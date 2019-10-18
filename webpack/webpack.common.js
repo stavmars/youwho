@@ -125,6 +125,6 @@ module.exports = options => ({
       chunksSortMode: 'dependency',
       inject: 'body'
     }),
-    new BaseHrefWebpackPlugin({ baseHref: '/' }),
+    new BaseHrefWebpackPlugin({ baseHref: 'youwho-bot-demo' }),
   ]
 });
