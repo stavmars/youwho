@@ -8,6 +8,7 @@ import { updateLastQuestion } from 'app/modules/chatbot/chatbot.reducer';
 
 export interface IAnswerProps extends StateProps, DispatchProps {
   answer: IAnswer;
+  reset: boolean;
 }
 
 export class Answer extends React.Component<IAnswerProps> {
@@ -16,12 +17,12 @@ export class Answer extends React.Component<IAnswerProps> {
   }
 
   render() {
-    const { answer, lastQuestionId } = this.props;
+    const { answer, reset, lastQuestionId } = this.props;
 
     return (
       <div style={{ width: '100%' }}>
         <Button.Group>
-          {lastQuestionId === answer.questionId && (
+          {lastQuestionId === answer.questionId && reset && (
             <Image
               src="content/images/noun_Refresh_854003.svg"
               as={Button}
