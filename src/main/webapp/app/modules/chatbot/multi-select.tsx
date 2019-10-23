@@ -38,22 +38,24 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
   };
 
   submitChoices = () => {
+    const answers = this.props.options
+      .map((option, index) => {
+        if (this.state.optChecked[index]) return option;
+      })
+      .filter(el => el);
     this.props.addQuestionResponse({
       questionId: this.props.questionId,
       startTime: this.props.questionStartTime,
       endTime: moment(),
-      choiceIds: this.props.options
-        .map((option, index) => {
-          if (this.state.optChecked[index]) return option.value;
-        })
-        .filter(el => el)
+      choiceIds: answers.map(answer => answer.value)
     });
     // @ts-ignore
-    this.props.triggerNextStep({ trigger: 'res_' + this.props.questionId });
+    this.props.triggerNextStep({ value: answers, trigger: 'res_' + this.props.questionId });
   };
 
   render() {
     const { options } = this.props;
+    const lastIndex = options.length - 1;
 
     return (
       <div style={{ width: '100%', height: '100%' }}>
@@ -68,7 +70,11 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
               label={option.text}
               onChange={() => this.checkBox(index)}
               checked={this.state.optChecked[index]}
-              disabled={!this.state.optChecked[index] && this.state.boxesChecked === 2}
+              disabled={
+                (!this.state.optChecked[index] && this.state.boxesChecked === 2) ||
+                (this.state.optChecked[lastIndex] && index !== lastIndex) ||
+                (index === lastIndex && this.state.boxesChecked && !this.state.optChecked[lastIndex])
+              }
               style={{
                 fontFamily: 'TTNormsProMedium',
                 fontSize: '15px',

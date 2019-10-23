@@ -87,6 +87,7 @@ export const configureStep = questions => {
             id: 'res_' + question.id + '_' + option.id,
             component: (
               <Answer
+                reset
                 answer={{
                   id: 'res_' + question.id + '_' + option.id,
                   text: option.description ? option.description : option.text,
