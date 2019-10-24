@@ -60,7 +60,7 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
     return (
       <div style={{ width: '100%', height: '100%' }}>
         <h2 style={{ fontFamily: 'TTNormsProMedium', fontSize: '10px', color: '#FFFFFF', textAlign: 'center' }}>
-          ΕΠΙΛΈΞΤΕ ΈΝΑ Ή ΠΕΡΙΣΣΌΤΕΡΑ
+          ΕΠΙΛΈΞΤΕ ΈΩΣ ΔΎΟ ΑΠΑΝΤΉΣΕΙΣ
         </h2>
         <Form>
           {options.map((option, index) => (
