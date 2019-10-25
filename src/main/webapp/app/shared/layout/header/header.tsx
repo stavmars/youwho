@@ -34,20 +34,12 @@ const Header = (props: IHeaderProps) => {
     <div className="app-header">
       {renderDevRibbon()}
       <LoadingBar className="loading-bar" />
-      <Menu>
-        <Menu.Item style={{ float: 'left', margin: '20px 0 0 25px' }}>
-          <Responsive {...Responsive.onlyMobile}>
-            <Image src="content/images/MobileLogo.svg" />
-          </Responsive>
-          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+      <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+        <Menu borderless style={{ height: '80px', margin: '0' }}>
+          <Menu.Item position="left" fitted>
             <Image src="content/images/HeaderLogo.svg" />
-          </Responsive>
-        </Menu.Item>
-        <Menu.Item style={{ float: 'right', margin: '25px 25px 0 0' }}>
-          <Responsive {...Responsive.onlyMobile}>
-            <Image src="content/images/dots.png" />
-          </Responsive>
-          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          </Menu.Item>
+          <Menu.Item position="right" fitted>
             <span
               style={{
                 marginRight: '100px',
@@ -57,13 +49,31 @@ const Header = (props: IHeaderProps) => {
             >
               Αποτελέσματα
             </span>
+          </Menu.Item>
+          <Menu.Item>
             <Image src="content/images/instagram.svg" />
+          </Menu.Item>
+          <Menu.Item>
             <Image src="content/images/twitter.svg" />
-            <Image src="content/images/facebook.svg" style={{ marginRight: '55px' }} />
+          </Menu.Item>
+          <Menu.Item>
+            <Image src="content/images/facebook.svg" />
+          </Menu.Item>
+          <Menu.Item>
             <Image src="content/images/HamburgerMenu.svg" style={{ width: '30px', height: '30px' }} />
-          </Responsive>
-        </Menu.Item>
-      </Menu>
+          </Menu.Item>
+        </Menu>
+      </Responsive>
+      <Responsive {...Responsive.onlyMobile}>
+        <Menu borderless style={{ height: '80px', margin: '0' }}>
+          <Menu.Item position="left" fitted>
+            <Image src="content/images/MobileLogo.svg" />
+          </Menu.Item>
+          <Menu.Item position="right" fitted>
+            <Image src="content/images/dots.png" />
+          </Menu.Item>
+        </Menu>
+      </Responsive>
     </div>
   );
 };
