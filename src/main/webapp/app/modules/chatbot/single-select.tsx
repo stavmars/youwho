@@ -29,13 +29,13 @@ export class SingleSelect extends React.Component<ISingleSelectProps> {
     const { options } = this.props;
 
     return (
-      <Button.Group className="single-select-buttons">
+      <div className="single-select-buttons">
         {options.map(option => (
           <Button key={option.trigger} onClick={() => this.commitChoice(option)} className="single-select">
             {option.text}
           </Button>
         ))}
-      </Button.Group>
+      </div>
     );
   }
 }

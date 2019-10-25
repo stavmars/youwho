@@ -21,20 +21,18 @@ export class Answer extends React.Component<IAnswerProps> {
 
     return (
       <div style={{ width: '100%' }}>
-        <Button.Group>
-          {lastQuestionId === answer.questionId && reset && (
-            <Image
-              src="content/images/noun_Refresh_854003.svg"
-              as={Button}
-              className="reset"
-              // @ts-ignore
-              onClick={() => this.props.triggerNextStep({ trigger: answer.questionId })}
-            />
-          )}
-          <Button disabled className="answer">
-            <span>{answer.text}</span>
-          </Button>
-        </Button.Group>
+        {lastQuestionId === answer.questionId && reset && (
+          <Image
+            src="content/images/noun_Refresh_854003.svg"
+            as={Button}
+            className="reset"
+            // @ts-ignore
+            onClick={() => this.props.triggerNextStep({ trigger: answer.questionId })}
+          />
+        )}
+        <Button floated="right" className="answer">
+          <span>{answer.text}</span>
+        </Button>
       </div>
     );
   }

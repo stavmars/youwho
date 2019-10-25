@@ -93,7 +93,6 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
               fontSize: '15px',
               color: '#777EFF',
               textAlign: 'center',
-              margin: '6px 0 6px 10px',
               borderStyle: 'none',
               background: 'transparent'
             }}
