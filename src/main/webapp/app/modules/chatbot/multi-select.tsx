@@ -58,7 +58,7 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
     const lastIndex = options.length - 1;
 
     return (
-      <div style={{ width: '100%', height: '100%' }}>
+      <div style={{ width: '100%', height: '100%', marginBottom: '10px' }}>
         <h2 style={{ fontFamily: 'TTNormsProMedium', fontSize: '10px', color: '#FFFFFF', textAlign: 'center' }}>
           ΕΠΙΛΈΞΤΕ ΈΩΣ ΔΎΟ ΑΠΑΝΤΉΣΕΙΣ
         </h2>
@@ -93,8 +93,10 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
               fontSize: '15px',
               color: '#777EFF',
               textAlign: 'center',
-              borderStyle: 'none',
-              background: 'transparent'
+              borderRadius: '21px',
+              background: '#ffffff 0% 0% no-repeat padding-box',
+              opacity: 1,
+              marginLeft: '50%'
             }}
           >
             υποβολή
