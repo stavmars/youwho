@@ -1,8 +1,8 @@
 import React from 'react';
 import { Checkbox, Form } from 'semantic-ui-react';
-import { IComponentProps } from 'app/modules/chatbot/configure-steps';
+import { IComponentProps } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda

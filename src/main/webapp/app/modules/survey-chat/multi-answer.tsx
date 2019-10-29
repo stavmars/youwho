@@ -1,7 +1,6 @@
 import React from 'react';
-import { IAnswer } from 'app/modules/chatbot/configure-steps';
-import Answer from 'app/modules/chatbot/answer';
-import { Grid } from 'semantic-ui-react';
+import { IAnswer } from 'app/modules/survey-chat/configure-steps';
+import Answer from 'app/modules/survey-chat/answer';
 // tslint:disable:jsx-no-lambda
 
 export interface IMultiAnswerProps {

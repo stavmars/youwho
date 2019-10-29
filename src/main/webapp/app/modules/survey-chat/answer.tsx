@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Image } from 'semantic-ui-react';
-import { IAnswer } from 'app/modules/chatbot/configure-steps';
+import { IAnswer } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { updateLastQuestion } from 'app/modules/chatbot/chatbot.reducer';
+import { updateLastQuestion } from 'app/modules/survey-chat/chatbot.reducer';
 // tslint:disable:jsx-no-lambda
 
 export interface IAnswerProps extends StateProps, DispatchProps {

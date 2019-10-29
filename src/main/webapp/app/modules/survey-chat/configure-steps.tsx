@@ -1,10 +1,10 @@
 import React from 'react';
-import SliderInput from 'app/modules/chatbot/slider-input';
-import Answer from 'app/modules/chatbot/answer';
-import Interest from 'app/modules/chatbot/interest';
-import SingleSelect from 'app/modules/chatbot/single-select';
-import MultiSelect from 'app/modules/chatbot/multi-select';
-import MultiAnswer from 'app/modules/chatbot/multi-answer';
+import SliderInput from 'app/modules/survey-chat/slider-input';
+import Answer from 'app/modules/survey-chat/answer';
+import Interest from 'app/modules/survey-chat/interest';
+import SingleSelect from 'app/modules/survey-chat/single-select';
+import MultiSelect from 'app/modules/survey-chat/multi-select';
+import MultiAnswer from 'app/modules/survey-chat/multi-answer';
 // tslint:disable:jsx-no-lambda
 
 export interface IComponentProps {

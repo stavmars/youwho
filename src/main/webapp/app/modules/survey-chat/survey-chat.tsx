@@ -3,20 +3,26 @@ import './chatbot.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { RouteComponentProps } from 'react-router-dom';
-import { initiateSurveyResponse, storeSurveyResponse } from 'app/modules/chatbot/chatbot.reducer';
+import { RouteComponentProps, Redirect } from 'react-router-dom';
+import { initiateSurveyResponse, storeSurveyResponse } from 'app/modules/survey-chat/chatbot.reducer';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import { configureStep } from 'app/modules/chatbot/configure-steps';
+import { configureStep } from 'app/modules/survey-chat/configure-steps';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
 export interface IChatBotProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
-
 export class SurveyChat extends React.Component<IChatBotProps> {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { surveysByName } = this.props;
     const survey = surveysByName[this.props.match.params.id];
+    if (!survey) {
+      return <Redirect to="/youwho-bot-demo" />;
+    }
     this.props.initiateSurveyResponse(survey, moment());
     const steps = configureStep(survey.questions);
 
