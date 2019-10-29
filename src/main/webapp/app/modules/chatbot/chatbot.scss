@@ -81,28 +81,11 @@
   padding: 10px 8px !important;
 }
 
-.interest-buttons {
-  width: 304px !important;
-  height: 30px !important;
-  background: rgba(255, 255, 255, 0.65) 0% 0% no-repeat padding-box !important;
-  border-radius: 18px !important;
-  margin-top: 10px !important;
-  align-self: center;
-}
-
-.interest-button {
-  font-size: 20px !important;
-  background: transparent !important;
-  border-style: none !important;
-  width: 60px !important;
-  text-align: center !important;
-}
-
 .interest-tooltip {
+  display: inline-block;
   margin-bottom: 20px !important;
-  box-sizing: border-box !important;
-  width: 100% !important;
   margin-top: 10px !important;
+  margin-left: 5%;
 }
 
 .interest-tooltip-text {
@@ -113,7 +96,6 @@
   word-wrap: break-word !important;
   width: 54px !important;
   white-space: normal !important;
-  margin-right: 8px !important;
   line-height: 1em !important;
 }
 
