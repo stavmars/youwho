@@ -12,6 +12,7 @@ describe('Header', () => {
   let mountedWrapper;
 
   const devProps = {
+    color: '',
     isAuthenticated: true,
     isAdmin: true,
     ribbonEnv: 'dev',

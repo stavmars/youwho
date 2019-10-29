@@ -13,7 +13,7 @@ import settings, { SettingsState } from 'app/modules/account/settings/settings.r
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
 import survey, { SurveyState } from 'app/entities/survey/survey.reducer';
 import surveyResponse, { SurveyResponseState } from 'app/entities/survey-response/survey-response.reducer';
-import chatBot, { ChatBotState } from 'app/modules/chatbot/chatbot.reducer';
+import chatBot, { ChatBotState } from 'app/modules/survey-chat/chatbot.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {

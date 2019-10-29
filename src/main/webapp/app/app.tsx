@@ -3,7 +3,7 @@ import './app.scss';
 
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { hot } from 'react-hot-loader';
 
@@ -16,6 +16,8 @@ import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import ErrorBoundary from 'app/shared/error/error-boundary';
 import { AUTHORITIES } from 'app/config/constants';
 import AppRoutes from 'app/routes';
+
+// tslint:disable:jsx-no-lambda
 
 const baseHref = document
   .querySelector('base')
@@ -34,14 +36,36 @@ export const App = (props: IAppProps) => {
   return (
     <Router basename={baseHref}>
       <div className="app-container">
-        <ErrorBoundary>
-          <Header
-            isAuthenticated={props.isAuthenticated}
-            isAdmin={props.isAdmin}
-            ribbonEnv={props.ribbonEnv}
-            isInProduction={props.isInProduction}
-            isSwaggerEnabled={props.isSwaggerEnabled}
+        <Switch>
+          <Route
+            path="/"
+            render={() => (
+              <Header
+                color="transparent"
+                isAuthenticated={props.isAuthenticated}
+                isAdmin={props.isAdmin}
+                ribbonEnv={props.ribbonEnv}
+                isInProduction={props.isInProduction}
+                isSwaggerEnabled={props.isSwaggerEnabled}
+              />
+            )}
           />
+          <Route
+            exact
+            path="/youWho"
+            render={() => (
+              <Header
+                color="white"
+                isAuthenticated={props.isAuthenticated}
+                isAdmin={props.isAdmin}
+                ribbonEnv={props.ribbonEnv}
+                isInProduction={props.isInProduction}
+                isSwaggerEnabled={props.isSwaggerEnabled}
+              />
+            )}
+          />
+        </Switch>
+        <ErrorBoundary>
           <AppRoutes />
         </ErrorBoundary>
       </div>
