@@ -14,6 +14,7 @@ import passwordReset, { PasswordResetState } from 'app/modules/account/password-
 import survey, { SurveyState } from 'app/entities/survey/survey.reducer';
 import surveyResponse, { SurveyResponseState } from 'app/entities/survey-response/survey-response.reducer';
 import chatBot, { ChatBotState } from 'app/modules/survey-chat/chatbot.reducer';
+import header, { HeaderState } from 'app/shared/reducers/header';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -29,6 +30,7 @@ export interface IRootState {
   readonly survey: SurveyState;
   readonly surveyResponse: SurveyResponseState;
   readonly chatBot: ChatBotState;
+  readonly header: HeaderState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -46,6 +48,7 @@ const rootReducer = combineReducers<IRootState>({
   survey,
   surveyResponse,
   chatBot,
+  header,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
