@@ -1,3 +1,5 @@
+@import 'app/shared/common.scss';
+
 $header-color: #fff;
 $header-color-secondary: #bbb;
 $header-color-hover: darken($header-color, 20%);
@@ -79,4 +81,30 @@ Header styles
 ========================================================================== */
 
 .app-header {
+}
+
+/* ==========================================================================
+SideBar styles
+========================================================================== */
+
+.sidebar-list {
+  .sidebar-item {
+    font-family: TTNormsProMediumItalic, serif;
+    font-size: 20px;
+    line-height: 34px !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    @include mobile {
+      margin-top: 5%;
+    }
+    @include computer {
+      margin-top: 15%;
+    }
+  }
+  .sidebar-collaboration {
+    font-size: 12px;
+    line-height: 52px !important;
+    text-align: center !important;
+    color: #ffffff !important;
+  }
 }
