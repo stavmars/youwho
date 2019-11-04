@@ -15,6 +15,13 @@ import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import SurveyChat from 'app/modules/survey-chat';
+import CollegeStudents from 'app/modules/menus/college-students';
+import Contact from 'app/modules/menus/contact';
+import News from 'app/modules/menus/news';
+import Project from 'app/modules/menus/project';
+import ProjectTeam from 'app/modules/menus/project-team';
+import Students from 'app/modules/menus/students';
+import YoungAdults from 'app/modules/menus/young-adults';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -42,6 +49,13 @@ const Routes = () => (
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
       <ErrorBoundaryRoute path="/survey-chat" component={SurveyChat} />
+      <ErrorBoundaryRoute path="/college-students" component={CollegeStudents} />
+      <ErrorBoundaryRoute path="/contact" component={Contact} />
+      <ErrorBoundaryRoute path="/news" component={News} />
+      <ErrorBoundaryRoute path="/project" component={Project} />
+      <ErrorBoundaryRoute path="/project-team" component={ProjectTeam} />
+      <ErrorBoundaryRoute path="/students" component={Students} />
+      <ErrorBoundaryRoute path="/young-adults" component={YoungAdults} />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>

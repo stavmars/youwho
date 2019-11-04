@@ -1,0 +1,44 @@
+@import 'app/shared/common.scss';
+
+.contact-page {
+  margin: 10% 0 0 20% !important;
+  .contact-page-title {
+    text-align: left;
+    font: Bold Italic 40px/45px TT Norms Pro;
+    letter-spacing: 0;
+    color: #401b00;
+    opacity: 1;
+  }
+  .contact-page-input {
+    text-align: left;
+    font: Medium 16px/23px TT Norms Pro;
+    letter-spacing: 0.32px;
+    color: #707070;
+    opacity: 0.37;
+  }
+  .contact-page-submit {
+    font-family: 'TTNormsProBoldItalic', serif !important;
+    color: #ffffff !important;
+    background: #ff6666 0% 0% no-repeat padding-box !important;
+    float: right;
+    text-align: center;
+    border-radius: 200px 151px 0 200px !important;
+    font-size: 16px !important;
+  }
+  .comment {
+    margin-top: 50px !important;
+    .comment-author {
+      text-align: left;
+      font: Bold 16px/20px TT Norms Pro;
+      letter-spacing: 0.32px;
+      color: #333333;
+      margin-left: 40px !important;
+    }
+    .comment-metadata {
+      text-align: left;
+      font: Regular 16px/20px TT Norms Pro;
+      letter-spacing: 0.32px;
+      color: #1e1e1e;
+    }
+  }
+}

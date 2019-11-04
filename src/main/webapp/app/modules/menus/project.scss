@@ -1,0 +1,35 @@
+@import 'app/shared/common.scss';
+
+.project-page {
+  margin-top: 5%;
+  .project-page-title {
+    text-align: left;
+    font: Bold Italic 40px/45px TT Norms Pro;
+    letter-spacing: 0;
+    color: #401b00;
+    opacity: 1;
+  }
+  .project-page-subtitle {
+    text-align: left;
+    font: Bold Italic 30px/45px TT Norms Pro;
+    letter-spacing: 0;
+    color: #401b00;
+    opacity: 1;
+  }
+  .project-page-content {
+    font: 22px/32px TT Norms Pro;
+    text-align: left;
+    letter-spacing: 0.44px;
+    opacity: 1;
+  }
+  .project-page-content::first-letter {
+    float: left;
+    margin-top: 0.4em;
+    margin-right: 0.15em;
+    text-align: center;
+    font: Bold Italic 95px/30px TT Norms Pro;
+    letter-spacing: 0;
+    color: #ff6666;
+    opacity: 1;
+  }
+}
