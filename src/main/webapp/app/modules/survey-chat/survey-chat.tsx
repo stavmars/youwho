@@ -21,7 +21,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
     const { surveysByName } = this.props;
     const survey = surveysByName[this.props.match.params.id];
     if (!survey) {
-      return <Redirect to="/youwho-bot-demo" />;
+      return <Redirect to="/" />;
     }
     this.props.initiateSurveyResponse(survey, moment());
     const steps = configureStep(survey.questions);
