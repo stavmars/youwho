@@ -61,14 +61,12 @@ export class Contact extends React.Component<IContactProps> {
       <div>
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
           <Grid className="contact-page" verticalAlign="middle">
-            <Grid.Column width={5} mobile={14}>
+            <Grid.Column width={5}>
               <h1 className="contact-page-title">Επικοινωνία</h1>
               {contactForm(name, email, message)}
             </Grid.Column>
             <Grid.Column width={2} />
-            <Grid.Column width={5} mobile={14}>
-              {contactInfo()}
-            </Grid.Column>
+            <Grid.Column width={5}>{contactInfo()}</Grid.Column>
           </Grid>
         </Responsive>
         <Responsive {...Responsive.onlyMobile}>
