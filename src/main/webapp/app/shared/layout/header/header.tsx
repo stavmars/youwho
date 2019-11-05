@@ -8,11 +8,6 @@ import { Link } from 'react-router-dom';
 
 export interface IHeaderProps {
   color: string;
-  isAuthenticated: boolean;
-  isAdmin: boolean;
-  ribbonEnv: string;
-  isInProduction: boolean;
-  isSwaggerEnabled: boolean;
   toggleSidebar?(): void;
 }
 
