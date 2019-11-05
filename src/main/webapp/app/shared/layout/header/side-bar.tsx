@@ -10,7 +10,7 @@ export interface ISideBarProps {
 export default (props: ISideBarProps) => (
   <List className="sidebar-list">
     <List.Item>
-      <Menu borderless compact style={{ marginLeft: '20px', background: 'transparent', borderStyle: 'none' }}>
+      <Menu text compact style={{ marginLeft: '20px', background: 'transparent', borderStyle: 'none' }}>
         <Menu.Item>
           <Image src="/content/images/instagram-white.svg" inline />
         </Menu.Item>
@@ -21,7 +21,7 @@ export default (props: ISideBarProps) => (
           <Image src="/content/images/twitter-white.svg" inline />
         </Menu.Item>
         <Menu.Item onClick={props.toggleSidebar}>
-          <Image src="/content/images/close.svg" inline style={{ marginTop: '3px' }} />
+          <Image src="/content/images/close.svg" inline />
         </Menu.Item>
       </Menu>
     </List.Item>
