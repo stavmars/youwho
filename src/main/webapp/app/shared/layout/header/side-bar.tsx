@@ -25,25 +25,25 @@ export default (props: ISideBarProps) => (
         </Menu.Item>
       </Menu>
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/project">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/project">
       Το έργο
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/students">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/students">
       Μαθητές
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/college-students">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/college-students">
       Φοιτητές
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/young-adults">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/young-adults">
       Νέοι 17-29
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/project-team">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/project-team">
       Ομάδα Έργου
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/news">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/news">
       Νέα
     </List.Item>
-    <List.Item className="sidebar-item" as={NavLink} to="/contact">
+    <List.Item className="sidebar-item" as={NavLink} to="/menus/contact">
       Επικοινωνία
     </List.Item>
     <List.Item className="sidebar-collaboration">Μια συνεργασία των</List.Item>
