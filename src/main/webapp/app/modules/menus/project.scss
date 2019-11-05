@@ -17,14 +17,24 @@
     opacity: 1;
   }
   .project-page-content {
-    font: 22px/32px TT Norms Pro;
+    @include mobile {
+      font: 18px/26px TT Norms Pro;
+    }
+    @include computer {
+      font: 22px/32px TT Norms Pro;
+    }
     text-align: left;
     letter-spacing: 0.44px;
     opacity: 1;
   }
   .project-page-content::first-letter {
+    @include mobile {
+      margin-top: 0.285em;
+    }
+    @include computer {
+      margin-top: 0.4em;
+    }
     float: left;
-    margin-top: 0.4em;
     margin-right: 0.15em;
     text-align: center;
     font: Bold Italic 95px/30px TT Norms Pro;

@@ -1,7 +1,12 @@
 @import 'app/shared/common.scss';
 
 .contact-page {
-  margin: 10% 0 0 20% !important;
+  @include mobile {
+    margin: 10% 0 0 0 !important;
+  }
+  @include computer {
+    margin: 10% 0 0 20% !important;
+  }
   .contact-page-title {
     text-align: left;
     font: Bold Italic 40px/45px TT Norms Pro;
