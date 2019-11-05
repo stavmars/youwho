@@ -4,6 +4,17 @@ Header styles
 ========================================================================== */
 
 .app-header {
+  .header {
+    height: 80px !important;
+    margin: 0 !important;
+    border-style: none !important;
+    &.white {
+      background-color: white !important;
+    }
+    &.transparent {
+      background-color: transparent !important;
+    }
+  }
 }
 
 /* ==========================================================================

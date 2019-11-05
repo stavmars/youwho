@@ -25,7 +25,7 @@ const Header = (props: IHeaderProps) => {
     <div className="app-header">
       <LoadingBar className="loading-bar" />
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-        <Menu borderless style={{ height: '80px', margin: '0', backgroundColor: props.color, borderStyle: 'none' }}>
+        <Menu borderless className={`header ${props.color}`}>
           <Menu.Item position="left" fitted style={{ marginLeft: '56px' }} as={Link} to="/">
             <Image src="content/images/HeaderLogo.svg" />
           </Menu.Item>
@@ -55,7 +55,7 @@ const Header = (props: IHeaderProps) => {
         </Menu>
       </Responsive>
       <Responsive {...Responsive.onlyMobile}>
-        <Menu borderless style={{ height: '80px', margin: '0', backgroundColor: props.color, borderStyle: 'none' }}>
+        <Menu borderless className={`header ${props.color}`}>
           <Menu.Item position="left" fitted style={{ marginLeft: '22px' }} as={Link} to="/">
             <Image src="content/images/MobileLogo.svg" />
           </Menu.Item>
