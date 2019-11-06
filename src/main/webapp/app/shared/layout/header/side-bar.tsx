@@ -26,25 +26,25 @@ export default (props: ISideBarProps) => (
       </Menu>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/project">
-      Το έργο
+      <span>Το έργο</span>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/students">
-      Μαθητές
+      <span>Μαθητές</span>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/college-students">
-      Φοιτητές
+      <span>Φοιτητές</span>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/young-adults">
-      Νέοι 17-29
+      <span>Νέοι 17-29</span>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/project-team">
-      Ομάδα Έργου
+      <span>Ομάδα Έργου</span>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/news">
-      Νέα
+      <span>Νέα</span>
     </List.Item>
     <List.Item className="sidebar-item" as={NavLink} to="/menus/contact">
-      Επικοινωνία
+      <span>Επικοινωνία</span>
     </List.Item>
     <List.Item className="sidebar-collaboration">Μια συνεργασία των</List.Item>
     <List.Item>

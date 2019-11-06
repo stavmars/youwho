@@ -26,9 +26,12 @@ SideBar styles
     font-family: TTNormsProMediumItalic, serif;
     font-size: 20px;
     line-height: 34px !important;
-    color: #ffffff !important;
-    opacity: 0.35 !important;
     text-align: center !important;
+    span {
+      padding: 7px;
+      color: #ffffff !important;
+      opacity: 0.35 !important;
+    }
     @include mobile {
       margin-top: 5%;
     }
@@ -50,7 +53,11 @@ SideBar styles
 }
 
 .sidebar-list > .sidebar-item.active {
-  color: #ffffff !important;
-  opacity: 1 !important;
-  border: 1px solid #ffffff !important;
+  background: rgb(0, 0, 0, 0) !important;
+  span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 20px 20px 0 20px;
+  }
 }
