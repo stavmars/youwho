@@ -1,0 +1,65 @@
+@import 'app/shared/common.scss';
+
+.college-students-page {
+  margin-top: -80px;
+  .college-students-page-top {
+    background-image: url('/content/images/students-w1920-h1080.png');
+    padding: 180px 0 80px 0;
+    .college-students-page-top-title {
+      text-align: left;
+      font: Bold Italic 40px/45px TT Norms Pro;
+      letter-spacing: 0;
+      color: #333333;
+      opacity: 1;
+    }
+    .college-students-page-top-subtext {
+      @include mobile {
+        font: Bold 20px/25px TT Norms Pro;
+        letter-spacing: 0.4px;
+      }
+      @include computer {
+        font: Bold 22px/32px TT Norms Pro;
+        letter-spacing: 0.44px;
+      }
+      color: #333333;
+      opacity: 1;
+      text-align: left;
+    }
+    .college-students-page-top-subtext::first-letter {
+      @include mobile {
+        margin-top: 0.285em;
+      }
+      @include computer {
+        margin-top: 0.4em;
+      }
+      float: left;
+      margin-right: 0.15em;
+      text-align: center;
+      font: Bold Italic 95px/30px TT Norms Pro;
+      letter-spacing: 0;
+      color: #ff6666;
+      opacity: 1;
+    }
+  }
+  .college-students-page-title {
+    text-align: left;
+    font: Bold Italic 35px/40px TT Norms Pro;
+    letter-spacing: 0;
+    color: #333333;
+    text-transform: capitalize;
+    opacity: 1;
+  }
+  .college-students-page-subtext {
+    text-align: left;
+    color: #333333;
+    opacity: 1;
+    @include mobile {
+      font: 20px/28px TT Norms Pro;
+      letter-spacing: 0.4px;
+    }
+    @include computer {
+      font: 20px/32px TT Norms Pro;
+      letter-spacing: 0;
+    }
+  }
+}
