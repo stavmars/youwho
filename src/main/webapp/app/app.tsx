@@ -4,7 +4,6 @@ import './app.scss';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
 import { hot } from 'react-hot-loader';
 
 import { IRootState } from 'app/shared/reducers';
@@ -19,6 +18,7 @@ import AppRoutes from 'app/routes';
 import { Menu, Sidebar } from 'semantic-ui-react';
 import SideBar from 'app/shared/layout/header/side-bar';
 import { hideSidebar, toggleSidebar } from 'app/shared/reducers/header';
+import Footer from 'app/shared/layout/footer/footer';
 
 // tslint:disable:jsx-no-lambda
 
@@ -58,6 +58,7 @@ export const App = (props: IAppProps) => {
           <ErrorBoundary>
             <AppRoutes />
           </ErrorBoundary>
+          <Route path="/menus/" render={() => <Footer />} />
         </Sidebar.Pushable>
       </div>
     </Router>
