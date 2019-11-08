@@ -1,8 +1,8 @@
 import React from 'react';
 import { Checkbox, Form } from 'semantic-ui-react';
-import { IComponentProps } from 'app/modules/chatbot/configure-steps';
+import { IComponentProps } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
@@ -58,7 +58,7 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
     const lastIndex = options.length - 1;
 
     return (
-      <div style={{ width: '100%', height: '100%' }}>
+      <div style={{ width: '100%', height: '100%', marginBottom: '10px' }}>
         <h2 style={{ fontFamily: 'TTNormsProMedium', fontSize: '10px', color: '#FFFFFF', textAlign: 'center' }}>
           ΕΠΙΛΈΞΤΕ ΈΩΣ ΔΎΟ ΑΠΑΝΤΉΣΕΙΣ
         </h2>
@@ -93,9 +93,10 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
               fontSize: '15px',
               color: '#777EFF',
               textAlign: 'center',
-              margin: '6px 0 6px 10px',
-              borderStyle: 'none',
-              background: 'transparent'
+              borderRadius: '21px',
+              background: '#ffffff 0% 0% no-repeat padding-box',
+              opacity: 1,
+              marginLeft: '50%'
             }}
           >
             υποβολή

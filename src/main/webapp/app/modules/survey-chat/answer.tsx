@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Image } from 'semantic-ui-react';
-import { IAnswer } from 'app/modules/chatbot/configure-steps';
+import { IAnswer } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { updateLastQuestion } from 'app/modules/chatbot/chatbot.reducer';
+import { updateLastQuestion } from 'app/modules/survey-chat/chatbot.reducer';
 // tslint:disable:jsx-no-lambda
 
 export interface IAnswerProps extends StateProps, DispatchProps {
@@ -21,20 +21,18 @@ export class Answer extends React.Component<IAnswerProps> {
 
     return (
       <div style={{ width: '100%' }}>
-        <Button.Group>
-          {lastQuestionId === answer.questionId && reset && (
-            <Image
-              src="content/images/noun_Refresh_854003.svg"
-              as={Button}
-              className="reset"
-              // @ts-ignore
-              onClick={() => this.props.triggerNextStep({ trigger: answer.questionId })}
-            />
-          )}
-          <Button disabled className="answer">
-            <span>{answer.text}</span>
-          </Button>
-        </Button.Group>
+        {lastQuestionId === answer.questionId && reset && (
+          <Image
+            src="content/images/noun_Refresh_854003.svg"
+            as={Button}
+            className="reset"
+            // @ts-ignore
+            onClick={() => this.props.triggerNextStep({ trigger: answer.questionId })}
+          />
+        )}
+        <Button floated="right" className="answer">
+          <span>{answer.text}</span>
+        </Button>
       </div>
     );
   }

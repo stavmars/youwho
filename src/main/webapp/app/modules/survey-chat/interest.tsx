@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
-import { IComponentProps, IOption } from 'app/modules/chatbot/configure-steps';
+import { Button, Menu } from 'semantic-ui-react';
+import { IComponentProps, IOption } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
@@ -30,16 +30,19 @@ export class Interest extends React.Component<IInterestProps> {
 
     return (
       <div style={{ width: '100%', alignContent: 'center' }}>
-        <Button.Group className="interest-buttons">
+        <Menu
+          compact
+          borderless
+          style={{
+            background: 'rgba(255, 255, 255, 0.65) 0% 0% no-repeat padding-box',
+            borderRadius: '18px',
+            margin: '10px 0 0 5%'
+          }}
+        >
           {options.map((option, index) => (
-            <Button
-              className={`interest-button opt${index}`}
-              key={option.trigger}
-              content={option.text}
-              onClick={() => this.commitChoice(option)}
-            />
+            <Menu.Item as={Button} key={option.trigger} content={option.text} onClick={() => this.commitChoice(option)} />
           ))}
-        </Button.Group>
+        </Menu>
         <div className="interest-tooltip">
           {options.map(option => (
             <span className="interest-tooltip-text" key={option.trigger}>

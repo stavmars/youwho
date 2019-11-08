@@ -14,6 +14,8 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
+import SurveyChat from 'app/modules/survey-chat';
+import Menus from 'app/modules/menus';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -40,6 +42,8 @@ const Routes = () => (
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
+      <ErrorBoundaryRoute path="/survey-chat" component={SurveyChat} />
+      <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>

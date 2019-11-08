@@ -1,8 +1,8 @@
 import React from 'react';
 import { Slider, Handles, Rail } from 'react-compound-slider';
-import { IComponentProps, IOption } from 'app/modules/chatbot/configure-steps';
+import { IComponentProps, IOption } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/chatbot/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda

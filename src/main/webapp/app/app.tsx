@@ -3,8 +3,7 @@ import './app.scss';
 
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
 import { IRootState } from 'app/shared/reducers';
@@ -16,6 +15,12 @@ import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import ErrorBoundary from 'app/shared/error/error-boundary';
 import { AUTHORITIES } from 'app/config/constants';
 import AppRoutes from 'app/routes';
+import { Menu, Sidebar } from 'semantic-ui-react';
+import SideBar from 'app/shared/layout/header/side-bar';
+import { hideSidebar, toggleSidebar } from 'app/shared/reducers/header';
+import Footer from 'app/shared/layout/footer/footer';
+
+// tslint:disable:jsx-no-lambda
 
 const baseHref = document
   .querySelector('base')
@@ -34,30 +39,42 @@ export const App = (props: IAppProps) => {
   return (
     <Router basename={baseHref}>
       <div className="app-container">
-        <ErrorBoundary>
-          <Header
-            isAuthenticated={props.isAuthenticated}
-            isAdmin={props.isAdmin}
-            ribbonEnv={props.ribbonEnv}
-            isInProduction={props.isInProduction}
-            isSwaggerEnabled={props.isSwaggerEnabled}
-          />
-          <AppRoutes />
-        </ErrorBoundary>
+        <Switch>
+          <Route path="/survey-chat/" render={() => <Header color="white" toggleSidebar={props.toggleSidebar} />} />
+          <Route exact path="/" render={() => <Header color="transparent" toggleSidebar={props.toggleSidebar} />} />
+        </Switch>
+        <Sidebar
+          as={Menu}
+          vertical
+          onHide={props.hideSidebar}
+          visible={props.isSidebarVisible}
+          animation="overlay"
+          direction="right"
+          className="app-sidebar"
+        >
+          <SideBar toggleSidebar={props.toggleSidebar} />
+        </Sidebar>
+        <Sidebar.Pushable>
+          <ErrorBoundary>
+            <AppRoutes />
+          </ErrorBoundary>
+          <Route path="/menus/" render={() => <Footer />} />
+        </Sidebar.Pushable>
       </div>
     </Router>
   );
 };
 
-const mapStateToProps = ({ authentication, applicationProfile }: IRootState) => ({
+const mapStateToProps = ({ authentication, applicationProfile, header }: IRootState) => ({
   isAuthenticated: authentication.isAuthenticated,
   isAdmin: hasAnyAuthority(authentication.account.authorities, [AUTHORITIES.ADMIN]),
   ribbonEnv: applicationProfile.ribbonEnv,
   isInProduction: applicationProfile.inProduction,
-  isSwaggerEnabled: applicationProfile.isSwaggerEnabled
+  isSwaggerEnabled: applicationProfile.isSwaggerEnabled,
+  isSidebarVisible: header.isSidebarVisible
 });
 
-const mapDispatchToProps = { getSession, getProfile, getEntities };
+const mapDispatchToProps = { getSession, getProfile, getEntities, hideSidebar, toggleSidebar };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
