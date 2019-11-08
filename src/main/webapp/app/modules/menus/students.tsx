@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
-import { Container } from 'semantic-ui-react';
+import { Button, Container, Grid, Image } from 'semantic-ui-react';
 
 export interface IStudentsProps extends StateProps, DispatchProps {}
 
@@ -32,9 +32,17 @@ export class Students extends React.Component<IStudentsProps> {
         </div>
         <Container style={{ marginTop: '30px' }}>
           <h1 className="students-page-title">Highlights</h1>
-          <p className="students-page-subtext">
-            Τα υψηλότερα ποσοστά διαφωνίας με τους καθηγητές (54,6%) προέρχονται από μαθητές με γονείς υψηλής κοινωνικής θέσης.
-          </p>
+          <Grid centered>
+            <Grid.Column computer={10} mobile={14}>
+              <Image src="/content/images/dummy chart.svg" />
+            </Grid.Column>
+            <Grid.Column computer={4} mobile={14}>
+              <p className="students-page-subtext">
+                Τα υψηλότερα ποσοστά διαφωνίας με τους καθηγητές (54,6%) προέρχονται από μαθητές με γονείς υψηλής κοινωνικής θέσης.
+              </p>
+              <Button className="students-page-more-button">Περισσότερα</Button>
+            </Grid.Column>
+          </Grid>
           <h1 className="students-page-title">έρευνες νεανικού πληθυσμού</h1>
           <p className="students-page-subtext">
             Σε γενικές γραμμές, οι έρευνες νεανικού πληθυσμού έχουν ως αντικείμενο τις ιδεολογικές στάσεις, τις αντιλήψεις, τις αξίες, τον
@@ -43,12 +51,17 @@ export class Students extends React.Component<IStudentsProps> {
             και τις αντιλήψεις που αντανακλούν το κοινωνικο-πολιτικό πλαίσιο της κάθε εποχής. Έτσι, καθιερώθηκαν συγκεκριμένες τυπολογίες
             γενεών όπως οι Baby boomers (η μεταπολεμική γενιά) η γενιά Χ, οι Millennials και εσχάτως η γενιά G.
           </p>
-          <Container text textAlign="center" style={{ margin: '45px 0' }}>
-            <p className="students-page-important">
-              Ιδιαίτερα αξιοσημείωτο ενδιαφέρον, όμως, παρουσιάζουν οι απαντήσεις των νέων ως προς τους παράγοντες που επηρέασαν την απόφασή
-              τους να εισαχθούν σε ΑΕΝ.
-            </p>
-          </Container>
+          <Grid style={{ margin: '45px 0' }}>
+            <Grid.Column width={1}>
+              <div className="vertical-line" />
+            </Grid.Column>
+            <Grid.Column computer={5} mobile={13}>
+              <p className="students-page-important">
+                Ιδιαίτερα αξιοσημείωτο ενδιαφέρον, όμως, παρουσιάζουν οι απαντήσεις των νέων ως προς τους παράγοντες που επηρέασαν την
+                απόφασή τους να εισαχθούν σε ΑΕΝ.
+              </p>
+            </Grid.Column>
+          </Grid>
           <p className="students-page-subtext">
             Στο πλαίσιο υλοποίησης του υποέργου «REDI – Αυτεπιστασία ΕΚΚΕ» της Πράξης «Έρευνα, Εκπαίδευση και Υποδομές: ο τριγωνισμός των
             αξόνωνστρατηγικής ανάπτυξης του ΕΚΚΕ (REDI)» εντάσσονται τρεις ξεχωριστές έρευνες νεολαίας. Αντικείμενό τους είναι να
