@@ -10,7 +10,7 @@ export interface ISideBarProps {
 export default (props: ISideBarProps) => (
   <List className="sidebar-list">
     <List.Item>
-      <Menu text compact style={{ marginLeft: '20px', background: 'transparent', borderStyle: 'none' }}>
+      <Menu text compact style={{ margin: '15px 0 0 30px', background: 'transparent', borderStyle: 'none' }}>
         <Menu.Item>
           <Image src="/content/images/instagram-white.svg" inline />
         </Menu.Item>
@@ -48,8 +48,14 @@ export default (props: ISideBarProps) => (
     </List.Item>
     <List.Item className="sidebar-collaboration">Μια συνεργασία των</List.Item>
     <List.Item>
-      <Image src="/content/images/ekke white.png" style={{ marginLeft: '60px' }} />
-      <Image src="/content/images/Athena_RC_Vertical.svg" />
+      <Menu text compact style={{ marginLeft: '50px', background: 'transparent', borderStyle: 'none' }}>
+        <Menu.Item>
+          <Image src="/content/images/ekke white.png" style={{ marginLeft: '25%' }} as="a" href="https://www.ekke.gr" />
+        </Menu.Item>
+        <Menu.Item>
+          <Image src="/content/images/Athena_RC_Vertical.svg" as="a" href="https://www.athena-innovation.gr" />
+        </Menu.Item>
+      </Menu>
     </List.Item>
   </List>
 );
