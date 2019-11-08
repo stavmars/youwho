@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Grid } from 'semantic-ui-react';
 import { IComponentProps, IOption } from 'app/modules/survey-chat/configure-steps';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
@@ -29,13 +29,13 @@ export class SingleSelect extends React.Component<ISingleSelectProps> {
     const { options } = this.props;
 
     return (
-      <div className="single-select-buttons">
+      <Grid style={{ marginTop: '20px' }} width={14} centered>
         {options.map(option => (
           <Button key={option.trigger} onClick={() => this.commitChoice(option)} className="single-select">
             {option.text}
           </Button>
         ))}
-      </div>
+      </Grid>
     );
   }
 }
