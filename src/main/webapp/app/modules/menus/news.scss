@@ -1,0 +1,60 @@
+@import 'app/shared/common.scss';
+
+.news-page {
+  .news-page-menu {
+    @include computer {
+      width: 45%;
+    }
+    .news-page-menu-item {
+      text-align: left;
+      font: 40px/45px TTNormsProBoldItalic;
+      letter-spacing: 0;
+      color: #401b00;
+      opacity: 1;
+    }
+    .news-page-menu-secondary {
+      text-align: left;
+      font: 18px/24px TTNormsProBoldItalic;
+      letter-spacing: 0;
+      color: #707070;
+      opacity: 1;
+    }
+  }
+  .news-page-h1 {
+    text-align: left;
+    font: Bold Italic 34px/40px TT Norms Pro;
+    letter-spacing: 0;
+    color: #333333;
+    opacity: 1;
+  }
+  .news-page-h3 {
+    text-align: left;
+    color: #afafaf;
+    font: Bold 16px/32px TT Norms Pro;
+    letter-spacing: 0.32px;
+    opacity: 1;
+  }
+  .news-page-p {
+    font: 18px/26px TT Norms Pro;
+    text-align: left;
+    letter-spacing: 0;
+    color: #707070;
+    opacity: 1;
+  }
+  .news-page-more-button {
+    text-align: left;
+    font: 14px/7px TTNormsProBoldItalic;
+    letter-spacing: 0;
+    color: #ffffff;
+    opacity: 1;
+    background: #ff6666 0% 0% no-repeat padding-box !important;
+    border-radius: 200px 151px 0 200px !important;
+  }
+  .news-page-divider {
+    width: 50%;
+    margin: 45px 0;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #707070;
+    opacity: 0.22;
+  }
+}
