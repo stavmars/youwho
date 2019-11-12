@@ -1,6 +1,9 @@
 /* tslint:disable:jsx-no-lambda */
 import React from 'react';
 import { Switch, RouteComponentProps, Route } from 'react-router-dom';
+import { IRootState } from 'app/shared/reducers';
+import { hasAnyAuthority } from 'app/shared/auth/private-route';
+import { AUTHORITIES } from 'app/config/constants';
 import Header from 'app/shared/layout/header/header';
 import { connect } from 'react-redux';
 import { toggleSidebar } from 'app/shared/reducers/header';
@@ -12,7 +15,7 @@ import ProjectTeam from 'app/modules/menus/project-team';
 import Students from 'app/modules/menus/students';
 import YoungAdults from 'app/modules/menus/young-adults';
 
-export interface IMenusProps extends DispatchProps, RouteComponentProps {}
+export interface IMenusProps extends StateProps, DispatchProps, RouteComponentProps {}
 
 export class Menus extends React.Component<IMenusProps> {
   render() {
@@ -20,7 +23,18 @@ export class Menus extends React.Component<IMenusProps> {
 
     return (
       <div>
-        <Route path={`${match.url}`} render={() => <Header color="transparent" toggleSidebar={this.props.toggleSidebar} />} />
+        <Route
+          path={`${match.url}`}
+          render={() => (
+            <Header
+              color="transparent"
+              isAuthenticated={this.props.isAuthenticated}
+              isAdmin={this.props.isAdmin}
+              isSwaggerEnabled={this.props.isSwaggerEnabled}
+              toggleSidebar={this.props.toggleSidebar}
+            />
+          )}
+        />
         <div className="menus-component">
           <Switch>
             <Route exact path={`${match.url}/college-students`} render={() => <CollegeStudents />} />
@@ -37,13 +51,20 @@ export class Menus extends React.Component<IMenusProps> {
   }
 }
 
+const mapStateToProps = ({ authentication, applicationProfile }: IRootState) => ({
+  isAuthenticated: authentication.isAuthenticated,
+  isAdmin: hasAnyAuthority(authentication.account.authorities, [AUTHORITIES.ADMIN]),
+  isSwaggerEnabled: applicationProfile.isSwaggerEnabled
+});
+
 const mapDispatchToProps = {
   toggleSidebar
 };
 
+type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Menus);

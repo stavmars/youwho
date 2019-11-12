@@ -40,8 +40,31 @@ export const App = (props: IAppProps) => {
     <Router basename={baseHref}>
       <div className="app-container">
         <Switch>
-          <Route path="/survey-chat/" render={() => <Header color="white" toggleSidebar={props.toggleSidebar} />} />
-          <Route exact path="/" render={() => <Header color="transparent" toggleSidebar={props.toggleSidebar} />} />
+          <Route
+            path="/survey-chat/"
+            render={() => (
+              <Header
+                color="white"
+                isAuthenticated={props.isAuthenticated}
+                isAdmin={props.isAdmin}
+                isSwaggerEnabled={props.isSwaggerEnabled}
+                toggleSidebar={props.toggleSidebar}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Header
+                color="transparent"
+                isAuthenticated={props.isAuthenticated}
+                isAdmin={props.isAdmin}
+                isSwaggerEnabled={props.isSwaggerEnabled}
+                toggleSidebar={props.toggleSidebar}
+              />
+            )}
+          />
         </Switch>
         <Sidebar
           as={Menu}

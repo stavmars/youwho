@@ -1,20 +1,16 @@
 import React from 'react';
-import MenuItem from 'app/shared/layout/menus/menu-item';
-import { DropdownItem } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { NavLink as Link } from 'react-router-dom';
-import { NavDropdown } from './menu-components';
+import { Dropdown } from 'semantic-ui-react';
 
 export const EntitiesMenu = props => (
-  // tslint:disable-next-line:jsx-self-close
-  <NavDropdown icon="th-list" name="Entities" id="entity-menu">
-    <MenuItem icon="asterisk" to="/entity/survey">
-      Survey
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/survey-response">
-      Survey Response
-    </MenuItem>
-    {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
-  </NavDropdown>
+  <Dropdown item simple text={'Οντότητες'} id="entity-menu">
+    <Dropdown.Menu>
+      <Dropdown.Item as={Link} to="/entity/survey">
+        Έρευνα
+      </Dropdown.Item>
+      <Dropdown.Item as={Link} to="/entity/survey-response">
+        Απαντήσεις Έρευνας
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
 );
