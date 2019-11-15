@@ -1,3 +1,5 @@
+// tslint:disable-next-line:no-submodule-imports
+import 'semantic-ui-css/semantic.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
 
