@@ -37,7 +37,7 @@ export class Home extends React.Component<IHomeProp> {
               </Grid.Column>
               <Grid.Column width={6} className="text-computer">
                 <p className="home-title-1">
-                  <div className="home-title-2">Εσύ πόσο</div>
+                  <div className="home-title-2">Εσύ ποιός/ποιά</div>
                   <p className="home-title-3">YouWho</p>
                   <span className="home-title-4">είσαι;</span>
                 </p>
@@ -59,7 +59,7 @@ export class Home extends React.Component<IHomeProp> {
             <Grid.Row style={{ marginTop: '-150px' }}>
               <Grid.Column width={14}>
                 <p className="home-title-1">
-                  <div className="home-title-2">Εσύ πόσο</div>
+                  <div className="home-title-2">Εσύ ποιός/ποιά</div>
                   <p className="home-title-3">YouWho</p>
                   <span className="home-title-4">είσαι;</span>
                 </p>
