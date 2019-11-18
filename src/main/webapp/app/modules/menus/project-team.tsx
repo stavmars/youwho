@@ -32,27 +32,27 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
           <Menu text compact style={{ background: 'transparent', borderStyle: 'none' }}>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
-                <Image size="tiny" circular src="/content/images/project-team/_MG_4451-1.png" />
+                <Image size="tiny" circular src="content/images/project-team/_MG_4451-1.png" />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#iliou')} smooth to="#iliou" replace={false}>
-                <Image size="tiny" circular src="/content/images/project-team/_MG_4402-2.png" />
+                <Image size="tiny" circular src="content/images/project-team/_MG_4402-2.png" />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
-                <Image size="tiny" circular src="/content/images/project-team/_MG_4570-1.png" />
+                <Image size="tiny" circular src="content/images/project-team/_MG_4570-1.png" />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#irene')} smooth to="#irene" replace={false}>
-                <Image size="tiny" circular src="/content/images/project-team/_MG_4435-1.png" />
+                <Image size="tiny" circular src="content/images/project-team/_MG_4435-1.png" />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
-                <Image size="tiny" circular src="/content/images/project-team/_MG_4476-1.png" />
+                <Image size="tiny" circular src="content/images/project-team/_MG_4476-1.png" />
               </NavHashLink>
             </Menu.Item>
           </Menu>
@@ -60,7 +60,7 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
         <Grid className="project-team-page" centered>
           <Grid.Row>
             <Grid.Column computer={3}>
-              <Image className="project-team-page-image" src="/content/images/project-team/_MG_4451.png" />
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
               <h1 id="manina" className="project-team-page-title">
@@ -93,12 +93,12 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               </p>
             </Grid.Column>
             <Grid.Column computer={3}>
-              <Image className="project-team-page-image" src="/content/images/project-team/_MG_4402-1@2x.png" />
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
             <Grid.Column computer={3}>
-              <Image className="project-team-page-image" src="/content/images/project-team/_MG_4570.png" />
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
               <h1 id="gpapas" className="project-team-page-title">
@@ -144,12 +144,12 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               </p>
             </Grid.Column>
             <Grid.Column computer={3}>
-              <Image className="project-team-page-image" src="/content/images/project-team/_MG_4435.png" />
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
             <Grid.Column computer={3}>
-              <Image className="project-team-page-image" src="/content/images/project-team/_MG_4476.png" />
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
               <h1 id="costis" className="project-team-page-title">

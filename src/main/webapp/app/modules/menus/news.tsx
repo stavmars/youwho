@@ -34,7 +34,7 @@ export class News extends React.Component<INewsProps> {
         <Grid centered>
           <Grid.Row>
             <Grid.Column computer={3} mobile={14}>
-              <Image className="news-page-image" src="/content/images/giagia.png" />
+              <Image className="news-page-image" src="content/images/giagia.png" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14}>
               <h1 className="news-page-h1">ΥouWho? Ερευνα για νέους 17-29 ετών</h1>
@@ -49,7 +49,7 @@ export class News extends React.Component<INewsProps> {
           <div className="news-page-divider" />
           <Grid.Row>
             <Grid.Column mobile={14} only="mobile">
-              <Image className="news-page-image" src="/content/images/csm_1303_ypogennitikotita_95db309f9f.png" />
+              <Image className="news-page-image" src="content/images/csm_1303_ypogennitikotita_95db309f9f.png" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14}>
               <h1 className="news-page-h1">Ημερίδα - Δράση για την Υπογεννητικότητα</h1>
@@ -61,13 +61,13 @@ export class News extends React.Component<INewsProps> {
               <Button className="news-page-more-button">Περισσότερα</Button>
             </Grid.Column>
             <Grid.Column computer={3} only="computer">
-              <Image className="news-page-image" src="/content/images/csm_1303_ypogennitikotita_95db309f9f.png" />
+              <Image className="news-page-image" src="content/images/csm_1303_ypogennitikotita_95db309f9f.png" />
             </Grid.Column>
           </Grid.Row>
           <div className="news-page-divider" />
           <Grid.Row>
             <Grid.Column computer={3} mobile={14}>
-              <Image className="news-page-image" src="/content/images/k2_items_src_fdf563fc52afab9bcc613f75df1c95b9.png" />
+              <Image className="news-page-image" src="content/images/k2_items_src_fdf563fc52afab9bcc613f75df1c95b9.png" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14}>
               <h1 className="news-page-h1">Η νεολαία της Αττικής και όχι των νησιών στρέφεται στο Ναυτικό Επάγγελμα</h1>

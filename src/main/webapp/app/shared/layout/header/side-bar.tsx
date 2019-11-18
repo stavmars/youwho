@@ -12,16 +12,16 @@ export default (props: ISideBarProps) => (
     <List.Item>
       <Menu text compact style={{ margin: '15px 0 0 30px', background: 'transparent', borderStyle: 'none' }}>
         <Menu.Item>
-          <Image src="/content/images/instagram-white.svg" inline />
+          <Image src="content/images/instagram-white.svg" inline />
         </Menu.Item>
         <Menu.Item>
-          <Image src="/content/images/facebook-white.svg" inline />
+          <Image src="content/images/facebook-white.svg" inline />
         </Menu.Item>
         <Menu.Item>
-          <Image src="/content/images/twitter-white.svg" inline />
+          <Image src="content/images/twitter-white.svg" inline />
         </Menu.Item>
         <Menu.Item onClick={props.toggleSidebar}>
-          <Image src="/content/images/close.svg" inline />
+          <Image src="content/images/close.svg" inline />
         </Menu.Item>
       </Menu>
     </List.Item>
@@ -50,10 +50,10 @@ export default (props: ISideBarProps) => (
     <List.Item>
       <Menu text compact style={{ marginLeft: '50px', background: 'transparent', borderStyle: 'none' }}>
         <Menu.Item>
-          <Image src="/content/images/ekke white.png" style={{ marginLeft: '25%' }} as="a" href="https://www.ekke.gr" />
+          <Image src="content/images/ekke white.png" style={{ marginLeft: '25%' }} as="a" href="https://www.ekke.gr" />
         </Menu.Item>
         <Menu.Item>
-          <Image src="/content/images/Athena_RC_Vertical.svg" as="a" href="https://www.athena-innovation.gr" />
+          <Image src="content/images/Athena_RC_Vertical.svg" as="a" href="https://www.athena-innovation.gr" />
         </Menu.Item>
       </Menu>
     </List.Item>

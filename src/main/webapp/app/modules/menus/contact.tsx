@@ -9,16 +9,16 @@ import { Button, Form, Grid, Comment, Responsive } from 'semantic-ui-react';
 const contactInfo = () => (
   <Comment.Group>
     <Comment className="comment">
-      <Comment.Avatar src="/content/images/noun_Location_2641856.svg" />
+      <Comment.Avatar src="content/images/noun_Location_2641856.svg" />
       <Comment.Author className="comment-author" content="Εθνικό Κέντρο Κοινωνικών Ερευνών" />
       <Comment.Metadata className="comment-metadata" content="Κρατίνου 9 και Αθηνάς, Πλατεία Κοτζιά, 105 52 Αθήνα" />
     </Comment>
     <Comment className="comment">
-      <Comment.Avatar src="/content/images/noun_call_2349137.svg" />
+      <Comment.Avatar src="content/images/noun_call_2349137.svg" />
       <Comment.Metadata className="comment-metadata" content="210 7491600" />
     </Comment>
     <Comment className="comment">
-      <Comment.Avatar src="/content/images/noun_fax_2577487.svg" />
+      <Comment.Avatar src="content/images/noun_fax_2577487.svg" />
       <Comment.Metadata className="comment-metadata" content="210 7489800" />
     </Comment>
   </Comment.Group>

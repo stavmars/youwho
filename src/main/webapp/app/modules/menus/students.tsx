@@ -34,7 +34,7 @@ export class Students extends React.Component<IStudentsProps> {
           <h1 className="students-page-title">Highlights</h1>
           <Grid centered>
             <Grid.Column computer={10} mobile={14}>
-              <Image src="/content/images/dummy chart.svg" />
+              <Image src="content/images/dummy chart.svg" />
             </Grid.Column>
             <Grid.Column computer={4} mobile={14}>
               <p className="students-page-subtext">

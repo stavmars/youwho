@@ -32,8 +32,8 @@ export class Home extends React.Component<IHomeProp> {
           <Grid>
             <Grid.Row>
               <Grid.Column width={9} className="images-computer">
-                <img src="/content/images/giagia.png" alt="granny" className="granny" />
-                <img src="/content/images/YellowStripesBg.svg" alt="yellow-stripes" className="stripes" />
+                <img src="content/images/giagia.png" alt="granny" className="granny" />
+                <img src="content/images/YellowStripesBg.svg" alt="yellow-stripes" className="stripes" />
               </Grid.Column>
               <Grid.Column width={6} className="text-computer">
                 <p className="home-title-1">
@@ -66,8 +66,8 @@ export class Home extends React.Component<IHomeProp> {
                 <Button className="survey-button" as={Link} to="survey-chat/youWho">
                   Κάνε την έρευνα
                 </Button>
-                <img src="/content/images/giagia.png" className="granny" />
-                {/*<img src="/content/images/YellowStripesBg.svg" alt="yellow-stripes" style={{ left: '-100px' }} />*/}
+                <img src="content/images/giagia.png" className="granny" />
+                {/*<img src="content/images/YellowStripesBg.svg" alt="yellow-stripes" style={{ left: '-100px' }} />*/}
               </Grid.Column>
             </Grid.Row>
           </Grid>
