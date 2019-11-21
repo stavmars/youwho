@@ -29,42 +29,60 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
     return (
       <div>
         <Grid style={{ marginTop: '50px' }} centered>
-          <Menu text compact style={{ background: 'transparent', borderStyle: 'none' }}>
-            <Menu.Item>
-              <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4451-1.png" />
-              </NavHashLink>
-            </Menu.Item>
-            <Menu.Item>
-              <NavHashLink isActive={this.isActive('#iliou')} smooth to="#iliou" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4402-2.png" />
-              </NavHashLink>
-            </Menu.Item>
-            <Menu.Item>
-              <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4570-1.png" />
-              </NavHashLink>
-            </Menu.Item>
-            <Menu.Item>
-              <NavHashLink isActive={this.isActive('#irene')} smooth to="#irene" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4435-1.png" />
-              </NavHashLink>
-            </Menu.Item>
-            <Menu.Item>
-              <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4476-1.png" />
-              </NavHashLink>
-            </Menu.Item>
-          </Menu>
+          <Grid.Row only="computer">
+            <Menu text compact style={{ background: 'transparent', borderStyle: 'none' }}>
+              <Menu.Item>
+                <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
+                  <Image size="tiny" circular src="content/images/project-team/_MG_4451-1.png" />
+                </NavHashLink>
+              </Menu.Item>
+              <Menu.Item>
+                <NavHashLink isActive={this.isActive('#iliou')} smooth to="#iliou" replace={false}>
+                  <Image size="tiny" circular src="content/images/project-team/_MG_4402-2.png" />
+                </NavHashLink>
+              </Menu.Item>
+              <Menu.Item>
+                <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
+                  <Image size="tiny" circular src="content/images/project-team/_MG_4570-1.png" />
+                </NavHashLink>
+              </Menu.Item>
+              <Menu.Item>
+                <NavHashLink isActive={this.isActive('#irene')} smooth to="#irene" replace={false}>
+                  <Image size="tiny" circular src="content/images/project-team/_MG_4435-1.png" />
+                </NavHashLink>
+              </Menu.Item>
+              <Menu.Item>
+                <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
+                  <Image size="tiny" circular src="content/images/project-team/_MG_4476-1.png" />
+                </NavHashLink>
+              </Menu.Item>
+            </Menu>
+          </Grid.Row>
+          <Grid.Row
+            only="mobile"
+            style={{
+              textAlign: 'left',
+              font: 'Bold Italic 40px/45px TT Norms Pro',
+              letterSpacing: '0',
+              color: '#333333',
+              opacity: '1',
+              padding: '0'
+            }}
+          >
+            Ομάδα Έργου
+          </Grid.Row>
         </Grid>
-        <Grid className="project-team-page" centered>
+        <Grid className="project-team-page" centered stackable>
           <Grid.Row>
-            <Grid.Column computer={3}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" circular />
+            </Grid.Column>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" />
             </Grid.Column>
-            <Grid.Column computer={5}>
+            <Grid.Column width={5}>
               <h1 id="manina" className="project-team-page-title">
-                Μανίνα Καπεκάκη
+                Μανίνα Κακεπάκη
               </h1>
               <h2 className="project-team-page-subtitle">Επιστημονική συν-υπεύθυνη έργου</h2>
               <p className="project-team-page-description">
@@ -78,6 +96,9 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" circular />
+            </Grid.Column>
             <Grid.Column computer={5}>
               <h1 id="iliou" className="project-team-page-title">
                 Κατερίνα Ηλιού
@@ -92,12 +113,15 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
                 προκατάληψη, ρατσισμός, πατριωτισμός, κοινωνική ταυτότητα, ταυτότητα νέων και κλίμακες μέτρησης στάσεων.
               </p>
             </Grid.Column>
-            <Grid.Column computer={3}>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column computer={3}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" circular />
+            </Grid.Column>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
@@ -123,6 +147,9 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" circular />
+            </Grid.Column>
             <Grid.Column computer={5}>
               <h1 id="irene" className="project-team-page-title">
                 Ειρήνη Κυριαζοπούλου
@@ -143,12 +170,15 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
                 εστίασης).
               </p>
             </Grid.Column>
-            <Grid.Column computer={3}>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column computer={3}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" circular />
+            </Grid.Column>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
