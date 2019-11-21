@@ -21,22 +21,66 @@ Header styles
 SideBar styles
 ========================================================================== */
 
+.sidebar-menu {
+  background: transparent;
+  borderstyle: none;
+  @include mobile {
+    margin: 4vh 0 0 39vw !important;
+  }
+  @include computer {
+    margin: 15px 0 0 225px !important;
+  }
+  .insta,
+  .twitter,
+  .facebook {
+    @include mobile {
+      padding: 0 3vw !important;
+    }
+    @include computer {
+      padding: auto !important;
+    }
+  }
+}
+
 .sidebar-list {
+  width: 144px;
+  @include mobile {
+    margin: 5vh 0 0 150px !important;
+  }
+  @include computer {
+    margin: 8vh 0 0 252px !important;
+  }
   .sidebar-item {
     font-family: TTNormsProMediumItalic, serif;
     font-size: 20px;
     line-height: 34px !important;
     text-align: center !important;
+    padding: 0 !important;
+    height: 23px !important;
     span {
       padding: 7px;
       color: #ffffff !important;
       opacity: 0.35 !important;
     }
-    @include mobile {
-      margin-top: 5%;
+    &.project,
+    &.students,
+    &.college-students,
+    &.news,
+    &.project-team {
+      @include mobile {
+        margin-bottom: 5vh !important;
+      }
+      @include computer {
+        margin-bottom: 7vh !important;
+      }
     }
-    @include computer {
-      margin-top: 13%;
+    &.young-adults {
+      @include mobile {
+        margin-bottom: 4vh !important;
+      }
+      @include computer {
+        margin-bottom: 5vh !important;
+      }
     }
     a:active {
       color: #ffffff;
@@ -44,11 +88,53 @@ SideBar styles
       border: 1px solid #ffffff;
     }
   }
+}
+
+.sidebar-collaboration-menu {
+  position: fixed;
+  bottom: 0;
+  background: transparent;
+  borderstyle: none;
+  @include mobile {
+    margin: 0 30px 34px 120px !important;
+  }
+  @include computer {
+    margin: 0 10% 0 182px !important;
+  }
   .sidebar-collaboration {
     font-size: 12px;
     line-height: 52px !important;
     text-align: center !important;
+    letter-spacing: 0 !important;
     color: #ffffff !important;
+    @include mobile {
+      margin: 0 0 0 50px !important;
+      padding: 0 !important;
+    }
+    @include computer {
+      padding: auto !important;
+      margin: 0 0 0 80px !important;
+    }
+  }
+  .ekke {
+    @include mobile {
+      width: 40px;
+      height: 36px;
+    }
+    @include computer {
+      width: auto;
+      height: auto;
+    }
+  }
+  .athena {
+    @include mobile {
+      width: 40px;
+      height: 36px;
+    }
+    @include computer {
+      width: auto;
+      height: auto;
+    }
   }
 }
 
