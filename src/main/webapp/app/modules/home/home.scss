@@ -8,95 +8,46 @@ Main page styles
   overflow: auto;
   overflow-y: hidden;
   .granny {
+    position: absolute;
     @include mobile {
-      left: 7px;
-      width: 133px;
-      height: 185px;
+      width: 37vw;
+      height: 30vh;
+      left: -1vw;
+      position: fixed;
+      bottom: 0;
     }
     @include computer {
-      top: 400px;
-      left: 300px;
+      width: 35vw;
+      height: 100vh;
+      top: 30vh;
+      left: 18vw;
     }
     z-index: 1;
-    position: absolute;
   }
 
   .stripes {
-  }
-
-  .images-computer {
-  }
-
-  .text-computer {
-    padding-top: calc(100vh - 900px);
-  }
-
-  .home-title-1 {
-    font-family: 'TTNormsProItalic', serif;
-    background: #777eff 0% 0% no-repeat padding-box;
-    color: #ffffff;
-    border-radius: 230px 151px 200px 0;
     @include mobile {
-      font-size: 22px;
-      width: 244px;
-      height: 149px;
-      margin-top: 30px;
+      left: -70vw !important;
+      top: -6vh !important;
+      transform: scale(2.5);
     }
     @include computer {
-      font-size: 48px;
-      max-width: 620px;
-      height: 379px;
-    }
-    .home-title-2 {
-      @include mobile {
-        padding: 20px 0 0 35px;
-      }
-      @include computer {
-        padding: 50px 0 0 100px;
-      }
-    }
-    .home-title-3 {
-      font-family: 'TTNormsProBoldItalic', serif;
-      color: #ffffff;
-      text-align: center;
-      margin-bottom: 0;
-      @include mobile {
-        font-size: 38px;
-      }
-      @include computer {
-        font-size: 98px;
-      }
-    }
-    .home-title-4 {
-      float: right;
-      @include mobile {
-        margin-right: 40px;
-      }
-      @include computer {
-        margin-right: 100px;
-      }
-    }
-  }
-
-  .survey-button {
-    font-family: 'TTNormsProBoldItalic', serif !important;
-    color: #ffffff !important;
-    background: #ff6666 0% 0% no-repeat padding-box !important;
-    float: right;
-    text-align: center;
-    border-radius: 200px 151px 0 200px !important;
-    @include mobile {
-      font-size: 15px !important;
-    }
-    @include computer {
-      font-size: 31px !important;
+      top: 30vh !important;
+      left: -18vw !important;
+      transform: scale(1.5);
     }
   }
 
   .home-subtext {
     color: #333333;
-    font-family: 'TTNormsProBoldItalic', serif;
-    font-size: 20px;
+    text-align: left;
+    font: Bold Italic 20px/24px TT Norms Pro;
     letter-spacing: 0;
+    @include mobile {
+      width: 80%;
+    }
+    @include computer {
+      margin-top: 9vh;
+    }
   }
 }
