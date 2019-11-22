@@ -42,7 +42,7 @@ export class Home extends React.Component<IHomeProp> {
                   <span className="home-title-4">είσαι;</span>
                 </p>
                 {subtext()}
-                <Button className="survey-button" as={Link} to="survey-chat/youWho" disabled>
+                <Button className="survey-button" as={Link} to="survey-chat/youWho">
                   Κάνε την έρευνα
                 </Button>
               </Grid.Column>
@@ -63,7 +63,7 @@ export class Home extends React.Component<IHomeProp> {
                   <p className="home-title-3">YouWho</p>
                   <span className="home-title-4">είσαι;</span>
                 </p>
-                <Button className="survey-button" as={Link} to="survey-chat/youWho" disabled>
+                <Button className="survey-button" as={Link} to="survey-chat/youWho">
                   Κάνε την έρευνα
                 </Button>
                 <img src="content/images/giagia.png" className="granny" />
