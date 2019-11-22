@@ -4,7 +4,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IRootState } from 'app/shared/reducers';
-import { Button, Grid, Responsive, Image } from 'semantic-ui-react';
+import { Button, Grid, Responsive, Image, Modal } from 'semantic-ui-react';
+import { Player, BigPlayButton } from 'video-react';
 
 // tslint:disable:jsx-no-lambda
 
@@ -44,8 +45,22 @@ export class Home extends React.Component<IHomeProp> {
                   style={{ width: '20vw', height: '10vh', top: '2vh' }}
                 />
                 {subtext()}
-                <Image src="content/images/play-video.svg" inline style={{ marginRight: '2vw' }} />
-                <span className="home-subtext">Δές το Βίντεο</span>
+                <Modal
+                  trigger={
+                    <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }}>
+                      <Image src="content/images/play-video.svg" inline style={{ marginRight: '2vw' }} />
+                      <span className="home-subtext">Δές το Βίντεο</span>
+                    </Button>
+                  }
+                  size="large"
+                >
+                  <Modal.Header>YouWho Promo Video</Modal.Header>
+                  <Modal.Content>
+                    <Player src="content/images/YouWho Promo-1.mp4">
+                      <BigPlayButton position="center" />
+                    </Player>
+                  </Modal.Content>
+                </Modal>
               </Grid.Column>
             </Grid.Row>
           </Grid>
