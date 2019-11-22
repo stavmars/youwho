@@ -23,9 +23,7 @@ class LoginModal extends React.Component<ILoginModalProps> {
     return (
       <Modal isOpen={this.props.showModal} toggle={handleClose} backdrop="static" id="login-page" autoFocus={false}>
         <AvForm onSubmit={this.handleSubmit}>
-          <ModalHeader id="login-title" toggle={handleClose}>
-            Sign in
-          </ModalHeader>
+          <ModalHeader id="login-title">Sign in</ModalHeader>
           <ModalBody>
             <Row>
               <Col md="12">
@@ -36,22 +34,8 @@ class LoginModal extends React.Component<ILoginModalProps> {
                 ) : null}
               </Col>
               <Col md="12">
-                <AvField
-                  name="username"
-                  label="Username"
-                  placeholder="Your username"
-                  required
-                  errorMessage="Username cannot be empty!"
-                  autoFocus
-                />
-                <AvField
-                  name="password"
-                  type="password"
-                  label="Password"
-                  placeholder="Your password"
-                  required
-                  errorMessage="Password cannot be empty!"
-                />
+                <AvField name="username" label="Username" placeholder="Your username" autoFocus />
+                <AvField name="password" type="password" label="Password" placeholder="Your password" />
                 <AvGroup check inline>
                   <Label className="form-check-label">
                     <AvInput type="checkbox" name="rememberMe" /> Remember me
@@ -61,9 +45,6 @@ class LoginModal extends React.Component<ILoginModalProps> {
             </Row>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={handleClose} tabIndex="1">
-              Cancel
-            </Button>{' '}
             <Button color="primary" type="submit">
               Sign in
             </Button>
