@@ -16,6 +16,7 @@ import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import SurveyChat from 'app/modules/survey-chat';
 import Menus from 'app/modules/menus';
+import Results from 'app/modules/results';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -44,6 +45,7 @@ const Routes = () => (
       <ErrorBoundaryRoute path="/" exact component={Home} />
       <ErrorBoundaryRoute path="/survey-chat" component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />
+      <ErrorBoundaryRoute path="/results" component={Results} />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>

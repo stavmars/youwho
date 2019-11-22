@@ -31,17 +31,18 @@ const Header = (props: IHeaderProps) => {
           {props.isAuthenticated && <EntitiesMenu />}
           {props.isAuthenticated && props.isAdmin && <AdminMenu showSwagger={props.isSwaggerEnabled} />}
           {props.isAuthenticated && <AccountMenu />}
-          <Menu.Item position="right">
-            <span
-              style={{
-                marginRight: '100px',
-                fontFamily: 'TTNormsProBoldItalic',
-                color: '#333333',
-                fontSize: '16px'
-              }}
-            >
-              Αποτελέσματα
-            </span>
+          <Menu.Item
+            position="right"
+            style={{
+              marginRight: '100px',
+              fontFamily: 'TTNormsProBoldItalic',
+              color: '#333333',
+              fontSize: '16px'
+            }}
+            as={Link}
+            to="/results/average"
+          >
+            Αποτελέσματα
           </Menu.Item>
           <Menu.Item>
             <Image src="content/images/instagram-black.svg" />

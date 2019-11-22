@@ -39,6 +39,9 @@ export const App = (props: IAppProps) => {
     props.getEntities();
   }, []);
 
+  const menus = '/menus/';
+  const results = '/results/';
+
   return (
     <Router basename={baseHref}>
       <div className="app-container">
@@ -85,6 +88,7 @@ export const App = (props: IAppProps) => {
             <AppRoutes />
           </ErrorBoundary>
           <Route path="/menus/" render={() => <Footer />} />
+          <Route path="/results/" render={() => <Footer />} />
         </Sidebar.Pushable>
       </div>
     </Router>
