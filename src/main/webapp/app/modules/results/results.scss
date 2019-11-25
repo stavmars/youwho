@@ -17,8 +17,21 @@
 results/average page styles
 ========================================================================== */
 
-.results-average {
+.results {
   margin: 0 0 10% 10% !important;
+  .results-legend {
+    text-align: center !important;
+    font: Bold Italic 19px/23px TT Norms Pro !important;
+    letter-spacing: 0 !important;
+    text-transform: lowercase !important;
+    opacity: 1 !important;
+    &.me {
+      color: #ff6666 !important;
+    }
+    &.others {
+      color: #707070 !important;
+    }
+  }
   .filter-type {
     letter-spacing: 0;
     color: #707070;
@@ -39,5 +52,17 @@ results/average page styles
     letter-spacing: 0;
     color: #afafaf;
     text-transform: lowercase;
+  }
+  .results-description-title {
+    text-align: left;
+    font: Bold Italic 18px/24px TT Norms Pro;
+    letter-spacing: 0.36px;
+    color: #1e1e1e;
+  }
+  .results-description-content {
+    text-align: left;
+    font: Italic 18px/24px TTNormsProMedium;
+    letter-spacing: 0.36px;
+    color: #1e1e1e;
   }
 }
