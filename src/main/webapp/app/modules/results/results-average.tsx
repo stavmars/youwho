@@ -9,7 +9,7 @@ export interface IResultsAverageProps extends StateProps, DispatchProps {}
 export class ResultsAverage extends React.Component<IResultsAverageProps> {
   render() {
     return (
-      <Grid className="results-average" stackable>
+      <Grid className="results" stackable>
         <Grid.Row>
           <Grid.Column computer={14}>
             <Image src="content/images/granny.jpg" circular size="tiny" inline />
@@ -37,15 +37,15 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
             <Button.Group style={{ display: 'block' }}>
               <h3 className="filter-type">φύλο</h3>
               <Button className="filter-buttons" style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}>
-                <Image src="content/images/male.svg" />
+                <Image src="content/images/female.svg" />
               </Button>
               <Button className="filter-buttons" style={{ height: '48px' }}>
-                <Image src="content/images/female.svg" />
+                <Image src="content/images/male.svg" />
               </Button>
               <Button
                 className="filter-buttons"
                 content="όλοι"
-                style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px' }}
+                style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px', paddingTop: '24px' }}
               />
             </Button.Group>
             <Button.Group style={{ display: 'block' }}>
