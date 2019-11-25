@@ -60,7 +60,7 @@ export const App = (props: IAppProps) => {
           />
           <Route
             exact
-            path="/"
+            path={`(/|/results/average|/results/personal)`}
             render={() => (
               <Header
                 color="transparent"
