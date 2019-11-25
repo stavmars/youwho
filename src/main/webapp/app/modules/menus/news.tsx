@@ -79,7 +79,7 @@ export class News extends React.Component<INewsProps> {
               <Button className="news-page-more-button">Περισσότερα</Button>
             </Grid.Column>
           </Grid.Row>
-          <div className="news-page-divider" />
+          <div className="content-divider" />
         </Grid>
       </div>
     );
