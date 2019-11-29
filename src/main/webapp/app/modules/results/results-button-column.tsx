@@ -1,3 +1,4 @@
+/* tslint:disable:jsx-no-lambda */
 import './results.scss';
 import React from 'react';
 import { Button, Grid, Icon, Image, Item } from 'semantic-ui-react';
@@ -28,34 +29,30 @@ const ResultsButtonColumn = (props: IResultsButtonColumnProps) => (
         </Item>
       </Item.Group>
     )}
-    <Button.Group style={{ display: 'block' }}>
-      <h3 className="filter-type">φύλο</h3>
-      <Button className="filter-buttons" style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}>
-        <Image src="content/images/female.svg" />
-      </Button>
-      <Button className="filter-buttons" style={{ height: '48px' }}>
-        <Image src="content/images/male.svg" />
-      </Button>
-      <Button
-        className="filter-buttons"
-        content="όλοι"
-        style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px', paddingTop: '24px' }}
-      />
-    </Button.Group>
-    <Button.Group style={{ display: 'block' }}>
-      <h3 className="filter-type">ηλικία</h3>
-      <Button
-        className="filter-buttons"
-        content="17-20"
-        style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}
-      />
-      <Button className="filter-buttons" content="21-24" style={{ height: '48px' }} />
-      <Button
-        className="filter-buttons"
-        content="25-28"
-        style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px' }}
-      />
-    </Button.Group>
+    <h3 className="filter-type">φύλο</h3>
+    <Button className="filter-buttons" style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}>
+      <Image src="content/images/female.svg" />
+    </Button>
+    <Button className="filter-buttons" style={{ height: '48px' }}>
+      <Image className="filter-buttons-image" src="content/images/male.svg" />
+    </Button>
+    <Button
+      className="filter-buttons"
+      content="όλοι"
+      style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px', paddingTop: '21px' }}
+    />
+    <h3 className="filter-type">ηλικία</h3>
+    <Button
+      className="filter-buttons"
+      content="17-20"
+      style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}
+    />
+    <Button className="filter-buttons" content="21-24" style={{ height: '48px' }} />
+    <Button
+      className="filter-buttons"
+      content="25-28"
+      style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px' }}
+    />
     <Button.Group style={{ display: 'block', marginTop: '10vh' }}>
       <h3 className="filter-type">Κάνε share</h3>
       <Button className="share-buttons" style={{ background: 'transparent', borderStyle: 'none' }}>
