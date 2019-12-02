@@ -23,7 +23,7 @@ SideBar styles
 
 .sidebar-menu {
   background: transparent;
-  borderstyle: none;
+  border-style: none;
   @include mobile {
     margin: 4vh 0 0 39vw !important;
   }
