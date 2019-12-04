@@ -1,10 +1,15 @@
 @import 'app/shared/common.scss';
 
 .college-students-page {
-  margin-top: -80px;
+  margin: -80px 0 50px 0;
   .college-students-page-top {
-    background-image: url('/content/images/students-w1920-h1080.png');
-    padding: 180px 0 80px 0;
+    background-image: url('/content/images/students-masked.png');
+    @include mobile {
+      padding: 25% 0 50% 0;
+    }
+    @include computer {
+      padding: 180px 0 25% 0;
+    }
     .college-students-page-top-title {
       text-align: left;
       font: Bold Italic 40px/45px TT Norms Pro;
