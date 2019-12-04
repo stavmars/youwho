@@ -14,6 +14,7 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
         <Grid.Row>
           <Grid.Column computer={14}>
             <Image src="content/images/granny.jpg" circular size="tiny" inline />
+            <span className="results-granny-bubble">Συνολικά αποτελέσματα</span>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

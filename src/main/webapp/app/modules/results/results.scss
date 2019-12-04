@@ -19,6 +19,22 @@ results/average page styles
 
 .results {
   margin: 0 0 10% 10% !important;
+  .results-granny-bubble {
+    margin-left: 5%;
+    background: #777eff 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 100px 60px 80px 0;
+    text-align: left;
+    color: #ffffff;
+    letter-spacing: 0;
+    padding: 20px 40px;
+    @include mobile {
+      font: Bold Italic 14px/16px TT Norms Pro;
+    }
+    @include computer {
+      font: Bold Italic 40px/48px TT Norms Pro;
+    }
+  }
   .results-legend {
     text-align: center !important;
     font: Bold Italic 19px/23px TT Norms Pro !important;
