@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
-import { Image, Grid, Menu, Container } from 'semantic-ui-react';
+import { Image, Grid, Menu, Container, Responsive } from 'semantic-ui-react';
 import { NavHashLink } from 'react-router-hash-link';
 
 export interface IProjectTeamProps extends StateProps, DispatchProps {}
@@ -28,50 +28,58 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
   render() {
     return (
       <div>
-        <Grid style={{ marginTop: '50px' }} centered>
-          <Grid.Row only="computer">
-            <Menu text compact style={{ background: 'transparent', borderStyle: 'none' }}>
-              <Menu.Item>
-                <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
-                  <Image circular src="content/images/project-team/_MG_4451-1@2x.png" style={{ width: '99px', height: '99px' }} />
-                </NavHashLink>
-              </Menu.Item>
-              <Menu.Item>
-                <NavHashLink isActive={this.isActive('#iliou')} smooth to="#iliou" replace={false}>
-                  <Image circular src="content/images/project-team/_MG_4402-2@2x.png" style={{ width: '99px', height: '99px' }} />
-                </NavHashLink>
-              </Menu.Item>
-              <Menu.Item>
-                <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
-                  <Image circular src="content/images/project-team/_MG_4570-1@2x.png" style={{ width: '99px', height: '99px' }} />
-                </NavHashLink>
-              </Menu.Item>
-              <Menu.Item>
-                <NavHashLink isActive={this.isActive('#irene')} smooth to="#irene" replace={false}>
-                  <Image circular src="content/images/project-team/_MG_4435-1@2x.png" style={{ width: '99px', height: '99px' }} />
-                </NavHashLink>
-              </Menu.Item>
-              <Menu.Item>
-                <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
-                  <Image circular src="content/images/project-team/_MG_4476-1@2x.png" style={{ width: '99px', height: '99px' }} />
-                </NavHashLink>
-              </Menu.Item>
-            </Menu>
-          </Grid.Row>
-          <Grid.Row
-            only="mobile"
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Menu
+            text
+            fluid
+            fixed="top"
             style={{
-              textAlign: 'left',
-              font: 'Bold Italic 40px/45px TT Norms Pro',
-              letterSpacing: '0',
-              color: '#333333',
-              opacity: '1',
-              padding: '0'
+              background: 'transparent linear-gradient(133deg, #ffffff 0%, #e3e3e6 100%) 0% 0% no-repeat fixed',
+              borderStyle: 'none',
+              marginTop: '80px',
+              paddingBottom: '40px'
             }}
           >
-            Ομάδα Έργου
-          </Grid.Row>
-        </Grid>
+            <Menu.Item style={{ marginLeft: '35%' }}>
+              <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4451-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavHashLink isActive={this.isActive('#iliou')} smooth to="#iliou" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4402-2@2x.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4570-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavHashLink isActive={this.isActive('#irene')} smooth to="#irene" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4435-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4476-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+          </Menu>
+        </Responsive>
+        <Responsive
+          {...Responsive.onlyMobile}
+          style={{
+            textAlign: 'center',
+            font: 'Bold Italic 40px/45px TT Norms Pro',
+            letterSpacing: '0',
+            color: '#333333',
+            opacity: '1',
+            padding: '0'
+          }}
+        >
+          Ομάδα Έργου
+        </Responsive>
         <Grid className="project-team-page" centered stackable>
           <Grid.Row>
             <Grid.Column only="mobile">
