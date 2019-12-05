@@ -8,7 +8,8 @@
       padding: 25% 0 50% 0;
     }
     @include computer {
-      padding: 180px 0 25% 0;
+      padding-top: 180px;
+      height: 754px;
     }
     .college-students-page-top-title {
       text-align: left;

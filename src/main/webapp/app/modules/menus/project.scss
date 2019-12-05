@@ -17,6 +17,7 @@
     opacity: 1;
   }
   .project-page-content {
+    width: 80%;
     @include mobile {
       font: 18px/26px TT Norms Pro;
     }
