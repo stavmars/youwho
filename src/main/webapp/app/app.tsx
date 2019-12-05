@@ -83,7 +83,7 @@ export const App = (props: IAppProps) => {
         >
           <SideBar toggleSidebar={props.toggleSidebar} />
         </Sidebar>
-        <Sidebar.Pushable>
+        <Sidebar.Pushable style={{ transform: 'none' }}>
           <ErrorBoundary>
             <AppRoutes />
           </ErrorBoundary>
