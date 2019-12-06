@@ -7,6 +7,10 @@
   @include computer {
     margin-top: 240px !important;
   }
+  .anchor {
+    position: relative;
+    top: -220px;
+  }
   .project-team-page-image {
     @include mobile {
       width: 173px;

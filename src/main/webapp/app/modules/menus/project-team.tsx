@@ -89,6 +89,7 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" />
             </Grid.Column>
             <Grid.Column width={5}>
+              <a id="manina" className="anchor" />
               <h1 id="manina" className="project-team-page-title">
                 Μανίνα Κακεπάκη
               </h1>
@@ -108,9 +109,8 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" circular />
             </Grid.Column>
             <Grid.Column computer={5}>
-              <h1 id="iliou" className="project-team-page-title">
-                Κατερίνα Ηλιού
-              </h1>
+              <a id="iliou" className="anchor" />
+              <h1 className="project-team-page-title">Κατερίνα Ηλιού</h1>
               <h2 className="project-team-page-subtitle">Επιστημονική συν-υπεύθυνη έργου</h2>
               <p className="project-team-page-description">
                 Κάτοχος διδακτορικού διπλώματος στην Κοινωνική Ψυχολογία (Πάντειο Πανεπιστήμιο, τμήμα Ψυχολογίας) με αντικείμενο τις «Νέες
@@ -133,9 +133,8 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
-              <h1 id="gpapas" className="project-team-page-title">
-                Γιώργος Παπαστεφανάτος
-              </h1>
+              <a id="gpapas" className="anchor" />
+              <h1 className="project-team-page-title">Γιώργος Παπαστεφανάτος</h1>
               <h2 className="project-team-page-subtitle">Τεχνικός υπεύθυνος έργου</h2>
               <p className="project-team-page-description">
                 Ο Δρ. Γεώργιος Παπαστεφανάτος είναι διπλωματούχος μηχανικός της Σχολής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του
@@ -159,6 +158,7 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" circular />
             </Grid.Column>
             <Grid.Column computer={5}>
+              <a id="irene" className="anchor" />
               <h1 id="irene" className="project-team-page-title">
                 Ειρήνη Κυριαζοπούλου
               </h1>
@@ -190,9 +190,8 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
-              <h1 id="costis" className="project-team-page-title">
-                Κωνσταντίνος Πιερίδης
-              </h1>
+              <a id="costis" className="anchor" />
+              <h1 className="project-team-page-title">Κωνσταντίνος Πιερίδης</h1>
               <h2 className="project-team-page-subtitle">Επιστημονικός σύμβουλος</h2>
               <p className="project-team-page-description">
                 Είναι διδάκτωρ του τμήματος Πολιτικής Επιστήμης και Ιστορίας του Παντείου Πανεπιστημίου. Η έρευνά του εστιάζεται στην μελέτη
