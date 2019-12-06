@@ -63,7 +63,7 @@ export const App = (props: IAppProps) => {
             path={`(/|/results/average|/results/personal)`}
             render={() => (
               <Header
-                color="transparent"
+                color="gradient"
                 isAuthenticated={props.isAuthenticated}
                 isAdmin={props.isAdmin}
                 isSwaggerEnabled={props.isSwaggerEnabled}
