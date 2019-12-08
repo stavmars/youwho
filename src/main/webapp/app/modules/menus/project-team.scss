@@ -1,26 +1,60 @@
 @import 'app/shared/common.scss';
 
 .project-team-page {
-  margin-top: 100px !important;
+  @include mobile {
+    margin-top: 80px !important;
+  }
+  @include computer {
+    margin-top: 240px !important;
+  }
+  .anchor {
+    position: relative;
+    top: -220px;
+  }
   .project-team-page-image {
-    width: 280px;
-    height: 420px;
+    @include mobile {
+      width: 173px;
+      height: 173px;
+      margin: 0 0 0 25%;
+    }
+    @include computer {
+      width: 280px;
+      height: 420px;
+      margin: auto;
+    }
   }
   .project-team-page-title {
-    text-align: left;
-    font: Bold Italic 50px/30px TT Norms Pro;
     letter-spacing: 0;
     color: #ff6666;
     opacity: 1;
+    @include mobile {
+      text-align: center;
+      font: Bold Italic 33px/30px TT Norms Pro;
+    }
+    @include computer {
+      text-align: left;
+      font: Bold Italic 50px/30px TT Norms Pro;
+    }
   }
   .project-team-page-subtitle {
-    text-align: left;
     font: Bold 16px/32px TT Norms Pro;
     letter-spacing: 0.32px;
     color: #1e1e1e;
     opacity: 1;
+    @include mobile {
+      text-align: center;
+    }
+    @include computer {
+      text-align: left;
+    }
   }
   .project-team-page-description {
+    @include mobile {
+      width: 95% !important;
+    }
+    @include computer {
+      width: auto;
+    }
     text-align: left;
     font: 18px/26px TT Norms Pro;
     letter-spacing: 0.36px;

@@ -1,10 +1,16 @@
 @import 'app/shared/common.scss';
 
 .young-adults-page {
-  margin-top: -80px;
+  margin: -80px 0 50px 0;
   .young-adults-page-top {
-    background-image: url('/content/images/young-w1920-h1080.png');
-    padding: 180px 0 80px 0;
+    background-image: url('/content/images/young-masked.png');
+    @include mobile {
+      padding: 25% 0 50% 0;
+    }
+    @include computer {
+      padding-top: 180px;
+      height: 754px;
+    }
     .young-adults-page-top-title {
       text-align: left;
       font: Bold Italic 40px/45px TT Norms Pro;

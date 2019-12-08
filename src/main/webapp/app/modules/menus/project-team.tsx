@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
-import { Image, Grid, Menu, Container } from 'semantic-ui-react';
+import { Image, Grid, Menu, Container, Responsive } from 'semantic-ui-react';
 import { NavHashLink } from 'react-router-hash-link';
 
 export interface IProjectTeamProps extends StateProps, DispatchProps {}
@@ -28,43 +28,70 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
   render() {
     return (
       <div>
-        <Grid style={{ marginTop: '50px' }} centered>
-          <Menu text compact style={{ background: 'transparent', borderStyle: 'none' }}>
-            <Menu.Item>
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Menu
+            text
+            fluid
+            fixed="top"
+            style={{
+              background: 'transparent linear-gradient(133deg, #ffffff 0%, #e3e3e6 100%) 0% 0% no-repeat fixed',
+              borderStyle: 'none',
+              marginTop: '80px',
+              paddingBottom: '40px'
+            }}
+          >
+            <Menu.Item style={{ marginLeft: '35%' }}>
               <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4451-1.png" />
+                <Image circular src="content/images/project-team/_MG_4451-1@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#iliou')} smooth to="#iliou" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4402-2.png" />
+                <Image circular src="content/images/project-team/_MG_4402-2@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4570-1.png" />
+                <Image circular src="content/images/project-team/_MG_4570-1@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#irene')} smooth to="#irene" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4435-1.png" />
+                <Image circular src="content/images/project-team/_MG_4435-1@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
               <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
-                <Image size="tiny" circular src="content/images/project-team/_MG_4476-1.png" />
+                <Image circular src="content/images/project-team/_MG_4476-1@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
           </Menu>
-        </Grid>
-        <Grid className="project-team-page" centered>
+        </Responsive>
+        <Responsive
+          {...Responsive.onlyMobile}
+          style={{
+            textAlign: 'center',
+            font: 'Bold Italic 40px/45px TT Norms Pro',
+            letterSpacing: '0',
+            color: '#333333',
+            opacity: '1',
+            padding: '0'
+          }}
+        >
+          Ομάδα Έργου
+        </Responsive>
+        <Grid className="project-team-page" centered stackable>
           <Grid.Row>
-            <Grid.Column computer={3}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" circular />
+            </Grid.Column>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" />
             </Grid.Column>
-            <Grid.Column computer={5}>
+            <Grid.Column width={5}>
+              <a id="manina" className="anchor" />
               <h1 id="manina" className="project-team-page-title">
-                Μανίνα Καπεκάκη
+                Μανίνα Κακεπάκη
               </h1>
               <h2 className="project-team-page-subtitle">Επιστημονική συν-υπεύθυνη έργου</h2>
               <p className="project-team-page-description">
@@ -78,10 +105,12 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" circular />
+            </Grid.Column>
             <Grid.Column computer={5}>
-              <h1 id="iliou" className="project-team-page-title">
-                Κατερίνα Ηλιού
-              </h1>
+              <a id="iliou" className="anchor" />
+              <h1 className="project-team-page-title">Κατερίνα Ηλιού</h1>
               <h2 className="project-team-page-subtitle">Επιστημονική συν-υπεύθυνη έργου</h2>
               <p className="project-team-page-description">
                 Κάτοχος διδακτορικού διπλώματος στην Κοινωνική Ψυχολογία (Πάντειο Πανεπιστήμιο, τμήμα Ψυχολογίας) με αντικείμενο τις «Νέες
@@ -92,18 +121,20 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
                 προκατάληψη, ρατσισμός, πατριωτισμός, κοινωνική ταυτότητα, ταυτότητα νέων και κλίμακες μέτρησης στάσεων.
               </p>
             </Grid.Column>
-            <Grid.Column computer={3}>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column computer={3}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" circular />
+            </Grid.Column>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
-              <h1 id="gpapas" className="project-team-page-title">
-                Γιώργος Παπαστεφανάτος
-              </h1>
+              <a id="gpapas" className="anchor" />
+              <h1 className="project-team-page-title">Γιώργος Παπαστεφανάτος</h1>
               <h2 className="project-team-page-subtitle">Τεχνικός υπεύθυνος έργου</h2>
               <p className="project-team-page-description">
                 Ο Δρ. Γεώργιος Παπαστεφανάτος είναι διπλωματούχος μηχανικός της Σχολής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του
@@ -123,7 +154,11 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" circular />
+            </Grid.Column>
             <Grid.Column computer={5}>
+              <a id="irene" className="anchor" />
               <h1 id="irene" className="project-team-page-title">
                 Ειρήνη Κυριαζοπούλου
               </h1>
@@ -143,18 +178,20 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
                 εστίασης).
               </p>
             </Grid.Column>
-            <Grid.Column computer={3}>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column computer={3}>
+            <Grid.Column only="mobile">
+              <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" circular />
+            </Grid.Column>
+            <Grid.Column computer={3} only="computer">
               <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" />
             </Grid.Column>
             <Grid.Column computer={5}>
-              <h1 id="costis" className="project-team-page-title">
-                Κωνσταντίνος Πιερίδης
-              </h1>
+              <a id="costis" className="anchor" />
+              <h1 className="project-team-page-title">Κωνσταντίνος Πιερίδης</h1>
               <h2 className="project-team-page-subtitle">Επιστημονικός σύμβουλος</h2>
               <p className="project-team-page-description">
                 Είναι διδάκτωρ του τμήματος Πολιτικής Επιστήμης και Ιστορίας του Παντείου Πανεπιστημίου. Η έρευνά του εστιάζεται στην μελέτη

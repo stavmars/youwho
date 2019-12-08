@@ -31,7 +31,7 @@ export class CollegeStudents extends React.Component<ICollegeStudentsProps> {
             </p>
           </Container>
         </div>
-        <Container style={{ marginTop: '30px' }}>
+        <Container style={{ marginTop: '-80px' }}>
           <h1 className="college-students-page-title">Highlights</h1>
           <p className="college-students-page-subtext">
             Τα υψηλότερα ποσοστά διαφωνίας με τους καθηγητές (54,6%) προέρχονται από μαθητές με γονείς υψηλής κοινωνικής θέσης.

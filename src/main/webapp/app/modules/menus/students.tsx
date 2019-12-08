@@ -30,7 +30,7 @@ export class Students extends React.Component<IStudentsProps> {
             </p>
           </Container>
         </div>
-        <Container style={{ marginTop: '30px' }}>
+        <Container style={{ marginTop: '-80px' }}>
           <h1 className="students-page-title">Highlights</h1>
           <Grid centered>
             <Grid.Column computer={10} mobile={14}>

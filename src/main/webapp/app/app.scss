@@ -92,11 +92,14 @@ body {
 }
 
 .app-sidebar {
+  background: transparent url('/content/images/menu-bg.svg') 0 0 no-repeat padding-box !important;
   @include mobile {
     width: 100% !important;
+    background-position: -8vh !important;
   }
   @include computer {
-    width: 300px !important;
+    width: 512px !important;
   }
-  background: #6065cc 0% 0% no-repeat padding-box !important;
+  border-style: none !important;
+  box-shadow: none !important;
 }
