@@ -28,8 +28,8 @@ const Header = (props: IHeaderProps) => {
           <Menu.Item position="left" fitted style={{ marginLeft: '56px' }} as={Link} to="/">
             <Image src="content/images/HeaderLogo.svg" />
           </Menu.Item>
-          {props.isAuthenticated && <EntitiesMenu />}
-          {props.isAuthenticated && props.isAdmin && <AdminMenu showSwagger={props.isSwaggerEnabled} />}
+          {/*{props.isAuthenticated && <EntitiesMenu />}*/}
+          {/*{props.isAuthenticated && props.isAdmin && <AdminMenu showSwagger={props.isSwaggerEnabled} />}*/}
           {props.isAuthenticated && <AccountMenu />}
           <Menu.Item
             position="right"

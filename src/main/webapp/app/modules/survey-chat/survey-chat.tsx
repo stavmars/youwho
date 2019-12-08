@@ -17,13 +17,20 @@ export class SurveyChat extends React.Component<IChatBotProps> {
     super(props);
   }
 
+  componentDidMount() {
+    const { surveysByName } = this.props;
+    const survey = surveysByName[this.props.match.params.id];
+    if (survey) {
+      this.props.initiateSurveyResponse(survey, moment());
+    }
+  }
+
   render() {
     const { surveysByName } = this.props;
     const survey = surveysByName[this.props.match.params.id];
     if (!survey) {
       return <Redirect to="/" />;
     }
-    this.props.initiateSurveyResponse(survey, moment());
     const steps = configureStep(survey.questions);
 
     return (
