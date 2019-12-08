@@ -24,24 +24,25 @@ const Header = (props: IHeaderProps) => {
     <div className="app-header">
       <LoadingBar className="loading-bar" />
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-        <Menu text className={`header ${props.color}`}>
+        <Menu text fixed={props.color === 'gradient' ? 'top' : null} className={`header ${props.color}`}>
           <Menu.Item position="left" fitted style={{ marginLeft: '56px' }} as={Link} to="/">
             <Image src="content/images/HeaderLogo.svg" />
           </Menu.Item>
           {/*{props.isAuthenticated && <EntitiesMenu />}*/}
           {/*{props.isAuthenticated && props.isAdmin && <AdminMenu showSwagger={props.isSwaggerEnabled} />}*/}
           {props.isAuthenticated && <AccountMenu />}
-          <Menu.Item position="right">
-            <span
-              style={{
-                marginRight: '100px',
-                fontFamily: 'TTNormsProBoldItalic',
-                color: '#333333',
-                fontSize: '16px'
-              }}
-            >
-              Αποτελέσματα
-            </span>
+          <Menu.Item
+            position="right"
+            style={{
+              marginRight: '100px',
+              fontFamily: 'TTNormsProBoldItalic',
+              color: '#333333',
+              fontSize: '16px'
+            }}
+            as={Link}
+            to="/results/average"
+          >
+            Αποτελέσματα
           </Menu.Item>
           <Menu.Item>
             <Image src="content/images/instagram-black.svg" />
@@ -58,9 +59,21 @@ const Header = (props: IHeaderProps) => {
         </Menu>
       </Responsive>
       <Responsive {...Responsive.onlyMobile}>
-        <Menu text className={`header ${props.color}`}>
+        <Menu text fixed={props.color === 'white' ? null : 'top'} className={`header ${props.color}`}>
           <Menu.Item position="left" fitted style={{ marginLeft: '22px' }} as={Link} to="/">
             <Image src="content/images/MobileLogo.svg" />
+          </Menu.Item>
+          <Menu.Item
+            style={{
+              font: 'Bold Italic 16px/34px TT Norms Pro',
+              letterSpacing: '0',
+              opacity: '1',
+              color: '#333333'
+            }}
+            as={Link}
+            to="/results/average"
+          >
+            Αποτελέσματα
           </Menu.Item>
           <Menu.Item position="right" fitted onClick={props.toggleSidebar}>
             <Image src="content/images/dots.svg" style={{ width: '80px', height: '50px' }} />

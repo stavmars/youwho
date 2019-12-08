@@ -1,0 +1,84 @@
+@import 'app/shared/common.scss';
+
+.results-labels {
+  text-align: center;
+  letter-spacing: 0;
+  color: #333333;
+  opacity: 1;
+  @include mobile {
+    font: Bold Italic 14px/16px TT Norms Pro;
+  }
+  @include computer {
+    font: Bold Italic 20px/24px TT Norms Pro;
+  }
+}
+
+/* ==========================================================================
+results/average page styles
+========================================================================== */
+
+.results {
+  margin: 80px 0 10% 10% !important;
+  .results-granny-bubble {
+    margin-left: 5%;
+    background: #777eff 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 100px 60px 80px 0;
+    text-align: left;
+    color: #ffffff;
+    letter-spacing: 0;
+    padding: 20px 40px;
+    @include mobile {
+      font: Bold Italic 14px/16px TT Norms Pro;
+    }
+    @include computer {
+      font: Bold Italic 40px/48px TT Norms Pro;
+    }
+  }
+  .results-legend {
+    text-align: center !important;
+    font: Bold Italic 19px/23px TT Norms Pro !important;
+    letter-spacing: 0 !important;
+    text-transform: lowercase !important;
+    opacity: 1 !important;
+    &.me {
+      color: #ff6666 !important;
+    }
+    &.others {
+      color: #707070 !important;
+    }
+  }
+  .filter-type {
+    letter-spacing: 0;
+    color: #707070;
+    text-transform: lowercase;
+    opacity: 1;
+    @include mobile {
+      font: Bold Italic 14px/16px TT Norms Pro;
+    }
+    @include computer {
+      font: Bold Italic 19px/23px TT Norms Pro;
+    }
+  }
+  .filter-buttons {
+    background: #dbdbdb 0% 0% no-repeat padding-box;
+    opacity: 1;
+    text-align: center;
+    font: Bold 15px/17px TT Norms Pro;
+    letter-spacing: 0;
+    color: #afafaf;
+    text-transform: lowercase;
+  }
+  .results-description-title {
+    text-align: left;
+    font: Bold Italic 18px/24px TT Norms Pro;
+    letter-spacing: 0.36px;
+    color: #1e1e1e;
+  }
+  .results-description-content {
+    text-align: left;
+    font: Italic 18px/24px TTNormsProMedium;
+    letter-spacing: 0.36px;
+    color: #1e1e1e;
+  }
+}

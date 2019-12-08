@@ -23,18 +23,33 @@ export class Menus extends React.Component<IMenusProps> {
 
     return (
       <div>
-        <Route
-          path={`${match.url}`}
-          render={() => (
-            <Header
-              color="transparent"
-              isAuthenticated={this.props.isAuthenticated}
-              isAdmin={this.props.isAdmin}
-              isSwaggerEnabled={this.props.isSwaggerEnabled}
-              toggleSidebar={this.props.toggleSidebar}
-            />
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path={`(${match.url}/students|${match.url}/college-students|${match.url}/young-adults)`}
+            render={() => (
+              <Header
+                color="transparent"
+                isAuthenticated={this.props.isAuthenticated}
+                isAdmin={this.props.isAdmin}
+                isSwaggerEnabled={this.props.isSwaggerEnabled}
+                toggleSidebar={this.props.toggleSidebar}
+              />
+            )}
+          />
+          <Route
+            path={`${match.url}`}
+            render={() => (
+              <Header
+                color="gradient"
+                isAuthenticated={this.props.isAuthenticated}
+                isAdmin={this.props.isAdmin}
+                isSwaggerEnabled={this.props.isSwaggerEnabled}
+                toggleSidebar={this.props.toggleSidebar}
+              />
+            )}
+          />
+        </Switch>
         <div className="menus-component">
           <Switch>
             <Route exact path={`${match.url}/college-students`} render={() => <CollegeStudents />} />

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="Group_12" data-name="Group 12" transform="translate(-938 -972)">
+    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(938 972)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="70" height="70" rx="35" stroke="none"/>
+      <rect x="0.5" y="0.5" width="69" height="69" rx="34.5" fill="none"/>
+    </g>
+    <path id="Polygon_1" data-name="Polygon 1" d="M13.5,0,27,23H0Z" transform="translate(989 994) rotate(90)" fill="#333"/>
+  </g>
+</svg>

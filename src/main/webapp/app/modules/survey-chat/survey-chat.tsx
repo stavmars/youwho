@@ -46,7 +46,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
       >
         <ChatBot
           hideUserAvatar
-          botAvatar="content/images/granny.png"
+          botAvatar="content/images/granny.jpg"
           footerStyle={{ display: 'none' }}
           hideHeader
           handleEnd={() => this.props.storeSurveyResponse()}
