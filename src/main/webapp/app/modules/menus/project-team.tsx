@@ -71,11 +71,11 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
           {...Responsive.onlyMobile}
           style={{
             textAlign: 'center',
-            font: 'Bold Italic 40px/45px TT Norms Pro',
+            font: '40px/45px TTNormsProBoldItalic',
             letterSpacing: '0',
             color: '#333333',
             opacity: '1',
-            padding: '0'
+            paddingTop: '80px'
           }}
         >
           Ομάδα Έργου
