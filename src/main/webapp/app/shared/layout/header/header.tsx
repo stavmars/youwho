@@ -65,7 +65,7 @@ const Header = (props: IHeaderProps) => {
           </Menu.Item>
           <Menu.Item
             style={{
-              font: 'Bold Italic 16px/34px TT Norms Pro',
+              font: '16px/34px TTNormsProBoldItalic',
               letterSpacing: '0',
               opacity: '1',
               color: '#333333'

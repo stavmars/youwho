@@ -13,18 +13,18 @@
     }
     .college-students-page-top-title {
       text-align: left;
-      font: Bold Italic 40px/45px TT Norms Pro;
+      font: 40px/45px TTNormsProBoldItalic;
       letter-spacing: 0;
       color: #333333;
       opacity: 1;
     }
     .college-students-page-top-subtext {
       @include mobile {
-        font: Bold 20px/25px TT Norms Pro;
+        font: 20px/25px TTNormsProBold;
         letter-spacing: 0.4px;
       }
       @include computer {
-        font: Bold 22px/32px TT Norms Pro;
+        font: 22px/32px TTNormsProBold;
         letter-spacing: 0.44px;
       }
       color: #333333;
@@ -41,7 +41,7 @@
       float: left;
       margin-right: 0.15em;
       text-align: center;
-      font: Bold Italic 95px/30px TT Norms Pro;
+      font: 95px/30px TTNormsProBoldItalic;
       letter-spacing: 0;
       color: #ff6666;
       opacity: 1;
@@ -49,7 +49,7 @@
   }
   .college-students-page-title {
     text-align: left;
-    font: Bold Italic 35px/40px TT Norms Pro;
+    font: 35px/40px TTNormsProBoldItalic;
     letter-spacing: 0;
     color: #333333;
     text-transform: capitalize;
@@ -60,11 +60,11 @@
     color: #333333;
     opacity: 1;
     @include mobile {
-      font: 20px/28px TT Norms Pro;
+      font: 20px/28px TTNormsProRegular;
       letter-spacing: 0.4px;
     }
     @include computer {
-      font: 20px/32px TT Norms Pro;
+      font: 20px/32px TTNormsProRegular;
       letter-spacing: 0;
     }
   }

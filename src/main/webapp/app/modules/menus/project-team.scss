@@ -29,15 +29,15 @@
     opacity: 1;
     @include mobile {
       text-align: center;
-      font: Bold Italic 33px/30px TT Norms Pro;
+      font: 33px/30px TTNormsProBoldItalic;
     }
     @include computer {
       text-align: left;
-      font: Bold Italic 50px/30px TT Norms Pro;
+      font: 50px/30px TTNormsProBoldItalic;
     }
   }
   .project-team-page-subtitle {
-    font: Bold 16px/32px TT Norms Pro;
+    font: 16px/32px TTNormsProBold;
     letter-spacing: 0.32px;
     color: #1e1e1e;
     opacity: 1;
@@ -56,7 +56,7 @@
       width: auto;
     }
     text-align: left;
-    font: 18px/26px TT Norms Pro;
+    font: 18px/26px TTNormsProRegular;
     letter-spacing: 0.36px;
     color: #1e1e1e;
     opacity: 1;
