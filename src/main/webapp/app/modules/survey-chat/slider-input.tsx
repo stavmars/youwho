@@ -84,7 +84,7 @@ export class SliderInput extends React.Component<ISliderInputProps> {
     const emo = options[0].description === '❤️' ? 'emoji' : '';
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', maxWidth: '400px' }}>
         <Slider rootStyle={sliderStyle} domain={[min, max]} step={1} values={[def]} onChange={this.onChange}>
           <Rail>
             {(

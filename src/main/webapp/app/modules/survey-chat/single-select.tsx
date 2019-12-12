@@ -32,7 +32,7 @@ export class SingleSelect extends React.Component<ISingleSelectProps> {
     const { options } = this.props;
 
     return (
-      <Grid style={{ marginTop: '20px' }} width={14} centered>
+      <Grid style={{ marginTop: '20px', maxWidth: '400px' }} width={14} centered>
         {options.map(option => (
           <Button key={option.trigger} onClick={() => this.commitChoice(option)} className="single-select">
             {option.text}

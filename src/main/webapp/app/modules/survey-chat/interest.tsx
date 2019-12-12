@@ -33,15 +33,7 @@ export class Interest extends React.Component<IInterestProps> {
 
     return (
       <div style={{ width: '100%', alignContent: 'center' }}>
-        <Menu
-          compact
-          borderless
-          style={{
-            background: 'rgba(255, 255, 255, 0.65) 0% 0% no-repeat padding-box',
-            borderRadius: '18px',
-            margin: '10px 0 0 5%'
-          }}
-        >
+        <Menu compact borderless className="interest-component">
           {options.map((option, index) => (
             <Menu.Item as={Button} key={option.trigger} content={option.text} onClick={() => this.commitChoice(option)} />
           ))}

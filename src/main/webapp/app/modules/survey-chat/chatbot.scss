@@ -1,3 +1,5 @@
+@import 'app/shared/common.scss';
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -72,11 +74,27 @@
   padding: 10px 8px !important;
 }
 
+.interest-component {
+  background: rgba(255, 255, 255, 0.65) 0% 0% no-repeat padding-box !important;
+  border-radius: 18px !important;
+  @include mobile {
+    margin: 10px 0 0 5% !important;
+  }
+  @include computer {
+    margin: 10px 0 0 20% !important;
+  }
+}
+
 .interest-tooltip {
   display: inline-block;
   margin-bottom: 20px !important;
   margin-top: 10px !important;
-  margin-left: 5%;
+  @include mobile {
+    margin-left: 5%;
+  }
+  @include computer {
+    margin-left: 20%;
+  }
 }
 
 .interest-tooltip-text {
