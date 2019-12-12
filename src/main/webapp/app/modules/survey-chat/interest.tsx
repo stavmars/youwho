@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Menu } from 'semantic-ui-react';
 import { IComponentProps, IOption } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer, updateActiveCategory } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
@@ -12,6 +12,9 @@ export interface IInterestProps extends IComponentProps, StateProps, DispatchPro
 export class Interest extends React.Component<IInterestProps> {
   componentDidMount(): void {
     this.props.initiateQuestionTimer();
+    if (this.props.activeCategory !== this.props.category) {
+      this.props.updateActiveCategory(this.props.category);
+    }
   }
 
   commitChoice(option: IOption): void {
@@ -30,15 +33,7 @@ export class Interest extends React.Component<IInterestProps> {
 
     return (
       <div style={{ width: '100%', alignContent: 'center' }}>
-        <Menu
-          compact
-          borderless
-          style={{
-            background: 'rgba(255, 255, 255, 0.65) 0% 0% no-repeat padding-box',
-            borderRadius: '18px',
-            margin: '10px 0 0 5%'
-          }}
-        >
+        <Menu compact borderless className="interest-component">
           {options.map((option, index) => (
             <Menu.Item as={Button} key={option.trigger} content={option.text} onClick={() => this.commitChoice(option)} />
           ))}
@@ -56,12 +51,14 @@ export class Interest extends React.Component<IInterestProps> {
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  questionStartTime: storeState.chatBot.questionStartTime
+  questionStartTime: storeState.chatBot.questionStartTime,
+  activeCategory: storeState.chatBot.activeCategory
 });
 
 const mapDispatchToProps = {
   initiateQuestionTimer,
-  addQuestionResponse
+  addQuestionResponse,
+  updateActiveCategory
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

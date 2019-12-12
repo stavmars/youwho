@@ -9,6 +9,7 @@ import MultiAnswer from 'app/modules/survey-chat/multi-answer';
 
 export interface IComponentProps {
   options: any;
+  category: string;
   style: React.CSSProperties;
 }
 
@@ -134,19 +135,21 @@ export const configureStep = questions => {
           }
         }
       }
-      // Finally push first the options(choices) of the question then push the reactions if any.
       let component;
       if (question.type === 'scale') {
         if (question.displayType === 'slider') {
-          component = <SliderInput options={options} style={{}} />;
+          component = <SliderInput options={options} category={question.category} style={{}} />;
         } else if (question.displayType === 'buttons') {
-          component = <Interest options={options} style={{ background: 'transparent' }} />;
+          component = <Interest options={options} category={question.category} style={{ background: 'transparent' }} />;
         }
       } else if (question.type === 'multi_select') {
-        component = <MultiSelect options={options} questionId={question.id} style={{ backgroundColor: 'transparent' }} />;
+        component = (
+          <MultiSelect options={options} category={question.category} questionId={question.id} style={{ backgroundColor: 'transparent' }} />
+        );
       } else {
-        component = <SingleSelect options={options} style={{ backgroundColor: 'transparent' }} />;
+        component = <SingleSelect options={options} category={question.category} style={{ backgroundColor: 'transparent' }} />;
       }
+      // Finally push first the options(choices) of the question then push the reactions if any.
       steps.push({
         id: 'option_' + question.id,
         component,

@@ -2,7 +2,7 @@ import React from 'react';
 import { Checkbox, Form } from 'semantic-ui-react';
 import { IComponentProps } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer, updateActiveCategory } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
@@ -28,6 +28,9 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
   componentDidMount() {
     this.setState({ optChecked: new Array(this.props.options.length).fill(false) });
     this.props.initiateQuestionTimer();
+    if (this.props.activeCategory !== this.props.category) {
+      this.props.updateActiveCategory(this.props.category);
+    }
   }
 
   checkBox = index => {
@@ -108,12 +111,14 @@ export class MultiSelect extends React.Component<IMultiSelectProps, IMultiSelect
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  questionStartTime: storeState.chatBot.questionStartTime
+  questionStartTime: storeState.chatBot.questionStartTime,
+  activeCategory: storeState.chatBot.activeCategory
 });
 
 const mapDispatchToProps = {
   initiateQuestionTimer,
-  addQuestionResponse
+  addQuestionResponse,
+  updateActiveCategory
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

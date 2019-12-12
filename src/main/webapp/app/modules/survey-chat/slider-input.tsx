@@ -2,7 +2,7 @@ import React from 'react';
 import { Slider, Handles, Rail } from 'react-compound-slider';
 import { IComponentProps, IOption } from 'app/modules/survey-chat/configure-steps';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer, updateActiveCategory } from 'app/modules/survey-chat/chatbot.reducer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
@@ -35,6 +35,9 @@ export interface ISliderInputProps extends IComponentProps, StateProps, Dispatch
 export class SliderInput extends React.Component<ISliderInputProps> {
   componentDidMount(): void {
     this.props.initiateQuestionTimer();
+    if (this.props.activeCategory !== this.props.category) {
+      this.props.updateActiveCategory(this.props.category);
+    }
   }
 
   onChange = x => {
@@ -81,7 +84,7 @@ export class SliderInput extends React.Component<ISliderInputProps> {
     const emo = options[0].description === '❤️' ? 'emoji' : '';
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', maxWidth: '400px' }}>
         <Slider rootStyle={sliderStyle} domain={[min, max]} step={1} values={[def]} onChange={this.onChange}>
           <Rail>
             {(
@@ -117,12 +120,14 @@ export class SliderInput extends React.Component<ISliderInputProps> {
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  questionStartTime: storeState.chatBot.questionStartTime
+  questionStartTime: storeState.chatBot.questionStartTime,
+  activeCategory: storeState.chatBot.activeCategory
 });
 
 const mapDispatchToProps = {
   initiateQuestionTimer,
-  addQuestionResponse
+  addQuestionResponse,
+  updateActiveCategory
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
