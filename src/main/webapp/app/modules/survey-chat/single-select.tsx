@@ -3,7 +3,7 @@ import { Button, Grid } from 'semantic-ui-react';
 import { IComponentProps, IOption } from 'app/modules/survey-chat/configure-steps';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { addQuestionResponse, initiateQuestionTimer } from 'app/modules/survey-chat/chatbot.reducer';
+import { addQuestionResponse, initiateQuestionTimer, updateActiveCategory } from 'app/modules/survey-chat/chatbot.reducer';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
@@ -12,6 +12,9 @@ export interface ISingleSelectProps extends IComponentProps, StateProps, Dispatc
 export class SingleSelect extends React.Component<ISingleSelectProps> {
   componentDidMount(): void {
     this.props.initiateQuestionTimer();
+    if (this.props.activeCategory !== this.props.category) {
+      this.props.updateActiveCategory(this.props.category);
+    }
   }
 
   commitChoice(option: IOption): void {
@@ -42,12 +45,14 @@ export class SingleSelect extends React.Component<ISingleSelectProps> {
 
 const mapStateToProps = (storeState: IRootState) => ({
   currentSurveyResponse: storeState.chatBot.currentSurveyResponse,
-  questionStartTime: storeState.chatBot.questionStartTime
+  questionStartTime: storeState.chatBot.questionStartTime,
+  activeCategory: storeState.chatBot.activeCategory
 });
 
 const mapDispatchToProps = {
   initiateQuestionTimer,
-  addQuestionResponse
+  addQuestionResponse,
+  updateActiveCategory
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

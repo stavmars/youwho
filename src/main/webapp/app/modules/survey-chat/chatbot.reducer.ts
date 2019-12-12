@@ -12,6 +12,7 @@ export const ACTION_TYPES = {
   INITIATE_SURVEY_RESPONSE: 'chatbot/INITIATE_SURVEY_RESPONSE',
   INITIATE_QUESTION_TIMER: 'chatbot/INITIATE_QUESTION_TIMER',
   ADD_QUESTION_RESPONSE: 'chatbot/ADD_QUESTION_RESPONSE',
+  UPDATE_ACTIVE_CATEGORY: 'chatbot/UPDATE_ACTIVE_CATEGORY',
   STORE_SURVEY_RESPONSE: 'chatbot/STORE_SURVEY_RESPONSE'
 };
 
@@ -19,6 +20,7 @@ const initialState = {
   lastQuestionId: null,
   currentSurveyResponse: SurveyResponseDefault,
   questionStartTime: null,
+  activeCategory: null,
   storeResult: null
 };
 
@@ -41,6 +43,11 @@ export default (state: ChatBotState = initialState, action): ChatBotState => {
       return {
         ...state,
         questionStartTime: moment()
+      };
+    case ACTION_TYPES.UPDATE_ACTIVE_CATEGORY:
+      return {
+        ...state,
+        activeCategory: action.payload
       };
     case SUCCESS(ACTION_TYPES.ADD_QUESTION_RESPONSE):
       return {
@@ -77,6 +84,11 @@ export const initiateSurveyResponse = (survey: ISurvey, initTime: Moment) => ({
 
 export const initiateQuestionTimer = () => ({
   type: ACTION_TYPES.INITIATE_QUESTION_TIMER
+});
+
+export const updateActiveCategory = activeCategory => ({
+  type: ACTION_TYPES.UPDATE_ACTIVE_CATEGORY,
+  payload: activeCategory
 });
 
 export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dispatch, getState) => {

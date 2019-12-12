@@ -6,6 +6,7 @@ import { IRootState } from 'app/shared/reducers';
 import { RouteComponentProps, Redirect } from 'react-router-dom';
 import { initiateSurveyResponse, storeSurveyResponse } from 'app/modules/survey-chat/chatbot.reducer';
 import ChatBot from 'react-simple-chatbot';
+import ProgressBar from 'app/modules/survey-chat/progress-bar';
 import { ThemeProvider } from 'styled-components';
 import { configureStep } from 'app/modules/survey-chat/configure-steps';
 import moment from 'moment';
@@ -26,7 +27,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
   }
 
   render() {
-    const { surveysByName } = this.props;
+    const { surveysByName, activeCategory } = this.props;
     const survey = surveysByName[this.props.match.params.id];
     if (!survey) {
       return <Redirect to="/" />;
@@ -34,51 +35,58 @@ export class SurveyChat extends React.Component<IChatBotProps> {
     const steps = configureStep(survey.questions);
 
     return (
-      <ThemeProvider
-        theme={{
-          background: '#777EFF',
-          fontFamily: 'TTNormsProMedium',
-          botBubbleColor: '#FFFFFF',
-          botFontColor: '#777EFF',
-          userBubbleColor: 'rgba(255, 255, 255, 0.65)',
-          userFontColor: '#777EFF'
-        }}
-      >
-        <ChatBot
-          hideUserAvatar
-          botAvatar="content/images/granny.jpg"
-          footerStyle={{ display: 'none' }}
-          hideHeader
-          handleEnd={() => this.props.storeSurveyResponse()}
-          steps={steps}
-          style={{
-            height: 'calc(100vh - 80px)',
-            userSelect: 'none',
-            borderRadius: '0px'
-          }}
-          contentStyle={{
-            height: window.innerWidth > 414 ? '70%' : '100%',
-            width: window.innerWidth > 414 ? '380px' : '100%',
-            marginLeft: window.innerWidth > 414 ? '40%' : '0'
-          }}
-          bubbleStyle={{
-            userSelect: 'none'
-          }}
-          bubbleOptionStyle={{
-            background: 'rgba(255, 255, 255, 0.65)'
-          }}
-          customStyle={{
-            botBubbleColor: 'transparent'
-          }}
-          width="100%"
+      <div style={{ width: '100%', backgroundColor: '#6065CC' }}>
+        <ProgressBar
+          activeCategory={activeCategory}
+          categories={['Εισαγωγή', 'Δημογραφικά', 'Εθνοκεντρισμός Διεθνισμός', 'Κοινωνικές αξίες', 'Πολιτική', 'Lifestyle']}
         />
-      </ThemeProvider>
+        <ThemeProvider
+          theme={{
+            background: '#777EFF',
+            fontFamily: 'TTNormsProMedium',
+            botBubbleColor: '#FFFFFF',
+            botFontColor: '#777EFF',
+            userBubbleColor: 'rgba(255, 255, 255, 0.65)',
+            userFontColor: '#777EFF'
+          }}
+        >
+          <ChatBot
+            hideUserAvatar
+            botAvatar="content/images/granny.jpg"
+            footerStyle={{ display: 'none' }}
+            hideHeader
+            handleEnd={() => this.props.storeSurveyResponse()}
+            steps={steps}
+            style={{
+              height: 'calc(100vh - 128px)',
+              userSelect: 'none',
+              borderRadius: '0px',
+              width: window.innerWidth > 414 ? '600px' : '100%',
+              marginLeft: window.innerWidth > 414 ? '30%' : '0'
+            }}
+            contentStyle={{
+              height: window.innerWidth > 414 ? '70%' : '100%'
+            }}
+            bubbleStyle={{
+              userSelect: 'none'
+            }}
+            bubbleOptionStyle={{
+              background: 'rgba(255, 255, 255, 0.65)'
+            }}
+            customStyle={{
+              botBubbleColor: 'transparent'
+            }}
+            width="100%"
+          />
+        </ThemeProvider>
+      </div>
     );
   }
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  surveysByName: storeState.survey.entitiesByName
+  surveysByName: storeState.survey.entitiesByName,
+  activeCategory: storeState.chatBot.activeCategory
 });
 
 const mapDispatchToProps = {
