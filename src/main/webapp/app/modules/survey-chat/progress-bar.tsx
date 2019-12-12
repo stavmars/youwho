@@ -20,7 +20,7 @@ export class ProgressBar extends React.Component<IProgressBarProps> {
         <Grid className="progress-bar">
           <Grid.Row>
             {categories.map((value, index) => (
-              <Grid.Column className={`progress-name ${activeCategory === value ? 'active' : ''} name-${index}`}>
+              <Grid.Column className={`progress-name ${categories.indexOf(activeCategory) >= index ? 'active' : ''} name-${index}`}>
                 <Icon name="circle" className={`progress-dot ${activeCategory ? 'active' : ''}`} />
                 <span>{value}</span>
               </Grid.Column>
