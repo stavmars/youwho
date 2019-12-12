@@ -1,0 +1,58 @@
+@import 'app/shared/common.scss';
+
+.progress {
+  background-color: #ffffff;
+  height: 48px;
+  width: 100%;
+  .progress-line {
+    border-bottom: 2px solid #afafaf;
+    width: 90%;
+    max-width: 720px;
+    @include mobile {
+      margin-left: 5%;
+    }
+    @include computer {
+      margin-left: 26%;
+    }
+    padding-top: 12px;
+    margin-bottom: -12px;
+  }
+  .progress-bar {
+    width: 90%;
+    max-width: 720px;
+    display: inline-block;
+    @include mobile {
+      margin-left: 5%;
+    }
+    @include computer {
+      margin-left: 26%;
+    }
+    .progress-name {
+      color: #afafaf;
+      text-align: center;
+      display: inline-block;
+      word-wrap: break-word;
+      white-space: normal;
+      letter-spacing: 0;
+      text-transform: capitalize;
+      opacity: 1;
+      font: 11px/12px TTNormsProMedium;
+      padding: 0 !important;
+      width: 84px !important;
+      &.name-1,
+      &.name-2,
+      &.name-3,
+      &.name-4,
+      &.name-5 {
+        margin-left: 43px;
+      }
+      &.active {
+        color: #ff6666;
+      }
+    }
+    .progress-dot {
+      margin-left: 15px !important;
+      margin-right: 15px !important;
+    }
+  }
+}
