@@ -20,7 +20,7 @@ const initialState = {
   lastQuestionId: null,
   currentSurveyResponse: SurveyResponseDefault,
   questionStartTime: null,
-  activeCategory: null,
+  activeCategory: 'Εισαγωγή',
   storeResult: null
 };
 
