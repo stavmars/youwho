@@ -28,8 +28,6 @@ public class QuestionResponse implements Serializable {
 
     List<String> choiceIds = new ArrayList<>();
 
-    private Map<String, Double> profilingWeights;
-
     public String getQuestionId() {
         return questionId;
     }
@@ -62,11 +60,4 @@ public class QuestionResponse implements Serializable {
         this.choiceIds = choiceIds;
     }
 
-    public Map<String, Double> getProfilingWeights() {
-        return profilingWeights;
-    }
-
-    public void setProfilingWeights(Map<String, Double> profilingWeights) {
-        this.profilingWeights = profilingWeights;
-    }
 }

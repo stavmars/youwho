@@ -3,6 +3,7 @@ package gr.ekke.youwho.domain;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * A Response Choice.
@@ -29,6 +30,8 @@ public class ResponseChoice implements Serializable {
 
     // if existing, it's the question to redirect the user to
     private String redirectQuestionId;
+
+    private Map<String, Double> profilingWeights;
 
     public String getId() {
         return id;
@@ -84,5 +87,13 @@ public class ResponseChoice implements Serializable {
 
     public void setRedirectQuestionId(String redirectQuestionId) {
         this.redirectQuestionId = redirectQuestionId;
+    }
+
+    public Map<String, Double> getProfilingWeights() {
+        return profilingWeights;
+    }
+
+    public void setProfilingWeights(Map<String, Double> profilingWeights) {
+        this.profilingWeights = profilingWeights;
     }
 }
