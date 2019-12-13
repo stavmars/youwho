@@ -10,6 +10,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 
 /**
  * A SurveyResponse.
@@ -37,6 +38,7 @@ public class SurveyResponse implements Serializable {
 
     private List<QuestionResponse> questionResponses = new ArrayList<>();
 
+    private Map<String, Double> profilingResults;
 
     public String getId() {
         return id;
@@ -131,6 +133,7 @@ public class SurveyResponse implements Serializable {
             ", status='" + status + '\'' +
             ", surveyId='" + surveyId + '\'' +
             ", questionResponses=" + questionResponses +
+            ", profilingResults=" + profilingResults +
             '}';
     }
 

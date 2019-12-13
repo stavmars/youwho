@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A Question Response.
@@ -26,6 +27,8 @@ public class QuestionResponse implements Serializable {
     private Instant endTime;
 
     List<String> choiceIds = new ArrayList<>();
+
+    private Map<String, Double> profilingWeights;
 
     public String getQuestionId() {
         return questionId;
@@ -57,5 +60,13 @@ public class QuestionResponse implements Serializable {
 
     public void setChoiceIds(List<String> choiceIds) {
         this.choiceIds = choiceIds;
+    }
+
+    public Map<String, Double> getProfilingWeights() {
+        return profilingWeights;
+    }
+
+    public void setProfilingWeights(Map<String, Double> profilingWeights) {
+        this.profilingWeights = profilingWeights;
     }
 }
