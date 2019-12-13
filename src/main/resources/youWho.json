@@ -4,7 +4,7 @@
   "description": "Πόσο youWho είσαι;(Νεόι 17-30)",
   "questions": [
     {
-      "id": "1",
+      "id": "info_text_1",
       "text": "Γεια σου παιδί μου!",
       "type": "info_text",
       "category": "Εισαγωγή",
@@ -24,7 +24,7 @@
       "imageURL": "content/images/chat-images/granny_youwho.gif"
     },
     {
-      "id": "2",
+      "id": "1",
       "text": "Αποδέχεσαι τους όρους χρήσης;",
       "type": "yes_no",
       "category": "Εισαγωγή",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "2",
       "text": "Πότε γεννήθηκες;",
       "category": "Δημογραφικά",
       "type": "single_select",
@@ -111,11 +111,16 @@
           "id": "13",
           "text": "2002",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
+        },
+        {
+          "id": "14",
+          "text": "2003",
+          "responseReaction": "content/images/chat-images/granny_wow.gif"
         }
       ]
     },
     {
-      "id": "4",
+      "id": "3",
       "text": "Ποιο είναι το φύλο σου;",
       "category": "Δημογραφικά",
       "type": "single_select",
@@ -139,7 +144,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "6",
       "text": "Πού  μένεις;",
       "category": "Δημογραφικά",
       "type": "single_select",
@@ -195,7 +200,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": "7",
       "text": "Τι έχεις τελειώσει;",
       "category": "Δημογραφικά",
       "type": "single_select",
@@ -237,7 +242,7 @@
       "type": "info_text"
     },
     {
-      "id": "7",
+      "id": "8",
       "text": "Η περιοχή που ζεις είναι...",
       "category": "Δημογραφικά",
       "type": "single_select",
@@ -264,7 +269,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "9",
       "text": "Αυτό το διάστημα τι κάνεις κυρίως;",
       "category": "Δημογραφικά",
       "type": "single_select",
@@ -314,28 +319,8 @@
       "type": "info_text"
     },
     {
-      "id": "9",
-      "text": "Πόσα ταξίδια έχεις κάνει μέχρι σήμερα εκτός Ελλάδας;",
-      "category": "Εθνοκεντρισμός Διεθνισμός",
-      "type": "single_select",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "0"
-        },
-        {
-          "id": "2",
-          "text": "1-5"
-        },
-        {
-          "id": "3",
-          "text": "Από 5 & πάνω"
-        }
-      ]
-    },
-    {
       "id": "info_text_11",
-      "text": "Πόσο ταυτίζεσαι με...",
+      "text": "Πόσο δεμένος/η νιώθεις με: ",
       "category": "Εθνοκεντρισμός Διεθνισμός",
       "type": "info_text"
     },
@@ -620,7 +605,7 @@
     },
     {
       "id": "17",
-      "text": "Δεν αισθάνομαι ιδιαίτερη υπερηφάνεια όταν η Ελλάδα διακρίνεται σε αθλητικές διοργανώσεις",
+      "text": "Αισθάνομαι ιδιαίτερη υπερηφάνεια όταν η Ελλάδα διακρίνεται σε αθλητικές διοργανώσεις",
       "category": "Εθνοκεντρισμός Διεθνισμός",
       "type": "scale",
       "displayType": "slider",
@@ -868,7 +853,7 @@
     },
     {
       "id": "23",
-      "text": "Τα ομόφυλα ζευγάρια να μπορούν να γίνονται γονείς όπως και τα ετερόφυλα",
+      "text": "Τα ομοφυλόφιλα ζευγάρια πρέπει να έχουν τα ίδια δικαιώματα στην υιοθεσία παιδιών όπως και τα ετεροφυλόφιλα",
       "category": "Κοινωνικές αξίες",
       "type": "scale",
       "displayType": "slider",
@@ -1273,7 +1258,7 @@
     },
     {
       "id": "34",
-      "text": "Δούλεψες εθελοντικά σε κάποια φιλανθρωπική οργάνωση;",
+      "text": "Δούλεψες εθελοντικά σε κάποια φιλανθρωπική οργάνωση/ΜΚΟ;",
       "category": "Κοινωνικές αξίες",
       "type": "single_select",
       "responseChoices": [
@@ -1327,7 +1312,7 @@
     },
     {
       "id": "37",
-      "text": "Έχεις κάνει κάποιο σχόλιο στα social media για κάποιο πολιτικό ή κοινωνικό θέμα;",
+      "text": "Έχεις κάνει κάποιο σχόλιο στα social media για κάποιο πολιτικό/κοινωνικό θέμα;",
       "category": "Κοινωνικές αξίες",
       "type": "single_select",
       "responseChoices": [
@@ -1362,13 +1347,31 @@
       ]
     },
     {
+      "id": "39",
+      "text": "Έχεις ποστάρει μουσικό κομμάτι με πολιτικό/κοινωνικό περιεχόμενο;",
+      "category": "Κοινωνικές αξίες",
+      "type": "single_select",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "👍",
+          "description": "Ναι"
+        },
+        {
+          "id": "2",
+          "text": "👎",
+          "description": "Όχι"
+        }
+      ]
+    },
+    {
       "id": "info_text_19",
       "text": "Με την πολιτική, πώς τα πας;",
       "category": "Πολιτική",
       "type": "info_text"
     },
     {
-      "id": "39",
+      "id": "40",
       "text": "Με ποιο πολιτικό ή ιδεολογικό ρεύμα ταυτίζεσαι περισσότερο;",
       "category": "Πολιτική",
       "type": "single_select",
@@ -1418,47 +1421,12 @@
       "type": "info_text"
     },
     {
-      "id": "40",
+      "id": "41",
       "text": "Γιάννης Αντετοκούμπο",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "content/images/chat-images/greek_freak.gif",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "😊",
-          "description": "Συμπαθώ"
-        },
-        {
-          "id": "2",
-          "text": "😐",
-          "description": "Αδιάφορο"
-        },
-        {
-          "id": "3",
-          "text": "😡",
-          "description": "Αντιπαθώ"
-        },
-        {
-          "id": "4",
-          "text": "🤔",
-          "description": "Άγνωστο πρόσωπο"
-        },
-        {
-          "id": "5",
-          "text": "❌",
-          "description": "Δεν Απαντώ"
-        }
-      ]
-    },
-    {
-      "id": "41",
-      "text": "Στέφανος Τσιτσιπάς",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "buttons",
-      "imageURL": "content/images/chat-images/poiotita.gif",
+      "imageURL": "content/images/chat-images/antetokoumpo.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1489,11 +1457,11 @@
     },
     {
       "id": "42",
-      "text": "ΛΕΞ",
+      "text": "Γιώργος Λάνθιμος",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "content/images/chat-images/lexaros.jpg",
+      "imageURL": "content/images/chat-images/lanthimos.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1524,146 +1492,6 @@
     },
     {
       "id": "43",
-      "text": "Mara Samartzi (You Tuber)",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "buttons",
-      "imageURL": "content/images/chat-images/mara_samartzi.gif",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "😊",
-          "description": "Συμπαθώ"
-        },
-        {
-          "id": "2",
-          "text": "😐",
-          "description": "Αδιάφορο"
-        },
-        {
-          "id": "3",
-          "text": "😡",
-          "description": "Αντιπαθώ"
-        },
-        {
-          "id": "4",
-          "text": "🤔",
-          "description": "Άγνωστο πρόσωπο"
-        },
-        {
-          "id": "5",
-          "text": "❌",
-          "description": "Δεν Απαντώ"
-        }
-      ]
-    },
-    {
-      "id": "44",
-      "text": "Manos (You Tuber)",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "buttons",
-      "imageURL": "content/images/chat-images/manos.gif",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "😊",
-          "description": "Συμπαθώ"
-        },
-        {
-          "id": "2",
-          "text": "😐",
-          "description": "Αδιάφορο"
-        },
-        {
-          "id": "3",
-          "text": "😡",
-          "description": "Αντιπαθώ"
-        },
-        {
-          "id": "4",
-          "text": "🤔",
-          "description": "Άγνωστο πρόσωπο"
-        },
-        {
-          "id": "5",
-          "text": "❌",
-          "description": "Δεν Απαντώ"
-        }
-      ]
-    },
-    {
-      "id": "45",
-      "text": "Ελένη Φουρέιρα",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "buttons",
-      "imageURL": "content/images/chat-images/foureira.gif",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "😊",
-          "description": "Συμπαθώ"
-        },
-        {
-          "id": "2",
-          "text": "😐",
-          "description": "Αδιάφορο"
-        },
-        {
-          "id": "3",
-          "text": "😡",
-          "description": "Αντιπαθώ"
-        },
-        {
-          "id": "4",
-          "text": "🤔",
-          "description": "Άγνωστο πρόσωπο"
-        },
-        {
-          "id": "5",
-          "text": "❌",
-          "description": "Δεν Απαντώ"
-        }
-      ]
-    },
-    {
-      "id": "46",
-      "text": "Sin Boy",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "buttons",
-      "imageURL": "content/images/chat-images/sinboy.gif",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "😊",
-          "description": "Συμπαθώ"
-        },
-        {
-          "id": "2",
-          "text": "😐",
-          "description": "Αδιάφορο"
-        },
-        {
-          "id": "3",
-          "text": "😡",
-          "description": "Αντιπαθώ"
-        },
-        {
-          "id": "4",
-          "text": "🤔",
-          "description": "Άγνωστο πρόσωπο"
-        },
-        {
-          "id": "5",
-          "text": "❌",
-          "description": "Δεν Απαντώ"
-        }
-      ]
-    },
-    {
-      "id": "47",
       "text": "Ηλιάνα Παπαγεωργίου",
       "category": "Πολιτική",
       "type": "scale",
@@ -1698,12 +1526,222 @@
       ]
     },
     {
-      "id": "48",
-      "text": "Γιώργος Λάνθιμος",
+      "id": "44",
+      "text": "ΛΕΞ",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
-      "imageURL": "content/images/chat-images/lanthimos.gif",
+      "imageURL": "content/images/chat-images/lex.gif",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "😊",
+          "description": "Συμπαθώ"
+        },
+        {
+          "id": "2",
+          "text": "😐",
+          "description": "Αδιάφορο"
+        },
+        {
+          "id": "3",
+          "text": "😡",
+          "description": "Αντιπαθώ"
+        },
+        {
+          "id": "4",
+          "text": "🤔",
+          "description": "Άγνωστο πρόσωπο"
+        },
+        {
+          "id": "5",
+          "text": "❌",
+          "description": "Δεν Απαντώ"
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "text": "Στέφανος Τσιτσιπάς",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "buttons",
+      "imageURL": "content/images/chat-images/tsitsipas.gif",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "😊",
+          "description": "Συμπαθώ"
+        },
+        {
+          "id": "2",
+          "text": "😐",
+          "description": "Αδιάφορο"
+        },
+        {
+          "id": "3",
+          "text": "😡",
+          "description": "Αντιπαθώ"
+        },
+        {
+          "id": "4",
+          "text": "🤔",
+          "description": "Άγνωστο πρόσωπο"
+        },
+        {
+          "id": "5",
+          "text": "❌",
+          "description": "Δεν Απαντώ"
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "text": "Ελένη Φουρέιρα",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "buttons",
+      "imageURL": "content/images/chat-images/foureira.gif",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "😊",
+          "description": "Συμπαθώ"
+        },
+        {
+          "id": "2",
+          "text": "😐",
+          "description": "Αδιάφορο"
+        },
+        {
+          "id": "3",
+          "text": "😡",
+          "description": "Αντιπαθώ"
+        },
+        {
+          "id": "4",
+          "text": "🤔",
+          "description": "Άγνωστο πρόσωπο"
+        },
+        {
+          "id": "5",
+          "text": "❌",
+          "description": "Δεν Απαντώ"
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "text": "Γιώργος Καπουτζίδης",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "buttons",
+      "imageURL": "content/images/chat-images/kapoutzidis.gif",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "😊",
+          "description": "Συμπαθώ"
+        },
+        {
+          "id": "2",
+          "text": "😐",
+          "description": "Αδιάφορο"
+        },
+        {
+          "id": "3",
+          "text": "😡",
+          "description": "Αντιπαθώ"
+        },
+        {
+          "id": "4",
+          "text": "🤔",
+          "description": "Άγνωστο πρόσωπο"
+        },
+        {
+          "id": "5",
+          "text": "❌",
+          "description": "Δεν Απαντώ"
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "text": "Μαίρη Συνατσάκη",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "buttons",
+      "imageURL": "content/images/chat-images/sinatsaki.gif",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "😊",
+          "description": "Συμπαθώ"
+        },
+        {
+          "id": "2",
+          "text": "😐",
+          "description": "Αδιάφορο"
+        },
+        {
+          "id": "3",
+          "text": "😡",
+          "description": "Αντιπαθώ"
+        },
+        {
+          "id": "4",
+          "text": "🤔",
+          "description": "Άγνωστο πρόσωπο"
+        },
+        {
+          "id": "5",
+          "text": "❌",
+          "description": "Δεν Απαντώ"
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "text": "Sin Boy",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "buttons",
+      "imageURL": "content/images/chat-images/sinboy.gif",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "😊",
+          "description": "Συμπαθώ"
+        },
+        {
+          "id": "2",
+          "text": "😐",
+          "description": "Αδιάφορο"
+        },
+        {
+          "id": "3",
+          "text": "😡",
+          "description": "Αντιπαθώ"
+        },
+        {
+          "id": "4",
+          "text": "🤔",
+          "description": "Άγνωστο πρόσωπο"
+        },
+        {
+          "id": "5",
+          "text": "❌",
+          "description": "Δεν Απαντώ"
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "text": "Gretta Thunberg",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "buttons",
+      "imageURL": "content/images/chat-images/gretta.gif",
       "responseChoices": [
         {
           "id": "1",
@@ -1739,7 +1777,7 @@
       "type": "info_text"
     },
     {
-      "id": "49",
+      "id": "51",
       "text": "Εσύ πού τοποθετείς τον εαυτό σου;",
       "category": "Πολιτική",
       "type": "scale",
@@ -1804,92 +1842,12 @@
       "type": "info_text"
     },
     {
-      "id": "50",
+      "id": "52",
       "text": "Υπογραφή συμφωνίας Πρεσπών",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/tsipras_gkrou.jpeg",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "1",
-          "description": "❤️"
-        },
-        {
-          "id": "2",
-          "text": "2",
-          "description": "👍"
-        },
-        {
-          "id": "3",
-          "text": "3",
-          "description": "😐"
-        },
-        {
-          "id": "4",
-          "text": "4",
-          "description": "👎"
-        },
-        {
-          "id": "5",
-          "text": "5",
-          "description": "🤮"
-        },
-        {
-          "id": "6",
-          "text": "X",
-          "description": "ΔΑ"
-        }
-      ]
-    },
-    {
-      "id": "51",
-      "text": "Συλλαλητήριο για τη Μακεδονία",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "slider",
-      "imageURL": "content/images/chat-images/syl_macedonia.jpg",
-      "responseChoices": [
-        {
-          "id": "1",
-          "text": "1",
-          "description": "❤️"
-        },
-        {
-          "id": "2",
-          "text": "2",
-          "description": "👍"
-        },
-        {
-          "id": "3",
-          "text": "3",
-          "description": "😐"
-        },
-        {
-          "id": "4",
-          "text": "4",
-          "description": "👎"
-        },
-        {
-          "id": "5",
-          "text": "5",
-          "description": "🤮"
-        },
-        {
-          "id": "6",
-          "text": "X",
-          "description": "ΔΑ"
-        }
-      ]
-    },
-    {
-      "id": "52",
-      "text": "Athens Pride 2018",
-      "category": "Πολιτική",
-      "type": "scale",
-      "displayType": "slider",
-      "imageURL": "content/images/chat-images/athens_pride_2018.jpg",
+      "imageURL": "content/images/chat-images/01_Prespes.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1925,11 +1883,11 @@
     },
     {
       "id": "53",
-      "text": "Αγιασμός σε σχολείο",
+      "text": "Συλλαλητήριο για τη Μακεδονία",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/kerameos_papas.jpg",
+      "imageURL": "content/images/chat-images/02_Makedoniko.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -1965,11 +1923,11 @@
     },
     {
       "id": "54",
-      "text": "Σύσκεψη για το Μάτι",
+      "text": "Athens Pride 2019",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/tsipras_mati.jpg",
+      "imageURL": "content/images/chat-images/03_athens_pride.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -2005,11 +1963,11 @@
     },
     {
       "id": "55",
-      "text": "Επίσκεψη Πρωθυπουργού στις φωτιές της Έυβοιας",
+      "text": "Αγιασμός στα σχολεία",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/mitsotakis_euvoia.jpg",
+      "imageURL": "content/images/chat-images/04_Agiasmos_b.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -2045,6 +2003,86 @@
     },
     {
       "id": "56",
+      "text": "Σύσκεψη για το Μάτι",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "slider",
+      "imageURL": "content/images/chat-images/05_Siskepsi Mati_b.jpg",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "1",
+          "description": "❤️"
+        },
+        {
+          "id": "2",
+          "text": "2",
+          "description": "👍"
+        },
+        {
+          "id": "3",
+          "text": "3",
+          "description": "😐"
+        },
+        {
+          "id": "4",
+          "text": "4",
+          "description": "👎"
+        },
+        {
+          "id": "5",
+          "text": "5",
+          "description": "🤮"
+        },
+        {
+          "id": "6",
+          "text": "X",
+          "description": "ΔΑ"
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "text": "Εκκένωση καταλήψεων που φιλοξενούν πρόσφυγες",
+      "category": "Πολιτική",
+      "type": "scale",
+      "displayType": "slider",
+      "imageURL": "content/images/chat-images/06_ekkenosi katalipsis.jpg",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "1",
+          "description": "❤️"
+        },
+        {
+          "id": "2",
+          "text": "2",
+          "description": "👍"
+        },
+        {
+          "id": "3",
+          "text": "3",
+          "description": "😐"
+        },
+        {
+          "id": "4",
+          "text": "4",
+          "description": "👎"
+        },
+        {
+          "id": "5",
+          "text": "5",
+          "description": "🤮"
+        },
+        {
+          "id": "6",
+          "text": "X",
+          "description": "ΔΑ"
+        }
+      ]
+    },
+    {
+      "id": "58",
       "text": "Αν έπρεπε να επιλέξεις ένα γεγονός που επέδρασε καθοριστικά στις πολιτικές σου απόψεις, ποιό θα διάλεγες;",
       "category": "Πολιτική",
       "type": "single_select",
@@ -2097,7 +2135,7 @@
       ]
     },
     {
-      "id": "57",
+      "id": "59",
       "text": "Τι ψήφισες στις εθνικές εκλογές το 2019;",
       "category": "Πολιτική",
       "type": "single_select",
@@ -2161,7 +2199,7 @@
       ]
     },
     {
-      "id": "58",
+      "id": "60",
       "text": "Με τι ταυτίζεσαι περισσότερο;",
       "category": "Lifestyle",
       "type": "multi_select",
@@ -2223,7 +2261,7 @@
       "type": "info_text"
     },
     {
-      "id": "59",
+      "id": "61",
       "text": "Νιώθω ότι δικαιούμαι γενικά περισσότερα σε όλα",
       "category": "Lifestyle",
       "type": "scale",
@@ -2262,7 +2300,7 @@
       ]
     },
     {
-      "id": "60",
+      "id": "62",
       "text": "Μου αξίζουν περισσότερα πράγματα στη ζωή",
       "category": "Lifestyle",
       "type": "scale",
@@ -2301,7 +2339,7 @@
       ]
     },
     {
-      "id": "61",
+      "id": "63",
       "text": "Τα πράγματα πρέπει να πηγαίνουν όπως τα θέλω",
       "category": "Lifestyle",
       "type": "scale",
@@ -2340,7 +2378,7 @@
       ]
     },
     {
-      "id": "62",
+      "id": "64",
       "text": "Απαιτώ το καλύτερο γιατί μου αξίζει",
       "category": "Lifestyle",
       "type": "scale",
@@ -2385,7 +2423,7 @@
       "type": "info_text"
     },
     {
-      "id": "63",
+      "id": "65",
       "text": "Ανακυκλώνεις χαρτί, πλαστικό ή γυαλί στο σπίτι;",
       "category": "Lifestyle",
       "type": "single_select",
@@ -2403,7 +2441,7 @@
       ]
     },
     {
-      "id": "64",
+      "id": "66",
       "text": "Έχεις ποστάρει video του εαυτού σου online;",
       "category": "Lifestyle",
       "type": "single_select",
@@ -2421,7 +2459,7 @@
       ]
     },
     {
-      "id": "65",
+      "id": "67",
       "text": "Έχεις ψηφίσει για διαγωνιζόμενο σε τηλεοπτικό talent ή reality show;",
       "category": "Lifestyle",
       "type": "single_select",
@@ -2439,7 +2477,7 @@
       ]
     },
     {
-      "id": "66",
+      "id": "68",
       "text": "Έχεις κάποιο τατουάζ;",
       "category": "Lifestyle",
       "type": "single_select",
@@ -2459,7 +2497,7 @@
       ]
     },
     {
-      "id": "67",
+      "id": "69",
       "text": "Είσαι vegan / vegetarian;;",
       "category": "Lifestyle",
       "type": "single_select",
@@ -2478,7 +2516,7 @@
       ]
     },
     {
-      "id": "68",
+      "id": "70",
       "text": "Έχεις τρέξει σε μαραθώνιο (κλασικό ή τοπικό);",
       "category": "Lifestyle",
       "type": "single_select",
@@ -2496,16 +2534,15 @@
       ]
     },
     {
-      "id": "69",
-      "text": "Έχεις αρνηθεί να πάρεις φάρμακα που σου σύστησε γιατρός;",
+      "id": "71",
+      "text": "Καπνίζεις; ",
       "category": "Lifestyle",
       "type": "single_select",
       "responseChoices": [
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι",
-          "responseReaction": "Γεροί να είμαστε!"
+          "description": "Ναι"
         },
         {
           "id": "2",
@@ -2515,7 +2552,61 @@
       ]
     },
     {
-      "id": "70",
+      "id": "72",
+      "text": "Νηστεύεις τη Μεγάλη Εβδομάδα;",
+      "category": "Lifestyle",
+      "type": "single_select",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "👍",
+          "description": "Ναι"
+        },
+        {
+          "id": "2",
+          "description": "Όχι",
+          "text": "👎"
+        }
+      ]
+    },
+    {
+      "id": "73",
+      "text": "Κοινωνείς κάποιες φορές το χρόνο;",
+      "category": "Lifestyle",
+      "type": "single_select",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "👍",
+          "description": "Ναι"
+        },
+        {
+          "id": "2",
+          "description": "Όχι",
+          "text": "👎"
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "text": "Έχεις προτιμήσει εναλλακτική ιατρική/ομοιοπαθητική:",
+      "category": "Lifestyle",
+      "type": "single_select",
+      "responseChoices": [
+        {
+          "id": "1",
+          "text": "👍",
+          "description": "Ναι"
+        },
+        {
+          "id": "2",
+          "description": "Όχι",
+          "text": "👎"
+        }
+      ]
+    },
+    {
+      "id": "75",
       "text": "Τι προτιμάς να κάνεις τον ελεύθερο χρόνο σου;",
       "category": "Lifestyle",
       "type": "multi_select",
@@ -2568,7 +2659,7 @@
       "type": "info_text"
     },
     {
-      "id": "71",
+      "id": "76",
       "text": "Μου αρέσει να μιλάω με διαφορετικούς ανθρώπους",
       "category": "Lifestyle",
       "type": "scale",
@@ -2607,7 +2698,7 @@
       ]
     },
     {
-      "id": "72",
+      "id": "77",
       "text": "Αντιμετωπίζω τους άλλους με κριτική ματιά",
       "category": "Lifestyle",
       "type": "scale",
@@ -2646,7 +2737,7 @@
       ]
     },
     {
-      "id": "73",
+      "id": "78",
       "text": "Μου αρέσει η τάξη",
       "category": "Lifestyle",
       "type": "scale",
@@ -2685,7 +2776,7 @@
       ]
     },
     {
-      "id": "74",
+      "id": "79",
       "text": "Αναστατώνομαι εύκολα",
       "category": "Lifestyle",
       "type": "scale",
@@ -2724,7 +2815,7 @@
       ]
     },
     {
-      "id": "75",
+      "id": "80",
       "text": "Μου αρέσουν οι νέες εμπειρίες",
       "category": "Lifestyle",
       "type": "scale",
@@ -2763,7 +2854,7 @@
       ]
     },
     {
-      "id": "76",
+      "id": "81",
       "text": "Συνήθως είμαι ήσυχος/η",
       "category": "Lifestyle",
       "type": "scale",
@@ -2802,7 +2893,7 @@
       ]
     },
     {
-      "id": "77",
+      "id": "82",
       "text": "Συμπάσχω με τα συναισθήματα των άλλων",
       "category": "Lifestyle",
       "type": "scale",
@@ -2841,7 +2932,7 @@
       ]
     },
     {
-      "id": "78",
+      "id": "83",
       "text": "Συχνά ξεχνώ να βάζω τα πράγματα πίσω στη θέση τους",
       "category": "Lifestyle",
       "type": "scale",
@@ -2880,7 +2971,7 @@
       ]
     },
     {
-      "id": "79",
+      "id": "84",
       "text": "Είμαι χαλαρός/ή τις περισσότερες φορές",
       "category": "Lifestyle",
       "type": "scale",
@@ -2919,7 +3010,7 @@
       ]
     },
     {
-      "id": "80",
+      "id": "85",
       "text": "Δεν έχω πολλή φαντασία",
       "category": "Lifestyle",
       "type": "scale",
@@ -2964,12 +3055,12 @@
       "type": "info_text"
     },
     {
-      "id": "81",
+      "id": "86",
       "text": "Διαμαρτυρία Vegan στη Βαρβάκειο",
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/vegan_protest.jpg",
+      "imageURL": "content/images/chat-images/07_vegan_varvakeios.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3004,12 +3095,12 @@
       ]
     },
     {
-      "id": "82",
-      "text": "Παρέμβαση Ρουβίκωνα στη Βουλή",
+      "id": "87",
+      "text": "Πορεία διαμαρτυρίας",
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/rothvoyli.jpg",
+      "imageURL": "content/images/chat-images/08_poreia sto kentro tis athinas.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3044,12 +3135,12 @@
       ]
     },
     {
-      "id": "83",
-      "text": "Εορτασμός 17 Νοέμβρη",
+      "id": "88",
+      "text": "Εορτασμός επετείου του Πολυτεχνείου",
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/17noembri.jpg",
+      "imageURL": "content/images/chat-images/09_17N.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3084,12 +3175,12 @@
       ]
     },
     {
-      "id": "84",
-      "text": "ΜΑΤ στα Εξάρχεια",
+      "id": "89",
+      "text": "Προσαγωγές στα Εξάρχεια",
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/eksarxeia_mat.jpg",
+      "imageURL": "content/images/chat-images/10_Sillipsi apo mat.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3124,12 +3215,12 @@
       ]
     },
     {
-      "id": "85",
+      "id": "90",
       "text": "Ελληνικό Πάσχα (έθιμο αρνιού)",
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/arni_pasxa.jpg",
+      "imageURL": "content/images/chat-images/11_Pasxa ethimo.jpg",
       "responseChoices": [
         {
           "id": "1",
@@ -3164,12 +3255,12 @@
       ]
     },
     {
-      "id": "86",
+      "id": "91",
       "text": "Μαθητική παρέλαση 28ης Οκτωβρίου",
       "category": "Lifestyle",
       "type": "scale",
       "displayType": "slider",
-      "imageURL": "content/images/chat-images/parelasi.jpg",
+      "imageURL": "content/images/chat-images/12_parelasi.jpg",
       "responseChoices": [
         {
           "id": "1",
