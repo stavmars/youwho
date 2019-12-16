@@ -8,6 +8,7 @@ export interface ISurveyResponse {
   status?: string;
   surveyId?: string;
   questionResponses?: IQuestionResponse[];
+  profilingResults?: { [key: string]: number };
 }
 
 export const defaultValue: Readonly<ISurveyResponse> = { questionResponses: [] };
