@@ -110,14 +110,7 @@ SideBar styles
     text-align: center !important;
     letter-spacing: 0 !important;
     color: #ffffff !important;
-    @include mobile {
-      margin: 0 0 0 50px !important;
-      padding: 0 !important;
-    }
-    @include computer {
-      padding: auto !important;
-      margin: 0 0 0 80px !important;
-    }
+    padding: 0 !important;
   }
   .ekke {
     @include mobile {

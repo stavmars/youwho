@@ -46,11 +46,11 @@ export default (props: ISideBarProps) => (
         <span>Επικοινωνία</span>
       </List.Item>
     </List>
-    <Grid className="sidebar-collaboration-menu">
+    <Grid className="sidebar-collaboration-menu" centered>
       <Grid.Row className="sidebar-collaboration" columns={1}>
         Μια συνεργασία των
       </Grid.Row>
-      <Grid.Row columns={2}>
+      <Grid.Row columns={2} style={{ paddingTop: 0 }}>
         <Grid.Column>
           <Image className="ekke" src="content/images/ekke white.png" style={{ marginLeft: '25%' }} as="a" href="https://www.ekke.gr" />
         </Grid.Column>
