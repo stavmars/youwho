@@ -1,10 +1,8 @@
 import axios from 'axios';
 import moment, { Moment } from 'moment';
 import { ISurvey } from 'app/shared/model/survey.model';
-import { defaultValue as SurveyResponseDefault } from 'app/shared/model/survey-response.model';
+import { defaultValue as SurveyResponseDefault, ISurveyResponse } from 'app/shared/model/survey-response.model';
 import { IQuestionResponse } from 'app/shared/model/question-response.model';
-import { addNewResponse } from 'app/shared/util/entity-utils';
-import { createEntity } from 'app/entities/survey-response/survey-response.reducer';
 import { SUCCESS } from 'app/shared/reducers/action-type.util';
 
 export const ACTION_TYPES = {
@@ -100,9 +98,9 @@ export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dis
   });
 };
 
-export const storeSurveyResponse = () => (dispatch, getState) => {
+export const storeSurveyResponse = (survey: ISurvey) => (dispatch, getState) => {
   const { currentSurveyResponse } = getState().chatBot;
-
+  currentSurveyResponse.profilingResults = computeProfilingResults(survey, currentSurveyResponse);
   return dispatch({
     type: ACTION_TYPES.STORE_SURVEY_RESPONSE,
     payload: axios
@@ -113,4 +111,27 @@ export const storeSurveyResponse = () => (dispatch, getState) => {
       })
       .then(res => res.data)
   });
+};
+
+const computeProfilingResults = (survey: ISurvey, surveyResponse: ISurveyResponse) => {
+  const profilingResults = {};
+  survey.profilingVariables.forEach(profilingVariable => {
+    const result = survey.questions
+      .filter(question => question.profilingWeights[profilingVariable.id] && question.type !== 'multi_select')
+      .reduce(
+        (acc, question) => {
+          const choiceId = surveyResponse.questionResponses.find(questionResponse => questionResponse.questionId === question.id)
+            .choiceIds[0];
+          const responseChoiceWeight = question.responseChoices.find(value => value.id === choiceId).profilingWeights[profilingVariable.id];
+          const questionWeight = question.profilingWeights[profilingVariable.id];
+          return responseChoiceWeight == null ? acc : [acc[0] + questionWeight * responseChoiceWeight, acc[1] + questionWeight];
+        },
+        [0, 0]
+      );
+
+    if (result[1]) {
+      profilingResults[profilingVariable.id] = result[0] / result[1];
+    }
+  });
+  return profilingResults;
 };
