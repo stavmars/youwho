@@ -37,7 +37,7 @@ export class Home extends React.Component<IHomeProp> {
                 <Image src="content/images/YellowStripesBg.svg" className="stripes" />
               </Grid.Column>
               <Grid.Column width={6}>
-                <Image src="content/images/big-bubble.svg" style={{ left: '-15vw', zIndex: '1' }} />
+                <Image src="content/images/big-bubble.svg" style={{ left: '-15vw', height: '40vh', zIndex: '1' }} />
                 <Image
                   src="content/images/small-bubble.svg"
                   as={Link}

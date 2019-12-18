@@ -42,13 +42,14 @@ Main page styles
   .home-subtext {
     color: #333333;
     text-align: left;
-    font: 20px/24px TTNormsProBoldItalic;
     letter-spacing: 0;
     @include mobile {
+      font: 20px/24px TTNormsProBoldItalic;
       width: 80%;
     }
     @include computer {
-      margin-top: 9vh;
+      font: 2.15vh/2.55vh TTNormsProBoldItalic;
+      margin-top: 15vh;
     }
   }
 }
