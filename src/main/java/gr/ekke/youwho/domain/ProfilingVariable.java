@@ -11,7 +11,6 @@ public class ProfilingVariable implements Serializable {
     @NotNull
     private String id;
 
-    @NotBlank
     private String name;
 
     @NotNull

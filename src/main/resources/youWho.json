@@ -2,6 +2,41 @@
   "id": "youWho",
   "name": "youWho",
   "description": "Πόσο youWho είσαι;(Νεόι 17-30)",
+  "profilingVariables": [
+    {
+      "id": "1",
+      "lowerEnd": {
+        "name": "Συντηρητικός",
+        "description": ""
+      },
+      "upperEnd": {
+        "name": "Προοδευτικός",
+        "description": ""
+      }
+    },
+    {
+      "id": "2",
+      "lowerEnd": {
+        "name": "Κοσμοπολίτης",
+        "description": ""
+      },
+      "upperEnd": {
+        "name": "Περιχαρακωμένος",
+        "description": ""
+      }
+    },
+    {
+      "id": "3",
+      "lowerEnd": {
+        "name": "Δραστήριος",
+        "description": ""
+      },
+      "upperEnd": {
+        "name": "Αδρανής",
+        "description": ""
+      }
+    }
+  ],
   "questions": [
     {
       "id": "info_text_1",
