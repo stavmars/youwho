@@ -410,9 +410,7 @@
           "id": "6",
           "text": "X",
           "description": "ΔΑ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -470,9 +468,7 @@
           "id": "6",
           "text": "X",
           "description": "ΔΑ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -491,7 +487,7 @@
           "text": "1",
           "description": "Καθόλου",
           "profilingWeights": {
-            "2": 1
+            "2": 0
           }
         },
         {
@@ -530,9 +526,7 @@
           "id": "6",
           "text": "X",
           "description": "ΔΑ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -550,7 +544,9 @@
           "id": "1",
           "text": "1",
           "description": "Καθόλου",
-          "profilingWeights": {}
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "2",
@@ -588,9 +584,7 @@
           "id": "6",
           "text": "X",
           "description": "ΔΑ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -654,9 +648,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -714,9 +706,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -774,9 +764,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -834,9 +822,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1262,9 +1248,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1322,9 +1306,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1382,9 +1364,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1442,9 +1422,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1502,9 +1480,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1562,9 +1538,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -1622,9 +1596,7 @@
           "id": "6",
           "text": "X",
           "description": "Δεν Απαντώ",
-          "profilingWeights": {
-            "3": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -3935,9 +3907,7 @@
           "id": "6",
           "text": "X",
           "description": "ΔΑ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
@@ -3996,9 +3966,7 @@
           "id": "6",
           "text": "X",
           "description": "ΔΑ",
-          "profilingWeights": {
-            "2": null
-          }
+          "profilingWeights": {}
         }
       ],
       "profilingWeights": {
