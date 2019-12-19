@@ -369,34 +369,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου"
+          "description": "Καθόλου",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Λίγο"
+          "description": "Λίγο",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά"
+          "description": "Αρκετά",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πάρα πολύ"
+          "description": "Πάρα πολύ",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 0.5
+      }
     },
     {
       "id": "9",
@@ -408,34 +429,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου"
+          "description": "Καθόλου",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Λίγο"
+          "description": "Λίγο",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά"
+          "description": "Αρκετά",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πάρα πολύ"
+          "description": "Πάρα πολύ",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 0.5
+      }
     },
     {
       "id": "10",
@@ -447,34 +489,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου"
+          "description": "Καθόλου",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Λίγο"
+          "description": "Λίγο",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά"
+          "description": "Αρκετά",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πάρα πολύ"
+          "description": "Πάρα πολύ",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 0.5
+      }
     },
     {
       "id": "11",
@@ -486,34 +549,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου"
+          "description": "Καθόλου",
+          "profilingWeights": {}
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Λίγο"
+          "description": "Λίγο",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά"
+          "description": "Αρκετά",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πάρα πολύ"
+          "description": "Πάρα πολύ",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 0.5
+      }
     },
     {
       "id": "info_text_12",
@@ -531,34 +613,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 1
+      }
     },
     {
       "id": "13",
@@ -570,34 +673,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 1
+      }
     },
     {
       "id": "14",
@@ -609,34 +733,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 1
+      }
     },
     {
       "id": "15",
@@ -648,34 +793,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 1
+      }
     },
     {
       "id": "info_text_13",
@@ -699,34 +865,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 1
+      }
     },
     {
       "id": "17",
@@ -738,34 +923,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 1
+      }
     },
     {
       "id": "18",
@@ -777,34 +981,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 1
+      }
     },
     {
       "id": "19",
@@ -817,35 +1040,54 @@
           "id": "1",
           "text": "1",
           "description": "Διαφωνώ Απόλυτα",
-          "responseReaction": "🙏 Άθεοι όλοι...Θα πέσει φωτιά να μας κάψει"
+          "responseReaction": "🙏 Άθεοι όλοι...Θα πέσει φωτιά να μας κάψει",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
           "description": "Μάλλον Διαφωνώ",
-          "responseReaction": "🙏 Άθεοι όλοι...Θα πέσει φωτιά να μας κάψει"
+          "responseReaction": "🙏 Άθεοι όλοι...Θα πέσει φωτιά να μας κάψει",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 1
+      }
     },
     {
       "id": "20",
@@ -857,34 +1099,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 1
+      }
     },
     {
       "id": "21",
@@ -896,34 +1157,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Διαφωνώ Απόλυτα"
+          "description": "Διαφωνώ Απόλυτα",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Μάλλον Διαφωνώ"
+          "description": "Μάλλον Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ"
+          "description": "Ούτε Συμφωνώ – ούτε Διαφωνώ",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Μάλλον συμφωνώ"
+          "description": "Μάλλον συμφωνώ",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Συμφωνώ απόλυτα"
+          "description": "Συμφωνώ απόλυτα",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 1
+      }
     },
     {
       "id": "info_text_15",
@@ -941,34 +1221,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 0.5
+      }
     },
     {
       "id": "23",
@@ -980,34 +1281,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 1
+      }
     },
     {
       "id": "24",
@@ -1019,34 +1341,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 0.5
+      }
     },
     {
       "id": "25",
@@ -1058,34 +1401,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 1
+      }
     },
     {
       "id": "26",
@@ -1097,34 +1461,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 1
+      }
     },
     {
       "id": "27",
@@ -1136,34 +1521,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 1
+      }
     },
     {
       "id": "28",
@@ -1175,34 +1581,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "Καθόλου σημαντικό"
+          "description": "Καθόλου σημαντικό",
+          "profilingWeights": {
+            "3": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "Ελάχιστα σημαντικό"
+          "description": "Ελάχιστα σημαντικό",
+          "profilingWeights": {
+            "3": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερα",
+          "profilingWeights": {
+            "3": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "Αρκετά σημαντικό"
+          "description": "Αρκετά σημαντικό",
+          "profilingWeights": {
+            "3": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "Πολύ σημαντικό"
+          "description": "Πολύ σημαντικό",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "Δεν Απαντώ"
+          "description": "Δεν Απαντώ",
+          "profilingWeights": {
+            "3": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 0.5
+      }
     },
     {
       "id": "29",
@@ -1264,14 +1691,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "31",
@@ -1282,14 +1718,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "32",
@@ -1300,14 +1745,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "33",
@@ -1318,14 +1772,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "34",
@@ -1336,14 +1799,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "35",
@@ -1354,14 +1826,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "36",
@@ -1372,14 +1853,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "37",
@@ -1390,14 +1880,23 @@
         {
           "id": "1",
           "text": "👍",
-          "description": "Ναι"
+          "description": "Ναι",
+          "profilingWeights": {
+            "3": 0
+          }
         },
         {
           "id": "2",
           "text": "👎",
-          "description": "Όχι"
+          "description": "Όχι",
+          "profilingWeights": {
+            "3": 1
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "3": 2
+      }
     },
     {
       "id": "info_text_19",
@@ -1887,34 +2386,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "51",
@@ -1927,34 +2445,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "52",
@@ -1967,34 +2504,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "53",
@@ -2007,34 +2563,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "54",
@@ -3102,34 +3677,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "85",
@@ -3182,34 +3776,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "87",
@@ -3222,34 +3835,53 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "1": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "1": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "1": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "1": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "1": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {}
         }
-      ]
+      ],
+      "profilingWeights": {
+        "1": 0.5
+      }
     },
     {
       "id": "88",
@@ -3262,34 +3894,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 0.5
+      }
     },
     {
       "id": "89",
@@ -3302,34 +3955,55 @@
         {
           "id": "1",
           "text": "1",
-          "description": "❤️"
+          "description": "❤️",
+          "profilingWeights": {
+            "2": 1
+          }
         },
         {
           "id": "2",
           "text": "2",
-          "description": "👍"
+          "description": "👍",
+          "profilingWeights": {
+            "2": 0.75
+          }
         },
         {
           "id": "3",
           "text": "3",
-          "description": "😐"
+          "description": "😐",
+          "profilingWeights": {
+            "2": 0.5
+          }
         },
         {
           "id": "4",
           "text": "4",
-          "description": "👎"
+          "description": "👎",
+          "profilingWeights": {
+            "2": 0.25
+          }
         },
         {
           "id": "5",
           "text": "5",
-          "description": "🤮"
+          "description": "🤮",
+          "profilingWeights": {
+            "2": 0
+          }
         },
         {
           "id": "6",
           "text": "X",
-          "description": "ΔΑ"
+          "description": "ΔΑ",
+          "profilingWeights": {
+            "2": null
+          }
         }
-      ]
+      ],
+      "profilingWeights": {
+        "2": 0.5
+      }
     },
     {
       "id": "last_question",
