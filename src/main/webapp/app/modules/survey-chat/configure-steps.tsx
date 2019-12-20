@@ -34,7 +34,8 @@ export const configureStep = questions => {
   for (let index = 0; index < questions.length; index++) {
     const question = questions[index];
     // Creating a step for each question.
-    if (question.id === 'last_question') {
+    if (index === questions.length - 1) {
+      // Add the button to results page if last step.
       steps.push({
         id: 'results-button',
         // @ts-ignore
