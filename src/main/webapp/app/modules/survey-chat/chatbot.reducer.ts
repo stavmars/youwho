@@ -101,6 +101,7 @@ export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dis
 export const storeSurveyResponse = (survey: ISurvey) => (dispatch, getState) => {
   const { currentSurveyResponse } = getState().chatBot;
   currentSurveyResponse.profilingResults = computeProfilingResults(survey, currentSurveyResponse);
+  console.log(currentSurveyResponse.profilingResults);
   return dispatch({
     type: ACTION_TYPES.STORE_SURVEY_RESPONSE,
     payload: axios
@@ -117,7 +118,7 @@ const computeProfilingResults = (survey: ISurvey, surveyResponse: ISurveyRespons
   const profilingResults = {};
   survey.profilingVariables.forEach(profilingVariable => {
     const result = survey.questions
-      .filter(question => question.profilingWeights[profilingVariable.id] && question.type !== 'multi_select')
+      .filter(question => question.profilingWeights && question.profilingWeights[profilingVariable.id] && question.type !== 'multi_select')
       .reduce(
         (acc, question) => {
           const choiceId = surveyResponse.questionResponses.find(questionResponse => questionResponse.questionId === question.id)
@@ -128,7 +129,6 @@ const computeProfilingResults = (survey: ISurvey, surveyResponse: ISurveyRespons
         },
         [0, 0]
       );
-
     if (result[1]) {
       profilingResults[profilingVariable.id] = result[0] / result[1];
     }
