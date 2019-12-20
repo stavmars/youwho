@@ -4,10 +4,18 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
+import { RouteComponentProps } from 'react-router-dom';
+import { getPersonalResults } from 'app/modules/results/results.reducer';
 
-export interface IResultsPersonalProps extends StateProps, DispatchProps {}
+export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ resultsId: string }> {}
+{
+}
 
 export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
+  componentDidMount() {
+    this.props.getPersonalResults(this.props.match.params.resultsId);
+  }
+
   render() {
     return (
       <Grid className="results" stackable>
@@ -71,9 +79,13 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   }
 }
 
-const mapStateToProps = (storeState: IRootState) => ({});
+const mapStateToProps = ({ results }: IRootState) => ({
+  personalResults: results.personalResults
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  getPersonalResults
+};
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
