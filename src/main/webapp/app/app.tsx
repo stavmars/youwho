@@ -59,8 +59,7 @@ export const App = (props: IAppProps) => {
             )}
           />
           <Route
-            exact
-            path={`(/|/results/average|/results/personal)`}
+            path={`(/|/results)`}
             render={() => (
               <Header
                 color="gradient"

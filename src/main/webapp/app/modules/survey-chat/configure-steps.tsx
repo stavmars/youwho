@@ -5,6 +5,7 @@ import Interest from 'app/modules/survey-chat/interest';
 import SingleSelect from 'app/modules/survey-chat/single-select';
 import MultiSelect from 'app/modules/survey-chat/multi-select';
 import MultiAnswer from 'app/modules/survey-chat/multi-answer';
+import ResultsButton from 'app/modules/survey-chat/results-button';
 // tslint:disable:jsx-no-lambda
 
 export interface IComponentProps {
@@ -33,6 +34,14 @@ export const configureStep = questions => {
   for (let index = 0; index < questions.length; index++) {
     const question = questions[index];
     // Creating a step for each question.
+    if (question.id === 'last_question') {
+      steps.push({
+        id: 'results-button',
+        // @ts-ignore
+        component: <ResultsButton />,
+        end: true
+      });
+    }
     if (question.imageURL) {
       steps.push({
         id: question.id,
@@ -47,14 +56,15 @@ export const configureStep = questions => {
             <img src={question.imageURL} alt="message" className="images" />
           </div>
         ),
-        trigger: question.id === 'last_question' ? '' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
-        end: question.id === 'last_question' ? true : null
+        trigger:
+          index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
       });
     } else if (question.type !== 'info_text') {
       steps.push({
         id: question.id,
         component: <span style={{ fontFamily: 'TTNormsProBold' }}>{question.text}</span>,
-        trigger: question.id === 'last_question' ? '' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
+        trigger:
+          index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
         asMessage: true,
         delay: 1500
       });
@@ -62,8 +72,7 @@ export const configureStep = questions => {
       steps.push({
         id: question.id,
         message: question.text,
-        trigger: question.id === 'last_question' ? '' : questions[index + 1].id,
-        end: question.id === 'last_question' ? true : null,
+        trigger: index === questions.length - 1 ? 'results-button' : questions[index + 1].id,
         delay: 1500
       });
     }
@@ -72,7 +81,7 @@ export const configureStep = questions => {
       const options = [];
       const reactions = [];
       const responses = [];
-      const trigger = question.id !== 'last_question' ? questions[index + 1].id : '';
+      const trigger = question.id !== 'last_question' ? questions[index + 1].id : 'results-button';
       // Create an array of JSON objects for the choices of the question.
       for (let choice = 0; choice < question.responseChoices.length; choice++) {
         const option = question.responseChoices[choice];

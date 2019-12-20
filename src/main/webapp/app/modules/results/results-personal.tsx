@@ -2,10 +2,11 @@ import './results.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
+import { RouteComponentProps } from 'react-router-dom';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
 
-export interface IResultsPersonalProps extends StateProps, DispatchProps {}
+export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   render() {

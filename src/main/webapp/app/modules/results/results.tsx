@@ -11,7 +11,7 @@ export class Results extends React.Component<RouteComponentProps> {
     return (
       <Switch>
         <Route exact path={`${match.url}/average`} render={() => <ResultsAverage />} />
-        <Route exact path={`${match.url}/personal`} render={() => <ResultsPersonal />} />
+        <Route path={`${match.url}/:id`} component={ResultsPersonal} />
       </Switch>
     );
   }
