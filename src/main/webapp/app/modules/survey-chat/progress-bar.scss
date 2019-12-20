@@ -83,6 +83,9 @@
       }
     }
     .progress-dot {
+      &.active {
+        color: #ff6666;
+      }
       margin-left: 15px !important;
       margin-right: 15px !important;
     }
