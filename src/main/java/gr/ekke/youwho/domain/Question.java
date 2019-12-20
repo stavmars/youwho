@@ -4,6 +4,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A Question.
@@ -28,6 +29,8 @@ public class Question implements Serializable {
     private String imageURL;
 
     private List<ResponseChoice> responseChoices;
+
+    private Map<String, Double> profilingWeights;
 
     public String getId() {
         return id;
@@ -83,5 +86,13 @@ public class Question implements Serializable {
 
     public void setResponseChoices(List<ResponseChoice> responseChoices) {
         this.responseChoices = responseChoices;
+    }
+
+    public Map<String, Double> getProfilingWeights() {
+        return profilingWeights;
+    }
+
+    public void setProfilingWeights(Map<String, Double> profilingWeights) {
+        this.profilingWeights = profilingWeights;
     }
 }

@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.Map;
 
 /**
  * A SurveyResponse.
@@ -37,6 +37,7 @@ public class SurveyResponse implements Serializable {
 
     private List<QuestionResponse> questionResponses = new ArrayList<>();
 
+    private Map<String, Double> profilingResults;
 
     public String getId() {
         return id;
@@ -106,6 +107,14 @@ public class SurveyResponse implements Serializable {
         this.questionResponses = questionResponses;
     }
 
+    public Map<String, Double> getProfilingResults() {
+        return profilingResults;
+    }
+
+    public void setProfilingResults(Map<String, Double> profilingResults) {
+        this.profilingResults = profilingResults;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -131,13 +140,14 @@ public class SurveyResponse implements Serializable {
             ", status='" + status + '\'' +
             ", surveyId='" + surveyId + '\'' +
             ", questionResponses=" + questionResponses +
+            ", profilingResults=" + profilingResults +
             '}';
     }
 
     public SurveyResponse addQuestionResponse(QuestionResponse questionResponse) {
         if (!this.questionResponses.isEmpty()) {
             QuestionResponse lastResponse = this.questionResponses.get(this.questionResponses.size() - 1);
-            if(lastResponse.getQuestionId().equals(questionResponse.getQuestionId())) {
+            if (lastResponse.getQuestionId().equals(questionResponse.getQuestionId())) {
                 this.questionResponses.set(this.questionResponses.indexOf(lastResponse), questionResponse);
                 return this;
             }

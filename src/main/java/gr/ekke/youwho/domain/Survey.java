@@ -37,6 +37,8 @@ public class Survey implements Serializable {
 
     private List<Question> questions = new ArrayList<>();
 
+    private List<ProfilingVariable> profilingVariables = new ArrayList<>();
+
     @DBRef
     @Field("user")
     private User user;
@@ -122,6 +124,14 @@ public class Survey implements Serializable {
         return this;
     }
 
+    public List<ProfilingVariable> getProfilingVariables() {
+        return profilingVariables;
+    }
+
+    public void setProfilingVariables(List<ProfilingVariable> profilingVariables) {
+        this.profilingVariables = profilingVariables;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -147,6 +157,7 @@ public class Survey implements Serializable {
             ", openTime=" + openTime +
             ", closeTime=" + closeTime +
             ", questions=" + questions +
+            ", profilingVariables=" + profilingVariables +
             ", user=" + user +
             '}';
     }

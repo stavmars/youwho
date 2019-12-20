@@ -7,6 +7,7 @@ export interface IQuestion {
   displayType?: string;
   category?: string;
   responseChoices?: IResponseChoice[];
+  profilingWeights?: { [key: string]: number };
 }
 
 export const defaultValue: Readonly<IQuestion> = { responseChoices: [] };
