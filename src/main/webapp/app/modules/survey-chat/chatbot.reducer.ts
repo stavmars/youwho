@@ -101,7 +101,6 @@ export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dis
 export const storeSurveyResponse = (survey: ISurvey) => (dispatch, getState) => {
   const { currentSurveyResponse } = getState().chatBot;
   currentSurveyResponse.profilingResults = computeProfilingResults(survey, currentSurveyResponse);
-  console.log(currentSurveyResponse.profilingResults);
   return dispatch({
     type: ACTION_TYPES.STORE_SURVEY_RESPONSE,
     payload: axios
