@@ -72,7 +72,7 @@
           "id": "2",
           "text": "😡 Όχι",
           "responseReaction": "Δυστυχώς δεν μπορείς να λάβεις μέρος στην έρευνα αν δεν αποδεκτείς τους όρους χρήσης.",
-          "redirectQuestionId": "2"
+          "redirectQuestionId": "1"
         }
       ]
     },
