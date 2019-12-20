@@ -2,14 +2,22 @@ import './results.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { RouteComponentProps } from 'react-router-dom';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
+import { RouteComponentProps } from 'react-router-dom';
+import { getPersonalResults } from 'app/modules/results/results.reducer';
+import { ISurvey } from 'app/shared/model/survey.model';
+import { ProfilingPill } from 'app/modules/results/profiling-pill';
 
-export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
+export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ resultsId: string }> {}
 
 export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
+  componentDidMount() {
+    this.props.getPersonalResults(this.props.match.params.resultsId);
+  }
+
   render() {
+    const { survey } = this.props;
     return (
       <Grid className="results" stackable>
         <Grid.Row>
@@ -18,21 +26,7 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column computer={10} mobile={14}>
-            <div style={{ display: 'inline-block', padding: '5vh 0 5vh 6vw' }}>
-              <div className="results-labels">προοδευτικός</div>
-              <Image src="content/images/pill.png" centered />
-              <div className="results-labels">συντηρητικός</div>
-            </div>
-            <div style={{ display: 'inline-block', padding: '5vh 3vw' }}>
-              <div className="results-labels">εθνοκεντρικός</div>
-              <Image src="content/images/pill.png" centered />
-              <div className="results-labels">κοσμοπολίτης</div>
-            </div>
-            <div style={{ display: 'inline-block', padding: '5vh 4vw 5vh 0' }}>
-              <div className="results-labels">παθητικός</div>
-              <Image src="content/images/pill.png" centered />
-              <div className="results-labels">συμμετοχικός</div>
-            </div>
+            {survey && survey.profilingVariables.map(profilingVariable => <ProfilingPill profilingVariable={profilingVariable} />)}
           </Grid.Column>
           <ResultsButtonColumn personal />
         </Grid.Row>
@@ -72,9 +66,14 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   }
 }
 
-const mapStateToProps = (storeState: IRootState) => ({});
+const mapStateToProps = ({ results, survey }: IRootState) => ({
+  personalResults: results.personalResults,
+  survey: survey.entitiesByName['youWho'] as ISurvey
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  getPersonalResults
+};
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;

@@ -4,7 +4,6 @@ import gr.ekke.youwho.domain.QuestionResponse;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.service.SurveyResponseService;
 import gr.ekke.youwho.web.rest.errors.BadRequestAlertException;
-
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -14,16 +13,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -33,14 +31,11 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class SurveyResponseResource {
 
-    private final Logger log = LoggerFactory.getLogger(SurveyResponseResource.class);
-
     private static final String ENTITY_NAME = "surveyResponse";
-
+    private final Logger log = LoggerFactory.getLogger(SurveyResponseResource.class);
+    private final SurveyResponseService surveyResponseService;
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
-
-    private final SurveyResponseService surveyResponseService;
 
     public SurveyResponseResource(SurveyResponseService surveyResponseService) {
         this.surveyResponseService = surveyResponseService;
@@ -89,9 +84,7 @@ public class SurveyResponseResource {
     /**
      * {@code GET  /survey-responses} : get all the surveyResponses.
      *
-
      * @param pageable the pagination information.
-
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of surveyResponses in body.
      */
     @GetMapping("/survey-responses")
@@ -131,7 +124,7 @@ public class SurveyResponseResource {
     /**
      * {@code PUT /survey-responses/:id/response}
      *
-     * @param id the id of the surveyResponse to update
+     * @param id               the id of the surveyResponse to update
      * @param questionResponse to add
      * @return the updated surveyResponse.
      */
@@ -139,5 +132,17 @@ public class SurveyResponseResource {
     public SurveyResponse addQuestionResponse(@PathVariable String id, @RequestBody QuestionResponse questionResponse) {
         log.debug("REST request to add QuestionResponse : {} to SurveyRespons : {}", questionResponse, id);
         return surveyResponseService.addQuestionResponse(id, questionResponse);
+    }
+
+    /**
+     * {@code GET  /survey-responses/results/:id} : get the profiling results of "id" surveyResponse.
+     *
+     * @param id the id of the surveyResponse to retrieve its profiling results.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the profiling results, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/survey-responses/results/{id}")
+    public ResponseEntity<Map<String, Double>> getProfilingResults(@PathVariable String id) {
+        log.debug("REST request to get profiling resutls for survey response : {}", id);
+        return ResponseUtil.wrapOrNotFound(surveyResponseService.findOne(id).map(SurveyResponse::getProfilingResults));
     }
 }
