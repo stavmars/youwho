@@ -1,0 +1,20 @@
+.results-button {
+  background: #ffffff 0 0 no-repeat padding-box !important;
+  border-radius: 18px !important;
+  opacity: 0.6 !important;
+  margin: 20px 0 !important;
+  .results-button-text {
+    text-align: center;
+    font: 15px/17px TTNormsProMedium;
+    letter-spacing: 0;
+    color: #777eff;
+    opacity: 1;
+  }
+  .results-button-emoji {
+    text-align: center;
+    font: 35px/41px Helvetica Neue;
+    letter-spacing: 0;
+    color: #707070;
+    opacity: 1;
+  }
+}
