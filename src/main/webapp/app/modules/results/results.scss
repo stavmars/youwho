@@ -19,6 +19,7 @@ results/average page styles
 
 .results {
   margin: 80px 0 10% 10% !important;
+
   .results-granny-bubble {
     margin-left: 5%;
     background: #777eff 0% 0% no-repeat padding-box;
@@ -35,19 +36,23 @@ results/average page styles
       font: 40px/48px TTNormsProBoldItalic;
     }
   }
+
   .results-legend {
     text-align: center !important;
     font: 19px/23px TTNormsProBoldItalic !important;
     letter-spacing: 0 !important;
     text-transform: lowercase !important;
     opacity: 1 !important;
+
     &.me {
       color: #ff6666 !important;
     }
+
     &.others {
       color: #707070 !important;
     }
   }
+
   .filter-type {
     letter-spacing: 0;
     color: #707070;
@@ -60,6 +65,7 @@ results/average page styles
       font: 19px/23px TTNormsProBoldItalic;
     }
   }
+
   .filter-buttons {
     background: #dbdbdb 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -69,16 +75,61 @@ results/average page styles
     color: #afafaf;
     text-transform: lowercase;
   }
+
   .results-description-title {
     text-align: left;
     font: 18px/24px TTNormsProBoldItalic;
     letter-spacing: 0.36px;
     color: #1e1e1e;
   }
+
   .results-description-content {
     text-align: left;
     font: 18px/24px TTNormsProMediumItalic;
     letter-spacing: 0.36px;
     color: #1e1e1e;
+  }
+
+  .pill {
+    background: #00000029;
+    position: relative;
+    margin: 70px auto 70px auto;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    height: 424px;
+    width: 65px;
+    border: 5px #ffffff solid;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .pill-bar {
+    background: #a1a1a1;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .pill-label {
+    font: 14px/20px TTNormsProBoldItalic;
+    color: #ffffff;
+    letter-spacing: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    &.pill-label-top {
+      top: 20px;
+    }
+    &.pill-label-bottom {
+      bottom: 20px;
+    }
   }
 }
