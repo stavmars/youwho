@@ -18,23 +18,7 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column computer={10} mobile={14}>
-            <div style={{ display: 'inline-block', padding: '5vh 0 5vh 6vw' }}>
-              <div className="results-labels">προοδευτικός</div>
-              <Image src="content/images/pill.png" centered />
-              <div className="results-labels">συντηρητικός</div>
-            </div>
-            <div style={{ display: 'inline-block', padding: '5vh 3vw' }}>
-              <div className="results-labels">εθνοκεντρικός</div>
-              <Image src="content/images/pill.png" centered />
-              <div className="results-labels">κοσμοπολίτης</div>
-            </div>
-            <div style={{ display: 'inline-block', padding: '5vh 4vw 5vh 0' }}>
-              <div className="results-labels">παθητικός</div>
-              <Image src="content/images/pill.png" centered />
-              <div className="results-labels">συμμετοχικός</div>
-            </div>
-          </Grid.Column>
+          <Grid.Column computer={10} mobile={14} />
           <ResultsButtonColumn personal={false} />
         </Grid.Row>
       </Grid>

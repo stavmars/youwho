@@ -117,4 +117,19 @@ results/average page styles
     overflow: hidden;
     width: 100%;
   }
+
+  .pill-label {
+    font: 14px/20px TTNormsProBoldItalic;
+    color: #ffffff;
+    letter-spacing: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    &.pill-label-top {
+      top: 20px;
+    }
+    &.pill-label-bottom {
+      bottom: 20px;
+    }
+  }
 }
