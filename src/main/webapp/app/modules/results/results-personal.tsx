@@ -17,19 +17,27 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   }
 
   render() {
-    const { survey } = this.props;
+    const { survey, personalResults } = this.props;
     return (
       <Grid className="results" stackable>
         <Grid.Row>
           <Image src="content/images/granny.jpg" circular size="tiny" inline />
           <span className="results-granny-bubble">Ποιος είσαι τελικά;</span>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column computer={10} mobile={14}>
-            {survey && survey.profilingVariables.map(profilingVariable => <ProfilingPill profilingVariable={profilingVariable} />)}
-          </Grid.Column>
-          <ResultsButtonColumn personal />
-        </Grid.Row>
+        {personalResults && survey && (
+          <Grid.Row columns={3}>
+            <Grid.Column computer={10} mobile={14}>
+              {survey.profilingVariables.map(profilingVariable => (
+                <ProfilingPill
+                  key={profilingVariable.id}
+                  profilingVariable={profilingVariable}
+                  value={personalResults[profilingVariable.id]}
+                />
+              ))}
+            </Grid.Column>
+            <ResultsButtonColumn personal />
+          </Grid.Row>
+        )}
         <div className="content-divider results" />
         <Grid.Row>
           <Grid.Column computer={3} mobile={14}>
