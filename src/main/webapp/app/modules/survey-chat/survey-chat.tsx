@@ -38,7 +38,14 @@ export class SurveyChat extends React.Component<IChatBotProps> {
       <div style={{ width: '100%', backgroundColor: '#6065CC' }}>
         <ProgressBar
           activeCategory={activeCategory}
-          categories={['Εισαγωγή', 'Δημογραφικά', 'Εθνοκεντρισμός Διεθνισμός', 'Κοινωνικές αξίες', 'Πολιτική', 'Lifestyle']}
+          categories={[
+            'Εισαγωγή',
+            'Δημογραφικά',
+            'Ελλάδα & Κόσμος',
+            'Κοινωνικές αξίες & δράσεις',
+            'Πολιτική & Πρόσωπα',
+            'Lifestyle & Προσωπικότητα'
+          ]}
         />
         <ThemeProvider
           theme={{
@@ -58,7 +65,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
             handleEnd={() => this.props.storeSurveyResponse(survey)}
             steps={steps}
             style={{
-              height: 'calc(100vh - 128px)',
+              height: 'calc(100vh - 132px)',
               userSelect: 'none',
               borderRadius: '0px',
               width: window.innerWidth > 414 ? '600px' : '100%',

@@ -2,7 +2,7 @@
 
 .progress {
   background-color: #ffffff;
-  height: 48px;
+  height: 52px;
   width: 100%;
   .progress-line {
     border-bottom: 2px solid #afafaf;
@@ -51,16 +51,16 @@
           width: 16vw !important;
         }
         &.name-2 {
-          width: 19vw !important;
+          width: 10vw !important;
         }
         &.name-3 {
           width: 13vw !important;
         }
         &.name-4 {
-          width: 10.1vw !important;
+          width: 12vw !important;
         }
         &.name-5 {
-          width: 10vw !important;
+          width: 19vw !important;
         }
       }
       @include computer {
@@ -69,11 +69,15 @@
       &.name-1,
       &.name-2,
       &.name-3,
-      &.name-4,
-      &.name-5 {
+      &.name-4 {
         @include mobile {
           margin-left: 1.8vw;
         }
+        @include computer {
+          margin-left: 43px;
+        }
+      }
+      &.name-5 {
         @include computer {
           margin-left: 43px;
         }
