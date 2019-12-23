@@ -4,6 +4,7 @@ import gr.ekke.youwho.YouwhoApp;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.repository.SurveyResponseRepository;
 import gr.ekke.youwho.service.SurveyResponseService;
+import gr.ekke.youwho.service.SurveyService;
 import gr.ekke.youwho.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -56,6 +57,9 @@ public class SurveyResponseResourceIT {
     private SurveyResponseService surveyResponseService;
 
     @Autowired
+    private SurveyService surveyService;
+
+    @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
     @Autowired
@@ -74,7 +78,7 @@ public class SurveyResponseResourceIT {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final SurveyResponseResource surveyResponseResource = new SurveyResponseResource(surveyResponseService);
+        final SurveyResponseResource surveyResponseResource = new SurveyResponseResource(surveyResponseService, surveyService);
         this.restSurveyResponseMockMvc = MockMvcBuilders.standaloneSetup(surveyResponseResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
@@ -189,7 +193,7 @@ public class SurveyResponseResourceIT {
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].surveyId").value(hasItem(DEFAULT_SURVEY_ID.toString())));
     }
-    
+
     @Test
     public void getSurveyResponse() throws Exception {
         // Initialize the database
