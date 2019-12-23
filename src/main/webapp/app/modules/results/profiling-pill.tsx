@@ -10,7 +10,7 @@ export interface IProfilingPillProps {
 export const ProfilingPill = (props: IProfilingPillProps) => {
   const { profilingVariable, value } = props;
   return (
-    <div style={{ display: 'inline-block', padding: '5vh 0 5vh 6vw' }}>
+    <div className="profile-pill">
       <div className="results-labels">{profilingVariable.upperEnd.name}</div>
       <div className="pill">
         <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>
