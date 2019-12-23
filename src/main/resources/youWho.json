@@ -230,7 +230,15 @@
         },
         {
           "id": "12",
+          "text": "Νότιο Αιγαίο"
+        },
+        {
+          "id": "13",
           "text": "Κρήτη"
+        },
+        {
+          "id": "14",
+          "text": "Δεν Απαντώ"
         }
       ]
     },
@@ -2243,7 +2251,7 @@
     },
     {
       "id": "48",
-      "text": "Gretta Thunberg",
+      "text": "Greta Thunberg",
       "category": "Πολιτική",
       "type": "scale",
       "displayType": "buttons",
