@@ -145,7 +145,7 @@ public class SurveyResponseResource {
      * @param id the id of the surveyResponse to retrieve its profiling results.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the profiling results, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/survey-responses/results/{surveyId}/{id}")
+    @GetMapping("/survey-responses/results/{id}")
     public ResponseEntity<Map<String, Double>> getProfilingResults(@PathVariable String id) {
         log.debug("REST request to get profiling resutls for survey response : {}", id);
         return ResponseUtil.wrapOrNotFound(surveyResponseService.findOne(id).map(SurveyResponse::getProfilingResults));
@@ -158,7 +158,7 @@ public class SurveyResponseResource {
      * @param questionFilters the list of questionFilters
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the profiling results, or with status {@code 404 (Not Found)}.
      */
-    @PostMapping("/survey-responses/results/{surveyId}")
+    @PostMapping("/survey-responses/total-results/{surveyId}")
     public Optional<Map<String, Double>> getAverageProfilingResults(@PathVariable String surveyId, @RequestBody Map<String, String> questionFilters) {
         log.debug("REST request to get average profiling results for questionFilters: {}", questionFilters);
         return surveyService.findOne(surveyId).map(survey -> survey.getProfilingVariables() != null ? surveyResponseService.getAverageProfilingResults(survey, questionFilters) : null);
