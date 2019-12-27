@@ -38,7 +38,7 @@ public class SurveyResponseRepositoryImpl implements SurveyResponseRepositoryCus
                 Criteria tmpCriteria = Criteria.where("questionId").is(entry.getKey())
                     .and("choiceIds.0");
                 Object value = entry.getValue();
-                tmpCriteria = value instanceof Collection ? tmpCriteria.in(((Collection)value).toArray()) : tmpCriteria.is(value);
+                tmpCriteria = value instanceof Collection ? tmpCriteria.in(((Collection)value).toArray()) : tmpCriteria.is(value.toString());
                 return Criteria.where("questionResponses").elemMatch(tmpCriteria);}
             ).toArray(Criteria[]::new);
             aggregationOperations.add(Aggregation.match(new Criteria().andOperator(criteria)));
