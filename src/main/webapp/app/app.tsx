@@ -1,6 +1,5 @@
 // tslint:disable:no-submodule-imports
 import 'semantic-ui-css/semantic.min.css';
-import 'video-react/dist/video-react.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
 
@@ -38,9 +37,6 @@ export const App = (props: IAppProps) => {
     props.getProfile();
     props.getEntities();
   }, []);
-
-  const menus = '/menus/';
-  const results = '/results/';
 
   return (
     <Router basename={baseHref}>

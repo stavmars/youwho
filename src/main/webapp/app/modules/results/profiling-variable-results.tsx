@@ -6,7 +6,7 @@ export interface IProfilingVariableResultsProps {
   profilingVariable: IProfilingVariable;
   personalValue?: number;
   totalValue: number;
-  personal: boolean;
+  personal?: boolean;
 }
 
 export const ProfilingVariableResults = (props: IProfilingVariableResultsProps) => {
