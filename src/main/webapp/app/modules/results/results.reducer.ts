@@ -63,6 +63,8 @@ export const getTotalResults = filters => {
     case '25-29':
       questionFilters['2'] = ['1', '2', '3', '4', '5', '6'];
       break;
+    default:
+      break;
   }
 
   return {
