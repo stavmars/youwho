@@ -19,7 +19,7 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   }
 
   render() {
-    const { survey, personalResults, totalResults } = this.props;
+    const { survey, personalResults, totalResults, filters } = this.props;
     return (
       <div>
         {personalResults && totalResults && survey && (
@@ -40,7 +40,7 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
                     />
                   ))}
                 </Grid.Column>
-                <ResultsButtonColumn personal />
+                <ResultsButtonColumn personal filters={filters} />
               </Grid.Row>
             )}
             <div className="content-divider results" />
@@ -77,6 +77,7 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
 const mapStateToProps = ({ results, survey }: IRootState) => ({
   personalResults: results.personalResults,
   totalResults: results.totalResults,
+  filters: results.filters,
   survey: survey.entitiesByName['youWho'] as ISurvey
 });
 

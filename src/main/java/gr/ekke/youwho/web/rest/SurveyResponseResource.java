@@ -159,7 +159,7 @@ public class SurveyResponseResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the profiling results, or with status {@code 404 (Not Found)}.
      */
     @PostMapping("/survey-responses/total-results/{surveyId}")
-    public Optional<Map<String, Double>> getAverageProfilingResults(@PathVariable String surveyId, @RequestBody Map<String, String> questionFilters) {
+    public Optional<Map<String, Double>> getAverageProfilingResults(@PathVariable String surveyId, @RequestBody Map<String, Object> questionFilters) {
         log.debug("REST request to get average profiling results for questionFilters: {}", questionFilters);
         return surveyService.findOne(surveyId).map(survey -> survey.getProfilingVariables() != null ? surveyResponseService.getAverageProfilingResults(survey, questionFilters) : null);
     }

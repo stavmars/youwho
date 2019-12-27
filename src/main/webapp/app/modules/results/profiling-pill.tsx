@@ -8,6 +8,9 @@ export interface IProfilingPillProps {
 
 export const ProfilingPill = (props: IProfilingPillProps) => {
   const { value, className } = props;
+  if (!_.isNumber(value)) {
+    return <div className={`pill ${className || ''}`} />;
+  }
   return (
     <div className={`pill ${className || ''}`}>
       <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>

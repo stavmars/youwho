@@ -10,6 +10,6 @@ import java.util.Map;
 @SuppressWarnings("unused")
 public interface SurveyResponseRepositoryCustom {
 
-    Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, String> questionFilters);
+    Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, Object> questionFilters);
 
 }

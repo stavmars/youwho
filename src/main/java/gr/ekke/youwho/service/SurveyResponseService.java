@@ -84,7 +84,7 @@ public class SurveyResponseService {
         return surveyResponseRepository.save(surveyResponse.addQuestionResponse(questionResponse));
     }
 
-    public Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, String> questionFilters) {
+    public Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, Object> questionFilters) {
         log.debug("Request to get average profiling resutls for questionFilters: {}", questionFilters);
         return surveyResponseRepository.getAverageProfilingResults(survey, questionFilters);
     }
