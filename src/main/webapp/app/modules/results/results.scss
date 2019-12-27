@@ -104,12 +104,17 @@ results/average page styles
     }
   }
 
+  .pill-container {
+    display: flex;
+    margin: 70px auto 70px auto;
+    justify-content: center;
+  }
+
   .pill {
     background: #00000029;
     position: relative;
-    margin: 70px auto 70px auto;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     overflow: hidden;
     height: 424px;
     width: 65px;
@@ -117,6 +122,16 @@ results/average page styles
     box-shadow: 0 3px 6px #00000029;
     padding: 0;
     border-radius: 50px;
+    &.personal-pill {
+      background: #ffe0e0;
+      .pill-bar {
+        background: #ff6666;
+      }
+    }
+  }
+
+  .pill:first-child {
+    margin-right: 5px;
   }
 
   .pill-bar {
@@ -139,9 +154,11 @@ results/average page styles
     position: absolute;
     width: 100%;
     text-align: center;
+
     &.pill-label-top {
       top: 20px;
     }
+
     &.pill-label-bottom {
       bottom: 20px;
     }

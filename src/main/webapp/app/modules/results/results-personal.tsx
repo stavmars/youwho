@@ -5,9 +5,9 @@ import { IRootState } from 'app/shared/reducers';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
 import { RouteComponentProps } from 'react-router-dom';
-import { getPersonalResults } from 'app/modules/results/results.reducer';
+import { getPersonalResults, getTotalResults } from 'app/modules/results/results.reducer';
 import { ISurvey } from 'app/shared/model/survey.model';
-import { ProfilingPill } from 'app/modules/results/profiling-pill';
+import { ProfilingVariableResults } from 'app/modules/results/profiling-variable-results';
 import _ from 'lodash';
 
 export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ resultsId: string }> {}
@@ -15,13 +15,14 @@ export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteC
 export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   componentDidMount() {
     this.props.getPersonalResults(this.props.match.params.resultsId);
+    this.props.getTotalResults({});
   }
 
   render() {
-    const { survey, personalResults } = this.props;
+    const { survey, personalResults, totalResults, filters } = this.props;
     return (
       <div>
-        {personalResults && survey && (
+        {personalResults && totalResults && survey && (
           <Grid className="results" stackable>
             <Grid.Row>
               <Image src="content/images/granny.jpg" circular size="tiny" inline />
@@ -31,14 +32,15 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
               <Grid.Row columns={3}>
                 <Grid.Column computer={10} mobile={14}>
                   {survey.profilingVariables.map(profilingVariable => (
-                    <ProfilingPill
+                    <ProfilingVariableResults
                       key={profilingVariable.id}
                       profilingVariable={profilingVariable}
-                      value={personalResults[profilingVariable.id]}
+                      personalValue={personalResults[profilingVariable.id]}
+                      totalValue={totalResults[profilingVariable.id]}
                     />
                   ))}
                 </Grid.Column>
-                <ResultsButtonColumn personal />
+                <ResultsButtonColumn personal filters={filters} />
               </Grid.Row>
             )}
             <div className="content-divider results" />
@@ -74,11 +76,14 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
 
 const mapStateToProps = ({ results, survey }: IRootState) => ({
   personalResults: results.personalResults,
+  totalResults: results.totalResults,
+  filters: results.filters,
   survey: survey.entitiesByName['youWho'] as ISurvey
 });
 
 const mapDispatchToProps = {
-  getPersonalResults
+  getPersonalResults,
+  getTotalResults
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

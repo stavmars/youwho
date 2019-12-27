@@ -1,8 +1,10 @@
 package gr.ekke.youwho.web.rest;
 
 import gr.ekke.youwho.domain.QuestionResponse;
+import gr.ekke.youwho.domain.Survey;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.service.SurveyResponseService;
+import gr.ekke.youwho.service.SurveyService;
 import gr.ekke.youwho.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
@@ -34,11 +36,14 @@ public class SurveyResponseResource {
     private static final String ENTITY_NAME = "surveyResponse";
     private final Logger log = LoggerFactory.getLogger(SurveyResponseResource.class);
     private final SurveyResponseService surveyResponseService;
+    private final SurveyService surveyService;
+
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    public SurveyResponseResource(SurveyResponseService surveyResponseService) {
+    public SurveyResponseResource(SurveyResponseService surveyResponseService, SurveyService surveyService) {
         this.surveyResponseService = surveyResponseService;
+        this.surveyService = surveyService;
     }
 
     /**
@@ -144,5 +149,18 @@ public class SurveyResponseResource {
     public ResponseEntity<Map<String, Double>> getProfilingResults(@PathVariable String id) {
         log.debug("REST request to get profiling resutls for survey response : {}", id);
         return ResponseUtil.wrapOrNotFound(surveyResponseService.findOne(id).map(SurveyResponse::getProfilingResults));
+    }
+
+    /**
+     * {@code POST  /survey-responses/:surveyId/results} : get the average profiling results for survey responses with "questionFilters" included in QuestionResponses.
+     *
+     * @param surveyId the id of the survey to get average profiling results for
+     * @param questionFilters the list of questionFilters
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the profiling results, or with status {@code 404 (Not Found)}.
+     */
+    @PostMapping("/survey-responses/total-results/{surveyId}")
+    public Optional<Map<String, Double>> getAverageProfilingResults(@PathVariable String surveyId, @RequestBody Map<String, Object> questionFilters) {
+        log.debug("REST request to get average profiling results for questionFilters: {}", questionFilters);
+        return surveyService.findOne(surveyId).map(survey -> survey.getProfilingVariables() != null ? surveyResponseService.getAverageProfilingResults(survey, questionFilters) : null);
     }
 }

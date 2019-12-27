@@ -1,0 +1,286 @@
+warning: LF will be replaced by CRLF in src/main/webapp/app/modules/results/profiling-variable-results.tsx.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/webapp/app/modules/results/results-personal.tsx.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/webapp/app/modules/results/results.reducer.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/webapp/app/modules/results/results.scss.
+The file will have its original line endings in your working directory
+[1mdiff --git a/src/main/webapp/app/modules/results/profiling-variable-results.tsx b/src/main/webapp/app/modules/results/profiling-variable-results.tsx[m
+[1mindex 5b102ae..fcfec70 100644[m
+[1m--- a/src/main/webapp/app/modules/results/profiling-variable-results.tsx[m
+[1m+++ b/src/main/webapp/app/modules/results/profiling-variable-results.tsx[m
+[36m@@ -1,49 +1,22 @@[m
+ import React from 'react';[m
+ import {IProfilingVariable} from 'app/shared/model/profiling-variable.model';[m
+[31m-import _ from 'lodash';[m
+[32m+[m[32mimport {ProfilingPill} from "app/modules/results/profiling-pill";[m
+ [m
+[31m-export interface IProfilingPillProps {[m
+[32m+[m[32mexport interface IProfilingVariableResultsProps {[m
+   profilingVariable: IProfilingVariable;[m
+   personalValue: number;[m
+   totalValue: number;[m
+ }[m
+ [m
+[31m-const {profilingVariable, personalValue, totalValue} = props;[m
+[31m-const singlePill = (value: number) => ([m
+[31m-  <div className="pill">[m
+[31m-    <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>[m
+[31m-    <div className="pill-bar" style={{height: `${(1 - value) * 100}%`}}/>[m
+[31m-    <span className="pill-label pill-label-bottom">{_.round(value * 100, 1)}%</span>[m
+[31m-  </div>);[m
+[31m-[m
+[31m-return ([m
+[31m-  <div className="profile-pill">[m
+[31m-    <div className="results-labels">{profilingVariable.upperEnd.name}</div>[m
+[31m-    <div className="pill">[m
+[31m-      <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>[m
+[31m-      <div className="pill-bar" style={{height: `${(1 - value) * 100}%`}}/>[m
+[31m-      <span className="pill-label pill-label-bottom">{_.round(value * 100, 1)}%</span>[m
+[31m-    </div>[m
+[31m-    <div className="results-labels">{profilingVariable.lowerEnd.name}</div>[m
+[31m-  </div>[m
+[31m-);[m
+[31m-};[m
+[31m-export const ProfilingPill = (props: IProfilingPillProps) => {[m
+[32m+[m[32mexport const ProfilingVariableResults = (props: IProfilingVariableResultsProps) => {[m
+   const {profilingVariable, personalValue, totalValue} = props;[m
+[31m-  const singlePill = (value: number) => ([m
+[31m-    <div className="pill">[m
+[31m-      <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>[m
+[31m-      <div className="pill-bar" style={{height: `${(1 - value) * 100}%`}}/>[m
+[31m-      <span className="pill-label pill-label-bottom">{_.round(value * 100, 1)}%</span>[m
+[31m-    </div>);[m
+ [m
+   return ([m
+     <div className="profile-pill">[m
+       <div className="results-labels">{profilingVariable.upperEnd.name}</div>[m
+[31m-      <div className="pill">[m
+[31m-        <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>[m
+[31m-        <div className="pill-bar" style={{height: `${(1 - value) * 100}%`}}/>[m
+[31m-        <span className="pill-label pill-label-bottom">{_.round(value * 100, 1)}%</span>[m
+[32m+[m[32m      <div className="pill-container">[m
+[32m+[m[32m        <ProfilingPill value={personalValue} className="personal-pill"/>[m
+[32m+[m[32m        <ProfilingPill value={totalValue}/>[m
+       </div>[m
+       <div className="results-labels">{profilingVariable.lowerEnd.name}</div>[m
+     </div>[m
+[36m@@ -51,4 +24,3 @@[m [mexport const ProfilingPill = (props: IProfilingPillProps) => {[m
+ };[m
+ [m
+ [m
+[31m-const ProfilingPill = (props: IProfilingPillProps) => {[m
+[1mdiff --git a/src/main/webapp/app/modules/results/results-personal.tsx b/src/main/webapp/app/modules/results/results-personal.tsx[m
+[1mindex 95cb278..a8bfb00 100644[m
+[1m--- a/src/main/webapp/app/modules/results/results-personal.tsx[m
+[1m+++ b/src/main/webapp/app/modules/results/results-personal.tsx[m
+[36m@@ -1,47 +1,50 @@[m
+ import './results.scss';[m
+ import React from 'react';[m
+[31m-import { connect } from 'react-redux';[m
+[31m-import { IRootState } from 'app/shared/reducers';[m
+[31m-import { Container, Grid, Image } from 'semantic-ui-react';[m
+[32m+[m[32mimport {connect} from 'react-redux';[m
+[32m+[m[32mimport {IRootState} from 'app/shared/reducers';[m
+[32m+[m[32mimport {Container, Grid, Image} from 'semantic-ui-react';[m
+ import ResultsButtonColumn from 'app/modules/results/results-button-column';[m
+[31m-import { RouteComponentProps } from 'react-router-dom';[m
+[31m-import { getPersonalResults } from 'app/modules/results/results.reducer';[m
+[31m-import { ISurvey } from 'app/shared/model/survey.model';[m
+[31m-import { ProfilingPill } from 'app/modules/results/profiling-pill';[m
+[32m+[m[32mimport {RouteComponentProps} from 'react-router-dom';[m
+[32m+[m[32mimport {getPersonalResults, getTotalResults} from 'app/modules/results/results.reducer';[m
+[32m+[m[32mimport {ISurvey} from 'app/shared/model/survey.model';[m
+[32m+[m[32mimport {ProfilingVariableResults} from 'app/modules/results/profiling-variable-results';[m
+ import _ from 'lodash';[m
+ [m
+[31m-export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ resultsId: string }> {}[m
+[32m+[m[32mexport interface IResultsPersonalProps extends StateProps, DispatchProps, RouteComponentProps<{ resultsId: string }> {[m
+[32m+[m[32m}[m
+ [m
+ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {[m
+   componentDidMount() {[m
+     this.props.getPersonalResults(this.props.match.params.resultsId);[m
+[32m+[m[32m    this.props.getTotalResults({});[m
+   }[m
+ [m
+   render() {[m
+[31m-    const { survey, personalResults } = this.props;[m
+[32m+[m[32m    const {survey, personalResults, totalResults} = this.props;[m
+     return ([m
+       <div>[m
+[31m-        {personalResults && survey && ([m
+[32m+[m[32m        {personalResults && totalResults && survey && ([m
+           <Grid className="results" stackable>[m
+             <Grid.Row>[m
+[31m-              <Image src="content/images/granny.jpg" circular size="tiny" inline />[m
+[32m+[m[32m              <Image src="content/images/granny.jpg" circular size="tiny" inline/>[m
+               <span className="results-granny-bubble">Ποιος είσαι τελικά;</span>[m
+             </Grid.Row>[m
+             {personalResults && survey && ([m
+               <Grid.Row columns={3}>[m
+                 <Grid.Column computer={10} mobile={14}>[m
+                   {survey.profilingVariables.map(profilingVariable => ([m
+[31m-                    <ProfilingPill[m
+[32m+[m[32m                    <ProfilingVariableResults[m
+                       key={profilingVariable.id}[m
+                       profilingVariable={profilingVariable}[m
+[31m-                      value={personalResults[profilingVariable.id]}[m
+[32m+[m[32m                      personalValue={personalResults[profilingVariable.id]}[m
+[32m+[m[32m                      totalValue={totalResults[profilingVariable.id]}[m
+                     />[m
+                   ))}[m
+                 </Grid.Column>[m
+[31m-                <ResultsButtonColumn personal />[m
+[32m+[m[32m                <ResultsButtonColumn personal/>[m
+               </Grid.Row>[m
+             )}[m
+[31m-            <div className="content-divider results" />[m
+[32m+[m[32m            <div className="content-divider results"/>[m
+             <Grid.Row>[m
+               <Grid.Column computer={10} mobile={14}>[m
+                 <Container>[m
+[36m@@ -50,15 +53,15 @@[m [mexport class ResultsPersonal extends React.Component<IResultsPersonalProps> {[m
+                     {survey.profilingVariables.map((profilingVariable, index) => ([m
+                       <span>[m
+                         {_.round(personalResults[profilingVariable.id] * 100, 1)}%{' '}[m
+[31m-                        <span style={{ textTransform: 'lowercase' }}>{profilingVariable.lowerEnd.name}</span> &{' '}[m
+[32m+[m[32m                        <span style={{textTransform: 'lowercase'}}>{profilingVariable.lowerEnd.name}</span> &{' '}[m
+                         {_.round((1 - personalResults[profilingVariable.id]) * 100, 1)}%{' '}[m
+[31m-                        <span style={{ textTransform: 'lowercase' }}>{profilingVariable.upperEnd.name}</span>{' '}[m
+[32m+[m[32m                        <span style={{textTransform: 'lowercase'}}>{profilingVariable.upperEnd.name}</span>{' '}[m
+                         {profilingVariable.lowerEnd.description}[m
+                         {index === survey.profilingVariables.length - 1[m
+                           ? '.'[m
+                           : index === survey.profilingVariables.length - 2[m
+[31m-                          ? ' και '[m
+[31m-                          : ', '}[m
+[32m+[m[32m                            ? ' και '[m
+[32m+[m[32m                            : ', '}[m
+                       </span>[m
+                     ))}[m
+                   </p>[m
+[36m@@ -72,13 +75,15 @@[m [mexport class ResultsPersonal extends React.Component<IResultsPersonalProps> {[m
+   }[m
+ }[m
+ [m
+[31m-const mapStateToProps = ({ results, survey }: IRootState) => ({[m
+[32m+[m[32mconst mapStateToProps = ({results, survey}: IRootState) => ({[m
+   personalResults: results.personalResults,[m
+[32m+[m[32m  totalResults: results.totalResults,[m
+   survey: survey.entitiesByName['youWho'] as ISurvey[m
+ });[m
+ [m
+ const mapDispatchToProps = {[m
+[31m-  getPersonalResults[m
+[32m+[m[32m  getPersonalResults,[m
+[32m+[m[32m  getTotalResults[m
+ };[m
+ [m
+ type StateProps = ReturnType<typeof mapStateToProps>;[m
+[1mdiff --git a/src/main/webapp/app/modules/results/results.reducer.ts b/src/main/webapp/app/modules/results/results.reducer.ts[m
+[1mindex c668661..77cd37e 100644[m
+[1m--- a/src/main/webapp/app/modules/results/results.reducer.ts[m
+[1m+++ b/src/main/webapp/app/modules/results/results.reducer.ts[m
+[36m@@ -1,14 +1,17 @@[m
+[31m-import { SUCCESS } from 'app/shared/reducers/action-type.util';[m
+[31m-import { ICrudGetAction } from 'react-jhipster';[m
+[32m+[m[32mimport {SUCCESS} from 'app/shared/reducers/action-type.util';[m
+[32m+[m[32mimport {ICrudGetAction} from 'react-jhipster';[m
+ import axios from 'axios';[m
+[31m-import { IProfilingResults } from 'app/shared/model/survey-response.model';[m
+[32m+[m[32mimport {IProfilingResults} from 'app/shared/model/survey-response.model';[m
+[32m+[m[32mimport {ISurvey} from 'app/shared/model/survey.model';[m
+ [m
+ export const ACTION_TYPES = {[m
+[31m-  FETCH_PERSONAL_RESULTS: 'results/FETCH_PERSONAL_RESULTS'[m
+[32m+[m[32m  FETCH_PERSONAL_RESULTS: 'results/FETCH_PERSONAL_RESULTS',[m
+[32m+[m[32m  FETCH_TOTAL_RESULTS: 'results/FETCH_TOTAL_RESULTS'[m
+ };[m
+ [m
+ const initialState = {[m
+[31m-  personalResults: false[m
+[32m+[m[32m  personalResults: null,[m
+[32m+[m[32m  totalResults: null[m
+ };[m
+ [m
+ export type ResultsState = Readonly<typeof initialState>;[m
+[36m@@ -20,6 +23,11 @@[m [mexport default (state: ResultsState = initialState, action): ResultsState => {[m
+         ...state,[m
+         personalResults: action.payload.data[m
+       };[m
+[32m+[m[32m    case SUCCESS(ACTION_TYPES.FETCH_TOTAL_RESULTS):[m
+[32m+[m[32m      return {[m
+[32m+[m[32m        ...state,[m
+[32m+[m[32m        totalResults: action.payload.data[m
+[32m+[m[32m      };[m
+     default:[m
+       return state;[m
+   }[m
+[36m@@ -32,3 +40,11 @@[m [mexport const getPersonalResults: ICrudGetAction<IProfilingResults> = id => {[m
+     payload: axios.get<IProfilingResults>(requestUrl)[m
+   };[m
+ };[m
+[32m+[m
+[32m+[m[32mexport const getTotalResults = (filters) => {[m
+[32m+[m[32m  const requestUrl = `api/survey-responses/total-results/youWho`;[m
+[32m+[m[32m  return {[m
+[32m+[m[32m    type: ACTION_TYPES.FETCH_TOTAL_RESULTS,[m
+[32m+[m[32m    payload: axios.post(requestUrl, filters)[m
+[32m+[m[32m  };[m
+[32m+[m[32m};[m
+[1mdiff --git a/src/main/webapp/app/modules/results/results.scss b/src/main/webapp/app/modules/results/results.scss[m
+[1mindex 8d0ff5d..3c6cc87 100644[m
+[1m--- a/src/main/webapp/app/modules/results/results.scss[m
+[1m+++ b/src/main/webapp/app/modules/results/results.scss[m
+[36m@@ -104,12 +104,17 @@[m [mresults/average page styles[m
+     }[m
+   }[m
+ [m
+[32m+[m[32m  .pill-container {[m
+[32m+[m[32m    display: flex;[m
+[32m+[m[32m    margin: 70px auto 70px auto;[m
+[32m+[m[32m    justify-content: center;[m
+[32m+[m[32m  }[m
+[32m+[m
+   .pill {[m
+     background: #00000029;[m
+     position: relative;[m
+[31m-    margin: 70px auto 70px auto;[m
+[31m-    display: -ms-flexbox;[m
+[31m-    display: flex;[m
+[32m+[m[32m    display: -ms-inline-flexbox;[m
+[32m+[m[32m    display: inline-flex;[m
+     overflow: hidden;[m
+     height: 424px;[m
+     width: 65px;[m
+[36m@@ -117,6 +122,16 @@[m [mresults/average page styles[m
+     box-shadow: 0 3px 6px #00000029;[m
+     padding: 0;[m
+     border-radius: 50px;[m
+[32m+[m[32m    &.personal-pill {[m
+[32m+[m[32m      background: #ffe0e0;[m
+[32m+[m[32m      .pill-bar {[m
+[32m+[m[32m        background: #ff6666;[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .pill:first-child {[m
+[32m+[m[32m    margin-right: 5px;[m
+   }[m
+ [m
+   .pill-bar {[m
+[36m@@ -139,9 +154,11 @@[m [mresults/average page styles[m
+     position: absolute;[m
+     width: 100%;[m
+     text-align: center;[m
+[32m+[m
+     &.pill-label-top {[m
+       top: 20px;[m
+     }[m
+[32m+[m
+     &.pill-label-bottom {[m
+       bottom: 20px;[m
+     }[m

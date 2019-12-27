@@ -2,35 +2,31 @@
 import './results.scss';
 import React from 'react';
 import { Button, Grid, Icon, Image, Item } from 'semantic-ui-react';
+import { IRootState } from 'app/shared/reducers';
+import { connect } from 'react-redux';
+import { updateFilters } from 'app/modules/results/results.reducer';
 
-export interface IResultsButtonColumnProps {
+export interface IResultsButtonColumnProps extends StateProps, DispatchProps {
   personal: boolean;
 }
 
-export interface IResultsButtonColumnState {
-  gender: number; // 0: no gender, 1: female, 2: male
-  age: number; // 0: no age, 1: 17-20, 2: 21-24, 3: 25-29
-}
-
-export class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps, IResultsButtonColumnState> {
+class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
   constructor(props) {
     super(props);
-    this.state = {
-      gender: 0,
-      age: 0
-    };
   }
 
-  handleGenderButton = (num: number) => {
-    this.setState({ ...this.state, gender: num });
+  handleGenderButton = (gender: number) => {
+    const { filters } = this.props;
+    this.props.updateFilters({ ...filters, gender });
   };
 
-  handlerAgeButton = (num: number) => {
-    this.setState({ ...this.state, age: this.state.age === num ? 0 : num });
+  handlerAgeButton = (age: string) => {
+    const { filters } = this.props;
+    this.props.updateFilters({ ...filters, age });
   };
 
   render() {
-    const { personal } = this.props;
+    const { personal, filters } = this.props;
 
     return (
       <Grid.Column computer={4} mobile={14} verticalAlign="middle">
@@ -57,16 +53,16 @@ export class ResultsButtonColumn extends React.Component<IResultsButtonColumnPro
         <h3 className="filter-type">φύλο</h3>
         <Button
           className="filter-buttons"
-          active={this.state.gender === 1}
-          onClick={() => this.handleGenderButton(1)}
+          active={filters.gender === 2}
+          onClick={() => this.handleGenderButton(2)}
           style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}
         >
           <Image src="content/images/female.svg" />
         </Button>
         <Button
           className="filter-buttons"
-          active={this.state.gender === 2}
-          onClick={() => this.handleGenderButton(2)}
+          active={filters.gender === 1}
+          onClick={() => this.handleGenderButton(1)}
           style={{ height: '48px' }}
         >
           <Image className="filter-buttons-image" src="content/images/male.svg" />
@@ -74,7 +70,7 @@ export class ResultsButtonColumn extends React.Component<IResultsButtonColumnPro
         <Button
           className="filter-buttons"
           content="όλοι"
-          active={this.state.gender === 0}
+          active={!filters.gender}
           onClick={() => this.handleGenderButton(0)}
           style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px', paddingTop: '21px' }}
         />
@@ -82,22 +78,29 @@ export class ResultsButtonColumn extends React.Component<IResultsButtonColumnPro
         <Button
           className="filter-buttons"
           content="17-20"
-          active={this.state.age === 1}
-          onClick={() => this.handlerAgeButton(1)}
+          active={filters.age === '17-20'}
+          onClick={() => this.handlerAgeButton('17-20')}
           style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px', height: '48px' }}
         />
         <Button
           className="filter-buttons"
           content="21-24"
-          active={this.state.age === 2}
-          onClick={() => this.handlerAgeButton(2)}
+          active={filters.age === '21-24'}
+          onClick={() => this.handlerAgeButton('21-24')}
           style={{ height: '48px' }}
         />
         <Button
           className="filter-buttons"
           content="25-29"
-          active={this.state.age === 3}
-          onClick={() => this.handlerAgeButton(3)}
+          active={filters.age === '25-29'}
+          onClick={() => this.handlerAgeButton('25-29')}
+          style={{ height: '48px' }}
+        />
+        <Button
+          className="filter-buttons"
+          content="όλοι"
+          active={!filters.age}
+          onClick={() => this.handlerAgeButton(null)}
           style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', height: '48px' }}
         />
         <Button.Group style={{ display: 'block', marginTop: '10vh' }}>
@@ -114,4 +117,18 @@ export class ResultsButtonColumn extends React.Component<IResultsButtonColumnPro
   }
 }
 
-export default ResultsButtonColumn;
+const mapStateToProps = ({ results }: IRootState) => ({
+  filters: results.filters
+});
+
+const mapDispatchToProps = {
+  updateFilters
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ResultsButtonColumn);

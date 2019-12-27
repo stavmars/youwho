@@ -1,15 +1,17 @@
 package gr.ekke.youwho.service;
 
 import gr.ekke.youwho.domain.QuestionResponse;
+import gr.ekke.youwho.domain.Survey;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.repository.SurveyResponseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -73,12 +75,17 @@ public class SurveyResponseService {
     /**
      * Add new question to the surveyResponse id.
      *
-     * @param id the id of the entity.
+     * @param id               the id of the entity.
      * @param questionResponse the question to be added
      */
     public SurveyResponse addQuestionResponse(String id, QuestionResponse questionResponse) {
         log.debug("Request to add QuestionResponse : {} to SurveyResponse : {}", questionResponse, id);
         SurveyResponse surveyResponse = surveyResponseRepository.findById(id).get();
         return surveyResponseRepository.save(surveyResponse.addQuestionResponse(questionResponse));
+    }
+
+    public Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, Object> questionFilters) {
+        log.debug("Request to get average profiling resutls for questionFilters: {}", questionFilters);
+        return surveyResponseRepository.getAverageProfilingResults(survey, questionFilters);
     }
 }
