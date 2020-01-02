@@ -25,7 +25,7 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
         {personalResults && totalResults && survey && (
           <Grid className="results" stackable>
             <Grid.Row>
-              <Image src="content/images/granny.jpg" circular size="tiny" inline />
+              <Image className="results-granny-icon" src="content/images/granny.jpg" circular size="tiny" inline />
               <span className="results-granny-bubble">Ποιος είσαι τελικά;</span>
             </Grid.Row>
             {personalResults && survey && (

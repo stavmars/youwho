@@ -22,7 +22,7 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
         {totalResults && survey && (
           <Grid className="results" stackable>
             <Grid.Row>
-              <Image src="content/images/granny.jpg" circular size="tiny" inline />
+              <Image className="results-granny-icon" src="content/images/granny.jpg" circular inline />
               <span className="results-granny-bubble">Συνολικά αποτελέσματα</span>
             </Grid.Row>
             <Grid.Row columns={3}>

@@ -19,7 +19,10 @@ results/average page styles
 
 .results {
   margin: 80px 0 10% 10% !important;
-
+  .results-granny-icon {
+    height: 12vh !important;
+    width: 12vh !important;
+  }
   .results-granny-bubble {
     margin-left: 5%;
     background: #777eff 0 0 no-repeat padding-box;
@@ -28,11 +31,14 @@ results/average page styles
     text-align: left;
     color: #ffffff;
     letter-spacing: 0;
-    padding: 20px 40px;
     @include mobile {
       font: 14px/16px TTNormsProBoldItalic;
+      height: 75%;
+      padding: 20px 35px;
     }
     @include computer {
+      height: auto;
+      padding: 35px 40px 20px 40px;
       font: 40px/48px TTNormsProBoldItalic;
     }
   }
