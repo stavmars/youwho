@@ -29,7 +29,7 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
     const { personal, filters } = this.props;
 
     return (
-      <Grid.Column computer={4} mobile={14} verticalAlign="middle">
+      <Grid.Column computer={5} mobile={14} verticalAlign="middle">
         {personal && (
           <Item.Group>
             <Item>
