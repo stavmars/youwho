@@ -45,7 +45,12 @@ results/average page styles
 
   .results-legend {
     text-align: center !important;
-    font: 19px/23px TTNormsProBoldItalic !important;
+    @include mobile {
+      font: 14px/16px TTNormsProBoldItalic !important;
+    }
+    @include computer {
+      font: 19px/23px TTNormsProBoldItalic !important;
+    }
     letter-spacing: 0 !important;
     text-transform: lowercase !important;
     opacity: 1 !important;
@@ -76,7 +81,13 @@ results/average page styles
     background: #dbdbdb 0 0 no-repeat padding-box;
     opacity: 1;
     text-align: center;
-    font: 15px/17px TTNormsProBold;
+    height: 48px !important;
+    @include mobile {
+      font: 13px/15px TTNormsProBold;
+    }
+    @include computer {
+      font: 15px/17px TTNormsProBold;
+    }
     letter-spacing: 0;
     color: #afafaf;
     text-transform: lowercase;
@@ -122,12 +133,18 @@ results/average page styles
     display: -ms-inline-flexbox;
     display: inline-flex;
     overflow: hidden;
-    height: 424px;
-    width: 65px;
     border: 5px #ffffff solid;
     box-shadow: 0 3px 6px #00000029;
     padding: 0;
     border-radius: 50px;
+    @include mobile {
+      width: 36px;
+      height: 200px;
+    }
+    @include computer {
+      height: 424px;
+      width: 65px;
+    }
     &.personal-pill {
       background: #ffe0e0;
       .pill-bar {
@@ -154,7 +171,12 @@ results/average page styles
   }
 
   .pill-label {
-    font: 14px/20px TTNormsProBoldItalic;
+    @include mobile {
+      font: 9px/11px TTNormsProBoldItalic;
+    }
+    @include computer {
+      font: 14px/20px TTNormsProBoldItalic;
+    }
     color: #ffffff;
     letter-spacing: 0;
     position: absolute;
