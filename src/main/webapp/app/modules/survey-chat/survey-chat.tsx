@@ -9,6 +9,7 @@ import ChatBot from 'react-simple-chatbot';
 import ProgressBar from 'app/modules/survey-chat/progress-bar';
 import { ThemeProvider } from 'styled-components';
 import { configureStep } from 'app/modules/survey-chat/configure-steps';
+import { defaultValue as SurveyResponseDefault } from 'app/shared/model/survey-response.model';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
@@ -21,7 +22,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
   componentDidMount() {
     const { surveysByName } = this.props;
     const survey = surveysByName[this.props.match.params.id];
-    if (survey) {
+    if (survey && this.props.currentSurveyResponse === SurveyResponseDefault) {
       this.props.initiateSurveyResponse(survey, moment());
     }
   }
@@ -59,6 +60,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
         >
           <ChatBot
             hideUserAvatar
+            cache
             botAvatar="content/images/granny.jpg"
             footerStyle={{ display: 'none' }}
             hideHeader
@@ -93,6 +95,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
 
 const mapStateToProps = (storeState: IRootState) => ({
   surveysByName: storeState.survey.entitiesByName,
+  currentSurveyResponse: storeState.chatBot.currentSurveyResponse,
   activeCategory: storeState.chatBot.activeCategory
 });
 
