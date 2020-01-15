@@ -43,7 +43,8 @@ export const configureStep = questions => {
         end: true
       });
     }
-    if (question.imageURL) {
+    if (question.imageURL && question.type === 'info_text') {
+      // Simple granny text with an image.
       steps.push({
         id: question.id,
         message: question.text,
@@ -61,14 +62,49 @@ export const configureStep = questions => {
           index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
       });
     } else if (question.type !== 'info_text') {
-      steps.push({
-        id: question.id,
-        component: <span style={{ fontFamily: 'TTNormsProBold' }}>{question.text}</span>,
-        trigger:
-          index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id,
-        asMessage: true,
-        delay: 1500
-      });
+      // Granny question
+      if (question.imageURL) {
+        // If it has an image also.
+        steps.push({
+          id: question.id,
+          component: (
+            <span id={`question-${question.id}`} style={{ fontFamily: 'TTNormsProBold' }}>
+              {question.text}
+            </span>
+          ),
+          trigger: 'image_' + question.id,
+          asMessage: true,
+          delay: 1500
+        });
+        steps.push({
+          id: 'image_' + question.id,
+          component: (
+            <div style={{ width: '100%' }}>
+              <img src={question.imageURL} alt="message" className="images" />
+            </div>
+          ),
+          trigger:
+            index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
+        });
+      } else {
+        // Plain question
+        steps.push({
+          id: question.id,
+          component: (
+            <span id={`question-${question.id}`} style={{ fontFamily: 'TTNormsProBold' }}>
+              {question.text}
+            </span>
+          ),
+          trigger:
+            index === questions.length - 1
+              ? 'results-button'
+              : question.responseChoices
+              ? 'option_' + question.id
+              : questions[index + 1].id,
+          asMessage: true,
+          delay: 1500
+        });
+      }
     } else {
       steps.push({
         id: question.id,

@@ -16,19 +16,27 @@ export class Answer extends React.Component<IAnswerProps> {
     this.props.updateLastQuestion(this.props.answer.questionId);
   }
 
+  reDoQuestion = () => {
+    const { answer } = this.props;
+    const questionStep = document.getElementById(`question-${answer.questionId}`).parentElement;
+    questionStep.style.display = 'none';
+    let nextStep = questionStep.parentElement.nextElementSibling;
+    while (nextStep !== null) {
+      // @ts-ignore
+      nextStep.style.display = 'none';
+      nextStep = nextStep.nextElementSibling;
+    }
+    // @ts-ignore
+    this.props.triggerNextStep({ trigger: answer.questionId });
+  };
+
   render() {
     const { answer, reset, lastQuestionId } = this.props;
 
     return (
       <div style={{ width: '100%' }}>
         {lastQuestionId === answer.questionId && reset && (
-          <Image
-            src="content/images/noun_Refresh_854003.svg"
-            as={Button}
-            className="reset"
-            // @ts-ignore
-            onClick={() => this.props.triggerNextStep({ trigger: answer.questionId })}
-          />
+          <Image src="content/images/noun_Refresh_854003.svg" as={Button} className="reset" onClick={this.reDoQuestion} />
         )}
         <Button floated="right" className="answer">
           <span>{answer.text}</span>
