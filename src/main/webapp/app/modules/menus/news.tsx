@@ -5,7 +5,6 @@ import { IRootState } from 'app/shared/reducers';
 import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
 import { Grid, Menu, Image, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 export interface INewsProps extends StateProps, DispatchProps {}
 
@@ -47,39 +46,6 @@ export class News extends React.Component<INewsProps> {
             </Grid.Column>
           </Grid.Row>
           <div className="news-page-divider" />
-          <Grid.Row>
-            <Grid.Column mobile={14} only="mobile">
-              <Image className="news-page-image" src="content/images/csm_1303_ypogennitikotita_95db309f9f.png" />
-            </Grid.Column>
-            <Grid.Column computer={5} mobile={14}>
-              <h1 className="news-page-h1">Ημερίδα - Δράση για την Υπογεννητικότητα</h1>
-              <h3 className="news-page-h3">28.09.2019 • Εκδηλώσεις</h3>
-              <p className="news-page-p">
-                Στο πλαίσιο υλοποίησης του υποέργου «REDI – Αυτεπιστασία ΕΚΚΕ» της Πράξης «Έρευνα, Εκπαίδευση και Υποδομές: ο τριγωνισμός
-                των αξόνων στρατηγικής ανάπτυξης του ΕΚΚΕ (REDI)» εντάσσονται τρεις ξεχωριστές έρευνες νεολαίας.
-              </p>
-              <Button className="news-page-more-button">Περισσότερα</Button>
-            </Grid.Column>
-            <Grid.Column computer={3} only="computer">
-              <Image className="news-page-image" src="content/images/csm_1303_ypogennitikotita_95db309f9f.png" />
-            </Grid.Column>
-          </Grid.Row>
-          <div className="news-page-divider" />
-          <Grid.Row>
-            <Grid.Column computer={3} mobile={14}>
-              <Image className="news-page-image" src="content/images/k2_items_src_fdf563fc52afab9bcc613f75df1c95b9.png" />
-            </Grid.Column>
-            <Grid.Column computer={5} mobile={14}>
-              <h1 className="news-page-h1">Η νεολαία της Αττικής και όχι των νησιών στρέφεται στο Ναυτικό Επάγγελμα</h1>
-              <h3 className="news-page-h3">28.09.2019 • Άρθρα</h3>
-              <p className="news-page-p">
-                Πρακτικό επιτροπής αξιολόγησης προτάσεων που έχουν υποβληθεί κατόπιν Πρόσκλησης εκδήλωσης ενδιαφέροντος για υποβολή
-                προτάσεων για την πλήρωση τριών θέσεων.
-              </p>
-              <Button className="news-page-more-button">Περισσότερα</Button>
-            </Grid.Column>
-          </Grid.Row>
-          <div className="content-divider" />
         </Grid>
       </div>
     );
