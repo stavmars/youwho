@@ -37,7 +37,7 @@ export class Home extends React.Component<IHomeProp> {
                 <Image src="content/images/giagia.png" className="granny" />
                 <Image src="content/images/YellowStripesBg.svg" className="stripes" />
               </Grid.Column>
-              <Grid.Column width={6}>
+              <Grid.Column width={7}>
                 <Image src="content/images/big-bubble.svg" style={{ left: '-15vw', height: '40vh', zIndex: '1' }} />
                 <Image
                   src="content/images/small-bubble.svg"
@@ -68,6 +68,10 @@ export class Home extends React.Component<IHomeProp> {
                     </Modal.Content>
                   </Modal>
                 )}
+                <div style={{ marginLeft: '65%', marginTop: '-30px' }}>
+                  <span className="home-subtext">Υπό την Αιγίδα</span>
+                  <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px' }} />
+                </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
