@@ -26,8 +26,6 @@ export interface IHomeProp extends StateProps, DispatchProps {}
 
 export class Home extends React.Component<IHomeProp> {
   render() {
-    const { isAuthenticated } = this.props;
-
     return (
       <div className="home-container">
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -46,28 +44,26 @@ export class Home extends React.Component<IHomeProp> {
                   style={{ width: '20vw', height: '10vh', top: '2vh' }}
                 />
                 {subtext()}
-                {isAuthenticated && (
-                  <Modal
-                    trigger={
-                      <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }}>
-                        <Image src="content/images/play-video.svg" inline style={{ width: '7vw', height: '7vh', marginRight: '2vw' }} />
-                        <span className="home-subtext">Δές το Βίντεο</span>
-                      </Button>
-                    }
-                    basic
-                  >
-                    <Modal.Content>
-                      <iframe
-                        width="720"
-                        height="480"
-                        src="https://www.youtube.com/embed/AhveenOl5K8"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </Modal.Content>
-                  </Modal>
-                )}
+                <Modal
+                  trigger={
+                    <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }} disabled>
+                      <Image src="content/images/play-video.svg" inline style={{ width: '7vw', height: '7vh', marginRight: '2vw' }} />
+                      <span className="home-subtext">Δές το Βίντεο</span>
+                    </Button>
+                  }
+                  basic
+                >
+                  <Modal.Content>
+                    <iframe
+                      width="720"
+                      height="480"
+                      src="https://www.youtube.com/embed/AhveenOl5K8"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </Modal.Content>
+                </Modal>
                 <div style={{ marginLeft: '65%', marginTop: '-30px' }}>
                   <span className="home-subtext">Υπό την Αιγίδα</span>
                   <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px' }} />
