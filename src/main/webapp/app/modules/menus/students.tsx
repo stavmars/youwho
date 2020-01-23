@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
-import { Button, Container, Grid, Image } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 export interface IStudentsProps extends StateProps, DispatchProps {}
 
@@ -24,51 +24,50 @@ export class Students extends React.Component<IStudentsProps> {
           <Container>
             <h1 className="students-page-top-title">Μαθητές</h1>
             <p className="students-page-top-subtext">
-              Πρόκειται για ποσοτική έρευνα πεδίου με αυτο-συμπληρούμενο ερωτηματολόγιο διάρκειας 40 λεπτών σε επιλεγμένες σχολικές μονάδες
-              της Αττικής, σε μαθητές όλων των τάξεων του Γυμνασίου. Η συλλογή των δεδομένων έλαβε χώρα από 22 Φεβρουαρίου έως και 30
-              Μαρτίου 2018.
+              Πολλές έρευνες συνηγορούν στο ότι οι βασικές πολιτικές προδιαθέσεις των ατόμων, που θα τους ακολουθούν μέχρι την ενηλικίωση,
+              διαμορφώνονται στα χρόνια της εφηβείας (Prior 2010, Russo and Stattin 2017). Στο ίδιο πλαίσιο, και σε συνέχεια των παραπάνω,
+              οι περισσότερες εμπειρικές μελέτες συνηγορούν στο ότι η οικογένεια είναι εκείνη που επιτελεί τον σημαντικότερο ρόλο στην
+              πολιτική κοινωνικοποίηση των εφήβων κατά τα χρόνια αυτά (Niemi and Hepburn 1995, Hooghe and Boonen 2015, Verba et al 1995). Ως
+              εκ τούτου, η μελέτη της συγκεκριμένης ηλικιακής ομάδας έχει ξεχωριστό ενδιαφέρον.
             </p>
           </Container>
         </div>
         <Container style={{ marginTop: '-80px' }}>
-          <h1 className="students-page-title">Highlights</h1>
-          <Grid centered>
-            <Grid.Column computer={10} mobile={14}>
-              <Image src="content/images/dummy chart.svg" />
-            </Grid.Column>
-            <Grid.Column computer={4} mobile={14}>
-              <p className="students-page-subtext">
-                Τα υψηλότερα ποσοστά διαφωνίας με τους καθηγητές (54,6%) προέρχονται από μαθητές με γονείς υψηλής κοινωνικής θέσης.
-              </p>
-              <Button className="students-page-more-button">Περισσότερα</Button>
-            </Grid.Column>
-          </Grid>
+          {/*<h1 className="students-page-title">Highlights</h1>*/}
+          {/*<Grid centered>*/}
+          {/*  <Grid.Column computer={10} mobile={14}>*/}
+          {/*    <Image src="content/images/dummy chart.svg" />*/}
+          {/*  </Grid.Column>*/}
+          {/*  <Grid.Column computer={4} mobile={14}>*/}
+          {/*    <p className="students-page-subtext">*/}
+          {/*      Τα υψηλότερα ποσοστά διαφωνίας με τους καθηγητές (54,6%) προέρχονται από μαθητές με γονείς υψηλής κοινωνικής θέσης.*/}
+          {/*    </p>*/}
+          {/*    <Button className="students-page-more-button">Περισσότερα</Button>*/}
+          {/*  </Grid.Column>*/}
+          {/*</Grid>*/}
           <h1 className="students-page-title">έρευνες νεανικού πληθυσμού</h1>
           <p className="students-page-subtext">
-            Σε γενικές γραμμές, οι έρευνες νεανικού πληθυσμού έχουν ως αντικείμενο τις ιδεολογικές στάσεις, τις αντιλήψεις, τις αξίες, τον
-            τρόπο ζωής, τις καθημερινές συνήθειες και τις αναζητήσεις της νέας γενιάς. Τα θέματα αυτά απασχόλησαν έντονα τους κοινωνικούς
-            επιστήμονες ήδη από τη δεκαετία του 1960. Οι επαναλαμβανόμενες μελέτες στο νεανικό πληθυσμό ανέδειξαν τις διαφορές στις στάσεις
-            και τις αντιλήψεις που αντανακλούν το κοινωνικο-πολιτικό πλαίσιο της κάθε εποχής. Έτσι, καθιερώθηκαν συγκεκριμένες τυπολογίες
-            γενεών όπως οι Baby boomers (η μεταπολεμική γενιά) η γενιά Χ, οι Millennials και εσχάτως η γενιά G.
+            Για τις ανάγκες του έργου σχεδιάστηκε και υλοποιήθηκε την άνοιξη του 2018 ποσοτική έρευνα πεδίου με αυτο-συμπληρούμενο
+            ερωτηματολόγιο σε επιλεγμένες σχολικές μονάδες της Αττικής, σε 792 μαθητές και μαθήτριες Γυμνασίου. Μέσω της έρευνας δόθηκε η
+            δυνατότητα να σκιαγραφηθούν οι πολλαπλές πλευρές της ταυτότητας των εφήβων υπό το πρίσμα του φύλου, της ηλικίας και της
+            κοινωνικής σύνθεσης της οικογένειας.
           </p>
-          <Grid style={{ margin: '45px 0' }}>
-            <Grid.Column width={1}>
-              <div className="vertical-line" />
-            </Grid.Column>
-            <Grid.Column computer={5} mobile={13}>
-              <p className="students-page-important">
-                Ιδιαίτερα αξιοσημείωτο ενδιαφέρον, όμως, παρουσιάζουν οι απαντήσεις των νέων ως προς τους παράγοντες που επηρέασαν την
-                απόφασή τους να εισαχθούν σε ΑΕΝ.
-              </p>
-            </Grid.Column>
-          </Grid>
+          {/*<Grid style={{ margin: '45px 0' }}>*/}
+          {/*  <Grid.Column width={1}>*/}
+          {/*    <div className="vertical-line" />*/}
+          {/*  </Grid.Column>*/}
+          {/*  <Grid.Column computer={5} mobile={13}>*/}
+          {/*    <p className="students-page-important">*/}
+          {/*      Ιδιαίτερα αξιοσημείωτο ενδιαφέρον, όμως, παρουσιάζουν οι απαντήσεις των νέων ως προς τους παράγοντες που επηρέασαν την*/}
+          {/*      απόφασή τους να εισαχθούν σε ΑΕΝ.*/}
+          {/*    </p>*/}
+          {/*  </Grid.Column>*/}
+          {/*</Grid>*/}
           <p className="students-page-subtext">
-            Στο πλαίσιο υλοποίησης του υποέργου «REDI – Αυτεπιστασία ΕΚΚΕ» της Πράξης «Έρευνα, Εκπαίδευση και Υποδομές: ο τριγωνισμός των
-            αξόνωνστρατηγικής ανάπτυξης του ΕΚΚΕ (REDI)» εντάσσονται τρεις ξεχωριστές έρευνες νεολαίας. Αντικείμενό τους είναι να
-            σκιαγραφηθούν οι βασικοί ατομικοί και συλλογικοί παράγοντες προσδιορισμού της ταυτότητας του νεανικού πληθυσμού της χώρας και να
-            αποτυπωθεί ο τρόπος που επιμέρους παράγοντες αλληλεπιδρούν στην διαμόρφωση τους. Ως πληθυσμός των τριών αυτών ερευνών ορίζονται
-            οι νέοι ηλικίας 15-29 ετών, οι οποίοι οργανώνονται στη βάση επιμέρους κατατμήσεων τους σε εξελικτικό-ηλιακό επίπεδο σε δύο
-            ηλικιακές κατηγορίες: τους εφήβους 13-15 ετών και τους νέους ενήλικες 18-29 ετών.
+            Τμήμα των δεδομένων έχει ήδη αναρτηθεί στην πλατφόρμα socioscope.gr, στην σχετική θεματική:{' '}
+            <a target="_blank" href="http://www.socioscope.gr/dataset/adolescents">
+              http://www.socioscope.gr/dataset/adolescents
+            </a>
           </p>
         </Container>
       </div>
