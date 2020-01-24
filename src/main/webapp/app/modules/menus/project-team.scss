@@ -11,6 +11,16 @@
     position: relative;
     top: -220px;
   }
+  .project-team-page-header {
+    margin-bottom: 7vh;
+    color: #777eff;
+    @include mobile {
+      font: 33px/30px TTNormsProBold;
+    }
+    @include computer {
+      font: 60px/60px TTNormsProBold;
+    }
+  }
   .project-team-page-image {
     @include mobile {
       width: 173px;
@@ -33,7 +43,7 @@
     }
     @include computer {
       text-align: left;
-      font: 50px/30px TTNormsProBoldItalic;
+      font: 50px/50px TTNormsProBoldItalic;
     }
   }
   .project-team-page-subtitle {
