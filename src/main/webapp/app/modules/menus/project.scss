@@ -1,7 +1,7 @@
 @import 'app/shared/common.scss';
 
 .project-page {
-  margin-top: 5%;
+  margin-top: 20vh;
   .project-page-title {
     text-align: left;
     font: 40px/45px TTNormsProBoldItalic;
@@ -17,15 +17,17 @@
     opacity: 1;
   }
   .project-page-content {
-    width: 80%;
     @include mobile {
       font: 18px/26px TTNormsProRegular;
+      letter-spacing: 0.36px;
+      width: 100%;
     }
     @include computer {
       font: 22px/32px TTNormsProRegular;
+      letter-spacing: 0.44px;
+      width: 80%;
     }
     text-align: left;
-    letter-spacing: 0.44px;
     opacity: 1;
   }
   .project-page-content::first-letter {

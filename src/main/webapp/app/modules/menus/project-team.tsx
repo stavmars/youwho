@@ -4,8 +4,32 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
-import { Image, Grid, Menu, Container, Responsive } from 'semantic-ui-react';
+import { Image, Grid, Menu, Responsive } from 'semantic-ui-react';
 import { NavHashLink } from 'react-router-hash-link';
+
+const MemberBio = (tag: string, title: string, subtitle: string, description: string, image: string, left: boolean) => (
+  <Grid.Row style={{ marginTop: '30px' }}>
+    <Grid.Column only="mobile">
+      <Image className="project-team-page-image" src={image} circular />
+    </Grid.Column>
+    {left && (
+      <Grid.Column computer={3} only="computer">
+        <Image className="project-team-page-image" src={image} />
+      </Grid.Column>
+    )}
+    <Grid.Column width={5}>
+      <a id={tag} className="anchor" />
+      <h1 className="project-team-page-title">{title}</h1>
+      <h2 className="project-team-page-subtitle">{subtitle}</h2>
+      <p className="project-team-page-description">{description}</p>
+    </Grid.Column>
+    {!left && (
+      <Grid.Column computer={3} only="computer">
+        <Image className="project-team-page-image" src={image} />
+      </Grid.Column>
+    )}
+  </Grid.Row>
+);
 
 export interface IProjectTeamProps extends StateProps, DispatchProps {}
 
@@ -40,7 +64,7 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               paddingBottom: '40px'
             }}
           >
-            <Menu.Item style={{ marginLeft: '35%' }}>
+            <Menu.Item style={{ marginLeft: '30vw' }}>
               <NavHashLink isActive={this.isActive('#manina')} smooth to="#manina" replace={false}>
                 <Image circular src="content/images/project-team/_MG_4451-1@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
@@ -51,8 +75,8 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
-              <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
-                <Image circular src="content/images/project-team/_MG_4570-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4476-1@2x.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
@@ -61,8 +85,18 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               </NavHashLink>
             </Menu.Item>
             <Menu.Item>
-              <NavHashLink isActive={this.isActive('#costis')} smooth to="#costis" replace={false}>
-                <Image circular src="content/images/project-team/_MG_4476-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              <NavHashLink isActive={this.isActive('#gpapas')} smooth to="#gpapas" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4570-1@2x.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavHashLink isActive={this.isActive('#stavmars')} smooth to="#stavmars" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4557.png" style={{ width: '99px', height: '99px' }} />
+              </NavHashLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavHashLink isActive={this.isActive('#astgian')} smooth to="#astgian" replace={false}>
+                <Image circular src="content/images/project-team/_MG_4532.png" style={{ width: '99px', height: '99px' }} />
               </NavHashLink>
             </Menu.Item>
           </Menu>
@@ -82,129 +116,109 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
         </Responsive>
         <Grid className="project-team-page" centered stackable>
           <Grid.Row>
-            <Grid.Column only="mobile">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" circular />
-            </Grid.Column>
-            <Grid.Column computer={3} only="computer">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4451.png" />
-            </Grid.Column>
-            <Grid.Column width={5}>
-              <a id="manina" className="anchor" />
-              <h1 id="manina" className="project-team-page-title">
-                Μανίνα Κακεπάκη
-              </h1>
-              <h2 className="project-team-page-subtitle">Επιστημονική συν-υπεύθυνη έργου</h2>
-              <p className="project-team-page-description">
-                Ερευνήτρια στο Εθνικό Κέντρο Κοινωνικών Ερευνών (ΕΚΚΕ). Σπούδασε πολιτική επιστήμη και πολιτική συμπεριφορά στην Αθήνα και
-                το Essex και έλαβε το διδακτορικό της δίπλωμα από το Πανεπιστήμιο Αθηνών. Έχει συμμετάσχει σε πολλά διεθνή και ελληνικά
-                ερευνητικά προγράμματα ενώ τα τρέχοντα ερευνητικά της ενδιαφέροντα εστιάζονται στις πολιτικές ελίτ και τις ανισότητες στην
-                πολιτική αντιπροσώπευση, καθώς και στην μελέτη της ταυτότητας των νέων. Από τις εκδόσεις Παπαζήση κυκλοφορεί σε επιμέλεια
-                της το βιβλίο «Η Πολιτική Αντιπροσώπευση στη Σύγχρονη Ελλάδα. Χαρακτηριστικά και Φυσιογνωμία των Μελών του Ελληνικού
-                Κοινοβουλίου 1996-2015».
-              </p>
-            </Grid.Column>
+            <h1 className="project-team-page-header">Οι Κοινωνικοί Επιστήμονες</h1>
           </Grid.Row>
-          <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column only="mobile">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" circular />
-            </Grid.Column>
+          {MemberBio(
+            'manina',
+            'Μανίνα Κακεπάκη',
+            'Επιστημονική συν-υπεύθυνη έργου (Πολιτική Επιστήμη)',
+            'Εντεταλμένη Ερευνήτρια στο Εθνικό Κέντρο Κοινωνικών Ερευνών, στο αντικείμενο «Πολιτική Κουλτούρα και εκλογική συμπεριφορά». Έχει συμμετάσχει σε πάνω από' +
+              ' 30 διεθνή και ελληνικά ερευνητικά προγράμματα ενώ τα τρέχοντα ερευνητικά της ενδιαφέροντα εστιάζονται στις πολιτικές ελίτ και τις ανισότητες στην πολιτική' +
+              ' αντιπροσώπευση, στις έμφυλες σχέσεις καθώς και στην μελέτη της ταυτότητας των νέων. Μέσω της πλατφόρμας socioscope έχει εξειδικευθεί στην οπτικοποίηση και ' +
+              'διάχυση των ερευνητικών αποτελεσμάτων ενώ διηύθυνε την πρώτη διαδικτυακή έρευνα που υλοποιήθηκε από το ΕΚΚΕ το 2017 με αντικείμενο την ' +
+              'συγκριτική μελέτη αξιών σε Ελλάδα και Ουγγαρία.',
+            'content/images/project-team/_MG_4451.png',
+            true
+          )}
+          {MemberBio(
+            'iliou',
+            'Κατερίνα Ηλιού',
+            'Επιστημονική συν-υπεύθυνη έργου (Κοινωνική Ψυχολογία)',
+            'Εντεταλμένη Ερευνήτρια στο Εθνικό Κέντρο Κοινωνικών Ερευνών, στο αντικείμενο «Κοινωνική ψυχολογία: Κοινωνικός αποκλεισμός και διακρίσεις». Τα ' +
+              'επιστημονικά της ενδιαφέροντα περιλαμβάνουν θέματα όπως προκατάληψη, ρατσισμός, πατριωτισμός, κοινωνική ταυτότητα, ταυτότητα νέων και κλίμακες μέτρησης στάσεων. ' +
+              'Έχει συμμετάσχει στην εκπόνηση μελετών πεδίου σε πλαίσιο εθνικών και διεθνών προγραμμάτων και έχει πραγματοποιήσει δημοσιεύσεις και εισηγήσεις σε διεθνή συνέδρια.' +
+              ' Είναι επιστημονική συν-υπεύθυνη του έργου.',
+            'content/images/project-team/_MG_4402-1@2x.png',
+            false
+          )}
+          {MemberBio(
+            'costis',
+            'Κωνσταντίνος Πιερίδης',
+            'Επιστημονικός συνεργάτης (Πολιτική Επιστήμη)',
+            'Διδάκτωρ του τμήματος Πολιτικής Επιστήμης και Ιστορίας του Παντείου Πανεπιστημίου με αντικείμενο μελέτης τις κοινωνικές διαιρετικές τομές της ύστερης ' +
+              'Μεταπολίτευσης (2004-2014). Κάτοχος Msc στην Ευρωπαϊκή Πολιτική και Διακυβέρνηση από το London School of Economics. Έχει εργαστεί ως εξωτερικός συνεργάτης του' +
+              ' ΕΚΚΕ στα πλαίσια του έργου «Δυναμική Διαχείριση Βάσεων Κοινωνικών Δεδομένων και Χαρτογραφικών Αναπαραστάσεων - Καλειδοσκόπιο Κοινωνικών Δεδομένων», ως ' +
+              'ερευνητής και πολιτικός αναλυτής στον ιδιωτικό τομέα και ως δημοσιογράφος σε εφημερίδες, περιοδικά και ιστοσελίδες.' +
+              ' Τα επιστημονικά και ερευνητικά του ενδιαφέροντα αφορούν τη θεωρία των διαιρετικών τομών, την εκλογική συμπεριφορά, τα πολιτικά κόμματα και τα κοινωνικά κινήματα.',
+            'content/images/project-team/_MG_4476.png',
+            true
+          )}
+          {MemberBio(
+            'irene',
+            'Ειρήνη Κυριαζοπούλου',
+            'Επικοινωνιακός σχεδιασμός έργου (Marketing και επικοινωνία)',
+            'Επικοινωνιολόγος και Marketer, πτυχιούχος του τμήματος ΕΜΜΕ του Πανεπιστημίου Αθηνών καθώς και κάτοχος MSc in Marketing and Communication από το ' +
+              'Οικονομικό Πανεπιστήμιο Αθηνών με εξειδίκευση στο Marketing. Παράλληλα κατέχει το Professional Diploma in Digital & Social Media από το Αμερικάνικο Κολλέγιο ' +
+              'Αθηνών. Στην επαγγελματική της εμπειρία συγκαταλέγονται η Εταιρική Επικοινωνία, η δημιουργία και διατήρηση μακροχρόνιων σχέσεων με πελάτες (B2B) και η δημιουργία ' +
+              'στρατηγικών εισόδου νέων επιχειρήσεων στην αγορά. Τα επιστημονικά της ενδιαφέροντα αφορούν στο Marketing Υπηρεσιών, τη Συμπεριφορά Καταναλωτή online και offline ' +
+              'καθώς και την επίδραση του Servicescape στην ικανοποίηση του καταναλωτή.  Ως μέλος της Ομάδας έργου του YouWho ανέλαβε τον επικοινωνιακό σχεδιασμό και την ' +
+              'διαμόρφωση της στρατηγικής καμπάνιας στα social media της έρευνας YouWho.',
+            'content/images/project-team/_MG_4435.png',
+            false
+          )}
+          <Grid.Row>
             <Grid.Column computer={5}>
-              <a id="iliou" className="anchor" />
-              <h1 className="project-team-page-title">Κατερίνα Ηλιού</h1>
-              <h2 className="project-team-page-subtitle">Επιστημονική συν-υπεύθυνη έργου</h2>
+              <h1 className="project-team-page-header">Πρακτική άσκηση</h1>
               <p className="project-team-page-description">
-                Κάτοχος διδακτορικού διπλώματος στην Κοινωνική Ψυχολογία (Πάντειο Πανεπιστήμιο, τμήμα Ψυχολογίας) με αντικείμενο τις «Νέες
-                μορφές προκατάληψης» και δύο μεταπτυχιακών διπλωμάτων, ένα με ειδικότητα στον «Κοινωνικό αποκλεισμό και μειονότητες» και ένα
-                με ειδικότητα στην «Εκπαίδευση Ενηλίκων». Εργάζεται ως ερευνήτρια στο Εθνικό Κέντρο Κοινωνικών Ερευνών, Ινστιτούτο Πολιτικής
-                Κοινωνιολογίας. Έχει συμμετάσχει στην εκπόνηση μελετών πεδίου σε πλαίσιο εθνικών και διεθνών προγραμμάτων και έχει
-                πραγματοποιήσει δημοσιεύσεις και εισηγήσεις σε διεθνή συνέδρια. Τα επιστημονικά της ενδιαφέροντα περιλαμβάνουν θέματα, όπως
-                προκατάληψη, ρατσισμός, πατριωτισμός, κοινωνική ταυτότητα, ταυτότητα νέων και κλίμακες μέτρησης στάσεων.
+                <span style={{ color: '#ff6666' }}>Διενέργεια έρευνας πεδίου</span>: Νίκος Κληρονόμος, Κατερίνα Πάσχου, Νίκος Σαριδάκης,
+                Ιάκωβος Σαχίνης, Ανδρεάς Σιαφάκας.
               </p>
-            </Grid.Column>
-            <Grid.Column computer={3} only="computer">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4402-1@2x.png" />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column only="mobile">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" circular />
-            </Grid.Column>
-            <Grid.Column computer={3} only="computer">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4570.png" />
-            </Grid.Column>
-            <Grid.Column computer={5}>
-              <a id="gpapas" className="anchor" />
-              <h1 className="project-team-page-title">Γιώργος Παπαστεφανάτος</h1>
-              <h2 className="project-team-page-subtitle">Τεχνικός υπεύθυνος έργου</h2>
               <p className="project-team-page-description">
-                Ο Δρ. Γεώργιος Παπαστεφανάτος είναι διπλωματούχος μηχανικός της Σχολής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του
-                Εθνικού Μετσόβιου Πολυτεχνείου (ΕΜΠ), από το οποίο αποφοίτησε το 2000. Το 2009 αναγορεύτηκε Διδάκτωρ Μηχανικός στη Σχολή
-                Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του ΕΜΠ, στην ερευνητική περιοχή των Βάσεων Δεδομένων και Πληροφοριακών
-                Συστημάτων. Από το 2009 είναι ερευνητικός συνεργάτης στο Ινστιτούτο Πληροφοριακών Συστημάτων του Ε.Κ. “Αθηνά”. Έχει εργαστεί
-                ως μηχανικός λογισμικού και ερευνητής σε ερευνητικά προγράμματα του ΕΜΠ και του ΕΠΙΣΕΥ. Επίσης, ως τεχνικός σύμβουλος,
-                συνεργάστηκε και ανέλαβε την ανάπτυξη πληροφοριακών συστημάτων σε διάφορες εταιρίες και οργανισμούς όπως η ΕΤΒΑ – ΒΙ.ΠΕ., η
-                Citibank, η ΕΥΔ-ΕΠΕΑΕΚ, κ.α. Τέλος, από το 2006 έως το 2015 συνεργάστηκε ως εμπειρογνώμονας με την Ελληνική Στατιστική Αρχή
-                – Διεύθυνση Πρωτογενούς Τομέα και Διεύθυνση Πληροφορικής, στο σχεδιασμό και υλοποίηση του πληροφοριακού συστήματος για τη
-                διεξαγωγή στατιστικών ερευνών και απογραφών. Τέλος, υπήρξε επιστημονικός υπεύθυνος εκ μέρους του ΕΚ. ΑΘΗΝΑ στο έργο «Sodamap
-                - Δυναμική διαχείριση βάσεων Κοινωνικών δεδομένων και Χαρτογραφικών αναπαραστάσεων», πρόσκληση “ΚΡΗΠΙΣ” της ΓΓΕΤ όπου σε
-                συνεργασία με το Εθνικό Κέντρο Κοινωνικών Ερευνών υλοποίησαν την πλατφόρμα Καλειδοσκόπιο Κοινωνικών Δεδομένων
-                (www.socioscope.gr), μια ψηφιακή υποδομή η οποία δίνει τη δυνατότητα οπτικοποίησης και ανάλυσης κοινωνικών και πολιτικών
-                δεδομένων.
+                <span style={{ color: '#ff6666' }}>Επεξεργασία δεδομένων</span>: Νικολέτα Γεωργίου, Μαρία Δουρίδα, Συμεών Ιωάννου, Δημήτρης
+                Κάστανος, Παναγιώτης Σωπάκης - Βαλαλάκης.
+              </p>
+              <p className="project-team-page-description">
+                <span style={{ color: '#ff6666' }}>Διαχείριση social media</span>: Μάρω Γιαννίκη
               </p>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column only="mobile">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" circular />
-            </Grid.Column>
-            <Grid.Column computer={5}>
-              <a id="irene" className="anchor" />
-              <h1 id="irene" className="project-team-page-title">
-                Ειρήνη Κυριαζοπούλου
-              </h1>
-              <h2 className="project-team-page-subtitle">Υπεύθυνη επικοινωνίας</h2>
-              <p className="project-team-page-description">
-                Είναι ερευνήτρια (Ειδικός Λειτουργικός Επιστήμονας Α’ βαθμίδας) στο Εθνικό Κέντρο Κοινωνικών Ερευνών από το 1994. Σπούδασε
-                Νομικά στο Πανεπιστήμιο Αθηνών και Δημοσιογραφία στο Εργαστήριο Επαγγελματικής Δημοσιογραφίας. Στη συνέχεια με υποτροφία
-                συνέχισε σε μεταπτυχιακές σπουδές στο City University στο Λονδίνο, και απέκτησε τον τίτλο σπουδών ‘Master of Arts in
-                Communications Policy Studies’ . Η ερευνητική της δραστηριότητα (ερευνητικά προγράμματα, δημοσιεύσεις, συμμετοχές σε
-                συνέδρια) και το επιστημονικό της ενδιαφέρον εστιάζονται στη πολιτική- κοινωνική - ατομική διάσταση του Επικοινωνιακού
-                Συστήματος (Έντυπα & Ηλεκτρονικά ΜΜΕ, Τηλεπικοινωνίες- Διαδίκτυο) και σε τομείς όπως: Δομές Επικοινωνιών, Ψηφιακή Σύγκλιση,
-                Εφαρμοσμένες Πολιτικές, Συσχετισμοί και σε Εθνικό, Ευρωπαϊκό & Διεθνές πλαίσιο, Στρατηγικές ανάπτυξης και αλληλεπιδράσεις,
-                Μηχανισμοί ελέγχου και Κέντρα Λήψης Αποφάσεων, Πολιτική της Διαφήμισης, Κώδικες επικοινωνίας (Λόγου και εικόνας),
-                Σημειωτική, κοινωνικά και ατομικά θέματα της ‘Κοινωνίας των Πληροφοριών’. Επιπλέον, έχει ασχοληθεί με θέματα κοινωνικών
-                ανισοτήτων, μετανάστευσης, φύλου και κοινωνικής συνοχής. Ειδικότερα, οι ερευνητικές της προσεγγίσεις μεθοδολογικά αφορούν
-                στις ποιοτικές μεθόδους έρευνας (σημειωτική, ανάλυση περιεχομένου, ανάλυση λόγου, βιογραφικές συνεντεύξεις, ομάδες
-                εστίασης).
-              </p>
-            </Grid.Column>
-            <Grid.Column computer={3} only="computer">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4435.png" />
-            </Grid.Column>
+          <Grid.Row>
+            <h1 className="project-team-page-header">Οι Μηχανικοί Υπολογιστών</h1>
           </Grid.Row>
-          <Grid.Row style={{ marginTop: '30px' }}>
-            <Grid.Column only="mobile">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" circular />
-            </Grid.Column>
-            <Grid.Column computer={3} only="computer">
-              <Image className="project-team-page-image" src="content/images/project-team/_MG_4476.png" />
-            </Grid.Column>
-            <Grid.Column computer={5}>
-              <a id="costis" className="anchor" />
-              <h1 className="project-team-page-title">Κωνσταντίνος Πιερίδης</h1>
-              <h2 className="project-team-page-subtitle">Επιστημονικός σύμβουλος</h2>
-              <p className="project-team-page-description">
-                Είναι διδάκτωρ του τμήματος Πολιτικής Επιστήμης και Ιστορίας του Παντείου Πανεπιστημίου. Η έρευνά του εστιάζεται στην μελέτη
-                των κοινωνικών διαιρετικών τομών της ύστερης Μεταπολίτευσης (2004-2014). Είναι επίσης κάτοχος μεταπτυχιακού τίτλου σπουδών
-                (Msc) στην Ευρωπαϊκή Πολιτική και Διακυβέρνηση από το London School of Economics. Στο παρελθόν έχει εργαστεί ως εξωτερικός
-                συνεργάτης / ερευνητής του ΕΚΚΕ στα πλαίσια του έργου «Δυναμική Διαχείριση Βάσεων Κοινωνικών Δεδομένων και Χαρτογραφικών
-                Αναπαραστάσεων - Καλειδοσκόπιο Κοινωνικών Δεδομένων», ως ερευνητής και πολιτικός αναλυτής για την εταιρεία Κοινωνικών και
-                Πολιτικών Ερευνών Public Issue, ως ερευνητής / αναλυτής στην εταιρεία ερευνών αγοράς Alternative Research Solutions και ως
-                συντάκτης σε εφημερίδες, περιοδικά και ιστοσελίδες. Τα επιστημονικά και ερευνητικά του ενδιαφέροντα αφορούν τη θεωρία των
-                διαιρετικών τομών, την εκλογική συμπεριφορά, τα πολιτικά κόμματα και τα κοινωνικά κινήματα.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
+          {MemberBio(
+            'gpapas',
+            'Γιώργος Παπαστεφανάτος',
+            'Υπεύθυνος σχεδιασμού πλατφόρμας',
+            'Διπλωματούχος μηχανικός της Σχολής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του Εθνικού Μετσόβιου Πολυτεχνείου (ΕΜΠ). Το 2009 αναγορεύτηκε ' +
+              'Διδάκτωρ Μηχανικός στη Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του ΕΜΠ, στην ερευνητική περιοχή των Βάσεων Δεδομένων και Πληροφοριακών Συστημάτων. ' +
+              'Από το 2009 είναι ερευνητικός συνεργάτης στο Ινστιτούτο Πληροφοριακών Συστημάτων του Ε.Κ. "Αθηνά". Έχει εργαστεί ως μηχανικός λογισμικού και ερευνητής σε ' +
+              'ερευνητικά προγράμματα του ΕΜΠ και του ΕΠΙΣΕΥ. Υπήρξε επιστημονικός υπεύθυνος εκ μέρους του Ε.Κ. ΑΘΗΝΑ στο έργο «Sodamap - Δυναμική διαχείριση βάσεων Κοινωνικών' +
+              ' δεδομένων και Χαρτογραφικών αναπαραστάσεων», πρόσκληση “ΚΡΗΠΙΣ” της ΓΓΕΤ όπου σε συνεργασία με το Εθνικό Κέντρο Κοινωνικών Ερευνών υλοποίησαν την πλατφόρμα' +
+              ' Καλειδοσκόπιο Κοινωνικών Δεδομένων (www.socioscope.gr).',
+            'content/images/project-team/_MG_4570.png',
+            true
+          )}
+          {MemberBio(
+            'stavmars',
+            'Σταύτος Μαρούλης',
+            'Υπεύθυνος τεχνικής ανάπτυξης',
+            'Διπλωματούχος μηχανικός και υποψήφιος διδάκτορας της Σχολής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του Εθνικού Μετσόβιου Πολυτεχνείου (ΕΜΠ).' +
+              ' Από το 2014 είναι ερευνητικός συνεργάτης στο Ινστιτούτο Πληροφοριακών Συστημάτων του Ε.Κ. “Αθηνά” και έχει εργασθεί ως μηχανικός λογισμικού σε πολλά ευρωπαϊκά ' +
+              'και ελληνικά ερευνητικά προγράμματα. Συμμετείχε στην ανάπτυξη της πλατφόρμας www.socioscope.gr για την οπτικοποίηση και ανάλυση κοινωνικών και πολιτικών ' +
+              'δεδομένων, καθώς και της ψηφιακής πλατφόρμας YouWho για τη συλλογή και διάθεση δεδομένων αποτύπωσης της ταυτότητας των νέων.',
+            'content/images/project-team/_MG_4557@2x.png',
+            false
+          )}
+          {MemberBio(
+            'astgian',
+            'Αστέρης Γιαννούδης',
+            'Πρακτική άσκηση',
+            'Απόφοιτος του τμήματος Πληροφορικής και Τηλεπικοινωνιών του Πανεπιστημίου Αθηνών. Έκανε την πρακτική του στο Ερευνητικό Κέντρο Αθηνά με αντικείμενο τη' +
+              ' μελέτη, το σχεδιασμό και την ανάπτυξη  μεθόδων επεξεργασίας και ανάλυσης μεγάλων δεδομένων στο Web. Στον ελεύθερο του χρόνο, πέραν του ενδιαφέροντος του στην ' +
+              'πληροφορική, ασχολείται με την γυμναστική και τον αθλητισμό, καθώς είναι μέλος της ομάδας καλαθοσφαίρισης με αμαξίδιο της Α.Ε.Κ..',
+            'content/images/project-team/_MG_4532@2x.png',
+            true
+          )}
         </Grid>
       </div>
     );

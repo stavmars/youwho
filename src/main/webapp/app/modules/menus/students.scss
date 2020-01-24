@@ -5,7 +5,7 @@
   .students-page-top {
     background-image: url('/content/images/school-students-masked.png');
     @include mobile {
-      padding: 25% 0 50% 0;
+      padding: 25% 0;
     }
     @include computer {
       padding-top: 180px;
@@ -55,7 +55,26 @@
     text-transform: capitalize;
     opacity: 1;
   }
+  .students-page-subtitle {
+    font: 30px/35px TTNormsProBoldItalic;
+    letter-spacing: 0;
+    color: #777eff;
+    opacity: 1;
+  }
   .students-page-subtext {
+    text-align: left;
+    color: #333333;
+    opacity: 1;
+    @include mobile {
+      font: 20px/28px TTNormsProBold;
+      letter-spacing: 0.4px;
+    }
+    @include computer {
+      font: 20px/32px TTNormsProBold;
+      letter-spacing: 0;
+    }
+  }
+  .students-page-text {
     text-align: left;
     color: #333333;
     opacity: 1;
