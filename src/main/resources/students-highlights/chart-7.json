@@ -1,0 +1,1283 @@
+{
+  "chart": {
+    "backgroundColor": "transparent",
+    "type": "bar",
+    "zoomType": "x",
+    "className": "chart color-scheme-3",
+    "style": {
+      "fontFamily": "TTNormsProRegular"
+    },
+    "events": {}
+  },
+  "title": {
+    "useHTML": true,
+    "text": "<div style=\"text-align: center;font-weight: bold\">Συμβουλεύονται για πολιτικά θέματα</div><div class=\"x-axis-subtitle\">Ερ. Αν ήθελες να συμβουλευτείς κάποιον/α για ένα πολιτικό θέμα, ποιον ή ποια θα προτιμούσες  να ρωτήσεις</div>"
+  },
+  "xAxis": {
+    "type": "category",
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "offset": 2
+  },
+  "yAxis": {
+    "title": {
+      "text": "%",
+      "style": {
+        "fontSize": "20px"
+      }
+    },
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "max": null,
+    "reversedStacks": false
+  },
+  "plotOptions": {
+    "series": {
+      "maxPointWidth": 80,
+      "dataLabels": {
+        "enabled": true,
+        "format": "{y:.1f}%",
+        "style": {
+          "fontFamily": "TTNormsProBold",
+          "fontSize": "14px"
+        }
+      },
+      "events": {}
+    }
+  },
+  "series": [
+    {
+      "name": "",
+      "code": false,
+      "color": "#ff6666",
+      "order": false,
+      "data": [
+        {
+          "name": "Τον πατέρα",
+          "codeOrder": 2,
+          "y": 46.84343434343434,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Τη μητέρα",
+          "codeOrder": 3,
+          "y": 19.19191919191919,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Άλλο",
+          "codeOrder": 6,
+          "y": 11.237373737373737,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "ΔΑ",
+          "codeOrder": 99,
+          "y": 7.828282828282829,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Έναν καθηγητή/Μια καθηγήτριά",
+          "codeOrder": 5,
+          "y": 5.1767676767676765,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Ένα φίλο/μια φίλη",
+          "codeOrder": 1,
+          "y": 4.166666666666666,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Τον αδελφό/Την αδελφή",
+          "codeOrder": 4,
+          "y": 3.9141414141414144,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Και τους δυο γονείς (αυθόρμητο)",
+          "codeOrder": 7,
+          "y": 1.6414141414141417,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "7",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "5",
+                  "y": 5.1767676767676765
+                },
+                {
+                  "x": "4",
+                  "y": 3.9141414141414144
+                },
+                {
+                  "x": "2",
+                  "y": 46.84343434343434
+                },
+                {
+                  "x": "99",
+                  "y": 7.828282828282829
+                },
+                {
+                  "x": "1",
+                  "y": 4.166666666666666
+                },
+                {
+                  "x": "3",
+                  "y": 19.19191919191919
+                },
+                {
+                  "x": "6",
+                  "y": 11.237373737373737
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac903",
+              "dimensionId": "q23a",
+              "notation": "1",
+              "name": {
+                "el": "Ένα φίλο/μια φίλη",
+                "en": "A friend"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac904",
+              "dimensionId": "q23a",
+              "notation": "2",
+              "name": {
+                "el": "Τον πατέρα",
+                "en": "My father"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac905",
+              "dimensionId": "q23a",
+              "notation": "3",
+              "name": {
+                "el": "Τη μητέρα",
+                "en": "My mother"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac906",
+              "dimensionId": "q23a",
+              "notation": "4",
+              "name": {
+                "el": "Τον αδελφό/Την αδελφή",
+                "en": "My brother/sister"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac907",
+              "dimensionId": "q23a",
+              "notation": "5",
+              "name": {
+                "el": "Έναν καθηγητή/Μια καθηγήτριά",
+                "en": "A professor"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "6": {
+              "id": "5e2ac781a46c780d095ac908",
+              "dimensionId": "q23a",
+              "notation": "6",
+              "name": {
+                "el": "Άλλο",
+                "en": "Other"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 6,
+              "level": 0
+            },
+            "7": {
+              "id": "5e2ac781a46c780d095ac909",
+              "dimensionId": "q23a",
+              "notation": "7",
+              "name": {
+                "el": "Και τους δυο γονείς (αυθόρμητο)",
+                "en": "Both parents (spontaneous)"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 7,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac90a",
+              "dimensionId": "q23a",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "credits": {
+    "enabled": false
+  },
+  "tooltip": {
+    "pointFormat": "{point.y:.1f}%",
+    "shared": false
+  },
+  "legend": {
+    "enabled": false,
+    "useHTML": true,
+    "itemStyle": {
+      "fontSize": "14px"
+    }
+  },
+  "drilldown": {
+    "allowPointDrilldown": false
+  }
+}

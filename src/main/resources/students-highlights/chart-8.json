@@ -1,0 +1,463 @@
+{
+  "chart": {
+    "backgroundColor": "transparent",
+    "type": "bar",
+    "zoomType": "x",
+    "className": "chart color-scheme-3",
+    "style": {
+      "fontFamily": "TTNormsProRegular"
+    },
+    "events": {}
+  },
+  "title": {
+    "useHTML": true,
+    "text": "<div style=\"text-align: center;font-weight: bold\">Άποψη για την ελληνική κοινωνία</div><div class=\"x-axis-subtitle\">Ερ. Ποια είναι η γενική άποψή σου για την ελληνική κοινωνία</div>"
+  },
+  "xAxis": {
+    "type": "category",
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "offset": 2
+  },
+  "yAxis": {
+    "title": {
+      "text": "%",
+      "style": {
+        "fontSize": "20px"
+      }
+    },
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "max": null,
+    "reversedStacks": false
+  },
+  "plotOptions": {
+    "series": {
+      "maxPointWidth": 80,
+      "dataLabels": {
+        "enabled": true,
+        "format": "{y:.1f}%",
+        "style": {
+          "fontFamily": "TTNormsProBold",
+          "fontSize": "14px"
+        }
+      },
+      "events": {}
+    }
+  },
+  "series": [
+    {
+      "name": "",
+      "code": false,
+      "color": "#ff6666",
+      "order": false,
+      "data": [
+        {
+          "name": "Είναι εντάξει έτσι όπως είναι",
+          "codeOrder": 1,
+          "y": 15.404040404040403,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "2",
+                  "y": 16.666666666666664
+                },
+                {
+                  "x": "99",
+                  "y": 3.2828282828282833
+                },
+                {
+                  "x": "3",
+                  "y": 64.64646464646465
+                },
+                {
+                  "x": "1",
+                  "y": 15.404040404040403
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac923",
+              "dimensionId": "q37",
+              "notation": "1",
+              "name": {
+                "el": "Είναι εντάξει έτσι όπως είναι",
+                "en": "It's OK as it is"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac924",
+              "dimensionId": "q37",
+              "notation": "2",
+              "name": {
+                "el": "Πρέπει να αλλάξει ριζικά με επαναστατικά μέτρα",
+                "en": "It must change radically with revolutionary measures"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac925",
+              "dimensionId": "q37",
+              "notation": "3",
+              "name": {
+                "el": "Πρέπει να αλλάξει σιγά σιγά με μεταρρυθμίσεις",
+                "en": "It needs to change slowly with reforms"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "88": {
+              "id": "5e2ac781a46c780d095ac926",
+              "dimensionId": "q37",
+              "notation": "88",
+              "name": {
+                "el": "Μη κατανοητό",
+                "en": "Incomprehensible"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 88,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac927",
+              "dimensionId": "q37",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Πρέπει να αλλάξει ριζικά με επαναστατικά μέτρα",
+          "codeOrder": 2,
+          "y": 16.666666666666664,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "2",
+                  "y": 16.666666666666664
+                },
+                {
+                  "x": "99",
+                  "y": 3.2828282828282833
+                },
+                {
+                  "x": "3",
+                  "y": 64.64646464646465
+                },
+                {
+                  "x": "1",
+                  "y": 15.404040404040403
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac923",
+              "dimensionId": "q37",
+              "notation": "1",
+              "name": {
+                "el": "Είναι εντάξει έτσι όπως είναι",
+                "en": "It's OK as it is"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac924",
+              "dimensionId": "q37",
+              "notation": "2",
+              "name": {
+                "el": "Πρέπει να αλλάξει ριζικά με επαναστατικά μέτρα",
+                "en": "It must change radically with revolutionary measures"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac925",
+              "dimensionId": "q37",
+              "notation": "3",
+              "name": {
+                "el": "Πρέπει να αλλάξει σιγά σιγά με μεταρρυθμίσεις",
+                "en": "It needs to change slowly with reforms"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "88": {
+              "id": "5e2ac781a46c780d095ac926",
+              "dimensionId": "q37",
+              "notation": "88",
+              "name": {
+                "el": "Μη κατανοητό",
+                "en": "Incomprehensible"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 88,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac927",
+              "dimensionId": "q37",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Πρέπει να αλλάξει σιγά σιγά με μεταρρυθμίσεις",
+          "codeOrder": 3,
+          "y": 64.64646464646465,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "2",
+                  "y": 16.666666666666664
+                },
+                {
+                  "x": "99",
+                  "y": 3.2828282828282833
+                },
+                {
+                  "x": "3",
+                  "y": 64.64646464646465
+                },
+                {
+                  "x": "1",
+                  "y": 15.404040404040403
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac923",
+              "dimensionId": "q37",
+              "notation": "1",
+              "name": {
+                "el": "Είναι εντάξει έτσι όπως είναι",
+                "en": "It's OK as it is"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac924",
+              "dimensionId": "q37",
+              "notation": "2",
+              "name": {
+                "el": "Πρέπει να αλλάξει ριζικά με επαναστατικά μέτρα",
+                "en": "It must change radically with revolutionary measures"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac925",
+              "dimensionId": "q37",
+              "notation": "3",
+              "name": {
+                "el": "Πρέπει να αλλάξει σιγά σιγά με μεταρρυθμίσεις",
+                "en": "It needs to change slowly with reforms"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "88": {
+              "id": "5e2ac781a46c780d095ac926",
+              "dimensionId": "q37",
+              "notation": "88",
+              "name": {
+                "el": "Μη κατανοητό",
+                "en": "Incomprehensible"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 88,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac927",
+              "dimensionId": "q37",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "ΔΑ",
+          "codeOrder": 99,
+          "y": 3.2828282828282833,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "2",
+                  "y": 16.666666666666664
+                },
+                {
+                  "x": "99",
+                  "y": 3.2828282828282833
+                },
+                {
+                  "x": "3",
+                  "y": 64.64646464646465
+                },
+                {
+                  "x": "1",
+                  "y": 15.404040404040403
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac923",
+              "dimensionId": "q37",
+              "notation": "1",
+              "name": {
+                "el": "Είναι εντάξει έτσι όπως είναι",
+                "en": "It's OK as it is"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac924",
+              "dimensionId": "q37",
+              "notation": "2",
+              "name": {
+                "el": "Πρέπει να αλλάξει ριζικά με επαναστατικά μέτρα",
+                "en": "It must change radically with revolutionary measures"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac925",
+              "dimensionId": "q37",
+              "notation": "3",
+              "name": {
+                "el": "Πρέπει να αλλάξει σιγά σιγά με μεταρρυθμίσεις",
+                "en": "It needs to change slowly with reforms"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "88": {
+              "id": "5e2ac781a46c780d095ac926",
+              "dimensionId": "q37",
+              "notation": "88",
+              "name": {
+                "el": "Μη κατανοητό",
+                "en": "Incomprehensible"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 88,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac927",
+              "dimensionId": "q37",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "credits": {
+    "enabled": false
+  },
+  "tooltip": {
+    "pointFormat": "{point.y:.1f}%",
+    "shared": false
+  },
+  "legend": {
+    "enabled": false,
+    "useHTML": true,
+    "itemStyle": {
+      "fontSize": "14px"
+    }
+  },
+  "drilldown": {
+    "allowPointDrilldown": false
+  }
+}

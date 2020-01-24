@@ -1,0 +1,578 @@
+{
+  "chart": {
+    "backgroundColor": "transparent",
+    "type": "bar",
+    "zoomType": "x",
+    "className": "chart color-scheme-3",
+    "style": {
+      "fontFamily": "TTNormsProRegular"
+    },
+    "events": {}
+  },
+  "title": {
+    "useHTML": true,
+    "text": "<div style=\"text-align: center;font-weight: bold\">Ενδιαφέρον για την πολιτική</div><div class=\"x-axis-subtitle\">Ερ. Θα μπορούσες να πεις ότι η πολιτική σε ενδιαφέρει</div>"
+  },
+  "xAxis": {
+    "type": "category",
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "offset": 2
+  },
+  "yAxis": {
+    "title": {
+      "text": "%",
+      "style": {
+        "fontSize": "20px"
+      }
+    },
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "max": null,
+    "reversedStacks": false
+  },
+  "plotOptions": {
+    "series": {
+      "maxPointWidth": 80,
+      "dataLabels": {
+        "enabled": true,
+        "format": "{y:.1f}%",
+        "style": {
+          "fontFamily": "TTNormsProBold",
+          "fontSize": "14px"
+        }
+      },
+      "events": {}
+    }
+  },
+  "series": [
+    {
+      "name": "",
+      "code": false,
+      "color": "#ff6666",
+      "order": false,
+      "data": [
+        {
+          "name": "Καθόλου",
+          "codeOrder": 1,
+          "y": 25.37878787878788,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 0.6313131313131313
+                },
+                {
+                  "x": "1",
+                  "y": 25.37878787878788
+                },
+                {
+                  "x": "3",
+                  "y": 24.242424242424242
+                },
+                {
+                  "x": "2",
+                  "y": 43.43434343434344
+                },
+                {
+                  "x": "4",
+                  "y": 6.313131313131313
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8f2",
+              "dimensionId": "q15New",
+              "notation": "1",
+              "name": {
+                "el": "Καθόλου",
+                "en": "Not at all "
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8f3",
+              "dimensionId": "q15New",
+              "notation": "2",
+              "name": {
+                "el": "Λίγο",
+                "en": "A little"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac8f4",
+              "dimensionId": "q15New",
+              "notation": "3",
+              "name": {
+                "el": "Αρκετά",
+                "en": "Somewhat"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac8f5",
+              "dimensionId": "q15New",
+              "notation": "4",
+              "name": {
+                "el": "Πολύ",
+                "en": "A Lot"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8f6",
+              "dimensionId": "q15New",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Λίγο",
+          "codeOrder": 2,
+          "y": 43.43434343434344,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 0.6313131313131313
+                },
+                {
+                  "x": "1",
+                  "y": 25.37878787878788
+                },
+                {
+                  "x": "3",
+                  "y": 24.242424242424242
+                },
+                {
+                  "x": "2",
+                  "y": 43.43434343434344
+                },
+                {
+                  "x": "4",
+                  "y": 6.313131313131313
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8f2",
+              "dimensionId": "q15New",
+              "notation": "1",
+              "name": {
+                "el": "Καθόλου",
+                "en": "Not at all "
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8f3",
+              "dimensionId": "q15New",
+              "notation": "2",
+              "name": {
+                "el": "Λίγο",
+                "en": "A little"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac8f4",
+              "dimensionId": "q15New",
+              "notation": "3",
+              "name": {
+                "el": "Αρκετά",
+                "en": "Somewhat"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac8f5",
+              "dimensionId": "q15New",
+              "notation": "4",
+              "name": {
+                "el": "Πολύ",
+                "en": "A Lot"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8f6",
+              "dimensionId": "q15New",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Αρκετά",
+          "codeOrder": 3,
+          "y": 24.242424242424242,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 0.6313131313131313
+                },
+                {
+                  "x": "1",
+                  "y": 25.37878787878788
+                },
+                {
+                  "x": "3",
+                  "y": 24.242424242424242
+                },
+                {
+                  "x": "2",
+                  "y": 43.43434343434344
+                },
+                {
+                  "x": "4",
+                  "y": 6.313131313131313
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8f2",
+              "dimensionId": "q15New",
+              "notation": "1",
+              "name": {
+                "el": "Καθόλου",
+                "en": "Not at all "
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8f3",
+              "dimensionId": "q15New",
+              "notation": "2",
+              "name": {
+                "el": "Λίγο",
+                "en": "A little"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac8f4",
+              "dimensionId": "q15New",
+              "notation": "3",
+              "name": {
+                "el": "Αρκετά",
+                "en": "Somewhat"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac8f5",
+              "dimensionId": "q15New",
+              "notation": "4",
+              "name": {
+                "el": "Πολύ",
+                "en": "A Lot"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8f6",
+              "dimensionId": "q15New",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Πολύ",
+          "codeOrder": 4,
+          "y": 6.313131313131313,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 0.6313131313131313
+                },
+                {
+                  "x": "1",
+                  "y": 25.37878787878788
+                },
+                {
+                  "x": "3",
+                  "y": 24.242424242424242
+                },
+                {
+                  "x": "2",
+                  "y": 43.43434343434344
+                },
+                {
+                  "x": "4",
+                  "y": 6.313131313131313
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8f2",
+              "dimensionId": "q15New",
+              "notation": "1",
+              "name": {
+                "el": "Καθόλου",
+                "en": "Not at all "
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8f3",
+              "dimensionId": "q15New",
+              "notation": "2",
+              "name": {
+                "el": "Λίγο",
+                "en": "A little"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac8f4",
+              "dimensionId": "q15New",
+              "notation": "3",
+              "name": {
+                "el": "Αρκετά",
+                "en": "Somewhat"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac8f5",
+              "dimensionId": "q15New",
+              "notation": "4",
+              "name": {
+                "el": "Πολύ",
+                "en": "A Lot"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8f6",
+              "dimensionId": "q15New",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "ΔΑ",
+          "codeOrder": 99,
+          "y": 0.6313131313131313,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 0.6313131313131313
+                },
+                {
+                  "x": "1",
+                  "y": 25.37878787878788
+                },
+                {
+                  "x": "3",
+                  "y": 24.242424242424242
+                },
+                {
+                  "x": "2",
+                  "y": 43.43434343434344
+                },
+                {
+                  "x": "4",
+                  "y": 6.313131313131313
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8f2",
+              "dimensionId": "q15New",
+              "notation": "1",
+              "name": {
+                "el": "Καθόλου",
+                "en": "Not at all "
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8f3",
+              "dimensionId": "q15New",
+              "notation": "2",
+              "name": {
+                "el": "Λίγο",
+                "en": "A little"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac8f4",
+              "dimensionId": "q15New",
+              "notation": "3",
+              "name": {
+                "el": "Αρκετά",
+                "en": "Somewhat"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac8f5",
+              "dimensionId": "q15New",
+              "notation": "4",
+              "name": {
+                "el": "Πολύ",
+                "en": "A Lot"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8f6",
+              "dimensionId": "q15New",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "credits": {
+    "enabled": false
+  },
+  "tooltip": {
+    "pointFormat": "{point.y:.1f}%",
+    "shared": false
+  },
+  "legend": {
+    "enabled": false,
+    "useHTML": true,
+    "itemStyle": {
+      "fontSize": "14px"
+    }
+  },
+  "drilldown": {
+    "allowPointDrilldown": false
+  }
+}

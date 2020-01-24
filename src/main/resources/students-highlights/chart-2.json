@@ -1,0 +1,278 @@
+{
+  "chart": {
+    "backgroundColor": "transparent",
+    "type": "bar",
+    "zoomType": "x",
+    "className": "chart color-scheme-3",
+    "style": {
+      "fontFamily": "TTNormsProRegular"
+    },
+    "events": {}
+  },
+  "title": {
+    "useHTML": true,
+    "text": "<div style=\"text-align: center;font-weight: bold\">Συμμόρφωση στο σχολείο</div><div class=\"x-axis-subtitle\">Ερ. Οι μαθητές/τριες πρέπει να ακολουθούν τις οδηγίες των καθηγητών ακόμα και όταν διαφωνούν με αυτές</div>"
+  },
+  "xAxis": {
+    "type": "category",
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "offset": 2
+  },
+  "yAxis": {
+    "title": {
+      "text": "%",
+      "style": {
+        "fontSize": "20px"
+      }
+    },
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "max": null,
+    "reversedStacks": false
+  },
+  "plotOptions": {
+    "series": {
+      "maxPointWidth": 80,
+      "dataLabels": {
+        "enabled": true,
+        "format": "{y:.1f}%",
+        "style": {
+          "fontFamily": "TTNormsProBold",
+          "fontSize": "14px"
+        }
+      },
+      "events": {}
+    }
+  },
+  "series": [
+    {
+      "name": "",
+      "code": false,
+      "color": "#ff6666",
+      "order": false,
+      "data": [
+        {
+          "name": "Συμφωνώ",
+          "codeOrder": 1,
+          "y": 58.333333333333336,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 1.2626262626262625
+                },
+                {
+                  "x": "1",
+                  "y": 58.333333333333336
+                },
+                {
+                  "x": "2",
+                  "y": 40.4040404040404
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8da",
+              "dimensionId": "q10b",
+              "notation": "1",
+              "name": {
+                "el": "Συμφωνώ",
+                "en": "Agree"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8db",
+              "dimensionId": "q10b",
+              "notation": "2",
+              "name": {
+                "el": "Διαφωνώ",
+                "en": "Disagree"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8dc",
+              "dimensionId": "q10b",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Διαφωνώ",
+          "codeOrder": 2,
+          "y": 40.4040404040404,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 1.2626262626262625
+                },
+                {
+                  "x": "1",
+                  "y": 58.333333333333336
+                },
+                {
+                  "x": "2",
+                  "y": 40.4040404040404
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8da",
+              "dimensionId": "q10b",
+              "notation": "1",
+              "name": {
+                "el": "Συμφωνώ",
+                "en": "Agree"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8db",
+              "dimensionId": "q10b",
+              "notation": "2",
+              "name": {
+                "el": "Διαφωνώ",
+                "en": "Disagree"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8dc",
+              "dimensionId": "q10b",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "ΔΑ",
+          "codeOrder": 99,
+          "y": 1.2626262626262625,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 1.2626262626262625
+                },
+                {
+                  "x": "1",
+                  "y": 58.333333333333336
+                },
+                {
+                  "x": "2",
+                  "y": 40.4040404040404
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac8da",
+              "dimensionId": "q10b",
+              "notation": "1",
+              "name": {
+                "el": "Συμφωνώ",
+                "en": "Agree"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac8db",
+              "dimensionId": "q10b",
+              "notation": "2",
+              "name": {
+                "el": "Διαφωνώ",
+                "en": "Disagree"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac8dc",
+              "dimensionId": "q10b",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "credits": {
+    "enabled": false
+  },
+  "tooltip": {
+    "pointFormat": "{point.y:.1f}%",
+    "shared": false
+  },
+  "legend": {
+    "enabled": false,
+    "useHTML": true,
+    "itemStyle": {
+      "fontSize": "14px"
+    }
+  },
+  "drilldown": {
+    "allowPointDrilldown": false
+  }
+}

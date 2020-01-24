@@ -1,0 +1,3841 @@
+{
+  "chart": {
+    "backgroundColor": "transparent",
+    "type": "bar",
+    "zoomType": "x",
+    "className": "chart color-scheme-3",
+    "style": {
+      "fontFamily": "TTNormsProRegular"
+    },
+    "events": {}
+  },
+  "title": {
+    "useHTML": true,
+    "text": "<div style=\"text-align: center;font-weight: bold\">Εθνική περηφάνεια</div><div class=\"x-axis-subtitle\">Ερ. Πόσο περήφανος /η νιώθεις για τα παρακάτω σχετικά με την Ελλάδα;</div>"
+  },
+  "xAxis": {
+    "type": "category",
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "offset": 2
+  },
+  "yAxis": {
+    "title": {
+      "text": "%",
+      "style": {
+        "fontSize": "20px"
+      }
+    },
+    "labels": {
+      "style": {
+        "fontFamily": "TTNormsProBold",
+        "fontSize": "14px"
+      }
+    },
+    "max": 100,
+    "reversedStacks": false
+  },
+  "plotOptions": {
+    "series": {
+      "maxPointWidth": 80,
+      "stacking": "normal",
+      "dataLabels": {
+        "enabled": true,
+        "format": "{y:.1f}%",
+        "style": {
+          "fontFamily": "TTNormsProBold",
+          "fontSize": "14px"
+        }
+      },
+      "events": {}
+    }
+  },
+  "series": [
+    {
+      "id": "1",
+      "name": "Καθόλου",
+      "code": {
+        "id": "5e2ac781a46c780d095ac91b",
+        "dimensionId": "q35",
+        "notation": "1",
+        "name": {
+          "el": "Καθόλου",
+          "en": "Not at all"
+        },
+        "shortName": null,
+        "parentId": null,
+        "order": 1,
+        "level": 0
+      },
+      "color": "#ffffe0",
+      "order": 1,
+      "data": [
+        {
+          "name": "Για την ιστορία του τόπου",
+          "codeOrder": null,
+          "y": 2.5,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+          "codeOrder": null,
+          "y": 6.8,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+          "codeOrder": null,
+          "y": 14.8,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+          "codeOrder": null,
+          "y": 50.6,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για όσα έχουμε καταφέρει στην οικονομία",
+          "codeOrder": null,
+          "y": 73.7,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Αρκετά",
+      "code": {
+        "id": "5e2ac781a46c780d095ac91c",
+        "dimensionId": "q35",
+        "notation": "2",
+        "name": {
+          "el": "Αρκετά",
+          "en": "Enough"
+        },
+        "shortName": null,
+        "parentId": null,
+        "order": 2,
+        "level": 0
+      },
+      "color": "#ffae8d",
+      "order": 2,
+      "data": [
+        {
+          "name": "Για την ιστορία του τόπου",
+          "codeOrder": null,
+          "y": 13.1,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+          "codeOrder": null,
+          "y": 34.5,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+          "codeOrder": null,
+          "y": 47.2,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+          "codeOrder": null,
+          "y": 41.2,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για όσα έχουμε καταφέρει στην οικονομία",
+          "codeOrder": null,
+          "y": 19.7,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Πολύ",
+      "code": {
+        "id": "5e2ac781a46c780d095ac91d",
+        "dimensionId": "q35",
+        "notation": "3",
+        "name": {
+          "el": "Πολύ",
+          "en": "Very"
+        },
+        "shortName": null,
+        "parentId": null,
+        "order": 3,
+        "level": 0
+      },
+      "color": "#ff6666",
+      "order": 3,
+      "data": [
+        {
+          "name": "Για την ιστορία του τόπου",
+          "codeOrder": null,
+          "y": 81.7,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+          "codeOrder": null,
+          "y": 56.3,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+          "codeOrder": null,
+          "y": 34.8,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+          "codeOrder": null,
+          "y": 5.2,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για όσα έχουμε καταφέρει στην οικονομία",
+          "codeOrder": null,
+          "y": 3.7,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "99",
+      "name": "ΔΑ",
+      "code": {
+        "id": "5e2ac781a46c780d095ac91e",
+        "dimensionId": "q35",
+        "notation": "99",
+        "name": {
+          "el": "ΔΑ",
+          "en": "DA"
+        },
+        "shortName": null,
+        "parentId": null,
+        "order": 99,
+        "color": "#a9a9a9",
+        "level": 0
+      },
+      "color": "#a9a9a9",
+      "order": 99,
+      "data": [
+        {
+          "name": "Για την ιστορία του τόπου",
+          "codeOrder": null,
+          "y": 2.7,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+          "codeOrder": null,
+          "y": 2.4,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+          "codeOrder": null,
+          "y": 3.2,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+          "codeOrder": null,
+          "y": 3,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        },
+        {
+          "name": "Για όσα έχουμε καταφέρει στην οικονομία",
+          "codeOrder": null,
+          "y": 2.9,
+          "seriesByParent": {
+            "": {
+              "1": [
+                {
+                  "x": "q35a",
+                  "y": 50.6
+                },
+                {
+                  "x": "q35b",
+                  "y": 73.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 14.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.5
+                },
+                {
+                  "x": "q35e",
+                  "y": 6.8
+                }
+              ],
+              "2": [
+                {
+                  "x": "q35a",
+                  "y": 41.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 19.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 47.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 13.1
+                },
+                {
+                  "x": "q35e",
+                  "y": 34.5
+                }
+              ],
+              "3": [
+                {
+                  "x": "q35a",
+                  "y": 5.2
+                },
+                {
+                  "x": "q35b",
+                  "y": 3.7
+                },
+                {
+                  "x": "q35c",
+                  "y": 34.8
+                },
+                {
+                  "x": "q35d",
+                  "y": 81.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 56.3
+                }
+              ],
+              "99": [
+                {
+                  "x": "q35a",
+                  "y": 3
+                },
+                {
+                  "x": "q35b",
+                  "y": 2.9
+                },
+                {
+                  "x": "q35c",
+                  "y": 3.2
+                },
+                {
+                  "x": "q35d",
+                  "y": 2.7
+                },
+                {
+                  "x": "q35e",
+                  "y": 2.4
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "q35a": {
+              "id": "q35a",
+              "name": {
+                "el": "Για τον τρόπο που λειτουργεί εδώ η δημοκρατία",
+                "en": "For the way democracy works here"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35b": {
+              "id": "q35b",
+              "name": {
+                "el": "Για όσα έχουμε καταφέρει στην οικονομία",
+                "en": "For all our economy has achieved"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35c": {
+              "id": "q35c",
+              "name": {
+                "el": "Για τις κατακτήσεις στην επιστήμη και την τεχνολογία",
+                "en": "For achievements in science and technology"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35d": {
+              "id": "q35d",
+              "name": {
+                "el": "Για την ιστορία του τόπου",
+                "en": "For the historical legacy of our land"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            },
+            "q35e": {
+              "id": "q35e",
+              "name": {
+                "el": "Για τις επιτυχίες στην τέχνη και τη λογοτεχνία",
+                "en": "For successes in art and literature"
+              },
+              "description": null,
+              "details": null,
+              "groupId": "nation",
+              "order": null,
+              "type": "coded",
+              "creator": null,
+              "disableAxis": true,
+              "disableFilter": true,
+              "filterWidget": null,
+              "disableStacking": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "credits": {
+    "enabled": false
+  },
+  "tooltip": {
+    "pointFormat": "{series.name}: {point.y:.1f}%",
+    "shared": false
+  },
+  "legend": {
+    "enabled": true,
+    "useHTML": true,
+    "itemStyle": {
+      "fontSize": "14px"
+    }
+  },
+  "drilldown": {
+    "allowPointDrilldown": false
+  }
+}
