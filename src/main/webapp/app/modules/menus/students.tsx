@@ -7,8 +7,9 @@ import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
 import { isBrowser } from 'react-device-detect';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Container, Grid, Button } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import chart2 from '../../../../resources/students-highlights/chart-2.json';
+import chart3 from '../../../../resources/students-highlights/chart-3.json';
 import chart4 from '../../../../resources/students-highlights/chart-4.json';
 import chart5 from '../../../../resources/students-highlights/chart-5.json';
 import chart6 from '../../../../resources/students-highlights/chart-6.json';
@@ -104,6 +105,10 @@ export class Students extends React.Component<IStudentsProps> {
               'Η κυρίαρχη γνώμη των μαθητών για την ψήφο στα 17 εμφανίζεται αμφίθυμη, καθώς μοιράζεται μεταξύ αποδοχής και αδιαφορίας. Το ενδιαφέρον τους' +
                 ' για την πολιτική είναι περιορισμένο. Για πολιτικά θέματα προτιμούν να συμβουλεύονται τον πατέρα τους. Οι περισσότεροι ' +
                 'υποστηρίζουν την αλλαγή της ελληνικής κοινωνίας σταδιακά με μεταρρυθμίσεις.'
+            )}
+            {Chart(
+              chart3,
+              'Το 30,7% των μαθητών χαρακτηρίζει τη δυνατότητα να ψηφίζουν οι νέοι στα 17 ως «αδιάφορη» και το 30,6% ως «μάλλον θετική».'
             )}
             {Chart(chart6, 'Το 43,4% των μαθητών ενδιαφέρεται «λίγο» για την πολιτική και το 6,3% ενδιαφέρεται «πολύ».')}
             {Chart(chart7, 'Το 66% των μαθητών θα προτιμούσε να «ρωτήσει τον πατέρα του/της για πολιτικά θέματα»')}

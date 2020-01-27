@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Συμμετοχή στις σχολικές αποφάσεις</div><div class=\"x-axis-subtitle\">Ερ. Όταν οι μαθητές/τριες συμμετέχουν στις αποφάσεις που παίρνονται στο σχολείο, τα πράγματα λειτουργούν καλύτερα</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Γνώμη για την ψήφο στα 17</div><div class=\"x-axis-subtitle\">Ερ. Σύμφωνα με νόμο που ψηφίστηκε, οι νέοι και οι νέες θα μπορούν πλέον να ψηφίζουν από τα 17. Εσύ θεωρείς αυτήν την αλλαγή</div>"
   },
   "xAxis": {
     "type": "category",
@@ -61,35 +61,47 @@
       "order": false,
       "data": [
         {
-          "name": "Συμφωνώ",
+          "name": "Πολύ αρνητική",
           "codeOrder": 1,
-          "y": 81.6919191919192,
+          "y": 6.4393939393939394,
           "seriesByParent": {
             "": {
               "undefined": [
                 {
                   "x": "99",
-                  "y": 1.7676767676767675
+                  "y": 1.6414141414141417
                 },
                 {
                   "x": "1",
-                  "y": 81.6919191919192
+                  "y": 6.4393939393939394
+                },
+                {
+                  "x": "3",
+                  "y": 30.681818181818183
                 },
                 {
                   "x": "2",
-                  "y": 16.54040404040404
+                  "y": 16.792929292929294
+                },
+                {
+                  "x": "4",
+                  "y": 30.555555555555557
+                },
+                {
+                  "x": "5",
+                  "y": 13.88888888888889
                 }
               ]
             }
           },
           "codesByNotation": {
             "1": {
-              "id": "5e2ac781a46c780d095ac8dd",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac90b",
+              "dimensionId": "q26",
               "notation": "1",
               "name": {
-                "el": "Συμφωνώ",
-                "en": "Agree"
+                "el": "Πολύ αρνητική",
+                "en": "Very negative"
               },
               "shortName": null,
               "parentId": null,
@@ -97,21 +109,60 @@
               "level": 0
             },
             "2": {
-              "id": "5e2ac781a46c780d095ac8de",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac90c",
+              "dimensionId": "q26",
               "notation": "2",
               "name": {
-                "el": "Διαφωνώ",
-                "en": "Disagree"
+                "el": "Μάλλον αρνητική",
+                "en": "Rather negative"
               },
               "shortName": null,
               "parentId": null,
               "order": 2,
               "level": 0
             },
+            "3": {
+              "id": "5e2ac781a46c780d095ac90d",
+              "dimensionId": "q26",
+              "notation": "3",
+              "name": {
+                "el": "Αδιάφορη",
+                "en": "Indifferent"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac90e",
+              "dimensionId": "q26",
+              "notation": "4",
+              "name": {
+                "el": "Μάλλον θετική",
+                "en": "Rather posistive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac90f",
+              "dimensionId": "q26",
+              "notation": "5",
+              "name": {
+                "el": "Πολύ θετική",
+                "en": "Very positive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
             "99": {
-              "id": "5e2ac781a46c780d095ac8df",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac910",
+              "dimensionId": "q26",
               "notation": "99",
               "name": {
                 "el": "ΔΑ",
@@ -126,35 +177,47 @@
           }
         },
         {
-          "name": "Διαφωνώ",
+          "name": "Μάλλον αρνητική",
           "codeOrder": 2,
-          "y": 16.54040404040404,
+          "y": 16.792929292929294,
           "seriesByParent": {
             "": {
               "undefined": [
                 {
                   "x": "99",
-                  "y": 1.7676767676767675
+                  "y": 1.6414141414141417
                 },
                 {
                   "x": "1",
-                  "y": 81.6919191919192
+                  "y": 6.4393939393939394
+                },
+                {
+                  "x": "3",
+                  "y": 30.681818181818183
                 },
                 {
                   "x": "2",
-                  "y": 16.54040404040404
+                  "y": 16.792929292929294
+                },
+                {
+                  "x": "4",
+                  "y": 30.555555555555557
+                },
+                {
+                  "x": "5",
+                  "y": 13.88888888888889
                 }
               ]
             }
           },
           "codesByNotation": {
             "1": {
-              "id": "5e2ac781a46c780d095ac8dd",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac90b",
+              "dimensionId": "q26",
               "notation": "1",
               "name": {
-                "el": "Συμφωνώ",
-                "en": "Agree"
+                "el": "Πολύ αρνητική",
+                "en": "Very negative"
               },
               "shortName": null,
               "parentId": null,
@@ -162,21 +225,408 @@
               "level": 0
             },
             "2": {
-              "id": "5e2ac781a46c780d095ac8de",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac90c",
+              "dimensionId": "q26",
               "notation": "2",
               "name": {
-                "el": "Διαφωνώ",
-                "en": "Disagree"
+                "el": "Μάλλον αρνητική",
+                "en": "Rather negative"
               },
               "shortName": null,
               "parentId": null,
               "order": 2,
               "level": 0
             },
+            "3": {
+              "id": "5e2ac781a46c780d095ac90d",
+              "dimensionId": "q26",
+              "notation": "3",
+              "name": {
+                "el": "Αδιάφορη",
+                "en": "Indifferent"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac90e",
+              "dimensionId": "q26",
+              "notation": "4",
+              "name": {
+                "el": "Μάλλον θετική",
+                "en": "Rather posistive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac90f",
+              "dimensionId": "q26",
+              "notation": "5",
+              "name": {
+                "el": "Πολύ θετική",
+                "en": "Very positive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
             "99": {
-              "id": "5e2ac781a46c780d095ac8df",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac910",
+              "dimensionId": "q26",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Αδιάφορη",
+          "codeOrder": 3,
+          "y": 30.681818181818183,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "1",
+                  "y": 6.4393939393939394
+                },
+                {
+                  "x": "3",
+                  "y": 30.681818181818183
+                },
+                {
+                  "x": "2",
+                  "y": 16.792929292929294
+                },
+                {
+                  "x": "4",
+                  "y": 30.555555555555557
+                },
+                {
+                  "x": "5",
+                  "y": 13.88888888888889
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac90b",
+              "dimensionId": "q26",
+              "notation": "1",
+              "name": {
+                "el": "Πολύ αρνητική",
+                "en": "Very negative"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac90c",
+              "dimensionId": "q26",
+              "notation": "2",
+              "name": {
+                "el": "Μάλλον αρνητική",
+                "en": "Rather negative"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac90d",
+              "dimensionId": "q26",
+              "notation": "3",
+              "name": {
+                "el": "Αδιάφορη",
+                "en": "Indifferent"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac90e",
+              "dimensionId": "q26",
+              "notation": "4",
+              "name": {
+                "el": "Μάλλον θετική",
+                "en": "Rather posistive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac90f",
+              "dimensionId": "q26",
+              "notation": "5",
+              "name": {
+                "el": "Πολύ θετική",
+                "en": "Very positive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac910",
+              "dimensionId": "q26",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Μάλλον θετική",
+          "codeOrder": 4,
+          "y": 30.555555555555557,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "1",
+                  "y": 6.4393939393939394
+                },
+                {
+                  "x": "3",
+                  "y": 30.681818181818183
+                },
+                {
+                  "x": "2",
+                  "y": 16.792929292929294
+                },
+                {
+                  "x": "4",
+                  "y": 30.555555555555557
+                },
+                {
+                  "x": "5",
+                  "y": 13.88888888888889
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac90b",
+              "dimensionId": "q26",
+              "notation": "1",
+              "name": {
+                "el": "Πολύ αρνητική",
+                "en": "Very negative"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac90c",
+              "dimensionId": "q26",
+              "notation": "2",
+              "name": {
+                "el": "Μάλλον αρνητική",
+                "en": "Rather negative"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac90d",
+              "dimensionId": "q26",
+              "notation": "3",
+              "name": {
+                "el": "Αδιάφορη",
+                "en": "Indifferent"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac90e",
+              "dimensionId": "q26",
+              "notation": "4",
+              "name": {
+                "el": "Μάλλον θετική",
+                "en": "Rather posistive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac90f",
+              "dimensionId": "q26",
+              "notation": "5",
+              "name": {
+                "el": "Πολύ θετική",
+                "en": "Very positive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac910",
+              "dimensionId": "q26",
+              "notation": "99",
+              "name": {
+                "el": "ΔΑ",
+                "en": "DA"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 99,
+              "color": "#a9a9a9",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Πολύ θετική",
+          "codeOrder": 5,
+          "y": 13.88888888888889,
+          "seriesByParent": {
+            "": {
+              "undefined": [
+                {
+                  "x": "99",
+                  "y": 1.6414141414141417
+                },
+                {
+                  "x": "1",
+                  "y": 6.4393939393939394
+                },
+                {
+                  "x": "3",
+                  "y": 30.681818181818183
+                },
+                {
+                  "x": "2",
+                  "y": 16.792929292929294
+                },
+                {
+                  "x": "4",
+                  "y": 30.555555555555557
+                },
+                {
+                  "x": "5",
+                  "y": 13.88888888888889
+                }
+              ]
+            }
+          },
+          "codesByNotation": {
+            "1": {
+              "id": "5e2ac781a46c780d095ac90b",
+              "dimensionId": "q26",
+              "notation": "1",
+              "name": {
+                "el": "Πολύ αρνητική",
+                "en": "Very negative"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 1,
+              "level": 0
+            },
+            "2": {
+              "id": "5e2ac781a46c780d095ac90c",
+              "dimensionId": "q26",
+              "notation": "2",
+              "name": {
+                "el": "Μάλλον αρνητική",
+                "en": "Rather negative"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 2,
+              "level": 0
+            },
+            "3": {
+              "id": "5e2ac781a46c780d095ac90d",
+              "dimensionId": "q26",
+              "notation": "3",
+              "name": {
+                "el": "Αδιάφορη",
+                "en": "Indifferent"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac90e",
+              "dimensionId": "q26",
+              "notation": "4",
+              "name": {
+                "el": "Μάλλον θετική",
+                "en": "Rather posistive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac90f",
+              "dimensionId": "q26",
+              "notation": "5",
+              "name": {
+                "el": "Πολύ θετική",
+                "en": "Very positive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
+            "99": {
+              "id": "5e2ac781a46c780d095ac910",
+              "dimensionId": "q26",
               "notation": "99",
               "name": {
                 "el": "ΔΑ",
@@ -193,33 +643,45 @@
         {
           "name": "ΔΑ",
           "codeOrder": 99,
-          "y": 1.7676767676767675,
+          "y": 1.6414141414141417,
           "seriesByParent": {
             "": {
               "undefined": [
                 {
                   "x": "99",
-                  "y": 1.7676767676767675
+                  "y": 1.6414141414141417
                 },
                 {
                   "x": "1",
-                  "y": 81.6919191919192
+                  "y": 6.4393939393939394
+                },
+                {
+                  "x": "3",
+                  "y": 30.681818181818183
                 },
                 {
                   "x": "2",
-                  "y": 16.54040404040404
+                  "y": 16.792929292929294
+                },
+                {
+                  "x": "4",
+                  "y": 30.555555555555557
+                },
+                {
+                  "x": "5",
+                  "y": 13.88888888888889
                 }
               ]
             }
           },
           "codesByNotation": {
             "1": {
-              "id": "5e2ac781a46c780d095ac8dd",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac90b",
+              "dimensionId": "q26",
               "notation": "1",
               "name": {
-                "el": "Συμφωνώ",
-                "en": "Agree"
+                "el": "Πολύ αρνητική",
+                "en": "Very negative"
               },
               "shortName": null,
               "parentId": null,
@@ -227,21 +689,60 @@
               "level": 0
             },
             "2": {
-              "id": "5e2ac781a46c780d095ac8de",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac90c",
+              "dimensionId": "q26",
               "notation": "2",
               "name": {
-                "el": "Διαφωνώ",
-                "en": "Disagree"
+                "el": "Μάλλον αρνητική",
+                "en": "Rather negative"
               },
               "shortName": null,
               "parentId": null,
               "order": 2,
               "level": 0
             },
+            "3": {
+              "id": "5e2ac781a46c780d095ac90d",
+              "dimensionId": "q26",
+              "notation": "3",
+              "name": {
+                "el": "Αδιάφορη",
+                "en": "Indifferent"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 3,
+              "level": 0
+            },
+            "4": {
+              "id": "5e2ac781a46c780d095ac90e",
+              "dimensionId": "q26",
+              "notation": "4",
+              "name": {
+                "el": "Μάλλον θετική",
+                "en": "Rather posistive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 4,
+              "level": 0
+            },
+            "5": {
+              "id": "5e2ac781a46c780d095ac90f",
+              "dimensionId": "q26",
+              "notation": "5",
+              "name": {
+                "el": "Πολύ θετική",
+                "en": "Very positive"
+              },
+              "shortName": null,
+              "parentId": null,
+              "order": 5,
+              "level": 0
+            },
             "99": {
-              "id": "5e2ac781a46c780d095ac8df",
-              "dimensionId": "q10d",
+              "id": "5e2ac781a46c780d095ac910",
+              "dimensionId": "q26",
               "notation": "99",
               "name": {
                 "el": "ΔΑ",
@@ -274,5 +775,23 @@
   },
   "drilldown": {
     "allowPointDrilldown": false
+  },
+  "exporting": {
+    "buttons": false,
+    "url": "https://socioscope.gr/hc-export",
+    "allowHTML": true,
+    "chartOptions": {
+      "credits": {
+        "enabled": true,
+        "text": "socioscope.gr",
+        "style": {
+          "color": "#1e1e1e",
+          "fontSize": "18px"
+        }
+      },
+      "chart": {
+        "height": "100%"
+      }
+    }
   }
 }
