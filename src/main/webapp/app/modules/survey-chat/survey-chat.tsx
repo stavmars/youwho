@@ -3,12 +3,13 @@ import './chatbot.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { RouteComponentProps, Redirect } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 import { initiateSurveyResponse, storeSurveyResponse } from 'app/modules/survey-chat/chatbot.reducer';
 import ChatBot from 'react-simple-chatbot';
 import ProgressBar from 'app/modules/survey-chat/progress-bar';
 import { ThemeProvider } from 'styled-components';
 import { configureStep } from 'app/modules/survey-chat/configure-steps';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
@@ -27,14 +28,13 @@ export class SurveyChat extends React.Component<IChatBotProps> {
   }
 
   render() {
-    const { surveysByName, activeCategory } = this.props;
-    const survey = surveysByName[this.props.match.params.id];
-    if (!survey) {
-      return <Redirect to="/" />;
-    }
-    const steps = configureStep(survey.questions);
+    const { surveysByName, activeCategory, loading } = this.props;
 
-    return (
+    return loading ? (
+      <Dimmer active page>
+        <Loader />
+      </Dimmer>
+    ) : (
       <div style={{ width: '100%', backgroundColor: '#6065CC' }}>
         <ProgressBar
           activeCategory={activeCategory}
@@ -62,8 +62,8 @@ export class SurveyChat extends React.Component<IChatBotProps> {
             botAvatar="content/images/granny.jpg"
             footerStyle={{ display: 'none' }}
             hideHeader
-            handleEnd={() => this.props.storeSurveyResponse(survey)}
-            steps={steps}
+            handleEnd={() => this.props.storeSurveyResponse(surveysByName[this.props.match.params.id])}
+            steps={configureStep(surveysByName[this.props.match.params.id].questions)}
             style={{
               height: 'calc(100vh - 132px)',
               userSelect: 'none',
@@ -93,6 +93,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
 
 const mapStateToProps = (storeState: IRootState) => ({
   surveysByName: storeState.survey.entitiesByName,
+  loading: storeState.survey.loading,
   activeCategory: storeState.chatBot.activeCategory
 });
 
