@@ -75,7 +75,7 @@ export class Home extends React.Component<IHomeProp> {
         <Responsive {...Responsive.onlyMobile}>
           <Grid centered style={{ height: '100vh' }}>
             <Grid.Row>{subtext()}</Grid.Row>
-            <Grid.Row>
+            <Grid.Row style={{ padding: 0 }}>
               <Grid.Column width={14}>
                 <Image
                   src="content/images/big-bubble.svg"
