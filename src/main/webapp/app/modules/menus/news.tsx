@@ -25,15 +25,15 @@ export class News extends React.Component<INewsProps> {
             <Menu.Item className="news-page-menu-item" position="left">
               Νέα
             </Menu.Item>
-            <Menu.Item className="news-page-menu-secondary" position="right">
-              Όλα Εκδηλώσεις Κείμενα Έρευνες
-            </Menu.Item>
+            {/*<Menu.Item className="news-page-menu-secondary" position="right">*/}
+            {/*  Όλα Εκδηλώσεις Κείμενα Έρευνες*/}
+            {/*</Menu.Item>*/}
           </Menu>
         </Grid>
-        <Grid centered>
+        <Grid centered style={{ marginBottom: '50px' }}>
           <Grid.Row>
-            <Grid.Column computer={3} mobile={14}>
-              <Image className="news-page-image" src="content/images/giagia.png" />
+            <Grid.Column computer={3} mobile={14} verticalAlign="middle">
+              <Image className="news-page-image" src="content/images/giagia-stasi.png" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14}>
               <h1 className="news-page-h1">ΥouWho? Ερευνα για νέους 17-29 ετών</h1>
