@@ -33,7 +33,7 @@ Main page styles
       transform: scale(2.5);
     }
     @include computer {
-      top: 30vh !important;
+      top: 25vh !important;
       left: -18vw !important;
       transform: scale(1.5);
     }
@@ -51,5 +51,12 @@ Main page styles
       font: 2.15vh/2.55vh TTNormsProBoldItalic;
       margin-top: 15vh;
     }
+  }
+
+  .sponsored-by {
+    color: #333333;
+    text-align: left;
+    letter-spacing: 0;
+    font: 1.55vh/1.55vh TTNormsProBoldItalic;
   }
 }

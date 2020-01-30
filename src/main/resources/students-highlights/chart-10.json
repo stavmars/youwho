@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Εθνική περηφάνεια</div><div class=\"x-axis-subtitle\">Ερ. Πόσο περήφανος /η νιώθεις για τα παρακάτω σχετικά με την Ελλάδα;</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Εθνική περηφάνεια</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Πόσο περήφανος /η νιώθεις για τα παρακάτω σχετικά με την Ελλάδα;</div>"
   },
   "xAxis": {
     "type": "category",

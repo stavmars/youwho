@@ -1,4 +1,5 @@
 /* tslint:disable:no-submodule-imports */
+/* tslint:disable:max-line-length */
 import './students.scss';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -37,7 +38,9 @@ const Chart = (options: any, subtext: string) => (
       <HighchartsReact options={options} highcharts={Highcharts} />
     </Grid.Column>
     <Grid.Column computer={4} mobile={14} verticalAlign="middle">
-      <p className="students-page-subtext">{subtext}</p>
+      <p className="students-page-text">
+        <div dangerouslySetInnerHTML={{ __html: subtext }} />
+      </p>
     </Grid.Column>
   </Grid.Row>
 );
@@ -61,20 +64,25 @@ export class Students extends React.Component<IStudentsProps> {
             <h1 className="students-page-top-title">Μαθητές</h1>
             <p className="students-page-top-subtext">
               Πολλές έρευνες συνηγορούν στο ότι οι βασικές πολιτικές προδιαθέσεις των ατόμων, που θα τους ακολουθούν μέχρι την ενηλικίωση,
-              διαμορφώνονται στα χρόνια της εφηβείας (Prior 2010, Russo and Stattin 2017). Στο ίδιο πλαίσιο, και σε συνέχεια των παραπάνω,
+              διαμορφώνονται στα χρόνια της εφηβείας (Prior, 2010, Russo & Stattin, 2017). Στο ίδιο πλαίσιο, και σε συνέχεια των παραπάνω,
               οι περισσότερες εμπειρικές μελέτες συνηγορούν στο ότι η οικογένεια είναι εκείνη που επιτελεί τον σημαντικότερο ρόλο στην
-              πολιτική κοινωνικοποίηση των εφήβων κατά τα χρόνια αυτά (Niemi and Hepburn 1995, Hooghe and Boonen 2015, Verba et al 1995). Ως
-              εκ τούτου, η μελέτη της συγκεκριμένης ηλικιακής ομάδας έχει ξεχωριστό ενδιαφέρον.
+              πολιτική κοινωνικοποίηση των εφήβων κατά τα χρόνια αυτά (Hooghe & Boonen, 2015, Niemi & Helpburn, 1995, Verba et al., 1995).
+              Ως εκ τούτου, η μελέτη της συγκεκριμένης ηλικιακής ομάδας έχει ξεχωριστό ενδιαφέρον.
             </p>
           </Container>
         </div>
-        <Container style={{ marginTop: '-80px' }}>
-          <h1 className="students-page-title">έρευνες νεανικού πληθυσμού</h1>
-          <p className="students-page-subtext">
+        <Container style={{ marginTop: '-60px' }}>
+          <p className="students-page-text">
             Για τις ανάγκες του έργου σχεδιάστηκε και υλοποιήθηκε την άνοιξη του 2018 ποσοτική έρευνα πεδίου με αυτο-συμπληρούμενο
             ερωτηματολόγιο σε επιλεγμένες σχολικές μονάδες της Αττικής, σε 792 μαθητές και μαθήτριες Γυμνασίου. Μέσω της έρευνας δόθηκε η
             δυνατότητα να σκιαγραφηθούν οι πολλαπλές πλευρές της ταυτότητας των εφήβων υπό το πρίσμα του φύλου, της ηλικίας και της
             κοινωνικής σύνθεσης της οικογένειας.
+          </p>
+          <p className="students-page-text">
+            Τμήμα των δεδομένων έχει ήδη αναρτηθεί στην πλατφόρμα socioscope.gr, στην σχετική θεματική:{' '}
+            <a target="_blank" href="http://www.socioscope.gr/dataset/adolescents">
+              http://www.socioscope.gr/dataset/adolescents
+            </a>
           </p>
           <h1 className="students-page-title">Highlights</h1>
           <Grid centered>
@@ -84,12 +92,12 @@ export class Students extends React.Component<IStudentsProps> {
             )}
             {Chart(
               chart2,
-              'Το 58,3% των μαθητών συμφωνούν ότι «οι μαθητές/τριες πρέπει να ακολουθούν τις οδηγίες των καθηγητών ακόμα και όταν διαφωνούν με αυτές»'
+              'Το 58,3% των μαθητών συμφωνούν ότι <span style="font-family: TTNormsProBoldItalic;font-style: italic">«οι μαθητές/τριες πρέπει να ακολουθούν τις οδηγίες των καθηγητών ακόμα και όταν διαφωνούν με αυτές»</span>'
             )}
             {Chart(
               chart4,
-              'Το 87,4% των μαθητών συμφωνούν ότι «οι μαθητές/τριες μπορούν να επηρεάσουν' +
-                'ότι συμβαίνει στο σχολείο τους όταν δρουν όλοι/ες μαζί, παρά ο καθένας μόνος του»'
+              'Το 87,4% των μαθητών συμφωνούν ότι <span style="font-family: TTNormsProBoldItalic;font-style: italic">«οι μαθητές/τριες μπορούν να επηρεάσουν' +
+                'ότι συμβαίνει στο σχολείο τους όταν δρουν όλοι/ες μαζί, παρά ο καθένας μόνος του»</span>'
             )}
             <h2 className="students-page-subtitle">ΟΙΚΟΓΕΝΕΙΑ</h2>
             {HighlightsSubTitle(
@@ -98,7 +106,7 @@ export class Students extends React.Component<IStudentsProps> {
             )}
             {Chart(
               chart5,
-              'Το 62,8% των μαθητών δηλώνει ότι συχνά «ο πατέρας παρακολουθεί ειδήσεις» και το 62,4% ότι συχνά «η μητέρα διαβάζει βιβλία»'
+              'Το 62,8% των μαθητών δηλώνει ότι συχνά <span style="font-family: TTNormsProBoldItalic;font-style: italic">«ο πατέρας παρακολουθεί ειδήσεις»</span> και το 62,4% ότι συχνά <span style="font-family: TTNormsProBoldItalic;font-style: italic">«η μητέρα διαβάζει βιβλία»</span>'
             )}
             <h2 className="students-page-subtitle">ΠΟΛΙΤΙΚΗ</h2>
             {HighlightsSubTitle(
@@ -108,13 +116,19 @@ export class Students extends React.Component<IStudentsProps> {
             )}
             {Chart(
               chart3,
-              'Το 30,7% των μαθητών χαρακτηρίζει τη δυνατότητα να ψηφίζουν οι νέοι στα 17 ως «αδιάφορη» και το 30,6% ως «μάλλον θετική».'
+              'Το 30,7% των μαθητών χαρακτηρίζει τη δυνατότητα να ψηφίζουν οι νέοι στα 17 ως <span style="font-family: TTNormsProBoldItalic;font-style: italic">«αδιάφορη»</span> και το 30,6% ως <span style="font-family: TTNormsProBoldItalic;font-style: italic">«μάλλον θετική»</span>.'
             )}
-            {Chart(chart6, 'Το 43,4% των μαθητών ενδιαφέρεται «λίγο» για την πολιτική και το 6,3% ενδιαφέρεται «πολύ».')}
-            {Chart(chart7, 'Το 66% των μαθητών θα προτιμούσε να «ρωτήσει τον πατέρα του/της για πολιτικά θέματα»')}
+            {Chart(
+              chart6,
+              'Το 43,4% των μαθητών ενδιαφέρεται <span style="font-family: TTNormsProBoldItalic;font-style: italic">«λίγο»</span> για την πολιτική και το 6,3% ενδιαφέρεται <span style="font-family: TTNormsProBoldItalic;font-style: italic">«πολύ»</span>.'
+            )}
+            {Chart(
+              chart7,
+              'Το 66% των μαθητών θα προτιμούσε να <span style="font-family: TTNormsProBoldItalic;font-style: italic">«ρωτήσει τον πατέρα του/της για πολιτικά θέματα»</span>'
+            )}
             {Chart(
               chart8,
-              'Το 64,6% των μαθητών υποστηρίζει την αλλαγή της ελληνικής κοινωνίας «σιγά σιγά με μεταρρυθμίσεις» και το 16,7% «ριζικά με επαναστατικά μέτρα»'
+              'Το 64,6% των μαθητών υποστηρίζει την αλλαγή της ελληνικής κοινωνίας <span style="font-family: TTNormsProBoldItalic;font-style: italic">«σιγά σιγά με μεταρρυθμίσεις»</span> και το 16,7% <span style="font-family: TTNormsProBoldItalic;font-style: italic">«ριζικά με επαναστατικά μέτρα»</span>'
             )}
             <h2 className="students-page-subtitle">ΕΘΝΟΣ</h2>
             {HighlightsSubTitle(
@@ -123,12 +137,12 @@ export class Students extends React.Component<IStudentsProps> {
             )}
             {Chart(
               chart9,
-              'Το 61% των μαθητών υποστηρίζει ότι «πραγματικός Έλληνας/ίδα» είναι εκείνος/η που «επιθυμεί να είναι Έλληνας/ίδα» και ' +
-                '«σέβεται τους θεσμούς της χώρας» (54,5%)'
+              'Το 61% των μαθητών υποστηρίζει ότι <span style="font-family: TTNormsProBoldItalic;font-style: italic">«πραγματικός Έλληνας/ίδα»</span> είναι εκείνος/η που <span style="font-family: TTNormsProBoldItalic;font-style: italic">«επιθυμεί να είναι Έλληνας/ίδα»</span> και ' +
+                '<span style="font-family: TTNormsProBoldItalic;font-style: italic">«σέβεται τους θεσμούς της χώρας»</span> (54,5%)'
             )}
             {Chart(
               chart10,
-              'Το 81,7% των μαθητών δηλώνουν υπερήφανοι «για την ιστορία του τόπου» και το 56,3% «για τις επιτυχίες στην τέχνη και τη λογοτεχνία»  '
+              'Το 81,7% των μαθητών δηλώνουν υπερήφανοι <span style="font-family: TTNormsProBoldItalic;font-style: italic">«για την ιστορία του τόπου»</span> και το 56,3% <span style="font-family: TTNormsProBoldItalic;font-style: italic">«για τις επιτυχίες στην τέχνη και τη λογοτεχνία»</span>  '
             )}
             <h2 className="students-page-subtitle">ΠΡΟΣΩΠΙΚΟΤΗΤΑ</h2>
             {HighlightsSubTitle(
@@ -138,20 +152,14 @@ export class Students extends React.Component<IStudentsProps> {
             )}
             {Chart(
               chart11,
-              'Το 79,9% των μαθητών δηλώνει ικανοποιημένο «από το σπίτι» του και το 76% από «τις σχέσεις με τους άλλους ανθρώπους»'
+              'Το 79,9% των μαθητών δηλώνει ικανοποιημένο <span style="font-family: TTNormsProBoldItalic;font-style: italic">«από το σπίτι»</span> του και το 76% από <span style="font-family: TTNormsProBoldItalic;font-style: italic">«τις σχέσεις με τους άλλους ανθρώπους»</span>'
             )}
             {Chart(
               chart12,
-              'Το 95,7% των μαθητών αξιολογούν τη «φιλία» ως τη σημαντικότερη αξία στη ζωή τους, το 89,8% το «επάγγελμα που ικανοποιεί τα ' +
-                'ενδιαφέροντά» τους και το 88,8% τις «αρμονικές οικογενειακές σχέσεις»'
+              'Το 95,7% των μαθητών αξιολογούν τη <span style="font-family: TTNormsProBoldItalic;font-style: italic">«φιλία»</span> ως τη σημαντικότερη αξία στη ζωή τους, το 89,8% το <span style="font-family: TTNormsProBoldItalic;font-style: italic">«επάγγελμα που ικανοποιεί τα ' +
+                'ενδιαφέροντά»</span> τους και το 88,8% τις <span style="font-family: TTNormsProBoldItalic;font-style: italic">«αρμονικές οικογενειακές σχέσεις»</span>'
             )}
           </Grid>
-          <p className="students-page-text">
-            Τμήμα των δεδομένων έχει ήδη αναρτηθεί στην πλατφόρμα socioscope.gr, στην σχετική θεματική:{' '}
-            <a target="_blank" href="http://www.socioscope.gr/dataset/adolescents">
-              http://www.socioscope.gr/dataset/adolescents
-            </a>
-          </p>
         </Container>
       </div>
     );

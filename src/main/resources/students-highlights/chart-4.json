@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Συλλογική δράση στο σχολείο</div><div class=\"x-axis-subtitle\">Ερ.  Οι μαθητές/τριες μπορούν να επηρεάσουν ότι συμβαίνει στο σχολείο τους όταν δρουν όλοι /ες μαζί, παρά ο καθένας μόνος του</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Συλλογική δράση στο σχολείο</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ.  Οι μαθητές/τριες μπορούν να επηρεάσουν ότι συμβαίνει στο σχολείο τους όταν δρουν όλοι /ες μαζί, παρά ο καθένας μόνος του</div>"
   },
   "xAxis": {
     "type": "category",

@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Άποψη για την ελληνική κοινωνία</div><div class=\"x-axis-subtitle\">Ερ. Ποια είναι η γενική άποψή σου για την ελληνική κοινωνία</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Άποψη για την ελληνική κοινωνία</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Ποια είναι η γενική άποψή σου για την ελληνική κοινωνία</div>"
   },
   "xAxis": {
     "type": "category",

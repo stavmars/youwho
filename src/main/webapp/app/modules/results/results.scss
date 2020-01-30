@@ -32,14 +32,14 @@ results/average page styles
     color: #ffffff;
     letter-spacing: 0;
     @include mobile {
-      font: 14px/16px TTNormsProBoldItalic;
+      font: 2vh/2.55vh TTNormsProBoldItalic;
       height: 75%;
-      padding: 20px 35px;
+      padding: 3vh 10vw;
     }
     @include computer {
       height: auto;
-      padding: 35px 40px 20px 40px;
-      font: 40px/48px TTNormsProBoldItalic;
+      padding: 3.5vh 2vw 3vh 2vw;
+      font: 4.13vh/4.5vh TTNormsProBoldItalic;
     }
   }
 

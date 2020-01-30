@@ -20,11 +20,11 @@
     }
     .young-adults-page-top-subtext {
       @include mobile {
-        font: 20px/25px TTNormsProBold;
+        font: 20px/25px TTNormsProRegular;
         letter-spacing: 0.4px;
       }
       @include computer {
-        font: 22px/32px TTNormsProBold;
+        font: 22px/32px TTNormsProRegular;
         letter-spacing: 0.44px;
       }
       color: #333333;
@@ -34,12 +34,13 @@
     .young-adults-page-top-subtext::first-letter {
       @include mobile {
         margin-top: 0.285em;
+        margin-right: 0.285em;
       }
       @include computer {
         margin-top: 0.4em;
+        margin-right: 0.25em;
       }
       float: left;
-      margin-right: 0.15em;
       text-align: center;
       font: 95px/30px TTNormsProBoldItalic;
       letter-spacing: 0;

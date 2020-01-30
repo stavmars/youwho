@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Οικογενειακές συνήθειες</div><div class=\"x-axis-subtitle\">Ερ. Νομίζεις ότι αυτές οι δηλώσεις περιγράφουν σωστά τους γονείς σου;</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Οικογενειακές συνήθειες</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Νομίζεις ότι αυτές οι δηλώσεις περιγράφουν σωστά τους γονείς σου;</div>"
   },
   "xAxis": {
     "type": "category",

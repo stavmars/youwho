@@ -2,7 +2,7 @@
 
 .project-team-page {
   @include mobile {
-    margin-top: 80px !important;
+    margin-top: 30px !important;
   }
   @include computer {
     margin-top: 240px !important;
@@ -12,13 +12,13 @@
     top: -220px;
   }
   .project-team-page-header {
-    margin-bottom: 7vh;
-    color: #777eff;
+    margin-bottom: 40px;
     @include mobile {
-      font: 33px/30px TTNormsProBold;
+      float: left !important;
+      font: 25px/25px TTNormsProBold;
     }
     @include computer {
-      font: 60px/60px TTNormsProBold;
+      font: 50px/50px TTNormsProBold;
     }
   }
   .project-team-page-image {

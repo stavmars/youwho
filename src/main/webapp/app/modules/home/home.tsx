@@ -36,12 +36,15 @@ export class Home extends React.Component<IHomeProp> {
                 <Image src="content/images/YellowStripesBg.svg" className="stripes" />
               </Grid.Column>
               <Grid.Column width={7}>
-                <Image src="content/images/big-bubble.svg" style={{ left: '-15vw', height: '40vh', zIndex: '1' }} />
                 <Image
-                  src="content/images/small-bubble.svg"
+                  src="content/images/bubble-purple-landing.png"
+                  style={{ left: '-15vw', zIndex: '1', width: '21.7vw', height: '26.35vh' }}
+                />
+                <Image
+                  src="content/images/bubble-pink-landing.png"
                   as={Link}
                   to="survey-chat/youWho"
-                  style={{ width: '20vw', height: '10vh', top: '2vh' }}
+                  style={{ top: '2vh', width: '29vw', height: '24vh' }}
                 />
                 {subtext()}
                 <Modal
@@ -65,7 +68,7 @@ export class Home extends React.Component<IHomeProp> {
                   </Modal.Content>
                 </Modal>
                 <div style={{ marginLeft: '65%', marginTop: '-30px' }}>
-                  <span className="home-subtext">Υπό την Αιγίδα</span>
+                  <span className="sponsored-by">Υπό την Αιγίδα</span>
                   <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px' }} />
                 </div>
               </Grid.Column>
@@ -78,14 +81,14 @@ export class Home extends React.Component<IHomeProp> {
             <Grid.Row style={{ padding: 0 }}>
               <Grid.Column width={14}>
                 <Image
-                  src="content/images/big-bubble.svg"
-                  style={{ width: '65vw', height: '23vh', left: '24vw', top: '2vh', zIndex: '1' }}
+                  src="content/images/bubble-purple-landing.png"
+                  style={{ width: '45vw', height: '18vh', left: '24vw', top: '2vh', zIndex: '1' }}
                 />
                 <Image
-                  src="content/images/small-bubble.svg"
+                  src="content/images/bubble-pink-landing.png"
                   as={Link}
                   to="survey-chat/youWho"
-                  style={{ width: '45vw', height: '13vh', top: '5vh', float: 'right', zIndex: '1' }}
+                  style={{ width: '60vw', height: '18vh', top: '5vh', float: 'right', zIndex: '1' }}
                 />
                 <Image src="content/images/giagia.png" className="granny" />
                 <Image src="content/images/YellowStripesBg.svg" alt="yellow-stripes" className="stripes" />
