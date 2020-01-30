@@ -1,4 +1,5 @@
 /* tslint:disable:no-submodule-imports */
+/* tslint:disable:max-line-length */
 import './students.scss';
 import React from 'react';
 import { connect } from 'react-redux';
