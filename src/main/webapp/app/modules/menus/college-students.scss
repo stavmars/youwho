@@ -20,11 +20,11 @@
     }
     .college-students-page-top-subtext {
       @include mobile {
-        font: 20px/25px TTNormsProBold;
+        font: 20px/25px TTNormsProRegular;
         letter-spacing: 0.4px;
       }
       @include computer {
-        font: 22px/32px TTNormsProBold;
+        font: 22px/32px TTNormsProRegular;
         letter-spacing: 0.44px;
       }
       color: #333333;
