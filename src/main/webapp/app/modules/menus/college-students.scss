@@ -34,12 +34,13 @@
     .college-students-page-top-subtext::first-letter {
       @include mobile {
         margin-top: 0.285em;
+        margin-right: 0.285em;
       }
       @include computer {
         margin-top: 0.4em;
+        margin-right: 0.25em;
       }
       float: left;
-      margin-right: 0.15em;
       text-align: center;
       font: 95px/30px TTNormsProBoldItalic;
       letter-spacing: 0;

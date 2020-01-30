@@ -115,9 +115,12 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
           Ομάδα Έργου
         </Responsive>
         <Grid className="project-team-page" centered stackable>
-          <Grid.Row>
+          <Grid.Column mobile={5} only="mobile">
             <h1 className="project-team-page-header">Οι Κοινωνικοί Επιστήμονες</h1>
-          </Grid.Row>
+          </Grid.Column>
+          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+            <h1 className="project-team-page-header">Οι Κοινωνικοί Επιστήμονες</h1>
+          </Responsive>
           {MemberBio(
             'manina',
             'Μανίνα Κακεπάκη',
@@ -166,9 +169,14 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
             'content/images/project-team/_MG_4435.png',
             false
           )}
+          <Grid.Column mobile={5} only="mobile">
+            <h1 className="project-team-page-header">Πρακτική άσκηση</h1>
+          </Grid.Column>
+          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+            <h1 className="project-team-page-header">Πρακτική άσκηση</h1>
+          </Responsive>
           <Grid.Row>
-            <Grid.Column computer={5}>
-              <h1 className="project-team-page-header">Πρακτική άσκηση</h1>
+            <Grid.Column computer={8}>
               <p className="project-team-page-description">
                 <span style={{ color: '#ff6666' }}>Διενέργεια έρευνας πεδίου</span>: Νίκος Κληρονόμος, Κατερίνα Πάσχου, Νίκος Σαριδάκης,
                 Ιάκωβος Σαχίνης, Ανδρεάς Σιαφάκας.
@@ -182,9 +190,12 @@ export class ProjectTeam extends React.Component<IProjectTeamProps> {
               </p>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Column mobile={5} only="mobile">
             <h1 className="project-team-page-header">Οι Μηχανικοί Υπολογιστών</h1>
-          </Grid.Row>
+          </Grid.Column>
+          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+            <h1 className="project-team-page-header">Οι Μηχανικοί Υπολογιστών</h1>
+          </Responsive>
           {MemberBio(
             'gpapas',
             'Γιώργος Παπαστεφανάτος',
