@@ -1,7 +1,14 @@
+@import 'app/shared/common.scss';
+
 .footer {
-  height: 80px;
-  text-align: center;
-  font: 14px/32px TT Norms Pro;
+  @include mobile {
+    height: auto;
+  }
+  @include computer {
+    height: 80px;
+  }
+  text-align: center !important;
+  font: 14px/32px TTNormsProRegular;
   letter-spacing: 0.28px;
   color: #333333;
   opacity: 0.6;
