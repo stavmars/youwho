@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Γνώμη για την ψήφο στα 17</div><div class=\"x-axis-subtitle\">Ερ. Σύμφωνα με νόμο που ψηφίστηκε, οι νέοι και οι νέες θα μπορούν πλέον να ψηφίζουν από τα 17. Εσύ θεωρείς αυτήν την αλλαγή</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Γνώμη για την ψήφο στα 17</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Σύμφωνα με νόμο που ψηφίστηκε, οι νέοι και οι νέες θα μπορούν πλέον να ψηφίζουν από τα 17. Εσύ θεωρείς αυτήν την αλλαγή</div>"
   },
   "xAxis": {
     "type": "category",

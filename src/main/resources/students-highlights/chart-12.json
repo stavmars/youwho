@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Αξίες για τη ζωή</div><div class=\"x-axis-subtitle\">Ερ. Αξιολόγησε τη σημασία των παρακάτω στοιχείων για τη ζωή σου, σήμερα αλλά και στο μέλλον</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Αξίες για τη ζωή</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Αξιολόγησε τη σημασία των παρακάτω στοιχείων για τη ζωή σου, σήμερα αλλά και στο μέλλον</div>"
   },
   "xAxis": {
     "type": "category",

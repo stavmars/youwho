@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Συμμόρφωση στο σχολείο</div><div class=\"x-axis-subtitle\">Ερ. Οι μαθητές/τριες πρέπει να ακολουθούν τις οδηγίες των καθηγητών ακόμα και όταν διαφωνούν με αυτές</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Συμμόρφωση στο σχολείο</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Οι μαθητές/τριες πρέπει να ακολουθούν τις οδηγίες των καθηγητών ακόμα και όταν διαφωνούν με αυτές</div>"
   },
   "xAxis": {
     "type": "category",

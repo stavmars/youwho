@@ -11,7 +11,7 @@
   },
   "title": {
     "useHTML": true,
-    "text": "<div style=\"text-align: center;font-weight: bold\">Συμβουλεύονται για πολιτικά θέματα</div><div class=\"x-axis-subtitle\">Ερ. Αν ήθελες να συμβουλευτείς κάποιον/α για ένα πολιτικό θέμα, ποιον ή ποια θα προτιμούσες  να ρωτήσεις</div>"
+    "text": "<div style=\"text-align: center;font-weight: bold\">Συμβουλεύονται για πολιτικά θέματα</div><div class=\"x-axis-subtitle\" style=\"font-family: TTNormsProItalic\">Ερ. Αν ήθελες να συμβουλευτείς κάποιον/α για ένα πολιτικό θέμα, ποιον ή ποια θα προτιμούσες  να ρωτήσεις</div>"
   },
   "xAxis": {
     "type": "category",
