@@ -46,37 +46,39 @@ export class Home extends React.Component<IHomeProp> {
                   to="survey-chat/youWho"
                   style={{ top: '2vh', width: '29vw', height: '24vh' }}
                 />
-                {subtext()}
-                <Modal
-                  trigger={
-                    <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }}>
-                      <Image src="content/images/play-video.svg" inline style={{ width: '7vw', height: '7vh', marginRight: '2vw' }} />
-                      <span className="home-subtext">Δές το Βίντεο</span>
-                    </Button>
-                  }
-                  basic
-                >
-                  <Modal.Content>
-                    <iframe
-                      width="720"
-                      height="480"
-                      src="https://www.youtube.com/embed/AhveenOl5K8"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </Modal.Content>
-                </Modal>
-                <div style={{ marginLeft: '65%', marginTop: '-30px' }}>
-                  <span className="sponsored-by">Υπό την Αιγίδα</span>
-                  <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px' }} />
+                <div style={{ marginTop: '-9%' }}>
+                  {subtext()}
+                  <Modal
+                    trigger={
+                      <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }}>
+                        <Image src="content/images/play-video.svg" inline style={{ width: '7vw', height: '7vh', marginRight: '2vw' }} />
+                        <span className="home-subtext">Δές το Βίντεο</span>
+                      </Button>
+                    }
+                    basic
+                  >
+                    <Modal.Content>
+                      <iframe
+                        width="720"
+                        height="480"
+                        src="https://www.youtube.com/embed/AhveenOl5K8"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </Modal.Content>
+                  </Modal>
+                  <div style={{ marginLeft: '65%', marginTop: '-50px' }}>
+                    <span className="sponsored-by">Υπό την Αιγίδα</span>
+                    <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px' }} />
+                  </div>
                 </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Responsive>
         <Responsive {...Responsive.onlyMobile}>
-          <Grid centered style={{ height: '100vh' }}>
+          <Grid centered>
             <Grid.Row>{subtext()}</Grid.Row>
             <Grid.Row style={{ padding: 0 }}>
               <Grid.Column width={14}>

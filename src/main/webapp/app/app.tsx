@@ -84,8 +84,7 @@ export const App = (props: IAppProps) => {
           </ErrorBoundary>
         </Sidebar.Pushable>
       </div>
-      <Route path="/menus/" render={() => <Footer />} />
-      <Route path="/results/" render={() => <Footer />} />
+      <Footer />
     </Router>
   );
 };

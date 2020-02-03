@@ -2,13 +2,14 @@
 
 .footer {
   @include mobile {
-    height: auto;
+    height: 100px;
+    font: 10px/14px TTNormsProRegular;
   }
   @include computer {
-    height: 80px;
+    height: 62px;
+    font: 14px/32px TTNormsProRegular;
   }
   text-align: center !important;
-  font: 14px/32px TTNormsProRegular;
   letter-spacing: 0.28px;
   color: #333333;
   opacity: 0.6;
