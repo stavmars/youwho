@@ -8,6 +8,7 @@ import { hideSidebar } from 'app/shared/reducers/header';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Container, Grid } from 'semantic-ui-react';
+import { NavHashLink } from 'react-router-hash-link';
 import chart2 from '../../../../resources/students-highlights/chart-2.json';
 import chart3 from '../../../../resources/students-highlights/chart-3.json';
 import chart4 from '../../../../resources/students-highlights/chart-4.json';
@@ -65,20 +66,56 @@ export class Students extends React.Component<IStudentsProps> {
               Ως εκ τούτου, η μελέτη της συγκεκριμένης ηλικιακής ομάδας έχει ξεχωριστό ενδιαφέρον. Για τις ανάγκες του έργου σχεδιάστηκε και
               υλοποιήθηκε την άνοιξη του 2018 ποσοτική έρευνα πεδίου με αυτο-συμπληρούμενο ερωτηματολόγιο σε επιλεγμένες σχολικές μονάδες
               της Αττικής, σε 792 μαθητές και μαθήτριες Γυμνασίου. Μέσω της έρευνας δόθηκε η δυνατότητα να σκιαγραφηθούν οι πολλαπλές
-              πλευρές της ταυτότητας των εφήβων υπό το πρίσμα του φύλου, της ηλικίας και της κοινωνικής σύνθεσης της οικογένειας.
+              πλευρές της ταυτότητας των εφήβων υπό το πρίσμα του φύλου, της ηλικίας και της κοινωνικής σύνθεσης της οικογένειας. Τμήμα των
+              δεδομένων έχει ήδη αναρτηθεί στην πλατφόρμα{' '}
+              <a href="https://socioscope.gr" target="_blank">
+                Socioscope
+              </a>
+              , στην{' '}
+              <a target="_blank" href="http://www.socioscope.gr/dataset/adolescents">
+                σχετική θεματική
+              </a>
+              .
             </p>
           </Container>
         </div>
         <Container style={{ marginTop: '-60px' }}>
           <p className="students-page-text">
-            Τμήμα των δεδομένων έχει ήδη αναρτηθεί στην πλατφόρμα socioscope.gr, στην{' '}
-            <a target="_blank" href="http://www.socioscope.gr/dataset/adolescents">
-              σχετική θεματική
-            </a>
-            .
+            Μερικά ερευνητικά αποτελέσματα για κάθε θεματική που φιλοξενείται στο{' '}
+            <a href="https://socioscope.gr" target="_blank">
+              Socioscope
+            </a>{' '}
+            μπορείτε να δείτε εδώ:
+            <ul style={{ listStyleType: 'none', textAlign: 'center' }}>
+              <li>
+                <NavHashLink smooth to="#school" style={{ color: '#ff6666' }}>
+                  ΣΧΟΛΕΙΟ
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink smooth to="#family" style={{ color: '#ff6666' }}>
+                  ΟΙΚΟΓΕΝΕΙΑ
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink smooth to="#politics" style={{ color: '#ff6666' }}>
+                  ΠΟΛΙΤΙΚΗ
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink smooth to="#nation" style={{ color: '#ff6666' }}>
+                  ΕΘΝΟΣ
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink smooth to="#personality" style={{ color: '#ff6666' }}>
+                  ΠΡΟΣΩΠΙΚΟΤΗΤΑ
+                </NavHashLink>
+              </li>
+            </ul>
           </p>
-          <h1 className="students-page-title">Highlights</h1>
           <Grid centered>
+            <a id="school" className="anchor" />
             <h2 className="students-page-subtitle">ΣΧΟΛΕΙΟ</h2>
             {HighlightsSubTitle(
               'Οι μαθητές υιοθετούν σε σημαντικό βαθμό πρακτικές συμμόρφωσης, ενώ υποστηρίζουν σθεναρά τη συλλογική δράση στο σχολείο.'
@@ -92,6 +129,7 @@ export class Students extends React.Component<IStudentsProps> {
               'Το 87,4% των μαθητών συμφωνούν ότι <span style="font-family: TTNormsProBoldItalic;font-style: italic">«οι μαθητές/τριες μπορούν να επηρεάσουν' +
                 'ότι συμβαίνει στο σχολείο τους όταν δρουν όλοι/ες μαζί, παρά ο καθένας μόνος του»</span>'
             )}
+            <a id="family" className="anchor" />
             <h2 className="students-page-subtitle">ΟΙΚΟΓΕΝΕΙΑ</h2>
             {HighlightsSubTitle(
               'Οι οικογενειακές συνήθειες στις οποίες αναφέρονται οι μαθητές διαφοροποιούν τον πατέρα από τη μητέρα.' +
@@ -101,6 +139,7 @@ export class Students extends React.Component<IStudentsProps> {
               chart5,
               'Το 62,8% των μαθητών δηλώνει ότι συχνά <span style="font-family: TTNormsProBoldItalic;font-style: italic">«ο πατέρας παρακολουθεί ειδήσεις»</span> και το 62,4% ότι συχνά <span style="font-family: TTNormsProBoldItalic;font-style: italic">«η μητέρα διαβάζει βιβλία»</span>'
             )}
+            <a id="politics" className="anchor" />
             <h2 className="students-page-subtitle">ΠΟΛΙΤΙΚΗ</h2>
             {HighlightsSubTitle(
               'Η κυρίαρχη γνώμη των μαθητών για την ψήφο στα 17 εμφανίζεται αμφίθυμη, καθώς μοιράζεται μεταξύ αποδοχής και αδιαφορίας. Το ενδιαφέρον τους' +
@@ -123,6 +162,7 @@ export class Students extends React.Component<IStudentsProps> {
               chart8,
               'Το 64,6% των μαθητών υποστηρίζει την αλλαγή της ελληνικής κοινωνίας <span style="font-family: TTNormsProBoldItalic;font-style: italic">«σιγά σιγά με μεταρρυθμίσεις»</span> και το 16,7% <span style="font-family: TTNormsProBoldItalic;font-style: italic">«ριζικά με επαναστατικά μέτρα»</span>'
             )}
+            <a id="nation" className="anchor" />
             <h2 className="students-page-subtitle">ΕΘΝΟΣ</h2>
             {HighlightsSubTitle(
               'Η πλειοψηφία των μαθητών αναγνωρίζει την  επιθυμία του αυτοπροσδιορισμού ως το πιο σημαντικό χαρακτηριστικού του/της' +
@@ -137,6 +177,7 @@ export class Students extends React.Component<IStudentsProps> {
               chart10,
               'Το 81,7% των μαθητών δηλώνουν υπερήφανοι <span style="font-family: TTNormsProBoldItalic;font-style: italic">«για την ιστορία του τόπου»</span> και το 56,3% <span style="font-family: TTNormsProBoldItalic;font-style: italic">«για τις επιτυχίες στην τέχνη και τη λογοτεχνία»</span>  '
             )}
+            <a id="personality" className="anchor" />
             <h2 className="students-page-subtitle">ΠΡΟΣΩΠΙΚΟΤΗΤΑ</h2>
             {HighlightsSubTitle(
               'Οι περισσότεροι μαθητές δηλώνουν ότι είναι ικανοποιημένοι από διάφορες παραμέτρους στη ζωή τους, όμως η υψηλότερη ικανοποίηση αντλείται ' +

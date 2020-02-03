@@ -2,6 +2,9 @@
 
 .students-page {
   margin: -80px 0 50px 0;
+  .anchor {
+    position: relative;
+  }
   .students-page-top {
     background-image: url('/content/images/school-students-masked.png');
     background-repeat: no-repeat;
