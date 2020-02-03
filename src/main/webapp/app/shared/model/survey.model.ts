@@ -12,6 +12,7 @@ export interface ISurvey {
   questions?: IQuestion[];
   user?: IUser;
   profilingVariables?: IProfilingVariable[];
+  topics?: string[];
 }
 
 export const defaultValue: Readonly<ISurvey> = { questions: [] };

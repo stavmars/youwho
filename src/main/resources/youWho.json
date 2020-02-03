@@ -2,6 +2,7 @@
   "id": "youWho",
   "name": "youWho",
   "description": "Πόσο youWho είσαι;(Νεόι 17-30)",
+  "topics": ["Εισαγωγή", "Δημογραφικά", "Ελλάδα & Κόσμος", "Κοινωνικές αξίες & δράσεις", "Πολιτική & Πρόσωπα", "Lifestyle & Προσωπικότητα"],
   "profilingVariables": [
     {
       "id": "1",
@@ -84,71 +85,66 @@
       "responseChoices": [
         {
           "id": "1",
-          "text": "1990",
-          "responseReaction": "content/images/chat-images/granny_wow.gif"
-        },
-        {
-          "id": "2",
           "text": "1991",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "3",
+          "id": "2",
           "text": "1992",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "4",
+          "id": "3",
           "text": "1993",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "5",
+          "id": "4",
           "text": "1994",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "6",
+          "id": "5",
           "text": "1995",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "7",
+          "id": "6",
           "text": "1996",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "8",
+          "id": "7",
           "text": "1997",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "9",
+          "id": "8",
           "text": "1998",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "10",
+          "id": "9",
           "text": "1999",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "11",
+          "id": "10",
           "text": "2000",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "12",
+          "id": "11",
           "text": "2001",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "13",
+          "id": "12",
           "text": "2002",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         },
         {
-          "id": "14",
+          "id": "13",
           "text": "2003",
           "responseReaction": "content/images/chat-images/granny_wow.gif"
         }
@@ -1025,7 +1021,7 @@
     },
     {
       "id": "19",
-      "text": "Πιστεύω ότι υπάρχει Θεός",
+      "text": "Υπάρχει Θεός",
       "category": "Κοινωνικές αξίες & δράσεις",
       "type": "scale",
       "displayType": "slider",
@@ -1231,7 +1227,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1289,7 +1285,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1347,7 +1343,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1405,7 +1401,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1463,7 +1459,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1521,7 +1517,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1579,7 +1575,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα",
+          "description": "Ουδέτερο",
           "profilingWeights": {
             "3": 0.5
           }
@@ -1631,7 +1627,7 @@
         {
           "id": "3",
           "text": "3",
-          "description": "Ουδέτερα"
+          "description": "Ουδέτερο"
         },
         {
           "id": "4",

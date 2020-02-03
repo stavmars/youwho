@@ -39,6 +39,8 @@ public class Survey implements Serializable {
 
     private List<ProfilingVariable> profilingVariables = new ArrayList<>();
 
+    private List<String> topics = new ArrayList<>();
+
     @DBRef
     @Field("user")
     private User user;
@@ -130,6 +132,14 @@ public class Survey implements Serializable {
 
     public void setProfilingVariables(List<ProfilingVariable> profilingVariables) {
         this.profilingVariables = profilingVariables;
+    }
+
+    public List<String> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(List<String> topics) {
+        this.topics = topics;
     }
 
     @Override
