@@ -2,10 +2,10 @@
 
 .project-team-page {
   @include mobile {
-    margin-top: 30px !important;
+    margin-top: 100px !important;
   }
   @include computer {
-    margin-top: 240px !important;
+    margin-top: 200px !important;
   }
   .anchor {
     position: relative;
@@ -28,10 +28,11 @@
       margin: 0 0 0 25%;
     }
     @include computer {
-      width: 280px;
-      height: 420px;
+      width: auto;
+      height: auto;
       margin: auto;
     }
+    position: relative; /* allows repositioning */
   }
   .project-team-page-title {
     letter-spacing: 0;
