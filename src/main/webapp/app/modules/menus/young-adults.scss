@@ -4,6 +4,7 @@
   margin: -80px 0 50px 0;
   .young-adults-page-top {
     background-image: url('/content/images/young-masked.png');
+    background-repeat: no-repeat;
     @include mobile {
       padding: 25% 0 50% 0;
     }

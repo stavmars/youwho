@@ -2,19 +2,14 @@ import './news.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
-import { isBrowser } from 'react-device-detect';
+import { hideSidebar } from 'app/shared/reducers/header';
 import { Grid, Menu, Image, Button } from 'semantic-ui-react';
 
 export interface INewsProps extends StateProps, DispatchProps {}
 
 export class News extends React.Component<INewsProps> {
   componentDidMount() {
-    if (isBrowser) {
-      this.props.showSidebar();
-    } else {
-      this.props.hideSidebar();
-    }
+    this.props.hideSidebar();
   }
 
   render() {
@@ -57,7 +52,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  showSidebar,
   hideSidebar
 };
 

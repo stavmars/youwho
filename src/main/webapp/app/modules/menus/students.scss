@@ -4,6 +4,7 @@
   margin: -80px 0 50px 0;
   .students-page-top {
     background-image: url('/content/images/school-students-masked.png');
+    background-repeat: no-repeat;
     @include mobile {
       padding: 25% 0;
     }
@@ -81,12 +82,12 @@
     color: #333333;
     opacity: 1;
     @include mobile {
-      font: 20px/28px TTNormsProRegular;
+      font: 20px/25px TTNormsProRegular;
       letter-spacing: 0.4px;
     }
     @include computer {
-      font: 20px/32px TTNormsProRegular;
-      letter-spacing: 0;
+      font: 22px/32px TTNormsProRegular;
+      letter-spacing: 0.44px;
     }
   }
   .students-page-more-button {

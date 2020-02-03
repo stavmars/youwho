@@ -2,8 +2,7 @@ import './project-team.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { showSidebar, hideSidebar } from 'app/shared/reducers/header';
-import { isBrowser } from 'react-device-detect';
+import { hideSidebar } from 'app/shared/reducers/header';
 import { Image, Grid, Menu, Responsive } from 'semantic-ui-react';
 import { NavHashLink } from 'react-router-hash-link';
 
@@ -35,11 +34,7 @@ export interface IProjectTeamProps extends StateProps, DispatchProps {}
 
 export class ProjectTeam extends React.Component<IProjectTeamProps> {
   componentDidMount() {
-    if (isBrowser) {
-      this.props.showSidebar();
-    } else {
-      this.props.hideSidebar();
-    }
+    this.props.hideSidebar();
   }
 
   // only consider an event active if its event id is an odd number
@@ -241,7 +236,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  showSidebar,
   hideSidebar
 };
 
