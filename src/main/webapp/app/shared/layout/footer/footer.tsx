@@ -11,7 +11,9 @@ const Footer = props => (
         <Menu.Item as={Link} to="/">
           © 2019 YouWho?
         </Menu.Item>
-        <Menu.Item>ΟΡΟΙ ΧΡΗΣΗΣ</Menu.Item>
+        <Menu.Item as="a" href="content/oroi-xrisis.pdf" target="_blank">
+          ΟΡΟΙ ΧΡΗΣΗΣ
+        </Menu.Item>
         <Menu.Item as={Link} to="/menus/contact">
           ΕΠΙΚΟΙΝΩΝΙΑ
         </Menu.Item>
@@ -32,8 +34,10 @@ const Footer = props => (
           © 2019 YouWho?
         </Grid.Row>
         <Grid.Row style={{ padding: 0 }}>
-          <Grid.Column mobile={6} style={{ padding: 0, textAlign: 'center' }}>
-            ΟΡΟΙ ΧΡΗΣΗΣ
+          <Grid.Column mobile={6} style={{ padding: 0 }}>
+            <a href="content/oroi-xrisis.pdf" target="_blank" style={{ textAlign: 'center', color: '#333333' }}>
+              ΟΡΟΙ ΧΡΗΣΗΣ
+            </a>
           </Grid.Column>
           <Grid.Column mobile={7} style={{ padding: 0 }}>
             <a href="https://www.ekke.gr/centre/privacy_policy" target="_blank" style={{ textAlign: 'center', color: '#333333' }}>
