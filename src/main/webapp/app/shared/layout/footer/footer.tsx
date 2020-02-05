@@ -18,7 +18,9 @@ const Footer = props => (
         <Menu.Item style={{ padding: 0 }}>
           <Image src="content/images/espa-el.png" />
         </Menu.Item>
-        <Menu.Item>ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ</Menu.Item>
+        <Menu.Item as="a" href="https://www.ekke.gr/centre/privacy_policy" target="_blank">
+          ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ
+        </Menu.Item>
         <Menu.Item as="a" href="https://www.roleplay.gr/" target="_blank">
           ΣΧΕΔΙΑΣΜΟΣ: ROLEPLAY
         </Menu.Item>
@@ -30,18 +32,31 @@ const Footer = props => (
           © 2019 YouWho?
         </Grid.Row>
         <Grid.Row style={{ padding: 0 }}>
-          <Grid.Column mobile={6} style={{ padding: 0 }}>
-            <div style={{ textAlign: 'center' }}>ΟΡΟΙ ΧΡΗΣΗΣ</div>
+          <Grid.Column mobile={6} style={{ padding: 0, textAlign: 'center' }}>
+            ΟΡΟΙ ΧΡΗΣΗΣ
           </Grid.Column>
           <Grid.Column mobile={7} style={{ padding: 0 }}>
-            <div style={{ textAlign: 'center' }}>ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ</div>
+            <a href="https://www.ekke.gr/centre/privacy_policy" target="_blank" style={{ textAlign: 'center', color: '#333333' }}>
+              ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ
+            </a>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row style={{ padding: '14px 0 10px 0' }}>
           <Image size="small" src="content/images/espa-el.png" />
         </Grid.Row>
-        <Grid.Row as="a" href="https://www.roleplay.gr/" target="_blank" style={{ padding: 0, color: '#333333' }}>
-          ΣΧΕΔΙΑΣΜΟΣ: ROLEPLAY
+        <Grid.Row style={{ padding: 0 }}>
+          <Grid.Column mobile={4} as={Link} to="/menus/contact" style={{ padding: 0, color: '#333333', textAlign: 'center' }}>
+            ΕΠΙΚΟΙΝΩΝΙΑ
+          </Grid.Column>
+          <Grid.Column
+            mobile={7}
+            style={{ padding: 0, color: '#333333', textAlign: 'center' }}
+            as="a"
+            href="https://www.roleplay.gr/"
+            target="_blank"
+          >
+            ΣΧΕΔΙΑΣΜΟΣ: ROLEPLAY
+          </Grid.Column>
         </Grid.Row>
       </Grid>
     </Responsive>
