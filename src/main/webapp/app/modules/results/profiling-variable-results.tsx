@@ -15,7 +15,7 @@ export const ProfilingVariableResults = (props: IProfilingVariableResultsProps) 
     <div className="profile-pill">
       <div className="results-labels">{profilingVariable.upperEnd.name}</div>
       <div className="pill-container">
-        {personalValue && <ProfilingPill value={personalValue} className="personal-pill" />}
+        {personalValue != null && <ProfilingPill value={personalValue} className="personal-pill" />}
         <ProfilingPill value={totalValue} />
       </div>
       <div className="results-labels">{profilingVariable.lowerEnd.name}</div>
