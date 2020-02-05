@@ -21,6 +21,7 @@ import { Menu, Sidebar } from 'semantic-ui-react';
 import SideBar from 'app/shared/layout/header/side-bar';
 import { hideSidebar, toggleSidebar } from 'app/shared/reducers/header';
 import Footer from 'app/shared/layout/footer/footer';
+import CookieConsent from 'react-cookie-consent';
 
 // tslint:disable:jsx-no-lambda
 
@@ -87,6 +88,18 @@ export const App = (props: IAppProps) => {
       <Route path="/" exact render={() => <Footer />} />
       <Route path="/menus/" render={() => <Footer />} />
       <Route path="/results/" render={() => <Footer />} />
+      <CookieConsent
+        location="bottom"
+        buttonText="Εντάξει"
+        cookieName="myAwesomeCookieName2"
+        style={{ background: '#2B373B' }}
+        buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
+        expires={150}
+      >
+        Το YouWho χρησιμοποιεί cookies για να λειτουργεί σωστά. Τα cookies είναι μικρά κομμάτια δεδομένων που αποθηκεύουν οι ιστοσελίδες
+        στον περιηγητή σας για να μας επιτρέψουν να σας προσφέρουμε την καλύτερη δυνατή εμπειρία περιήγησης. Χρησιμοποιώντας τo YouWho
+        αποδέχεστε τη χρήση των cookies. <a href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">Δείτε περισσότερα</a>
+      </CookieConsent>
     </Router>
   );
 };
