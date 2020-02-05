@@ -28,13 +28,26 @@ export interface IOption {
   trigger: string;
 }
 
-export const configureStep = questions => {
+export const configureStep = (questions, scenario: number) => {
   const steps = [];
+  let finalQuestions = [];
 
-  for (let index = 0; index < questions.length; index++) {
-    const question = questions[index];
+  if (scenario) {
+    const intro = questions.filter(question => question.category === 'Εισαγωγή' || question.category === 'Δημογραφικά');
+    const nation = questions.filter(question => question.category === 'Ελλάδα & Κόσμος');
+    const social = questions.filter(question => question.category === 'Κοινωνικές αξίες & δράσεις');
+    const politics = questions.filter(question => question.category === 'Πολιτική & Πρόσωπα');
+    const lifestyle = questions.filter(question => question.category === 'Lifestyle & Προσωπικότητα');
+    const exit = questions.filter(question => question.category === 'Exit');
+    finalQuestions = finalQuestions.concat(intro, lifestyle, politics, social, nation, exit);
+  } else {
+    finalQuestions = finalQuestions.concat(questions);
+  }
+
+  for (let index = 0; index < finalQuestions.length; index++) {
+    const question = finalQuestions[index];
     // Creating a step for each question.
-    if (index === questions.length - 1) {
+    if (index === finalQuestions.length - 1) {
       // Add the button to results page if last step.
       steps.push({
         id: 'results-button',
@@ -59,7 +72,11 @@ export const configureStep = questions => {
           </div>
         ),
         trigger:
-          index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
+          index === finalQuestions.length - 1
+            ? 'results-button'
+            : question.responseChoices
+            ? 'option_' + question.id
+            : finalQuestions[index + 1].id
       });
     } else if (question.type !== 'info_text') {
       // Granny question
@@ -84,7 +101,11 @@ export const configureStep = questions => {
             </div>
           ),
           trigger:
-            index === questions.length - 1 ? 'results-button' : question.responseChoices ? 'option_' + question.id : questions[index + 1].id
+            index === finalQuestions.length - 1
+              ? 'results-button'
+              : question.responseChoices
+              ? 'option_' + question.id
+              : finalQuestions[index + 1].id
         });
       } else {
         // Plain question
@@ -96,11 +117,11 @@ export const configureStep = questions => {
             </span>
           ),
           trigger:
-            index === questions.length - 1
+            index === finalQuestions.length - 1
               ? 'results-button'
               : question.responseChoices
               ? 'option_' + question.id
-              : questions[index + 1].id,
+              : finalQuestions[index + 1].id,
           asMessage: true,
           delay: 1500
         });
@@ -109,7 +130,7 @@ export const configureStep = questions => {
       steps.push({
         id: question.id,
         message: question.text,
-        trigger: index === questions.length - 1 ? 'results-button' : questions[index + 1].id,
+        trigger: index === finalQuestions.length - 1 ? 'results-button' : finalQuestions[index + 1].id,
         delay: 1500
       });
     }
@@ -118,7 +139,7 @@ export const configureStep = questions => {
       const options = [];
       const reactions = [];
       const responses = [];
-      const trigger = question.id !== 'last_question' ? questions[index + 1].id : 'results-button';
+      const trigger = question.id !== 'last_question' ? finalQuestions[index + 1].id : 'results-button';
       // Create an array of JSON objects for the choices of the question.
       for (let choice = 0; choice < question.responseChoices.length; choice++) {
         const option = question.responseChoices[choice];
@@ -145,7 +166,7 @@ export const configureStep = questions => {
             trigger: option.responseReaction ? 'reaction_' + question.id + '_' + option.id : trigger
           });
         } else if (choice === 0) {
-          // Special response for multi_select type of questions. (choice === 0 so I push this step just once.)
+          // Special response for multi_select type of finalQuestions. (choice === 0 so I push this step just once.)
           responses.push({
             id: 'res_' + question.id,
             component: (

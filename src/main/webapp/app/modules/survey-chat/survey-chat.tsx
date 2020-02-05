@@ -30,6 +30,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
   render() {
     const { surveysByName, activeCategory, loading } = this.props;
     const surveyId = this.props.match.params.id;
+    const scenario = Math.floor(Math.random() * 2);
 
     return loading ? (
       <Dimmer active page>
@@ -37,7 +38,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
       </Dimmer>
     ) : (
       <div style={{ width: '100%', backgroundColor: '#6065CC' }}>
-        <ProgressBar activeCategory={activeCategory} categories={surveysByName[surveyId].topics} />
+        <ProgressBar activeCategory={activeCategory} categories={surveysByName[surveyId].topics[scenario]} />
         <ThemeProvider
           theme={{
             background: '#777EFF',
@@ -54,7 +55,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
             footerStyle={{ display: 'none' }}
             hideHeader
             handleEnd={() => this.props.storeSurveyResponse(surveysByName[surveyId])}
-            steps={configureStep(surveysByName[surveyId].questions)}
+            steps={configureStep(surveysByName[surveyId].questions, scenario)}
             style={{
               height: 'calc(100vh - 132px)',
               userSelect: 'none',
