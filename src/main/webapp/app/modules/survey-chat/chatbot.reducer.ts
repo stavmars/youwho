@@ -1,6 +1,7 @@
 import axios from 'axios';
 import moment, { Moment } from 'moment';
 import { ISurvey } from 'app/shared/model/survey.model';
+import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import { defaultValue as SurveyResponseDefault, ISurveyResponse } from 'app/shared/model/survey-response.model';
 import { IQuestionResponse } from 'app/shared/model/question-response.model';
 import { SUCCESS } from 'app/shared/reducers/action-type.util';
@@ -69,16 +70,19 @@ export const updateLastQuestion = questionId => ({
   payload: questionId
 });
 
-export const initiateSurveyResponse = (survey: ISurvey, initTime: Moment) => ({
-  type: ACTION_TYPES.INITIATE_SURVEY_RESPONSE,
-  payload: axios
-    .post('api/survey-responses', {
-      surveyId: survey.id,
-      status: 'partial',
-      startTime: initTime
+export const initiateSurveyResponse = (initTime: Moment) => async dispatch =>
+  dispatch(getSurvey('youWho')).then(res =>
+    dispatch({
+      type: ACTION_TYPES.INITIATE_SURVEY_RESPONSE,
+      payload: axios
+        .post('api/survey-responses', {
+          surveyId: res.value.data.id,
+          status: 'partial',
+          startTime: initTime
+        })
+        .then(storeRes => storeRes.data)
     })
-    .then(res => res.data)
-});
+  );
 
 export const initiateQuestionTimer = () => ({
   type: ACTION_TYPES.INITIATE_QUESTION_TIMER

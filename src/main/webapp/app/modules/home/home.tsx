@@ -37,12 +37,7 @@ export class Home extends React.Component<IHomeProp> {
               </Grid.Column>
               <Grid.Column width={7}>
                 <Image src="content/images/bubble-purple-landing.png" style={{ left: '-15vw', zIndex: '1', height: '26.35vh' }} />
-                <Image
-                  src="content/images/bubble-pink-landing.png"
-                  as={Link}
-                  to="survey-chat/youWho"
-                  style={{ top: '2vh', width: '29vw' }}
-                />
+                <Image src="content/images/bubble-pink-landing.png" as={Link} to="survey-chat" style={{ top: '2vh', width: '29vw' }} />
                 <div style={{ marginTop: '-9%' }}>
                   {subtext()}
                   <Modal
@@ -86,7 +81,7 @@ export class Home extends React.Component<IHomeProp> {
                 <Image
                   src="content/images/bubble-pink-landing.png"
                   as={Link}
-                  to="survey-chat/youWho"
+                  to="survey-chat"
                   style={{ width: '60vw', height: '18vh', top: '5vh', float: 'right', zIndex: '1' }}
                 />
                 <Image src="content/images/giagia.png" className="granny" />

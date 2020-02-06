@@ -6,7 +6,7 @@ import SurveyChat from './survey-chat';
 
 const Routes = ({ match }) => (
   <>
-    <ErrorBoundaryRoute path={`${match.url}/:id`} component={SurveyChat} />
+    <ErrorBoundaryRoute path={`${match.url}`} component={SurveyChat} />
   </>
 );
 
