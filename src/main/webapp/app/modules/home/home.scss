@@ -5,25 +5,18 @@ Main page styles
 ========================================================================== */
 .home-container {
   margin-top: 80px;
-  @include mobile {
-    height: calc(100vh - 10vh) !important;
-  }
-  @include computer {
-    height: calc(100vh - 142px) !important;
-  }
+  height: calc(100vh - 80px) !important;
   overflow: auto;
   overflow-y: hidden;
   .granny {
     position: absolute;
     @include mobile {
       margin-top: 10vh;
-      width: 40vw;
       height: 35vh;
       left: -1vw;
     }
     @include computer {
       width: 30vw;
-      height: 65vh;
       top: 30vh;
       left: 18vw;
     }

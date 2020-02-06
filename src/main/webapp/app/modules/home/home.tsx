@@ -36,15 +36,12 @@ export class Home extends React.Component<IHomeProp> {
                 <Image src="content/images/YellowStripesBg.svg" className="stripes" />
               </Grid.Column>
               <Grid.Column width={7}>
-                <Image
-                  src="content/images/bubble-purple-landing.png"
-                  style={{ left: '-15vw', zIndex: '1', width: '21.7vw', height: '26.35vh' }}
-                />
+                <Image src="content/images/bubble-purple-landing.png" style={{ left: '-15vw', zIndex: '1', height: '26.35vh' }} />
                 <Image
                   src="content/images/bubble-pink-landing.png"
                   as={Link}
                   to="survey-chat/youWho"
-                  style={{ top: '2vh', width: '29vw', height: '24vh' }}
+                  style={{ top: '2vh', width: '29vw' }}
                 />
                 <div style={{ marginTop: '-9%' }}>
                   {subtext()}
