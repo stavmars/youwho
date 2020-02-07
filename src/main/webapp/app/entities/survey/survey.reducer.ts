@@ -21,7 +21,6 @@ const initialState = {
   errorMessage: null,
   entities: [] as ReadonlyArray<ISurvey>,
   entity: defaultValue,
-  entitiesByName: {},
   updating: false,
   updateSuccess: false
 };
@@ -65,8 +64,7 @@ export default (state: SurveyState = initialState, action): SurveyState => {
       return {
         ...state,
         loading: false,
-        entities: action.payload.data,
-        entitiesByName: _.keyBy(action.payload.data, 'name')
+        entities: action.payload.data
       };
     case SUCCESS(ACTION_TYPES.FETCH_SURVEY):
       return {
