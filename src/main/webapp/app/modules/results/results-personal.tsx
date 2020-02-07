@@ -2,11 +2,12 @@ import './results.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { Container, Grid, Image } from 'semantic-ui-react';
+import { Container, Dimmer, Grid, Image, Loader } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
 import { RouteComponentProps } from 'react-router-dom';
 import { getPersonalResults, getTotalResults } from 'app/modules/results/results.reducer';
-import { ISurvey } from 'app/shared/model/survey.model';
+import { defaultValue } from 'app/shared/model/survey.model';
+import { getEntity } from 'app/entities/survey/survey.reducer';
 import { ProfilingVariableResults } from 'app/modules/results/profiling-variable-results';
 import _ from 'lodash';
 
@@ -14,13 +15,18 @@ export interface IResultsPersonalProps extends StateProps, DispatchProps, RouteC
 
 export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
   componentDidMount() {
+    this.props.getEntity('youWho');
     this.props.getPersonalResults(this.props.match.params.resultsId);
     this.props.getTotalResults({});
   }
 
   render() {
     const { survey, personalResults, totalResults, filters } = this.props;
-    return (
+    return survey === defaultValue ? (
+      <Dimmer active page>
+        <Loader />
+      </Dimmer>
+    ) : (
       <div>
         {personalResults && totalResults && survey && (
           <Grid className="results" stackable>
@@ -78,12 +84,13 @@ const mapStateToProps = ({ results, survey }: IRootState) => ({
   personalResults: results.personalResults,
   totalResults: results.totalResults,
   filters: results.filters,
-  survey: survey.entitiesByName['youWho'] as ISurvey
+  survey: survey.entity
 });
 
 const mapDispatchToProps = {
   getPersonalResults,
-  getTotalResults
+  getTotalResults,
+  getEntity
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

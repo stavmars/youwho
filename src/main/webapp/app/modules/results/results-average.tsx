@@ -2,9 +2,10 @@ import './results.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { Grid, Image } from 'semantic-ui-react';
+import { Dimmer, Grid, Image, Loader } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
-import { ISurvey } from 'app/shared/model/survey.model';
+import { defaultValue } from 'app/shared/model/survey.model';
+import { getEntity } from 'app/entities/survey/survey.reducer';
 import { getTotalResults } from 'app/modules/results/results.reducer';
 import { ProfilingVariableResults } from 'app/modules/results/profiling-variable-results';
 
@@ -13,11 +14,16 @@ export interface IResultsAverageProps extends StateProps, DispatchProps {}
 export class ResultsAverage extends React.Component<IResultsAverageProps> {
   componentDidMount() {
     this.props.getTotalResults({});
+    this.props.getEntity('youWho');
   }
 
   render() {
     const { survey, totalResults, filters } = this.props;
-    return (
+    return survey === defaultValue ? (
+      <Dimmer active page>
+        <Loader />
+      </Dimmer>
+    ) : (
       <div>
         {totalResults && survey && (
           <Grid className="results" stackable>
@@ -47,11 +53,12 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
 const mapStateToProps = ({ results, survey }: IRootState) => ({
   totalResults: results.totalResults,
   filters: results.filters,
-  survey: survey.entitiesByName['youWho'] as ISurvey
+  survey: survey.entity
 });
 
 const mapDispatchToProps = {
-  getTotalResults
+  getTotalResults,
+  getEntity
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
