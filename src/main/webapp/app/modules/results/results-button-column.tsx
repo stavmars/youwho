@@ -102,9 +102,6 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
             <Button className="share-buttons" style={{ background: 'transparent', borderStyle: 'none' }}>
               <Image src="content/images/share-facebook.svg" />
             </Button>
-            <Button className="share-buttons" style={{ background: 'transparent', borderStyle: 'none' }}>
-              <Image src="content/images/share-twitter.svg" />
-            </Button>
           </Button.Group>
         </Responsive>
       </Grid.Column>

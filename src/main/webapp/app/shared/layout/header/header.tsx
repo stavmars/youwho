@@ -44,13 +44,10 @@ const Header = (props: IHeaderProps) => {
           >
             Αποτελέσματα
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item as="a" href="https://www.instagram.com/youwho.gr/" target="_blank">
             <Image src="content/images/instagram-black.svg" />
           </Menu.Item>
-          <Menu.Item>
-            <Image src="content/images/twitter-black.svg" />
-          </Menu.Item>
-          <Menu.Item>
+          <Menu.Item as="a" href="https://www.facebook.com/YouWho.gr/" target="_blank">
             <Image src="content/images/facebook-black.svg" />
           </Menu.Item>
           <Menu.Item onClick={props.toggleSidebar}>
