@@ -16,7 +16,7 @@ Main page styles
       left: -1vw;
     }
     @include computer {
-      width: 30vw;
+      height: 65vh;
       top: 30vh;
       left: 18vw;
     }
@@ -46,7 +46,6 @@ Main page styles
     }
     @include computer {
       font: 2.15vh/2.55vh TTNormsProBoldItalic;
-      margin-top: 15vh;
     }
   }
 

@@ -38,7 +38,7 @@ export class Home extends React.Component<IHomeProp> {
               <Grid.Column width={7}>
                 <Image src="content/images/bubble-purple-landing.png" style={{ left: '-15vw', zIndex: '1', height: '26.35vh' }} />
                 <Image src="content/images/bubble-pink-landing.png" as={Link} to="survey-chat" style={{ top: '2vh', width: '29vw' }} />
-                <div style={{ marginTop: '-9%' }}>
+                <div style={{ marginTop: '14vh' }}>
                   {subtext()}
                   <Modal
                     trigger={
