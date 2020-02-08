@@ -50,14 +50,7 @@ export class Home extends React.Component<IHomeProp> {
                     basic
                   >
                     <Modal.Content>
-                      <iframe
-                        width="720"
-                        height="480"
-                        src="https://www.youtube.com/embed/AhveenOl5K8"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                      <iframe width="720" height="480" src="https://www.youtube.com/embed/AhveenOl5K8" frameBorder="0" allowFullScreen />
                     </Modal.Content>
                   </Modal>
                   <div style={{ marginLeft: '65%', marginTop: '-50px' }}>
