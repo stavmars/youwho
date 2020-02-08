@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IRootState } from 'app/shared/reducers';
 import { Button, Grid, Responsive, Image, Modal } from 'semantic-ui-react';
+import ReactPlayer from 'react-player';
 
 // tslint:disable:jsx-no-lambda
 
@@ -50,7 +51,7 @@ export class Home extends React.Component<IHomeProp> {
                     basic
                   >
                     <Modal.Content>
-                      <iframe width="720" height="480" src="https://www.youtube.com/embed/AhveenOl5K8" frameBorder="0" allowFullScreen />
+                      <ReactPlayer url="https://www.youtube.com/watch?v=AhveenOl5K8&feature=emb_title" playing />
                     </Modal.Content>
                   </Modal>
                   <div style={{ marginLeft: '65%', marginTop: '-50px' }}>
