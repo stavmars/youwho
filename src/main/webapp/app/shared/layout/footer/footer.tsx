@@ -34,12 +34,12 @@ const Footer = props => (
           © 2019 YouWho?
         </Grid.Row>
         <Grid.Row style={{ padding: 0 }}>
-          <Grid.Column mobile={6} style={{ padding: 0 }}>
+          <Grid.Column mobile={6} style={{ padding: 0, textAlign: 'center' }}>
             <a href="content/oroi-xrisis.pdf" target="_blank" style={{ textAlign: 'center', color: '#333333' }}>
               ΟΡΟΙ ΧΡΗΣΗΣ
             </a>
           </Grid.Column>
-          <Grid.Column mobile={7} style={{ padding: 0 }}>
+          <Grid.Column mobile={7} style={{ padding: 0, textAlign: 'center' }}>
             <a href="https://www.ekke.gr/centre/privacy_policy" target="_blank" style={{ textAlign: 'center', color: '#333333' }}>
               ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ
             </a>
@@ -49,7 +49,7 @@ const Footer = props => (
           <Image size="small" src="content/images/espa-el.png" />
         </Grid.Row>
         <Grid.Row style={{ padding: 0 }}>
-          <Grid.Column mobile={4} as={Link} to="/menus/contact" style={{ padding: 0, color: '#333333', textAlign: 'center' }}>
+          <Grid.Column mobile={6} as={Link} to="/menus/contact" style={{ padding: 0, color: '#333333', textAlign: 'center' }}>
             ΕΠΙΚΟΙΝΩΝΙΑ
           </Grid.Column>
           <Grid.Column
