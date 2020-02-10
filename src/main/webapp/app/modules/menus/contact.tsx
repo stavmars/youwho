@@ -14,11 +14,7 @@ const contactInfo = () => (
     </Comment>
     <Comment className="comment">
       <Comment.Avatar src="content/images/noun_call_2349137.svg" style={{ width: '25px', height: '33px', margin: '5px' }} />
-      <Comment.Metadata className="comment-metadata" content="210 7491600" />
-    </Comment>
-    <Comment className="comment">
-      <Comment.Avatar src="content/images/noun_fax_2577487.svg" style={{ width: '25px', height: '33px', margin: '5px' }} />
-      <Comment.Metadata className="comment-metadata" content="210 7489800" />
+      <Comment.Metadata className="comment-metadata" content="210 7491674" />
     </Comment>
   </Comment.Group>
 );
