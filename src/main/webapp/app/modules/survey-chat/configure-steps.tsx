@@ -112,9 +112,11 @@ export const configureStep = (questions, scenario: number) => {
         steps.push({
           id: question.id,
           component: (
-            <span id={`question-${question.id}`} style={{ fontFamily: 'TTNormsProBold' }}>
-              {question.text}
-            </span>
+            <span
+              id={`question-${question.id}`}
+              style={{ fontFamily: 'TTNormsProBold' }}
+              dangerouslySetInnerHTML={{ __html: question.text }}
+            />
           ),
           trigger:
             index === finalQuestions.length - 1
