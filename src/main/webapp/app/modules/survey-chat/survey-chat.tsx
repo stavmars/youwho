@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { defaultValue } from 'app/shared/model/survey.model';
-import { initiateSurveyResponse, storeSurveyResponse } from 'app/modules/survey-chat/chatbot.reducer';
+import { initiateSurveyResponse, storeSurveyResponse, updateActiveCategory } from 'app/modules/survey-chat/chatbot.reducer';
 import ChatBot from 'react-simple-chatbot';
 import ProgressBar from 'app/modules/survey-chat/progress-bar';
 import { ThemeProvider } from 'styled-components';
@@ -14,32 +14,37 @@ import moment from 'moment';
 // tslint:disable:jsx-no-lambda
 
 export interface IChatBotProps extends StateProps, DispatchProps {}
-export class SurveyChat extends React.Component<IChatBotProps> {
+
+export interface IChatBotState {
+  scenario: number;
+}
+
+export class SurveyChat extends React.Component<IChatBotProps, IChatBotState> {
   constructor(props) {
     super(props);
+    this.state = {
+      scenario: null
+    };
   }
 
   componentDidMount() {
+    this.setState({
+      scenario: Math.floor(Math.random() * 2)
+    });
+    this.props.updateActiveCategory('Εισαγωγή');
     this.props.initiateSurveyResponse(moment());
   }
 
-  // componentDidUpdate(prevProps: Readonly<IChatBotProps>) {
-  //   if (this.props.survey !== prevProps.survey) {
-  //     this.props.initiateSurveyResponse(moment());
-  //   }
-  // }
-
   render() {
     const { survey, activeCategory, loading } = this.props;
-    const scenario = Math.floor(Math.random() * 2);
 
-    return loading || survey === defaultValue ? (
+    return loading || survey === defaultValue || this.state.scenario === null ? (
       <Dimmer active page>
         <Loader />
       </Dimmer>
     ) : (
       <div style={{ width: '100%', backgroundColor: '#6065CC' }}>
-        <ProgressBar activeCategory={activeCategory} categories={survey.topics[scenario]} />
+        <ProgressBar activeCategory={activeCategory} categories={survey.topics[this.state.scenario]} />
         <ThemeProvider
           theme={{
             background: '#777EFF',
@@ -56,7 +61,7 @@ export class SurveyChat extends React.Component<IChatBotProps> {
             footerStyle={{ display: 'none' }}
             hideHeader
             handleEnd={() => this.props.storeSurveyResponse(survey)}
-            steps={configureStep(survey.questions, scenario)}
+            steps={configureStep(survey.questions, this.state.scenario)}
             style={{
               height: 'calc(100vh - 132px)',
               userSelect: 'none',
@@ -92,7 +97,8 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   initiateSurveyResponse,
-  storeSurveyResponse
+  storeSurveyResponse,
+  updateActiveCategory
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
