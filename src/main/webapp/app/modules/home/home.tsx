@@ -45,7 +45,7 @@ export class Home extends React.Component<IHomeProp> {
                     trigger={
                       <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }}>
                         <Image src="content/images/play-video.svg" inline style={{ width: '7vw', height: '7vh', marginRight: '2vw' }} />
-                        <span className="home-subtext">Δές το Βίντεο</span>
+                        <span className="home-subtext">Δες το Βίντεο</span>
                       </Button>
                     }
                     basic

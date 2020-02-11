@@ -30,14 +30,14 @@ export class News extends React.Component<INewsProps> {
             <Grid.Column computer={3} mobile={14} verticalAlign="middle">
               <Image className="news-page-image" src="content/images/giagia-stasi.png" />
             </Grid.Column>
-            <Grid.Column computer={5} mobile={14}>
+            <Grid.Column computer={5} mobile={14} verticalAlign="middle">
               <h1 className="news-page-h1">ΥouWho? Ερευνα για νέους 17-29 ετών</h1>
               <h3 className="news-page-h3">28.09.2019 • Έρευνες</h3>
-              <p className="news-page-p">
-                Στο πλαίσιο υλοποίησης του υποέργου «REDI – Αυτεπιστασία ΕΚΚΕ» της Πράξης «Έρευνα, Εκπαίδευση και Υποδομές: ο τριγωνισμός
-                των αξόνων στρατηγικής ανάπτυξης του ΕΚΚΕ (REDI)» εντάσσονται τρεις ξεχωριστές έρευνες νεολαίας.
-              </p>
-              <Button className="news-page-more-button">Περισσότερα</Button>
+              {/*<p className="news-page-p">*/}
+              {/*  Στο πλαίσιο υλοποίησης του υποέργου «REDI – Αυτεπιστασία ΕΚΚΕ» της Πράξης «Έρευνα, Εκπαίδευση και Υποδομές: ο τριγωνισμός*/}
+              {/*  των αξόνων στρατηγικής ανάπτυξης του ΕΚΚΕ (REDI)» εντάσσονται τρεις ξεχωριστές έρευνες νεολαίας.*/}
+              {/*</p>*/}
+              {/*<Button className="news-page-more-button">Περισσότερα</Button>*/}
             </Grid.Column>
           </Grid.Row>
           <div className="news-page-divider" />
