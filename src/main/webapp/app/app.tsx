@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
 
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -29,6 +30,8 @@ const baseHref = document
   .getAttribute('href')
   .replace(/\/$/, '');
 
+ReactGA.initialize('UA-158070930-1');
+
 export interface IAppProps extends StateProps, DispatchProps {}
 
 export const App = (props: IAppProps) => {
@@ -37,9 +40,16 @@ export const App = (props: IAppProps) => {
     props.getProfile();
   }, []);
 
+  const tracker = ({ location }) => {
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
+    return null;
+  };
+
   return (
     <Router basename={baseHref}>
       <div className="app-container">
+        <Route render={tracker} />
         <Switch>
           <Route
             path="/survey-chat/"
