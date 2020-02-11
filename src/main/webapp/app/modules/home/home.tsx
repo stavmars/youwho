@@ -11,7 +11,7 @@ import ReactPlayer from 'react-player';
 
 const subtext = () => (
   <div className="home-subtext">
-    <span>Είσαι νέα/ος 17-29 ετών;</span>
+    <span>Είσαι 17-29 ετών;</span>
     <br />
     <br />
     <span>Θέλεις να μάθεις πόσο χαρακτηριστικό δείγμα της γενιάς σου είσαι;</span>
