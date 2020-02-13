@@ -194,16 +194,21 @@
   margin-right: 1% !important;
 }
 
-.ten-tooltip.range10 {
+.ten-tooltip.range11 {
   margin-bottom: 20px !important;
-  margin-left: 5% !important;
+  margin-left: 3% !important;
   font-size: 11px !important;
   font-family: TNormsProMedium !important;
   color: #ffff !important;
 }
 
-.ten-tooltip-text.range10 {
-  margin-right: 9% !important;
+.ten-tooltip-text.range11 {
+  @include mobile {
+    margin-right: 7.5% !important;
+  }
+  @include computer {
+    margin-right: 8% !important;
+  }
 }
 
 .check-box {

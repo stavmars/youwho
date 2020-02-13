@@ -79,7 +79,7 @@ export class SliderInput extends React.Component<ISliderInputProps> {
     const { options } = this.props;
     const min = 1;
     const max = options.length;
-    const def = max / 2;
+    const def = Math.floor(max / 2);
     const className = max < 10 ? 'tooltip' : 'ten-tooltip';
     const emo = options[0].description === '❤️' ? 'emoji' : '';
 
@@ -107,7 +107,7 @@ export class SliderInput extends React.Component<ISliderInputProps> {
               {option.description}
             </span>
           ))}
-          {max === 10 && (
+          {max === 11 && (
             <div style={{ width: '100%' }}>
               <span>Αριστερά</span>
               <span style={{ float: 'right', marginRight: '15px' }}>Δεξιά</span>
