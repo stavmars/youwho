@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-lambda */
 import './results.scss';
 import React from 'react';
-import { Button, Grid, Icon, Image, Item, Responsive } from 'semantic-ui-react';
+import { Button, Grid, Icon, Image, Item, Menu, Responsive } from 'semantic-ui-react';
 import { IRootState } from 'app/shared/reducers';
 import { connect } from 'react-redux';
 import { updateFilters } from 'app/modules/results/results.reducer';
@@ -131,6 +131,27 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
               onClick={() => this.share('twitter')}
             >
               <Image src="content/images/share-twitter.svg" />
+            </Button>
+          </Button.Group>
+          <Button.Group style={{ display: 'block', marginTop: '5vh' }}>
+            <h3 className="filter-type">Ακολούθησέ μας στο:</h3>
+            <Button
+              className="share-buttons"
+              style={{ background: 'transparent', borderStyle: 'none' }}
+              as="a"
+              href="https://www.facebook.com/YouWho.gr/"
+              target="_blank"
+            >
+              <Image src="content/images/follow-facebook.png" />
+            </Button>
+            <Button
+              className="share-buttons"
+              style={{ background: 'transparent', borderStyle: 'none' }}
+              as="a"
+              href="https://www.instagram.com/youwho.gr/"
+              target="_blank"
+            >
+              <Image src="content/images/follow-instagram.png" />
             </Button>
           </Button.Group>
         </Responsive>
