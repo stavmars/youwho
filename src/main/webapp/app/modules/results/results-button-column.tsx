@@ -25,6 +25,25 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
     this.props.updateFilters({ ...filters, age });
   };
 
+  share = action => {
+    const left = (screen.width - 570) / 2;
+    const top = (screen.height - 570) / 2;
+    const params = 'menubar=no,toolbar=no,status=no,width=570,height=570,top=' + top + ',left=' + left;
+    let url;
+    switch (action) {
+      case 'facebook':
+        url = 'https://www.facebook.com/sharer.php?u=' + window.location.href;
+        window.open(url, 'NewWindow', params);
+        break;
+      case 'twitter':
+        url = 'https://twitter.com/intent/tweet?text=' + 'YouWho? έρευνα' + '&url=' + window.location.href;
+        window.open(url, 'NewWindow', params);
+        break;
+      default:
+        break;
+    }
+  };
+
   render() {
     const { personal, filters } = this.props;
 
@@ -99,8 +118,19 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
           <Button.Group style={{ display: 'block', marginTop: '10vh' }}>
             <h3 className="filter-type">Κάνε share</h3>
-            <Button className="share-buttons" style={{ background: 'transparent', borderStyle: 'none' }}>
+            <Button
+              className="share-buttons"
+              style={{ background: 'transparent', borderStyle: 'none' }}
+              onClick={() => this.share('facebook')}
+            >
               <Image src="content/images/share-facebook.svg" />
+            </Button>
+            <Button
+              className="share-buttons"
+              style={{ background: 'transparent', borderStyle: 'none' }}
+              onClick={() => this.share('twitter')}
+            >
+              <Image src="content/images/share-twitter.svg" />
             </Button>
           </Button.Group>
         </Responsive>
