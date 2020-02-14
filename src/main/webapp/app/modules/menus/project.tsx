@@ -52,7 +52,7 @@ export class Project extends React.Component<IProjectProps> {
         <h2 className="project-page-subtitle">Χρηματοδότηση</h2>
         <br />
         <p className="project-page-content">
-          Το έργου υλοποιείται στο πλαίσιο της Πράξης «
+          Το έργο υλοποιείται στο πλαίσιο της Πράξης «
           <a
             target="_blank"
             href="https://www.ekke.gr/research/project/ereuna-ekpaideusi-kai-ipodomes-o-trigonismos-ton-axonon-stratigikis-anaptixis-tou-ekke-redi"
