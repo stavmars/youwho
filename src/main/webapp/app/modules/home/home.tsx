@@ -80,6 +80,12 @@ export class Home extends React.Component<IHomeProp> {
                 />
                 <Image src="content/images/giagia.png" className="granny" />
                 <Image src="content/images/YellowStripesBg.svg" alt="yellow-stripes" className="stripes" />
+                <div style={{ marginLeft: '60vw', marginTop: '-315px', zIndex: 1 }}>
+                  <span className="sponsored-by" style={{ position: 'absolute' }}>
+                    Υπό την Αιγίδα
+                  </span>
+                  <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px', marginTop: '15px' }} />
+                </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>

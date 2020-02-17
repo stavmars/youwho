@@ -9,7 +9,7 @@ const Footer = props => (
     <Responsive minWidth={Responsive.onlyTablet.minWidth}>
       <Menu text compact style={{ backgroundColor: 'transparent', borderStyle: 'none' }}>
         <Menu.Item as={Link} to="/">
-          © 2019 YouWho?
+          © 2020 YouWho?
         </Menu.Item>
         <Menu.Item as="a" href="content/oroi-xrisis.pdf" target="_blank">
           ΟΡΟΙ ΧΡΗΣΗΣ
@@ -31,7 +31,7 @@ const Footer = props => (
     <Responsive {...Responsive.onlyMobile}>
       <Grid centered style={{ marginTop: '5px' }}>
         <Grid.Row as={Link} to="/" style={{ padding: 0, color: '#333333' }}>
-          © 2019 YouWho?
+          © 2020 YouWho?
         </Grid.Row>
         <Grid.Row style={{ padding: 0 }}>
           <Grid.Column mobile={6} style={{ padding: 0, textAlign: 'center' }}>

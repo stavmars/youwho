@@ -133,7 +133,7 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
           </Button>
         </Button.Group>
         <Button.Group style={{ display: 'block', marginTop: '5vh' }}>
-          <h3 className="filter-type">Ακολούθησέ μας στο:</h3>
+          <h3 className="filter-type">like:</h3>
           <iframe
             src={
               'https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FYouWho.gr' +
@@ -147,6 +147,9 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
             allowTransparency
             allow="encrypted-media"
           />
+        </Button.Group>
+        <Button.Group style={{ display: 'block' }}>
+          <h3 className="filter-type">follow:</h3>
           <Button
             className="share-buttons"
             style={{ background: 'transparent', borderStyle: 'none' }}
@@ -154,7 +157,7 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
             href="https://www.instagram.com/youwho.gr/"
             target="_blank"
           >
-            <Image src="content/images/instagram-icon.png" style={{ width: '70px' }} />
+            <Image src="content/images/instagram-icon.png" style={{ marginLeft: '30px', width: '30px' }} />
           </Button>
         </Button.Group>
       </Grid.Column>
