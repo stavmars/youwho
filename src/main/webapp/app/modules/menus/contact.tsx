@@ -3,10 +3,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
-import { Button, Form, Grid, Comment } from 'semantic-ui-react';
+import { Button, Form, Grid, Comment, Responsive, Icon } from 'semantic-ui-react';
 
 const contactInfo = () => (
   <Comment.Group>
+    <Comment className="comment">
+      <Comment.Avatar as={Icon} name="mail" size="big" style={{ marginLeft: '-16px', color: '#f66' }} />
+      <Comment.Author className="comment-author">
+        <a href="mailto:youwho@ekke.gr?subject=Σχόλια%20Έρευνας" style={{ color: '#401b00', marginLeft: '-10px' }}>
+          youwho@ekke.gr
+        </a>
+      </Comment.Author>
+    </Comment>
     <Comment className="comment">
       <Comment.Avatar src="content/images/noun_Location_2641856.svg" style={{ width: '25px', height: '33px', margin: '5px' }} />
       <Comment.Author className="comment-author" content="Εθνικό Κέντρο Κοινωνικών Ερευνών" />
@@ -30,11 +38,7 @@ const contactForm = (name: string, email: string, message: string) => (
   </Form>
 );
 
-export interface IContactProps extends StateProps, DispatchProps {
-  name: string;
-  email: string;
-  message: string;
-}
+export interface IContactProps extends StateProps, DispatchProps {}
 
 export class Contact extends React.Component<IContactProps> {
   constructor(props) {
@@ -46,22 +50,24 @@ export class Contact extends React.Component<IContactProps> {
   }
 
   render() {
-    const { name, email, message } = this.props;
-
     return (
       <div>
-        <Grid className="contact-page" verticalAlign="middle">
-          <Grid.Column computer={7} mobile={16}>
-            <h1 className="contact-page-title">Επικοινωνία</h1>
-            {/*{contactForm(name, email, message)}*/}
-            <p className="contact-page-paragraph">
-              Στείλε μας τα σχόλιά σου στο <a href="mailto:youwho@ekke.gr?subject=Σχόλια%20Έρευνας">youwho@ekke.gr</a>
-            </p>
-          </Grid.Column>
-          <Grid.Column computer={5} mobile={16}>
-            {contactInfo()}
-          </Grid.Column>
-        </Grid>
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Grid className="contact-page" verticalAlign="middle" centered columns={4}>
+            <Grid.Column>
+              <h1 className="contact-page-title">Επικοινωνία</h1>
+              {contactInfo()}
+            </Grid.Column>
+          </Grid>
+        </Responsive>
+        <Responsive {...Responsive.onlyMobile}>
+          <Grid className="contact-page" verticalAlign="middle">
+            <Grid.Column>
+              <h1 className="contact-page-title">Επικοινωνία</h1>
+              {contactInfo()}
+            </Grid.Column>
+          </Grid>
+        </Responsive>
       </div>
     );
   }
