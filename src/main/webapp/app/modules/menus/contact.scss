@@ -5,14 +5,22 @@
     margin: 18% 0 0 0 !important;
   }
   @include computer {
-    margin: 10% 0 0 20% !important;
+    margin: 17% 0 0 20% !important;
   }
   .contact-page-title {
-    text-align: left;
+    text-align: center;
     font: 40px/45px TTNormsProBoldItalic;
     letter-spacing: 0;
     color: #401b00;
     opacity: 1;
+  }
+  .contact-page-paragraph {
+    text-align: center;
+    font: 20px/25px TTNormsProMedium;
+    letter-spacing: 0.32px;
+    color: #401b00;
+    opacity: 1;
+    margin-top: 10vh;
   }
   .contact-page-input {
     text-align: left;

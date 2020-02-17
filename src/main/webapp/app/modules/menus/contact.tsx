@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
-import { Button, Form, Grid, Comment, Responsive } from 'semantic-ui-react';
+import { Button, Form, Grid, Comment } from 'semantic-ui-react';
 
 const contactInfo = () => (
   <Comment.Group>
@@ -14,7 +14,7 @@ const contactInfo = () => (
     </Comment>
     <Comment className="comment">
       <Comment.Avatar src="content/images/noun_call_2349137.svg" style={{ width: '25px', height: '33px', margin: '5px' }} />
-      <Comment.Metadata className="comment-metadata" content="210 7491674" />
+      <Comment.Metadata className="comment-metadata" content="210 7491613-614" />
     </Comment>
   </Comment.Group>
 );
@@ -50,25 +50,18 @@ export class Contact extends React.Component<IContactProps> {
 
     return (
       <div>
-        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-          <Grid className="contact-page" verticalAlign="middle">
-            <Grid.Column width={5}>
-              <h1 className="contact-page-title">Επικοινωνία</h1>
-              {contactForm(name, email, message)}
-            </Grid.Column>
-            <Grid.Column width={2} />
-            <Grid.Column width={5}>{contactInfo()}</Grid.Column>
-          </Grid>
-        </Responsive>
-        <Responsive {...Responsive.onlyMobile}>
-          <Grid className="contact-page">
-            <Grid.Column width={16}>
-              <h1 className="contact-page-title">Επικοινωνία</h1>
-              {contactInfo()}
-            </Grid.Column>
-            <Grid.Column width={16}>{contactForm(name, email, message)}</Grid.Column>
-          </Grid>
-        </Responsive>
+        <Grid className="contact-page" verticalAlign="middle">
+          <Grid.Column computer={7} mobile={16}>
+            <h1 className="contact-page-title">Επικοινωνία</h1>
+            {/*{contactForm(name, email, message)}*/}
+            <p className="contact-page-paragraph">
+              Στείλε μας τα σχόλιά σου στο <a href="mailto:youwho@ekke.gr?subject=Σχόλια%20Έρευνας">youwho@ekke.gr</a>
+            </p>
+          </Grid.Column>
+          <Grid.Column computer={5} mobile={16}>
+            {contactInfo()}
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }
