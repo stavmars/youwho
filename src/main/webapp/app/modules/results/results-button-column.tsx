@@ -115,46 +115,44 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
           onClick={() => this.handlerAgeButton(null)}
           style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px' }}
         />
-        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-          <Button.Group style={{ display: 'block', marginTop: '10vh' }}>
-            <h3 className="filter-type">Κάνε share</h3>
-            <Button
-              className="share-buttons"
-              style={{ background: 'transparent', borderStyle: 'none' }}
-              onClick={() => this.share('facebook')}
-            >
-              <Image src="content/images/share-facebook.svg" />
-            </Button>
-            <Button
-              className="share-buttons"
-              style={{ background: 'transparent', borderStyle: 'none' }}
-              onClick={() => this.share('twitter')}
-            >
-              <Image src="content/images/share-twitter.svg" />
-            </Button>
-          </Button.Group>
-          <Button.Group style={{ display: 'block', marginTop: '5vh' }}>
-            <h3 className="filter-type">Ακολούθησέ μας στο:</h3>
-            <Button
-              className="share-buttons"
-              style={{ background: 'transparent', borderStyle: 'none' }}
-              as="a"
-              href="https://www.facebook.com/YouWho.gr/"
-              target="_blank"
-            >
-              <Image src="content/images/follow-facebook.png" />
-            </Button>
-            <Button
-              className="share-buttons"
-              style={{ background: 'transparent', borderStyle: 'none' }}
-              as="a"
-              href="https://www.instagram.com/youwho.gr/"
-              target="_blank"
-            >
-              <Image src="content/images/follow-instagram.png" />
-            </Button>
-          </Button.Group>
-        </Responsive>
+        <Button.Group style={{ display: 'block', marginTop: '10vh' }}>
+          <h3 className="filter-type">Κάνε share</h3>
+          <Button
+            className="share-buttons"
+            style={{ background: 'transparent', borderStyle: 'none' }}
+            onClick={() => this.share('facebook')}
+          >
+            <Image src="content/images/share-facebook.svg" />
+          </Button>
+          <Button
+            className="share-buttons"
+            style={{ background: 'transparent', borderStyle: 'none' }}
+            onClick={() => this.share('twitter')}
+          >
+            <Image src="content/images/share-twitter.svg" />
+          </Button>
+        </Button.Group>
+        <Button.Group style={{ display: 'block', marginTop: '5vh' }}>
+          <h3 className="filter-type">Ακολούθησέ μας στο:</h3>
+          <Button
+            className="share-buttons"
+            style={{ background: 'transparent', borderStyle: 'none' }}
+            as="a"
+            href="https://www.facebook.com/YouWho.gr/"
+            target="_blank"
+          >
+            <Image src="content/images/follow-facebook.png" />
+          </Button>
+          <Button
+            className="share-buttons"
+            style={{ background: 'transparent', borderStyle: 'none' }}
+            as="a"
+            href="https://www.instagram.com/youwho.gr/"
+            target="_blank"
+          >
+            <Image src="content/images/follow-instagram.png" />
+          </Button>
+        </Button.Group>
       </Grid.Column>
     );
   }
