@@ -72,7 +72,7 @@ const Header = (props: IHeaderProps) => {
           >
             Αποτελέσματα
           </Menu.Item>
-          <Menu.Item position="right" fitted onClick={props.toggleSidebar}>
+          <Menu.Item position="right" onClick={props.toggleSidebar}>
             <Image src="content/images/dots.svg" style={{ width: '80px', height: '50px' }} />
           </Menu.Item>
         </Menu>
