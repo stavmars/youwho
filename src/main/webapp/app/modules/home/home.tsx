@@ -54,9 +54,9 @@ export class Home extends React.Component<IHomeProp> {
                       <ReactPlayer url="https://www.youtube.com/watch?v=AhveenOl5K8&feature=emb_title" playing />
                     </Modal.Content>
                   </Modal>
-                  <div style={{ marginLeft: '65%', marginTop: '-50px' }}>
+                  <div style={{ marginLeft: '60%', marginTop: '-65px' }}>
                     <span className="sponsored-by">Υπό την Αιγίδα</span>
-                    <Image src="content/images/CoA_logoHor_el.png" size="tiny" inline style={{ marginLeft: '10px' }} />
+                    <Image src="content/images/CoA_logoHor_el.png" size="small" inline style={{ marginLeft: '10px' }} />
                   </div>
                 </div>
               </Grid.Column>
