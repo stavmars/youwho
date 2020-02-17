@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-lambda */
 import './results.scss';
 import React from 'react';
-import { Button, Grid, Icon, Image, Item, Menu, Responsive } from 'semantic-ui-react';
+import { Button, Grid, Icon, Image, Item } from 'semantic-ui-react';
 import { IRootState } from 'app/shared/reducers';
 import { connect } from 'react-redux';
 import { updateFilters } from 'app/modules/results/results.reducer';
@@ -134,15 +134,19 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
         </Button.Group>
         <Button.Group style={{ display: 'block', marginTop: '5vh' }}>
           <h3 className="filter-type">Ακολούθησέ μας στο:</h3>
-          <Button
-            className="share-buttons"
-            style={{ background: 'transparent', borderStyle: 'none' }}
-            as="a"
-            href="https://www.facebook.com/YouWho.gr/"
-            target="_blank"
-          >
-            <Image src="content/images/follow-facebook.png" />
-          </Button>
+          <iframe
+            src={
+              'https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FYouWho.gr' +
+              '%2F&width=59&layout=button&action=like&size=small&share=false&height=65&appId'
+            }
+            width="59"
+            height="65"
+            style={{ border: 'none', overflow: 'hidden', paddingTop: '10px', marginLeft: '30px' }}
+            scrolling="no"
+            frameBorder="0"
+            allowTransparency
+            allow="encrypted-media"
+          />
           <Button
             className="share-buttons"
             style={{ background: 'transparent', borderStyle: 'none' }}
@@ -150,7 +154,7 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
             href="https://www.instagram.com/youwho.gr/"
             target="_blank"
           >
-            <Image src="content/images/follow-instagram.png" />
+            <Image src="content/images/instagram-icon.png" style={{ width: '70px' }} />
           </Button>
         </Button.Group>
       </Grid.Column>
