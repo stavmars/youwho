@@ -51,16 +51,36 @@
           width: 16vw !important;
         }
         &.name-2 {
-          width: 10vw !important;
+          &.sc-0 {
+            width: 10vw !important;
+          }
+          &.sc-1 {
+            width: 19vw !important;
+          }
         }
         &.name-3 {
-          width: 13vw !important;
+          &.sc-0 {
+            width: 13vw !important;
+          }
+          &.sc-1 {
+            width: 12vw !important;
+          }
         }
         &.name-4 {
-          width: 12vw !important;
+          &.sc-0 {
+            width: 12vw !important;
+          }
+          &.sc-1 {
+            width: 13vw !important;
+          }
         }
         &.name-5 {
-          width: 19vw !important;
+          &.sc-0 {
+            width: 19vw !important;
+          }
+          &.sc-1 {
+            width: 10vw !important;
+          }
         }
       }
       @include computer {

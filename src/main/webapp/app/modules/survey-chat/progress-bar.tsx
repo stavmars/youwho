@@ -5,6 +5,7 @@ import { Grid, Icon } from 'semantic-ui-react';
 export interface IProgressBarProps {
   activeCategory: string;
   categories: string[];
+  scenario: number;
 }
 
 export class ProgressBar extends React.Component<IProgressBarProps> {
@@ -13,14 +14,16 @@ export class ProgressBar extends React.Component<IProgressBarProps> {
   }
 
   render() {
-    const { activeCategory, categories } = this.props;
+    const { activeCategory, categories, scenario } = this.props;
     return (
       <div className="progress">
         <div className="progress-line" />
         <Grid className="progress-bar">
           <Grid.Row>
             {categories.map((value, index) => (
-              <Grid.Column className={`progress-name ${categories.indexOf(activeCategory) === index ? 'active' : ''} name-${index}`}>
+              <Grid.Column
+                className={`progress-name ${categories.indexOf(activeCategory) === index ? 'active' : ''} name-${index} sc-${scenario}`}
+              >
                 <Icon name="circle" className={`progress-dot ${categories.indexOf(activeCategory) >= index ? 'active' : ''}`} />
                 <br />
                 <span>{value}</span>
