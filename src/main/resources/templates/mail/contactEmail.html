@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{email.contact.title}">JHipster Contact</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+    </head>
+    <body>
+        <p th:text="#{email.contact.greeting}">
+            Dear
+        </p>
+        <p th:text="#{email.contact.text1(${contactName})}">
+            Random Text 1
+        </p>
+        <p th:text="#{email.contact.text2(${contactEmail})}">
+            Random Text 2
+        </p>
+        <p th:text="#{email.contact.text3}">
+            Random Text 3
+        </p>
+        <p th:text="#{${contactContent}}">
+            Contact Content
+        </p>
+        <p>
+            <span th:text="#{email.contact.text4}">Random Text 4</span>
+        </p>
+        <p>
+            <em th:text="#{email.signature}">JHipster.</em>
+        </p>
+    </body>
+</html>
