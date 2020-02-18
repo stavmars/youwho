@@ -34,7 +34,10 @@ describe('Entities reducer tests', () => {
     entity: defaultValue,
     entitiesByName: {},
     updating: false,
-    updateSuccess: false
+    updateSuccess: false,
+    sendingContactMail: false,
+    successMessage: null,
+    contactMailSent: false
   };
 
   function testInitialState(state) {

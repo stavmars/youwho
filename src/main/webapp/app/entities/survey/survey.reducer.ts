@@ -13,6 +13,7 @@ export const ACTION_TYPES = {
   CREATE_SURVEY: 'survey/CREATE_SURVEY',
   UPDATE_SURVEY: 'survey/UPDATE_SURVEY',
   DELETE_SURVEY: 'survey/DELETE_SURVEY',
+  SEND_CONTACT_MAIL: 'survey/SEND_CONTACT_MAIL',
   RESET: 'survey/RESET'
 };
 
@@ -22,7 +23,10 @@ const initialState = {
   entities: [] as ReadonlyArray<ISurvey>,
   entity: defaultValue,
   updating: false,
-  updateSuccess: false
+  updateSuccess: false,
+  sendingContactMail: false,
+  successMessage: null,
+  contactMailSent: false
 };
 
 export type SurveyState = Readonly<typeof initialState>;
@@ -31,6 +35,11 @@ export type SurveyState = Readonly<typeof initialState>;
 
 export default (state: SurveyState = initialState, action): SurveyState => {
   switch (action.type) {
+    case REQUEST(ACTION_TYPES.SEND_CONTACT_MAIL):
+      return {
+        ...state,
+        sendingContactMail: true
+      };
     case REQUEST(ACTION_TYPES.FETCH_SURVEY_LIST):
     case REQUEST(ACTION_TYPES.FETCH_SURVEY):
       return {
@@ -48,6 +57,12 @@ export default (state: SurveyState = initialState, action): SurveyState => {
         updateSuccess: false,
         updating: true
       };
+    case FAILURE(ACTION_TYPES.SEND_CONTACT_MAIL):
+      return {
+        ...state,
+        sendingContactMail: false,
+        contactMailSent: false
+      };
     case FAILURE(ACTION_TYPES.FETCH_SURVEY_LIST):
     case FAILURE(ACTION_TYPES.FETCH_SURVEY):
     case FAILURE(ACTION_TYPES.CREATE_SURVEY):
@@ -59,6 +74,13 @@ export default (state: SurveyState = initialState, action): SurveyState => {
         updating: false,
         updateSuccess: false,
         errorMessage: action.payload
+      };
+    case SUCCESS(ACTION_TYPES.SEND_CONTACT_MAIL):
+      return {
+        ...state,
+        sendingContactMail: false,
+        contactMailSent: true,
+        successMessage: action.meta
       };
     case SUCCESS(ACTION_TYPES.FETCH_SURVEY_LIST):
       return {
@@ -99,6 +121,14 @@ export default (state: SurveyState = initialState, action): SurveyState => {
 const apiUrl = 'api/surveys';
 
 // Actions
+
+export const sendContactMail = (name, email, content) => ({
+  type: ACTION_TYPES.SEND_CONTACT_MAIL,
+  payload: axios.post(`${apiUrl}/contact`, { contactName: name, contactEmail: email, contactContent: content }),
+  meta: {
+    successMessage: '<strong>Το σχόλιό σας εστάλη επιτυχώς</strong>'
+  }
+});
 
 export const getEntities: ICrudGetAllAction<ISurvey> = (page, size, sort) => ({
   type: ACTION_TYPES.FETCH_SURVEY_LIST,
