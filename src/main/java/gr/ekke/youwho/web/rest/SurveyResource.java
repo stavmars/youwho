@@ -1,9 +1,11 @@
 package gr.ekke.youwho.web.rest;
 
 import gr.ekke.youwho.domain.Survey;
+import gr.ekke.youwho.service.MailService;
 import gr.ekke.youwho.service.SurveyService;
 import gr.ekke.youwho.web.rest.errors.BadRequestAlertException;
 
+import gr.ekke.youwho.web.rest.vm.ContactInfoVM;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
@@ -35,8 +37,11 @@ public class SurveyResource {
 
     private final SurveyService surveyService;
 
-    public SurveyResource(SurveyService surveyService) {
+    private final MailService mailService;
+
+    public SurveyResource(SurveyService surveyService, MailService mailService) {
         this.surveyService = surveyService;
+        this.mailService = mailService;
     }
 
     /**
@@ -112,5 +117,16 @@ public class SurveyResource {
         log.debug("REST request to delete Survey : {}", id);
         surveyService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id)).build();
+    }
+
+    /**
+     * {@code POST  /surveys/contact} : Contact Survey owner.
+     *
+     * @param contactInfoVM name, email and content of the contacting person.
+     */
+    @PostMapping("/surveys/contact")
+    public void contactSurveyOwner(@Valid @RequestBody ContactInfoVM contactInfoVM) {
+        log.debug("REST request to contact Survey Owner by {} {} with comment {}", contactInfoVM.getContactName(), contactInfoVM.getContactEmail(), contactInfoVM.getContactContent());
+        mailService.sendContactEmailFromTemplate(contactInfoVM.getContactName(), contactInfoVM.getContactEmail(), contactInfoVM.getContactContent(), "mail/contactEmail", "email.contact.title");
     }
 }

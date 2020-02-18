@@ -32,6 +32,12 @@ public class MailService {
 
     private static final String BASE_URL = "baseUrl";
 
+    private static final String CONTACT_NAME = "contactName";
+
+    private static final String CONTACT_EMAIL= "contactEmail";
+
+    private static final String CONTACT_CONTENT= "contactContent";
+
     private final JHipsterProperties jHipsterProperties;
 
     private final JavaMailSender javaMailSender;
@@ -82,6 +88,19 @@ public class MailService {
         String content = templateEngine.process(templateName, context);
         String subject = messageSource.getMessage(titleKey, null, locale);
         sendEmail(user.getEmail(), subject, content, false, true);
+    }
+
+    @Async
+    public void sendContactEmailFromTemplate(String contactName, String contactEmail, String contactContent, String templateName, String titleKey) {
+        Locale locale = Locale.forLanguageTag("en");
+        Context context = new Context(locale);
+        context.setVariable(BASE_URL, jHipsterProperties.getMail().getBaseUrl());
+        context.setVariable(CONTACT_NAME, contactName);
+        context.setVariable(CONTACT_EMAIL, contactEmail);
+        context.setVariable(CONTACT_CONTENT, contactContent);
+        String content = templateEngine.process(templateName, context);
+        String subject = messageSource.getMessage(titleKey, null, locale);
+        sendEmail("youwho@ekke.gr", subject, content, false, true);
     }
 
     @Async
