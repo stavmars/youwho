@@ -3,6 +3,7 @@ package gr.ekke.youwho.web.rest;
 import gr.ekke.youwho.YouwhoApp;
 import gr.ekke.youwho.domain.Survey;
 import gr.ekke.youwho.repository.SurveyRepository;
+import gr.ekke.youwho.service.MailService;
 import gr.ekke.youwho.service.SurveyService;
 import gr.ekke.youwho.web.rest.errors.ExceptionTranslator;
 
@@ -56,6 +57,9 @@ public class SurveyResourceIT {
     private SurveyService surveyService;
 
     @Autowired
+    private MailService mailService;
+
+    @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
     @Autowired
@@ -74,7 +78,7 @@ public class SurveyResourceIT {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final SurveyResource surveyResource = new SurveyResource(surveyService);
+        final SurveyResource surveyResource = new SurveyResource(surveyService, mailService);
         this.restSurveyMockMvc = MockMvcBuilders.standaloneSetup(surveyResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
@@ -189,7 +193,7 @@ public class SurveyResourceIT {
             .andExpect(jsonPath("$.[*].openTime").value(hasItem(DEFAULT_OPEN_TIME.toString())))
             .andExpect(jsonPath("$.[*].closeTime").value(hasItem(DEFAULT_CLOSE_TIME.toString())));
     }
-    
+
     @Test
     public void getSurvey() throws Exception {
         // Initialize the database
