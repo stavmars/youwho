@@ -1,7 +1,7 @@
 import './header.scss';
 import React from 'react';
 import { Grid, Image, List, Menu } from 'semantic-ui-react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export interface ISideBarProps {
   toggleSidebar(): void;
@@ -10,6 +10,9 @@ export interface ISideBarProps {
 export default (props: ISideBarProps) => (
   <div style={{ height: '100%' }}>
     <Menu text compact className="sidebar-menu">
+      <Menu.Item className="youtube" as="a" href="https://www.youtube.com/channel/UCEfMZfe5xokl-CIPGucqBfg" target="_blank">
+        <Image src="content/images/youtube-white.png" inline />
+      </Menu.Item>
       <Menu.Item className="insta" as="a" href="https://www.instagram.com/youwho.gr/" target="_blank">
         <Image src="content/images/instagram-white.svg" inline />
       </Menu.Item>

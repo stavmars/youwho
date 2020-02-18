@@ -31,10 +31,10 @@ SideBar styles
     margin: 4vh 0 0 39vw !important;
   }
   @include computer {
-    margin: 15px 0 0 275px !important;
+    margin: 15px 0 0 220px !important;
   }
   .insta,
-  .twitter,
+  .youtube,
   .facebook {
     @include mobile {
       padding: 0 3vw !important;
