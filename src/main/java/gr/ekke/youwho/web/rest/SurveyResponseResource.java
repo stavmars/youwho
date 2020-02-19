@@ -163,4 +163,26 @@ public class SurveyResponseResource {
         log.debug("REST request to get average profiling results for questionFilters: {}", questionFilters);
         return surveyService.findOne(surveyId).map(survey -> survey.getProfilingVariables() != null ? surveyResponseService.getAverageProfilingResults(survey, questionFilters) : null);
     }
+
+    /**
+     * {@code GET  /survey-responses/non-empty} : get all non empty surveyResponses.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/non-empty")
+    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
+        log.debug("REST request to get all non empty SurveyResponses");
+        return surveyResponseService.getAllNonEmptySurveyResponses();
+    }
+
+    /**
+     * {@code GET  /survey-responses/completed} : get all completed surveyResponses.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/completed")
+    public List<SurveyResponse> getAllCompletedSurveyResponses() {
+        log.debug("REST request to get all completed SurveyResponses");
+        return surveyResponseService.getAllCompletedSurveyResponses();
+    }
 }

@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -87,5 +89,15 @@ public class SurveyResponseService {
     public Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, Object> questionFilters) {
         log.debug("Request to get average profiling resutls for questionFilters: {}", questionFilters);
         return surveyResponseRepository.getAverageProfilingResults(survey, questionFilters);
+    }
+
+    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
+        log.debug("Request to get non empty Survey Responses");
+        return surveyResponseRepository.getAllByQuestionResponsesGreaterThan(new ArrayList<>());
+    }
+
+    public List<SurveyResponse> getAllCompletedSurveyResponses() {
+        log.debug("Request to get all completed Survey Responses");
+        return surveyResponseRepository.getAllByStatusEquals("completed");
     }
 }
