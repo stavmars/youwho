@@ -8,6 +8,12 @@ import { sendContactMail } from 'app/entities/survey/survey.reducer';
 
 export interface IContactProps extends StateProps, DispatchProps {}
 
+const initialState = {
+  name: '',
+  email: '',
+  content: ''
+};
+
 export interface IContactState {
   name: string;
   email: string;
@@ -17,11 +23,7 @@ export interface IContactState {
 export class Contact extends React.Component<IContactProps, IContactState> {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      email: '',
-      content: ''
-    };
+    this.state = initialState;
   }
 
   componentDidMount() {
@@ -44,16 +46,17 @@ export class Contact extends React.Component<IContactProps, IContactState> {
     );
   }
 
+  validateEmail = () => {
+    const mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    return !this.state.email.match(mailFormat);
+  };
+
   handleChange = (e, { name, value }) => this.setState({ ...this.state, [name]: value });
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.sendContactMail(this.state.name, this.state.email, this.state.content);
-    this.setState({
-      name: '',
-      email: '',
-      content: ''
-    });
+    this.setState(initialState);
   };
 
   contactForm(name: string, email: string, content: string) {
@@ -75,6 +78,12 @@ export class Contact extends React.Component<IContactProps, IContactState> {
           name="email"
           value={email}
           onChange={this.handleChange}
+          error={
+            this.validateEmail() && {
+              content: 'Please enter a valid email address',
+              pointing: 'below'
+            }
+          }
           required
         />
         <Form.TextArea
@@ -87,7 +96,11 @@ export class Contact extends React.Component<IContactProps, IContactState> {
           onChange={this.handleChange}
           required
         />
-        <Button className="contact-page-submit" type="submit">
+        <Button
+          className="contact-page-submit"
+          type="submit"
+          disabled={this.state.content === '' || this.state.email === '' || this.state.name === '' || this.validateEmail()}
+        >
           Αποστολή
         </Button>
       </Form>
