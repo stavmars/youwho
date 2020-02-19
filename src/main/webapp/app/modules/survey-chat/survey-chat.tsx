@@ -43,7 +43,7 @@ export class SurveyChat extends React.Component<IChatBotProps, IChatBotState> {
         <Loader />
       </Dimmer>
     ) : (
-      <div style={{ width: '100%', backgroundColor: '#6065CC' }}>
+      <div style={{ width: '100%', backgroundColor: '#6065CC', position: 'relative', zIndex: 0 }}>
         <ProgressBar activeCategory={activeCategory} categories={survey.topics[this.state.scenario]} scenario={this.state.scenario} />
         <ThemeProvider
           theme={{
