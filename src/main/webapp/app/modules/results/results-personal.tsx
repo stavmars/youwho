@@ -46,6 +46,7 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
                     />
                   ))}
                 </Grid.Column>
+                <ResultsButtonColumn personal filters={filters} />
               </Grid.Row>
             )}
             <div className="content-divider results" />
@@ -71,7 +72,6 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
                   </p>
                 </Container>
               </Grid.Column>
-              <ResultsButtonColumn personal filters={filters} />
             </Grid.Row>
           </Grid>
         )}
