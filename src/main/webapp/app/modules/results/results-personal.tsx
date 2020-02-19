@@ -2,7 +2,7 @@ import './results.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { Container, Dimmer, Grid, Image, Loader } from 'semantic-ui-react';
+import { Container, Dimmer, Grid, Image, Loader, Responsive } from 'semantic-ui-react';
 import ResultsButtonColumn from 'app/modules/results/results-button-column';
 import { RouteComponentProps } from 'react-router-dom';
 import { getPersonalResults, getTotalResults } from 'app/modules/results/results.reducer';
@@ -46,6 +46,9 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
                     />
                   ))}
                 </Grid.Column>
+                <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+                  <ResultsButtonColumn personal filters={filters} />
+                </Responsive>
               </Grid.Row>
             )}
             <div className="content-divider results" />
@@ -71,7 +74,9 @@ export class ResultsPersonal extends React.Component<IResultsPersonalProps> {
                   </p>
                 </Container>
               </Grid.Column>
-              <ResultsButtonColumn personal filters={filters} />
+              <Responsive {...Responsive.onlyMobile}>
+                <ResultsButtonColumn personal filters={filters} />
+              </Responsive>
             </Grid.Row>
           </Grid>
         )}
