@@ -10,8 +10,8 @@ export const ACTION_TYPES = {
 };
 
 const initialState = {
-  nonEmptyEntities: [] as ReadonlyArray<ISurveyResponse>,
-  completedEntities: [] as ReadonlyArray<ISurveyResponse>,
+  nonEmptyEntitiesCount: 0,
+  completedEntitiesCount: 0,
   averageCompletionTime: null,
   loading: false,
   errorMessage: null
@@ -39,13 +39,13 @@ export default (state: DbToolState = initialState, action): DbToolState => {
       return {
         ...state,
         loading: false,
-        nonEmptyEntities: action.payload.data
+        nonEmptyEntitiesCount: action.payload.data
       };
     case SUCCESS(ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST):
       return {
         ...state,
         loading: false,
-        completedEntities: action.payload.data
+        completedEntitiesCount: action.payload.data
       };
     default:
       return state;
@@ -54,18 +54,18 @@ export default (state: DbToolState = initialState, action): DbToolState => {
 
 // Actions
 
-export const getNonEmptyEntities: ICrudGetAllAction<ISurveyResponse> = () => {
+export const getNonEmptyEntities = () => {
   const requestUrl = 'api/survey-responses/non-empty';
   return {
     type: ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST,
-    payload: axios.get<ISurveyResponse>(requestUrl)
+    payload: axios.get(requestUrl)
   };
 };
 
-export const getCompletedEntities: ICrudGetAllAction<ISurveyResponse> = () => {
+export const getCompletedEntities = () => {
   const requestUrl = 'api/survey-responses/completed';
   return {
     type: ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST,
-    payload: axios.get<ISurveyResponse>(requestUrl)
+    payload: axios.get(requestUrl)
   };
 };

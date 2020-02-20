@@ -170,9 +170,9 @@ public class SurveyResponseResource {
      * @return the desired list.
      */
     @GetMapping("/survey-responses/non-empty")
-    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
-        log.debug("REST request to get all non empty SurveyResponses");
-        return surveyResponseService.getAllNonEmptySurveyResponses();
+    public Integer countAllNonEmptySurveyResponses() {
+        log.debug("REST request to get count of all non empty SurveyResponses");
+        return surveyResponseService.countAllNonEmptySurveyResponses();
     }
 
     /**
@@ -181,8 +181,8 @@ public class SurveyResponseResource {
      * @return the desired list.
      */
     @GetMapping("/survey-responses/completed")
-    public List<SurveyResponse> getAllCompletedSurveyResponses() {
-        log.debug("REST request to get all completed SurveyResponses");
-        return surveyResponseService.getAllCompletedSurveyResponses();
+    public Integer countAllCompletedSurveyResponses() {
+        log.debug("REST request to get count of all completed SurveyResponses");
+        return surveyResponseService.countAllCompletedSurveyResponses();
     }
 }

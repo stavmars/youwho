@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface SurveyResponseRepository extends MongoRepository<SurveyResponse, String>, SurveyResponseRepositoryCustom {
 
-    List<SurveyResponse> getAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
+    Integer countAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
 
-    List<SurveyResponse> getAllByStatusEquals(String status);
+    Integer countAllByStatusEquals(String status);
 }

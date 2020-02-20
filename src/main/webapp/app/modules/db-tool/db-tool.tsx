@@ -23,7 +23,7 @@ export class DbTool extends React.Component<IDbToolProps> {
   };
 
   render() {
-    const { loading, nonEmptyEntities, completedEntities, averageCompletionTime } = this.props;
+    const { loading, nonEmptyEntitiesCount, completedEntitiesCount, averageCompletionTime } = this.props;
 
     return (
       <div className="db-tool">
@@ -35,28 +35,28 @@ export class DbTool extends React.Component<IDbToolProps> {
             <Grid.Column className="db-tool-grid-header">Μέσος χρόνος συμπλήρωσης</Grid.Column>
           </Grid.Row>
           <Grid.Row columns={3}>
-            <Grid.Column className="db-tool-grid-content">{nonEmptyEntities.length}</Grid.Column>
-            <Grid.Column className="db-tool-grid-content">{completedEntities.length}</Grid.Column>
+            <Grid.Column className="db-tool-grid-content">{nonEmptyEntitiesCount}</Grid.Column>
+            <Grid.Column className="db-tool-grid-content">{completedEntitiesCount}</Grid.Column>
             <Grid.Column className="db-tool-grid-content">{averageCompletionTime}</Grid.Column>
           </Grid.Row>
-          <Grid.Row columns={3} style={{ marginTop: '5vh' }}>
-            <Grid.Column className="db-tool-grid-header">ID</Grid.Column>
-            <Grid.Column className="db-tool-grid-header">Κατάσταση</Grid.Column>
-            <Grid.Column className="db-tool-grid-header">Χρόνος συμπλήρωσης</Grid.Column>
-          </Grid.Row>
-          {loading
-            ? null
-            : nonEmptyEntities.map(entity => (
-                <Grid.Row columns={3} key={entity.id}>
-                  <Grid.Column className="db-tool-grid-content">
-                    {entity.status === 'completed' ? <NavLink to={`/results/${entity.id}`}>{entity.id}</NavLink> : entity.id}
-                  </Grid.Column>
-                  <Grid.Column className="db-tool-grid-content">{entity.status === 'completed' ? 'Ολοκληρωμένη' : 'Ελλιπής'}</Grid.Column>
-                  <Grid.Column className="db-tool-grid-content">
-                    {entity.status === 'completed' ? this.calculateTimElapsed(entity.startTime, entity.endTime) : null}
-                  </Grid.Column>
-                </Grid.Row>
-              ))}
+          {/*<Grid.Row columns={3} style={{ marginTop: '5vh' }}>*/}
+          {/*  <Grid.Column className="db-tool-grid-header">ID</Grid.Column>*/}
+          {/*  <Grid.Column className="db-tool-grid-header">Κατάσταση</Grid.Column>*/}
+          {/*  <Grid.Column className="db-tool-grid-header">Χρόνος συμπλήρωσης</Grid.Column>*/}
+          {/*</Grid.Row>*/}
+          {/*{loading*/}
+          {/*  ? null*/}
+          {/*  : nonEmptyEntities.map(entity => (*/}
+          {/*      <Grid.Row columns={3} key={entity.id}>*/}
+          {/*        <Grid.Column className="db-tool-grid-content">*/}
+          {/*          {entity.status === 'completed' ? <NavLink to={`/results/${entity.id}`}>{entity.id}</NavLink> : entity.id}*/}
+          {/*        </Grid.Column>*/}
+          {/*        <Grid.Column className="db-tool-grid-content">{entity.status === 'completed' ? 'Ολοκληρωμένη' : 'Ελλιπής'}</Grid.Column>*/}
+          {/*        <Grid.Column className="db-tool-grid-content">*/}
+          {/*          {entity.status === 'completed' ? this.calculateTimElapsed(entity.startTime, entity.endTime) : null}*/}
+          {/*        </Grid.Column>*/}
+          {/*      </Grid.Row>*/}
+          {/*    ))}*/}
         </Grid>
       </div>
     );
@@ -64,8 +64,8 @@ export class DbTool extends React.Component<IDbToolProps> {
 }
 
 const mapStateToProps = ({ dbTool }: IRootState) => ({
-  nonEmptyEntities: dbTool.nonEmptyEntities,
-  completedEntities: dbTool.completedEntities,
+  nonEmptyEntitiesCount: dbTool.nonEmptyEntitiesCount,
+  completedEntitiesCount: dbTool.completedEntitiesCount,
   averageCompletionTime: dbTool.averageCompletionTime,
   loading: dbTool.loading
 });

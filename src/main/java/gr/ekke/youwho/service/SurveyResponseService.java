@@ -91,13 +91,13 @@ public class SurveyResponseService {
         return surveyResponseRepository.getAverageProfilingResults(survey, questionFilters);
     }
 
-    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
-        log.debug("Request to get non empty Survey Responses");
-        return surveyResponseRepository.getAllByQuestionResponsesGreaterThan(new ArrayList<>());
+    public Integer countAllNonEmptySurveyResponses() {
+        log.debug("Request to get count of non empty Survey Responses");
+        return surveyResponseRepository.countAllByQuestionResponsesGreaterThan(new ArrayList<>());
     }
 
-    public List<SurveyResponse> getAllCompletedSurveyResponses() {
-        log.debug("Request to get all completed Survey Responses");
-        return surveyResponseRepository.getAllByStatusEquals("completed");
+    public Integer countAllCompletedSurveyResponses() {
+        log.debug("Request to get count of all completed Survey Responses");
+        return surveyResponseRepository.countAllByStatusEquals("completed");
     }
 }
