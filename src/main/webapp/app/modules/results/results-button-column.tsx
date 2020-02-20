@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-lambda */
 import './results.scss';
 import React from 'react';
-import { Button, Grid, Icon, Image, Item } from 'semantic-ui-react';
+import { Button, Grid, Icon, Image, Item, Popup } from 'semantic-ui-react';
 import { IRootState } from 'app/shared/reducers';
 import { connect } from 'react-redux';
 import { updateFilters } from 'app/modules/results/results.reducer';
@@ -70,23 +70,37 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
           </Item.Group>
         )}
         <h3 className="filter-type">φύλο</h3>
+        <Popup
+          content="Γυναίκες"
+          trigger={
+            <Button
+              className="filter-buttons"
+              active={filters.gender === 2}
+              onClick={() => this.handleGenderButton(2)}
+              style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px' }}
+            >
+              <Image src="content/images/female.svg" />
+            </Button>
+          }
+          style={{ fontFamily: 'TTNormsProMedium', background: '#dbdbdb 0 0 no-repeat padding-box' }}
+          basic
+        />
+        <Popup
+          content="Άνδρες"
+          trigger={
+            <Button className="filter-buttons" active={filters.gender === 1} onClick={() => this.handleGenderButton(1)}>
+              <Image className="filter-buttons-image" src="content/images/male.svg" />
+            </Button>
+          }
+          style={{ fontFamily: 'TTNormsProMedium', background: '#dbdbdb 0 0 no-repeat padding-box' }}
+          basic
+        />
         <Button
           className="filter-buttons"
-          active={filters.gender === 2}
-          onClick={() => this.handleGenderButton(2)}
-          style={{ borderTopLeftRadius: '18px', borderBottomLeftRadius: '18px' }}
-        >
-          <Image src="content/images/female.svg" />
-        </Button>
-        <Button className="filter-buttons" active={filters.gender === 1} onClick={() => this.handleGenderButton(1)}>
-          <Image className="filter-buttons-image" src="content/images/male.svg" />
-        </Button>
-        <Button
-          className="filter-buttons"
-          content="όλοι"
+          content="σύνολο"
           active={!filters.gender}
           onClick={() => this.handleGenderButton(0)}
-          style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', paddingTop: '22.2px' }}
+          style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px', position: 'absolute' }}
         />
         <h3 className="filter-type">ηλικία</h3>
         <Button
@@ -110,7 +124,7 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
         />
         <Button
           className="filter-buttons"
-          content="όλοι"
+          content="σύνολο"
           active={!filters.age}
           onClick={() => this.handlerAgeButton(null)}
           style={{ borderTopRightRadius: '18px', borderBottomRightRadius: '18px' }}
