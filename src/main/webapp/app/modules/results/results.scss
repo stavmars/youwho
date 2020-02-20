@@ -43,6 +43,18 @@ results/average page styles
     }
   }
 
+  .results-disclaimer {
+    text-align: center !important;
+    @include mobile {
+      font: 14px/16px TTNormsProMedium !important;
+    }
+    @include computer {
+      font: 19px/23px TTNormsProMedium !important;
+    }
+    letter-spacing: 0 !important;
+    opacity: 1 !important;
+  }
+
   .results-legend {
     text-align: center !important;
     @include mobile {

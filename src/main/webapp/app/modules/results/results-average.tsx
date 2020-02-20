@@ -31,6 +31,9 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
               <Image className="results-granny-icon" src="content/images/granny.jpg" circular inline />
               <span className="results-granny-bubble">Συνολικά αποτελέσματα</span>
             </Grid.Row>
+            <Grid.Row centered className="results-disclaimer">
+              Τα συνολικά αποτελέσματα είναι προσωρινά και αναδιαμορφώνονται συνεχώς καθώς προστίθενται νέες απαντήσεις.
+            </Grid.Row>
             <Grid.Row columns={3}>
               <Grid.Column computer={10} mobile={14}>
                 {survey.profilingVariables.map(profilingVariable => (
