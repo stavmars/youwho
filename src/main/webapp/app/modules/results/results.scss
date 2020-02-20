@@ -6,7 +6,7 @@
   color: #333333;
   opacity: 1;
   @include mobile {
-    font: 14px/16px TTNormsProBoldItalic;
+    font: 12px/13px TTNormsProBoldItalic;
   }
   @include computer {
     font: 20px/24px TTNormsProBoldItalic;
