@@ -1,0 +1,38 @@
+@import 'app/shared/common.scss';
+
+.db-tool {
+  margin-top: 15vh;
+  .db-tool-header {
+    text-align: center;
+    font: 40px/45px TTNormsProBoldItalic;
+    letter-spacing: 0;
+    color: #401b00;
+    opacity: 1;
+  }
+  .db-tool-grid {
+    .db-tool-grid-header {
+      @include mobile {
+        font: 18px/26px TTNormsProBold;
+        letter-spacing: 0.36px;
+      }
+      @include computer {
+        font: 22px/32px TTNormsProBold;
+        letter-spacing: 0.44px;
+      }
+      text-align: center !important;
+      opacity: 1;
+    }
+    .db-tool-grid-content {
+      @include mobile {
+        font: 18px/26px TTNormsProRegular;
+        letter-spacing: 0.36px;
+      }
+      @include computer {
+        font: 22px/32px TTNormsProRegular;
+        letter-spacing: 0.44px;
+      }
+      text-align: center !important;
+      opacity: 1;
+    }
+  }
+}

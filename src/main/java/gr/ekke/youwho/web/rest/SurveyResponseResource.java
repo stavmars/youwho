@@ -163,4 +163,39 @@ public class SurveyResponseResource {
         log.debug("REST request to get average profiling results for questionFilters: {}", questionFilters);
         return surveyService.findOne(surveyId).map(survey -> survey.getProfilingVariables() != null ? surveyResponseService.getAverageProfilingResults(survey, questionFilters) : null);
     }
+
+    /**
+     * {@code GET  /survey-responses/non-empty} : get all non empty surveyResponses.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/non-empty")
+    public Integer countAllNonEmptySurveyResponses() {
+        log.debug("REST request to get count of all non empty SurveyResponses");
+        return surveyResponseService.countAllNonEmptySurveyResponses();
+    }
+
+    /**
+     * {@code GET  /survey-responses/completed} : get all completed surveyResponses.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/completed")
+    public Integer countAllCompletedSurveyResponses() {
+        log.debug("REST request to get count of all completed SurveyResponses");
+        return surveyResponseService.countAllCompletedSurveyResponses();
+    }
+    /**
+     * {@code GET  /survey-responses/completed} : get all completed surveyResponses.
+     *
+     * @param surveyId the id of the survey to get average profiling results for
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/avgTime/{surveyId}")
+    public Double getAverageSurveyResponseTime(@PathVariable String surveyId) {
+        log.debug("REST request to get count of all completed SurveyResponses");
+        return surveyResponseService.getAverageSurveyResponseTime(surveyService.findOne(surveyId).get());
+    }
+    
+
 }

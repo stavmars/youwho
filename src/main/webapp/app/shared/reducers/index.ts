@@ -15,6 +15,7 @@ import survey, { SurveyState } from 'app/entities/survey/survey.reducer';
 import surveyResponse, { SurveyResponseState } from 'app/entities/survey-response/survey-response.reducer';
 import chatBot, { ChatBotState } from 'app/modules/survey-chat/chatbot.reducer';
 import results, { ResultsState } from 'app/modules/results/results.reducer';
+import dbTool, { DbToolState } from 'app/modules/db-tool/db-tool.reducer';
 
 import header, { HeaderState } from 'app/shared/reducers/header';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
@@ -34,6 +35,7 @@ export interface IRootState {
   readonly chatBot: ChatBotState;
   readonly results: ResultsState;
   readonly header: HeaderState;
+  readonly dbTool: DbToolState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -53,6 +55,7 @@ const rootReducer = combineReducers<IRootState>({
   chatBot,
   results,
   header,
+  dbTool,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });

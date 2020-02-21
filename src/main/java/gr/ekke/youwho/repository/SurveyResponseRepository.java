@@ -1,9 +1,12 @@
 package gr.ekke.youwho.repository;
 
+import gr.ekke.youwho.domain.QuestionResponse;
 import gr.ekke.youwho.domain.SurveyResponse;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 /**
@@ -13,4 +16,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SurveyResponseRepository extends MongoRepository<SurveyResponse, String>, SurveyResponseRepositoryCustom {
 
+    Integer countAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
+
+    Integer countAllByStatusEquals(String status);
 }

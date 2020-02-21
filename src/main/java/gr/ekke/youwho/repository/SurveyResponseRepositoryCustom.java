@@ -12,4 +12,8 @@ public interface SurveyResponseRepositoryCustom {
 
     Map<String, Double> getAverageProfilingResults(Survey survey, Map<String, Object> questionFilters);
 
+    Map<String, Double> getAverageQuestionResponseTime();
+
+    Double getAverageSurveyResponseTime(Survey survey);
+
 }

@@ -17,6 +17,7 @@ import { AUTHORITIES } from 'app/config/constants';
 import SurveyChat from 'app/modules/survey-chat';
 import Menus from 'app/modules/menus';
 import Results from 'app/modules/results';
+import DbTool from 'app/modules/db-tool/db-tool';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -35,13 +36,13 @@ const Routes = () => (
     <Switch>
       <ErrorBoundaryRoute path="/login" component={Login} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
-      <ErrorBoundaryRoute path="/register" component={Register} />
       <ErrorBoundaryRoute path="/activate/:key?" component={Activate} />
       <ErrorBoundaryRoute path="/reset/request" component={PasswordResetInit} />
       <ErrorBoundaryRoute path="/reset/finish/:key?" component={PasswordResetFinish} />
       <PrivateRoute path="/admin" component={Admin} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
+      <PrivateRoute path="/db-tool" component={DbTool} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
       <ErrorBoundaryRoute path="/survey-chat/" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />

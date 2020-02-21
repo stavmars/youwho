@@ -64,7 +64,7 @@ export const App = (props: IAppProps) => {
             )}
           />
           <Route
-            path={`(/|/results)`}
+            path={`(/|/results|/db-tool)`}
             render={() => (
               <Header
                 color="gradient"
@@ -94,6 +94,7 @@ export const App = (props: IAppProps) => {
         </Sidebar.Pushable>
       </div>
       <Route path="/" exact render={() => <Footer />} />
+      <Route path="/db-tool" exact render={() => <Footer />} />
       <Route path="/menus/" render={() => <Footer />} />
       <Route path="/results/" render={() => <Footer />} />
       <CookieConsent
