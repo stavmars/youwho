@@ -100,4 +100,9 @@ public class SurveyResponseService {
         log.debug("Request to get count of all completed Survey Responses");
         return surveyResponseRepository.countAllByStatusEquals("completed");
     }
+
+    public Double getAverageSurveyResponseTime(Survey survey) {
+        log.debug("Request to get average survey response time");
+        return surveyResponseRepository.getAverageSurveyResponseTime(survey);
+    }
 }

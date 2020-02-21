@@ -1,6 +1,7 @@
 package gr.ekke.youwho.repository;
 
 import gr.ekke.youwho.domain.ProfilingVariable;
+import gr.ekke.youwho.domain.Question;
 import gr.ekke.youwho.domain.Survey;
 import org.bson.Document;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.previousOperation;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 public class SurveyResponseRepositoryImpl implements SurveyResponseRepositoryCustom {
 
@@ -52,12 +53,36 @@ public class SurveyResponseRepositoryImpl implements SurveyResponseRepositoryCus
         }
         aggregationOperations.add(groupOperation);
         aggregationOperations.add(Aggregation.project().andExclude(previousOperation()));
-        Aggregation agg = Aggregation.newAggregation(aggregationOperations);
+        Aggregation agg = newAggregation(aggregationOperations);
         log.debug("Mongo agg query to get profiling total results: {} ", agg);
 
         AggregationResults<Document> result = mongoTemplate
             .aggregate(agg, "survey_response", Document.class);
         Document document = result.getUniqueMappedResult();
         return document == null ? null : document.entrySet().stream().collect(Collectors.toMap(entry -> entry.getKey(), entry -> (Double) entry.getValue()));
+    }
+
+    @Override
+    public Map<String, Double> getAverageQuestionResponseTime() {
+
+        return null;
+    }
+
+    @Override
+    public Double getAverageSurveyResponseTime(Survey survey) {
+        List<AggregationOperation> aggregationOperations = new ArrayList<>();
+        aggregationOperations.add(Aggregation.match(Criteria.where("survey_id").is(survey.getId())));
+        aggregationOperations.add(Aggregation.match(Criteria.where("status").is("completed")));
+        aggregationOperations.add(Aggregation.project("end_time", "start_time").and("end_time").minus("start_time").as("duration"));
+        aggregationOperations.add(Aggregation.group().avg("duration").as("averageTime"));
+
+        aggregationOperations.add(Aggregation.project().andExclude(previousOperation()));
+        Aggregation agg = Aggregation.newAggregation(aggregationOperations);
+
+        log.debug("Mongo agg query to get average survey response time:{} ", agg);
+        AggregationResults<Document> result = mongoTemplate
+            .aggregate(agg, "survey_response", Document.class);
+        Document document = result.getUniqueMappedResult();
+        return document == null ? null : document.getDouble("averageTime");
     }
 }

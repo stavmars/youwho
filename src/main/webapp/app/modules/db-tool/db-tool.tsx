@@ -4,7 +4,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { getNonEmptyEntities, getCompletedEntities } from 'app/modules/db-tool/db-tool.reducer';
+import { getNonEmptyEntities, getCompletedEntities, getAverageSurveyResponseTime } from 'app/modules/db-tool/db-tool.reducer';
 import moment, { Moment } from 'moment';
 import { NavLink } from 'react-router-dom';
 
@@ -14,6 +14,7 @@ export class DbTool extends React.Component<IDbToolProps> {
   componentDidMount(): void {
     this.props.getNonEmptyEntities();
     this.props.getCompletedEntities();
+    this.props.getAverageSurveyResponseTime('youWho');
   }
 
   calculateTimElapsed = (start: Moment, end: Moment) => {
@@ -25,19 +26,25 @@ export class DbTool extends React.Component<IDbToolProps> {
   render() {
     const { loading, nonEmptyEntitiesCount, completedEntitiesCount, averageCompletionTime } = this.props;
 
+    const seconds = averageCompletionTime / 1000;
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+
     return (
       <div className="db-tool">
         <h1 className="db-tool-header">Κατάσταση Βάσης</h1>
         <Grid className="db-tool-grid" centered stackable>
-          <Grid.Row columns={3} style={{ marginTop: '5vh' }}>
+          <Grid.Row columns={4} style={{ marginTop: '5vh' }}>
             <Grid.Column className="db-tool-grid-header">Συνολικώς αριθμός απαντήσεων</Grid.Column>
             <Grid.Column className="db-tool-grid-header">Ολοκληρωμένες απαντήσεις</Grid.Column>
+            <Grid.Column className="db-tool-grid-header">Ελλιπείς απαντήσεις</Grid.Column>
             <Grid.Column className="db-tool-grid-header">Μέσος χρόνος συμπλήρωσης</Grid.Column>
           </Grid.Row>
-          <Grid.Row columns={3}>
+          <Grid.Row columns={4}>
             <Grid.Column className="db-tool-grid-content">{nonEmptyEntitiesCount}</Grid.Column>
             <Grid.Column className="db-tool-grid-content">{completedEntitiesCount}</Grid.Column>
-            <Grid.Column className="db-tool-grid-content">{averageCompletionTime}</Grid.Column>
+            <Grid.Column className="db-tool-grid-content">{nonEmptyEntitiesCount - completedEntitiesCount}</Grid.Column>
+            <Grid.Column className="db-tool-grid-content">{`${minutes}min${remainingSeconds}sec`}</Grid.Column>
           </Grid.Row>
           {/*<Grid.Row columns={3} style={{ marginTop: '5vh' }}>*/}
           {/*  <Grid.Column className="db-tool-grid-header">ID</Grid.Column>*/}
@@ -72,7 +79,8 @@ const mapStateToProps = ({ dbTool }: IRootState) => ({
 
 const mapDispatchToProps = {
   getNonEmptyEntities,
-  getCompletedEntities
+  getCompletedEntities,
+  getAverageSurveyResponseTime
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

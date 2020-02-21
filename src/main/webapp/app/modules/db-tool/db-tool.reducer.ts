@@ -23,6 +23,7 @@ export default (state: DbToolState = initialState, action): DbToolState => {
   switch (action.type) {
     case REQUEST(ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST):
     case REQUEST(ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST):
+    case REQUEST(ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME):
       return {
         ...state,
         errorMessage: null,
@@ -30,6 +31,7 @@ export default (state: DbToolState = initialState, action): DbToolState => {
       };
     case FAILURE(ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST):
     case FAILURE(ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST):
+    case FAILURE(ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME):
       return {
         ...state,
         loading: false,
@@ -46,6 +48,12 @@ export default (state: DbToolState = initialState, action): DbToolState => {
         ...state,
         loading: false,
         completedEntitiesCount: action.payload.data
+      };
+    case SUCCESS(ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME):
+      return {
+        ...state,
+        loading: false,
+        averageCompletionTime: action.payload.data
       };
     default:
       return state;
@@ -67,5 +75,13 @@ export const getCompletedEntities = () => {
   return {
     type: ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST,
     payload: axios.get(requestUrl)
+  };
+};
+
+export const getAverageSurveyResponseTime = surveyId => {
+  const requestUrl = 'api/survey-responses/avgTime/';
+  return {
+    type: ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME,
+    payload: axios.get(requestUrl + surveyId)
   };
 };
