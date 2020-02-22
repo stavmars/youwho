@@ -32,10 +32,10 @@ export class DbTool extends React.Component<IDbToolProps> {
 
     return (
       <div className="db-tool">
-        <h1 className="db-tool-header">Κατάσταση Βάσης</h1>
+        <h1 className="db-tool-header">Στατιστικά Έρευνας</h1>
         <Grid className="db-tool-grid" centered stackable>
           <Grid.Row columns={4} style={{ marginTop: '5vh' }}>
-            <Grid.Column className="db-tool-grid-header">Συνολικώς αριθμός απαντήσεων</Grid.Column>
+            <Grid.Column className="db-tool-grid-header">Συνολικός αριθμός απαντήσεων</Grid.Column>
             <Grid.Column className="db-tool-grid-header">Ολοκληρωμένες απαντήσεις</Grid.Column>
             <Grid.Column className="db-tool-grid-header">Ελλιπείς απαντήσεις</Grid.Column>
             <Grid.Column className="db-tool-grid-header">Μέσος χρόνος συμπλήρωσης</Grid.Column>
