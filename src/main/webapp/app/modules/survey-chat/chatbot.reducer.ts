@@ -48,7 +48,7 @@ export default (state: ChatBotState = initialState, action): ChatBotState => {
         ...state,
         activeCategory: action.payload
       };
-    case SUCCESS(ACTION_TYPES.ADD_QUESTION_RESPONSE):
+    case ACTION_TYPES.ADD_QUESTION_RESPONSE:
       return {
         ...state,
         currentSurveyResponse: action.payload,
@@ -95,10 +95,15 @@ export const updateActiveCategory = activeCategory => ({
 
 export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dispatch, getState) => {
   const { currentSurveyResponse } = getState().chatBot;
+  const updatedSurveyResponse = {
+    ...currentSurveyResponse,
+    questionResponses: currentSurveyResponse.questionResponses.concat(questionResponse)
+  };
+  axios.put(`api/survey-responses`, updatedSurveyResponse);
 
   return dispatch({
     type: ACTION_TYPES.ADD_QUESTION_RESPONSE,
-    payload: axios.put(`api/survey-responses/${currentSurveyResponse.id}/response`, questionResponse).then(res => res.data)
+    payload: updatedSurveyResponse
   });
 };
 
