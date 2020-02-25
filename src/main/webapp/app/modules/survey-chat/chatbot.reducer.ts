@@ -5,6 +5,7 @@ import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import { defaultValue as SurveyResponseDefault, ISurveyResponse } from 'app/shared/model/survey-response.model';
 import { IQuestionResponse } from 'app/shared/model/question-response.model';
 import { SUCCESS } from 'app/shared/reducers/action-type.util';
+import _ from 'lodash';
 
 export const ACTION_TYPES = {
   UPDATE_LAST_QUESTION: 'chatbot/UPDATE_LAST_QUESTION',
@@ -95,9 +96,16 @@ export const updateActiveCategory = activeCategory => ({
 
 export const addQuestionResponse = (questionResponse: IQuestionResponse) => (dispatch, getState) => {
   const { currentSurveyResponse } = getState().chatBot;
+  const updatedQuestionResponses = currentSurveyResponse.questionResponses;
+  const index = _.findIndex(updatedQuestionResponses, _.pick(questionResponse, 'questionId'));
+  if (index !== -1) {
+    updatedQuestionResponses.splice(index, 1, questionResponse);
+  } else {
+    updatedQuestionResponses.push(questionResponse);
+  }
   const updatedSurveyResponse = {
     ...currentSurveyResponse,
-    questionResponses: currentSurveyResponse.questionResponses.concat(questionResponse)
+    questionResponses: updatedQuestionResponses
   };
   axios.put(`api/survey-responses`, updatedSurveyResponse);
 
