@@ -105,4 +105,14 @@ public class SurveyResponseService {
         log.debug("Request to get average survey response time");
         return surveyResponseRepository.getAverageSurveyResponseTime(survey);
     }
+
+    public List<SurveyResponse> getAllSurveyResponseByStatus(String status) {
+        log.debug("Request to get all survey responses with status: {}", status);
+        return surveyResponseRepository.getAllByStatusEquals(status);
+    }
+
+    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
+        log.debug("Request to get all non empty Survey Responses");
+        return surveyResponseRepository.getAllByQuestionResponsesGreaterThan(new ArrayList<>());
+    }
 }

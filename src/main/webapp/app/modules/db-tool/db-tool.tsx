@@ -1,17 +1,36 @@
 /* tslint:disable:jsx-no-lambda */
 import './db-tool.scss';
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Button, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { countNonEmptyEntities, countCompletedEntities, getAverageSurveyResponseTime } from 'app/modules/db-tool/db-tool.reducer';
+import {
+  countNonEmptyEntities,
+  countCompletedEntities,
+  getAverageSurveyResponseTime,
+  getAllNonEmptyEntities
+} from 'app/modules/db-tool/db-tool.reducer';
+import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import moment, { Moment } from 'moment';
-import { NavLink } from 'react-router-dom';
+import _ from 'lodash';
+import CsvDownloader from 'react-csv-downloader';
 
 export interface IDbToolProps extends StateProps, DispatchProps {}
 
-export class DbTool extends React.Component<IDbToolProps> {
+export interface IDbToolState {
+  dataToExport: any[];
+}
+
+export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataToExport: []
+    };
+  }
+
   componentDidMount(): void {
+    this.props.getSurvey('youWho');
     this.props.countNonEmptyEntities();
     this.props.countCompletedEntities();
     this.props.getAverageSurveyResponseTime('youWho');
@@ -23,8 +42,56 @@ export class DbTool extends React.Component<IDbToolProps> {
     return `${d.hours() ? d.hours() + 'h' : ''}${d.minutes()}m${d.seconds()}s`;
   };
 
+  exportNonEmptyResponsesToCSV = () => {
+    const { allNonEmptyEntities, survey } = this.props;
+    const questions = _.keyBy(survey.questions, 'id');
+    const dataToExport = [];
+
+    allNonEmptyEntities.forEach(response => {
+      const questionResponses = response.questionResponses;
+      const questionResponsesToExport = [];
+      questionResponses.forEach(questionResponse => {
+        const responseChoices = _.keyBy(questions[questionResponse.questionId].responseChoices, 'id');
+        questionResponsesToExport.push({
+          question: questions[questionResponse.questionId].text,
+          answerTime: questionResponse.endTime
+            ? moment
+                .duration(moment(questionResponse.endTime).diff(moment(questionResponse.startTime)))
+                .asMinutes()
+                .toString()
+            : '',
+          answer: questionResponse.choiceIds.map(choiceId =>
+            parseInt(responseChoices[choiceId].text, 10) !== 0 && parseInt(responseChoices[choiceId].text, 10) < 100
+              ? responseChoices[choiceId].description
+              : responseChoices[choiceId].text
+          )
+        });
+      });
+      dataToExport.push({
+        id: response.id,
+        status: response.status,
+        date: moment(response.startTime).format('DD MM YYYY'),
+        totalTime:
+          response.status === 'completed'
+            ? moment
+                .duration(moment(response.endTime).diff(moment(response.startTime)))
+                .asMinutes()
+                .toString()
+            : '',
+        questionResponses: questionResponsesToExport.map(item => ({
+          question: item.question,
+          answerTime: item.answerTime,
+          answer: item.answer
+        }))
+      });
+    });
+    this.setState({
+      dataToExport
+    });
+  };
+
   render() {
-    const { loading, nonEmptyEntitiesCount, completedEntitiesCount, averageCompletionTime } = this.props;
+    const { loading, nonEmptyEntitiesCount, completedEntitiesCount, averageCompletionTime, allNonEmptyEntities } = this.props;
 
     const seconds = averageCompletionTime / 1000;
     const minutes = Math.floor(seconds / 60);
@@ -64,22 +131,37 @@ export class DbTool extends React.Component<IDbToolProps> {
           {/*        </Grid.Column>*/}
           {/*      </Grid.Row>*/}
           {/*    ))}*/}
+          <Grid.Row>
+            {allNonEmptyEntities.length === 0 ? (
+              <Button onClick={this.props.getAllNonEmptyEntities} content="Fetch data" loading={loading} />
+            ) : this.state.dataToExport.length === 0 ? (
+              <Button onClick={this.exportNonEmptyResponsesToCSV} content="Prepare CSV" />
+            ) : (
+              <CsvDownloader datas={this.state.dataToExport} filename={`results_${moment().format('DD_MM_YYYY_HH_mm_ss')}`}>
+                <Button content="Download CSV" />
+              </CsvDownloader>
+            )}
+          </Grid.Row>
         </Grid>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ dbTool }: IRootState) => ({
+const mapStateToProps = ({ dbTool, survey }: IRootState) => ({
+  survey: survey.entity,
   nonEmptyEntitiesCount: dbTool.nonEmptyEntitiesCount,
   completedEntitiesCount: dbTool.completedEntitiesCount,
+  allNonEmptyEntities: dbTool.allNonEmptyEntities,
   averageCompletionTime: dbTool.averageCompletionTime,
   loading: dbTool.loading
 });
 
 const mapDispatchToProps = {
+  getSurvey,
   countNonEmptyEntities,
   countCompletedEntities,
+  getAllNonEmptyEntities,
   getAverageSurveyResponseTime
 };
 

@@ -165,9 +165,9 @@ public class SurveyResponseResource {
     }
 
     /**
-     * {@code GET  /survey-responses/non-empty} : get all non empty surveyResponses.
+     * {@code GET  /survey-responses/non-empty} : get count of all non empty surveyResponses.
      *
-     * @return the desired list.
+     * @return the amount.
      */
     @GetMapping("/survey-responses/non-empty")
     public Integer countAllNonEmptySurveyResponses() {
@@ -176,9 +176,9 @@ public class SurveyResponseResource {
     }
 
     /**
-     * {@code GET  /survey-responses/completed} : get all completed surveyResponses.
+     * {@code GET  /survey-responses/completed} : get count of all completed surveyResponses.
      *
-     * @return the desired list.
+     * @return the amount.
      */
     @GetMapping("/survey-responses/completed")
     public Integer countAllCompletedSurveyResponses() {
@@ -186,16 +186,36 @@ public class SurveyResponseResource {
         return surveyResponseService.countAllCompletedSurveyResponses();
     }
     /**
-     * {@code GET  /survey-responses/completed} : get all completed surveyResponses.
+     * {@code GET  /survey-responses/avgTime/:surveyId} : get average completion time of survey.
      *
-     * @param surveyId the id of the survey to get average profiling results for
-     * @return the desired list.
+     * @param surveyId the id of the survey to get average completion time for
+     * @return the total time.
      */
     @GetMapping("/survey-responses/avgTime/{surveyId}")
     public Double getAverageSurveyResponseTime(@PathVariable String surveyId) {
         log.debug("REST request to get count of all completed SurveyResponses");
         return surveyResponseService.getAverageSurveyResponseTime(surveyService.findOne(surveyId).get());
     }
-    
 
+    /**
+     * {@code GET  /survey-responses/all/completed} : get all completed surveyResponses.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/all/completed")
+    public List<SurveyResponse> getAllCompletedSurveyResponse() {
+        log.debug("REST request to get all completed SurveyResponses");
+        return surveyResponseService.getAllSurveyResponseByStatus("completed");
+    }
+
+    /**
+     * {@code GET  /survey-responses/all/non-empty} : get all non empty surveyResponses.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/all/non-empty")
+    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
+        log.debug("REST request to get count of all non empty SurveyResponses");
+        return surveyResponseService.getAllNonEmptySurveyResponses();
+    }
 }
