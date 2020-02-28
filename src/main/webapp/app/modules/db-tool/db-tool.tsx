@@ -4,7 +4,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { getNonEmptyEntities, getCompletedEntities, getAverageSurveyResponseTime } from 'app/modules/db-tool/db-tool.reducer';
+import { countNonEmptyEntities, countCompletedEntities, getAverageSurveyResponseTime } from 'app/modules/db-tool/db-tool.reducer';
 import moment, { Moment } from 'moment';
 import { NavLink } from 'react-router-dom';
 
@@ -12,8 +12,8 @@ export interface IDbToolProps extends StateProps, DispatchProps {}
 
 export class DbTool extends React.Component<IDbToolProps> {
   componentDidMount(): void {
-    this.props.getNonEmptyEntities();
-    this.props.getCompletedEntities();
+    this.props.countNonEmptyEntities();
+    this.props.countCompletedEntities();
     this.props.getAverageSurveyResponseTime('youWho');
   }
 
@@ -78,8 +78,8 @@ const mapStateToProps = ({ dbTool }: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getNonEmptyEntities,
-  getCompletedEntities,
+  countNonEmptyEntities,
+  countCompletedEntities,
   getAverageSurveyResponseTime
 };
 

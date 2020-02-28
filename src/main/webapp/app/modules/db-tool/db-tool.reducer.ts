@@ -4,8 +4,8 @@ import axios from 'axios';
 import { ISurveyResponse } from 'app/shared/model/survey-response.model';
 
 export const ACTION_TYPES = {
-  FETCH_NON_EMPTY_SURVEYRESPONSE_LIST: 'dbTool/FETCH_NON_EMPTY_SURVEYREPSONE_LIST',
-  FETCH_COMPLETED_SURVEYRESPONSE_LIST: 'dbTool/FETCH_COMPLETED_SURVEY_RESPONSE_LIST',
+  COUNT_NON_EMPTY_SURVEYRESPONSE_LIST: 'dbTool/FETCH_NON_EMPTY_SURVEYREPSONE_LIST',
+  COUNT_COMPLETED_SURVEYRESPONSE_LIST: 'dbTool/FETCH_COMPLETED_SURVEY_RESPONSE_LIST',
   FETCH_AVERAGE_COMPLETION_TIME: 'dbTool/FETCH_AVERAGE_COMPLETION_TIME'
 };
 
@@ -21,29 +21,29 @@ export type DbToolState = Readonly<typeof initialState>;
 
 export default (state: DbToolState = initialState, action): DbToolState => {
   switch (action.type) {
-    case REQUEST(ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST):
-    case REQUEST(ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST):
+    case REQUEST(ACTION_TYPES.COUNT_COMPLETED_SURVEYRESPONSE_LIST):
+    case REQUEST(ACTION_TYPES.COUNT_NON_EMPTY_SURVEYRESPONSE_LIST):
     case REQUEST(ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME):
       return {
         ...state,
         errorMessage: null,
         loading: true
       };
-    case FAILURE(ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST):
-    case FAILURE(ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST):
+    case FAILURE(ACTION_TYPES.COUNT_NON_EMPTY_SURVEYRESPONSE_LIST):
+    case FAILURE(ACTION_TYPES.COUNT_COMPLETED_SURVEYRESPONSE_LIST):
     case FAILURE(ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME):
       return {
         ...state,
         loading: false,
         errorMessage: action.payload
       };
-    case SUCCESS(ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST):
+    case SUCCESS(ACTION_TYPES.COUNT_NON_EMPTY_SURVEYRESPONSE_LIST):
       return {
         ...state,
         loading: false,
         nonEmptyEntitiesCount: action.payload.data
       };
-    case SUCCESS(ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST):
+    case SUCCESS(ACTION_TYPES.COUNT_COMPLETED_SURVEYRESPONSE_LIST):
       return {
         ...state,
         loading: false,
@@ -62,18 +62,18 @@ export default (state: DbToolState = initialState, action): DbToolState => {
 
 // Actions
 
-export const getNonEmptyEntities = () => {
+export const countNonEmptyEntities = () => {
   const requestUrl = 'api/survey-responses/non-empty';
   return {
-    type: ACTION_TYPES.FETCH_NON_EMPTY_SURVEYRESPONSE_LIST,
+    type: ACTION_TYPES.COUNT_NON_EMPTY_SURVEYRESPONSE_LIST,
     payload: axios.get(requestUrl)
   };
 };
 
-export const getCompletedEntities = () => {
+export const countCompletedEntities = () => {
   const requestUrl = 'api/survey-responses/completed';
   return {
-    type: ACTION_TYPES.FETCH_COMPLETED_SURVEYRESPONSE_LIST,
+    type: ACTION_TYPES.COUNT_COMPLETED_SURVEYRESPONSE_LIST,
     payload: axios.get(requestUrl)
   };
 };
