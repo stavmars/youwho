@@ -140,7 +140,18 @@ results/average page styles
   }
 
   .pill {
-    background: #00000029;
+    &.upper {
+      background: #00000029;
+      .pill-bar {
+        background: #a1a1a1;
+      }
+    }
+    &.lower {
+      background: #a1a1a1;
+      .pill-bar {
+        background: #00000029;
+      }
+    }
     position: relative;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -158,9 +169,17 @@ results/average page styles
       width: 65px;
     }
     &.personal-pill {
-      background: #ffe0e0;
-      .pill-bar {
+      &.upper {
+        background: #ffe0e0;
+        .pill-bar {
+          background: #ff6666;
+        }
+      }
+      &.lower {
         background: #ff6666;
+        .pill-bar {
+          background: #ffe0e0;
+        }
       }
     }
   }
@@ -170,7 +189,6 @@ results/average page styles
   }
 
   .pill-bar {
-    background: #a1a1a1;
     bottom: 0;
     display: -ms-flexbox;
     display: flex;

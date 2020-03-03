@@ -12,7 +12,7 @@ export const ProfilingPill = (props: IProfilingPillProps) => {
     return <div className={`pill ${className || ''}`} />;
   }
   return (
-    <div className={`pill ${className || ''}`}>
+    <div className={`pill ${className || ''}  ${value > 0.5 ? 'lower' : 'upper'}`}>
       <span className="pill-label pill-label-top">{_.round((1 - value) * 100, 1)}%</span>
       <div className="pill-bar" style={{ height: `${(1 - value) * 100}%` }} />
       <span className="pill-label pill-label-bottom">{_.round(value * 100, 1)}%</span>
