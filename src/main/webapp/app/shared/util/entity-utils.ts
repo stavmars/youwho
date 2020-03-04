@@ -33,3 +33,39 @@ export const addNewResponse = (responses: ReadonlyArray<IQuestionResponse>, resp
   }
   return responses.concat(response);
 };
+
+export const pivotArray = (arr: any[]) => {
+  const mp = new Map();
+
+  const setValue = (a, path, val) => {
+    if (Object(val) !== val) {
+      // primitive value
+      const pathStr = path.join('.');
+      const i = (mp.has(pathStr) ? mp : mp.set(pathStr, mp.size)).get(pathStr);
+      a[i] = val;
+    } else {
+      for (const key in val) {
+        if (val.hasOwnProperty(key)) {
+          setValue(a, key === '0' ? path : path.concat(key), val[key]);
+        }
+      }
+    }
+    return a;
+  };
+
+  const result = arr.map(obj => setValue([], [], obj));
+  return [[...mp.keys()], ...result];
+};
+
+export const toCsv = (arr: any[]) =>
+  'data:text/csv;charset=utf-8,' + arr.map(row => row.map(val => (Array.isArray(val) ? toCsv(val) : val)).join(',')).join('\n');
+
+export const downloadCSV = csvContent => {
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement('a');
+  link.setAttribute('href', encodedUri);
+  link.setAttribute('download', 'my_data.csv');
+  document.body.appendChild(link); // Required for FF
+
+  link.click();
+};

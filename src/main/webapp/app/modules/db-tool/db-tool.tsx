@@ -14,6 +14,7 @@ import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import moment, { Moment } from 'moment';
 import _ from 'lodash';
 import CsvDownloader from 'react-csv-downloader';
+import { downloadCSV, pivotArray, toCsv } from 'app/shared/util/entity-utils';
 
 export interface IDbToolProps extends StateProps, DispatchProps {}
 
@@ -137,9 +138,7 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
             ) : this.state.dataToExport.length === 0 ? (
               <Button onClick={this.exportNonEmptyResponsesToCSV} content="Prepare CSV" />
             ) : (
-              <CsvDownloader datas={this.state.dataToExport} filename={`results_${moment().format('DD_MM_YYYY_HH_mm_ss')}`}>
-                <Button content="Download CSV" />
-              </CsvDownloader>
+              <Button content="Download CSV" onClick={() => downloadCSV(toCsv(pivotArray(this.state.dataToExport)))} />
             )}
           </Grid.Row>
         </Grid>
