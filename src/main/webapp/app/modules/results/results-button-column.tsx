@@ -151,9 +151,8 @@ class ResultsButtonColumn extends React.Component<IResultsButtonColumnProps> {
           <iframe
             src={
               'https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FYouWho.gr' +
-              '%2F&width=59&layout=button&action=like&size=small&share=false&height=65&appId'
+              '%2F&layout=button&action=like&size=small&share=false&appId'
             }
-            width="59"
             height="65"
             style={{ border: 'none', overflow: 'hidden', paddingTop: '10px', marginLeft: '30px' }}
             scrolling="no"
