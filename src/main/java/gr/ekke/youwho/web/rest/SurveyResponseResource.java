@@ -22,9 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * REST controller for managing {@link gr.ekke.youwho.domain.SurveyResponse}.
@@ -217,5 +215,45 @@ public class SurveyResponseResource {
     public List<SurveyResponse> getAllNonEmptySurveyResponses() {
         log.debug("REST request to get count of all non empty SurveyResponses");
         return surveyResponseService.getAllNonEmptySurveyResponses();
+    }
+
+    /**
+     * {@code GET /survey-responses/duplicate/answers/completed} : find and fix all completed responses with duplicated answers.
+     *
+     * @return the desired list.
+     */
+    @GetMapping("/survey-responses/duplicate/answers/completed")
+    public List<SurveyResponse> findAndFixAllCompletedSurveyResponseWithDuplicateAnswers() {
+        log.debug("REST request to get all completed SurveyResponses with duplicated answers");
+        List<SurveyResponse> completedSurveys = surveyResponseService.getAllSurveyResponseByStatus("completed");
+
+        // Keep only those with duplicate question responses.
+        completedSurveys.removeIf(surveyResponse -> surveyResponse.getQuestionResponses().size() <= 89);
+
+        for (SurveyResponse completedSurvey : completedSurveys) {
+            // Create an array with 0s for all questions.
+            int[] answersArray = new int[89];
+            Arrays.fill(answersArray, 0);
+            // Count for each question response the amount of answer each question has.
+            for (int i = 0; i < completedSurvey.getQuestionResponses().size(); i++) {
+                QuestionResponse questionResponse = completedSurvey.getQuestionResponses().get(i);
+                answersArray[Integer.parseInt(questionResponse.getQuestionId()) - 1]++;
+            }
+            for (int i = 0; i < 89; i++) {
+                // For any question with more than one answer, remove all duplicates and keep the last one.
+                while (answersArray[i] > 1) {
+                    final int id = i + 1;
+                    QuestionResponse duplicate = completedSurvey.getQuestionResponses()
+                        .stream()
+                        .filter(questionResponse -> questionResponse.getQuestionId().equals(String.valueOf(id)))
+                        .findFirst()
+                        .get();
+                    completedSurvey.getQuestionResponses().remove(duplicate);
+                    answersArray[i]--;
+                }
+            }
+        }
+        // Finally return this list so it can be updated to the database.
+        return completedSurveys;
     }
 }

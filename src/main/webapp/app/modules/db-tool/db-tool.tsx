@@ -8,7 +8,9 @@ import {
   countNonEmptyEntities,
   countCompletedEntities,
   getAverageSurveyResponseTime,
-  getAllNonEmptyEntities
+  getAllNonEmptyEntities,
+  findAndCleanAllCompletedWithDuplicateAnswers,
+  computeResultsOfDuplicateAnswers
 } from 'app/modules/db-tool/db-tool.reducer';
 import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import moment, { Moment } from 'moment';
@@ -34,6 +36,7 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
     this.props.getSurvey('youWho');
     this.props.countNonEmptyEntities();
     this.props.countCompletedEntities();
+    this.props.findAndCleanAllCompletedWithDuplicateAnswers();
     this.props.getAverageSurveyResponseTime('youWho');
   }
 
@@ -92,7 +95,14 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
   };
 
   render() {
-    const { loading, nonEmptyEntitiesCount, completedEntitiesCount, averageCompletionTime, allNonEmptyEntities } = this.props;
+    const {
+      loading,
+      nonEmptyEntitiesCount,
+      completedEntitiesCount,
+      averageCompletionTime,
+      allNonEmptyEntities,
+      completedWithDuplicateAnswers
+    } = this.props;
 
     const seconds = averageCompletionTime / 1000;
     const minutes = Math.floor(seconds / 60);
@@ -141,6 +151,15 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
               <Button content="Download CSV" onClick={() => downloadCSV(toCsv(pivotArray(this.state.dataToExport)))} />
             )}
           </Grid.Row>
+          {completedWithDuplicateAnswers.length > 0 && (
+            <Grid.Row>
+              <Button
+                content="Re-calculate results"
+                color="red"
+                onClick={() => this.props.computeResultsOfDuplicateAnswers(this.props.survey)}
+              />
+            </Grid.Row>
+          )}
         </Grid>
       </div>
     );
@@ -152,6 +171,7 @@ const mapStateToProps = ({ dbTool, survey }: IRootState) => ({
   nonEmptyEntitiesCount: dbTool.nonEmptyEntitiesCount,
   completedEntitiesCount: dbTool.completedEntitiesCount,
   allNonEmptyEntities: dbTool.allNonEmptyEntities,
+  completedWithDuplicateAnswers: dbTool.corruptedEntities,
   averageCompletionTime: dbTool.averageCompletionTime,
   loading: dbTool.loading
 });
@@ -161,7 +181,9 @@ const mapDispatchToProps = {
   countNonEmptyEntities,
   countCompletedEntities,
   getAllNonEmptyEntities,
-  getAverageSurveyResponseTime
+  findAndCleanAllCompletedWithDuplicateAnswers,
+  getAverageSurveyResponseTime,
+  computeResultsOfDuplicateAnswers
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
