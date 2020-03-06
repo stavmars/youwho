@@ -130,7 +130,7 @@ export const storeSurveyResponse = (survey: ISurvey) => (dispatch, getState) => 
   });
 };
 
-const computeProfilingResults = (survey: ISurvey, surveyResponse: ISurveyResponse) => {
+export const computeProfilingResults = (survey: ISurvey, surveyResponse: ISurveyResponse) => {
   const profilingResults = {};
   survey.profilingVariables.forEach(profilingVariable => {
     const result = survey.questions

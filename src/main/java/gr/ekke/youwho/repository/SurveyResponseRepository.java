@@ -19,4 +19,8 @@ public interface SurveyResponseRepository extends MongoRepository<SurveyResponse
     Integer countAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
 
     Integer countAllByStatusEquals(String status);
+
+    List<SurveyResponse> getAllByStatusEquals(String status);
+
+    List<SurveyResponse> getAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
 }
