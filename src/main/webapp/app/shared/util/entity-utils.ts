@@ -1,5 +1,6 @@
 import pick from 'lodash/pick';
 import { IQuestionResponse } from 'app/shared/model/question-response.model';
+import cloneDeep from 'lodash/cloneDeep';
 
 /**
  * Removes fields with an 'id' field that equals ''.
@@ -34,38 +35,80 @@ export const addNewResponse = (responses: ReadonlyArray<IQuestionResponse>, resp
   return responses.concat(response);
 };
 
-export const pivotArray = (arr: any[]) => {
-  const mp = new Map();
+export const exportToCsv = (filename: string, rows: object[]) => {
+  if (!rows || !rows.length) {
+    return;
+  }
+  const separator = ',';
+  const keys = Object.keys(rows[0]);
+  const csvContent =
+    keys.join(separator) +
+    '\n' +
+    rows
+      .map(row => {
+        return keys
+          .map(k => {
+            let cell = row[k] === null || row[k] === undefined ? '' : row[k];
+            cell = cell instanceof Date ? cell.toLocaleString() : cell.toString().replace(/"/g, '""');
+            if (cell.search(/([",\n])/g) >= 0) {
+              cell = `"${cell}"`;
+            }
+            return cell;
+          })
+          .join(separator);
+      })
+      .join('\n');
 
-  const setValue = (a, path, val) => {
-    if (Object(val) !== val) {
-      // primitive value
-      const pathStr = path.join('.');
-      const i = (mp.has(pathStr) ? mp : mp.set(pathStr, mp.size)).get(pathStr);
-      a[i] = val;
-    } else {
-      for (const key in val) {
-        if (val.hasOwnProperty(key)) {
-          setValue(a, key === '0' ? path : path.concat(key), val[key]);
-        }
-      }
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  if (navigator.msSaveBlob) {
+    // IE 10+
+    navigator.msSaveBlob(blob, filename);
+  } else {
+    const link = document.createElement('a');
+    if (link.download !== undefined) {
+      // Browsers that support HTML5 download attribute
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
-    return a;
-  };
-
-  const result = arr.map(obj => setValue([], [], obj));
-  return [[...mp.keys()], ...result];
+  }
 };
 
-export const toCsv = (arr: any[]) =>
-  'data:text/csv;charset=utf-8,' + arr.map(row => row.map(val => (Array.isArray(val) ? toCsv(val) : val)).join(',')).join('\n');
+export const reflatten = items => {
+  const reflatted = [];
 
-export const downloadCSV = csvContent => {
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement('a');
-  link.setAttribute('href', encodedUri);
-  link.setAttribute('download', 'my_data.csv');
-  document.body.appendChild(link); // Required for FF
+  items.forEach(item => {
+    let array = false;
 
-  link.click();
+    for (const key of Object.keys(item)) {
+      if (Array.isArray(item[key])) {
+        array = true;
+
+        // @ts-ignore
+        const children = Array(item[key].length)
+          .fill()
+          .map(() => cloneDeep(item));
+
+        for (let i = 0; i < children.length; i++) {
+          const keys = Object.keys(children[i][key][i]);
+
+          keys.forEach(k => {
+            children[i][`${key}.${k}`] = children[i][key][i][k];
+          });
+          delete children[i][key];
+          reflatted.push(children[i]);
+        }
+        break;
+      }
+    }
+    if (!array) {
+      reflatted.push(item);
+    }
+  });
+
+  return reflatted.length === items.length ? reflatted : reflatten(reflatted);
 };

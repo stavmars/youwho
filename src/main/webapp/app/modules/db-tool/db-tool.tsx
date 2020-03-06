@@ -15,8 +15,8 @@ import {
 import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import moment, { Moment } from 'moment';
 import _ from 'lodash';
-import CsvDownloader from 'react-csv-downloader';
-import { downloadCSV, pivotArray, toCsv } from 'app/shared/util/entity-utils';
+import { reflatten, exportToCsv } from 'app/shared/util/entity-utils';
+import * as flat from 'flat';
 
 export interface IDbToolProps extends StateProps, DispatchProps {}
 
@@ -64,11 +64,20 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
                 .asMinutes()
                 .toString()
             : '',
-          answer: questionResponse.choiceIds.map(choiceId =>
-            parseInt(responseChoices[choiceId].text, 10) !== 0 && parseInt(responseChoices[choiceId].text, 10) < 100
-              ? responseChoices[choiceId].description
-              : responseChoices[choiceId].text
-          )
+          answer:
+            questionResponse.choiceIds.length === 1
+              ? [
+                  parseInt(responseChoices[questionResponse.choiceIds[0]].text, 10) !== 0 &&
+                  parseInt(responseChoices[questionResponse.choiceIds[0]].text, 10) < 100
+                    ? responseChoices[questionResponse.choiceIds[0]].description
+                    : responseChoices[questionResponse.choiceIds[0]].text,
+                  ''
+                ]
+              : questionResponse.choiceIds.map(choiceId =>
+                  parseInt(responseChoices[choiceId].text, 10) !== 0 && parseInt(responseChoices[choiceId].text, 10) < 100
+                    ? responseChoices[choiceId].description
+                    : responseChoices[choiceId].text
+                )
         });
       });
       dataToExport.push({
@@ -82,15 +91,20 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
                 .asMinutes()
                 .toString()
             : '',
-        questionResponses: questionResponsesToExport.map(item => ({
-          question: item.question,
-          answerTime: item.answerTime,
-          answer: item.answer
-        }))
+        questionResponses: questionResponsesToExport
       });
     });
+    const rows = [];
+
+    for (const item of dataToExport) {
+      const flatted = [flat.flatten(item)];
+      rows.push(...reflatten(flatted));
+    }
+    const a = rows[99];
+    rows[99] = rows[0];
+    rows[0] = a;
     this.setState({
-      dataToExport
+      dataToExport: rows
     });
   };
 
@@ -148,7 +162,16 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
             ) : this.state.dataToExport.length === 0 ? (
               <Button onClick={this.exportNonEmptyResponsesToCSV} content="Prepare CSV" />
             ) : (
-              <Button content="Download CSV" onClick={() => downloadCSV(toCsv(pivotArray(this.state.dataToExport)))} />
+              // <CSVLink data={this.state.dataToExport} target="_blank">
+              //   Download
+              // </CSVLink>
+              // <CsvDownloader datas={this.state.dataToExport} filename={`results_${moment().format('DD_MM_YYYY_HH_mm_ss')}`}>
+              //   <Button content="Download CSV" />
+              // </CsvDownloader>
+              <Button
+                content="Download CSV"
+                onClick={() => exportToCsv(`results_${moment().format('DD_MM_YYYY_HH_mm_ss')}.csv`, this.state.dataToExport)}
+              />
             )}
           </Grid.Row>
           {completedWithDuplicateAnswers.length > 0 && (
