@@ -28,7 +28,7 @@ export class News extends React.Component<INewsProps> {
         </Grid>
         <Grid centered style={{ marginBottom: '50px' }}>
           <Grid.Row>
-            <Grid.Column computer={3} mobile={14} verticalAlign="middle" style={{ backgroundColor: 'white' }}>
+            <Grid.Column computer={3} mobile={14} verticalAlign="middle">
               <Image className="news-page-image" src="content/images/news1.png" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14} verticalAlign="middle">
