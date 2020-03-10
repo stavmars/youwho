@@ -21,7 +21,7 @@
     }
   }
   .news-page-h1 {
-    text-align: left;
+    text-align: center;
     font: 34px/40px TTNormsProBoldItalic;
     letter-spacing: 0;
     color: #333333;
@@ -35,11 +35,14 @@
     opacity: 1;
   }
   .news-page-p {
-    font: 18px/26px TTNormsProRegular;
+    margin: 3vh 0;
+    font: 18px/26px TTNormsProMedium;
     text-align: left;
     letter-spacing: 0;
-    color: #707070;
     opacity: 1;
+    .bold {
+      font: 18px/26px TTNormsProBold;
+    }
   }
   .news-page-more-button {
     text-align: left;

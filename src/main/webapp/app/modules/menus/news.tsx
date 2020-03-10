@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
 import { Grid, Menu, Image, Button } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 export interface INewsProps extends StateProps, DispatchProps {}
 
@@ -27,17 +28,15 @@ export class News extends React.Component<INewsProps> {
         </Grid>
         <Grid centered style={{ marginBottom: '50px' }}>
           <Grid.Row>
-            <Grid.Column computer={3} mobile={14} verticalAlign="middle">
-              <Image className="news-page-image" src="content/images/giagia-stasi.png" />
+            <Grid.Column computer={3} mobile={14} verticalAlign="middle" style={{ backgroundColor: 'white' }}>
+              <Image className="news-page-image" src="content/images/news1.png" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14} verticalAlign="middle">
-              <h1 className="news-page-h1">ΥouWho? Ερευνα για νέους 17-29 ετών</h1>
-              <h3 className="news-page-h3">28.09.2019 • Έρευνες</h3>
-              {/*<p className="news-page-p">*/}
-              {/*  Στο πλαίσιο υλοποίησης του υποέργου «REDI – Αυτεπιστασία ΕΚΚΕ» της Πράξης «Έρευνα, Εκπαίδευση και Υποδομές: ο τριγωνισμός*/}
-              {/*  των αξόνων στρατηγικής ανάπτυξης του ΕΚΚΕ (REDI)» εντάσσονται τρεις ξεχωριστές έρευνες νεολαίας.*/}
-              {/*</p>*/}
-              {/*<Button className="news-page-more-button">Περισσότερα</Button>*/}
+              <h1 className="news-page-h1">Είσαι 17-29 ετών; Τότε αυτή η έρευνα σε αφορά!</h1>
+              <h3 className="news-page-h3">11.03.2020 • Έρευνες</h3>
+              <Button className="news-page-more-button" as={NavLink} to="news1">
+                Περισσότερα
+              </Button>
             </Grid.Column>
           </Grid.Row>
           <div className="news-page-divider" />
