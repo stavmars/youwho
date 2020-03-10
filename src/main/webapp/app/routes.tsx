@@ -18,6 +18,7 @@ import SurveyChat from 'app/modules/survey-chat';
 import Menus from 'app/modules/menus';
 import Results from 'app/modules/results';
 import DbTool from 'app/modules/db-tool/db-tool';
+import NewsEditor from 'app/modules/news-editor/news-editor';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -43,6 +44,7 @@ const Routes = () => (
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <PrivateRoute path="/db-tool" component={DbTool} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
+      <PrivateRoute path="/news-editor" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
       <ErrorBoundaryRoute path="/survey-chat/" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />

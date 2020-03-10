@@ -1,0 +1,21 @@
+@import 'app/shared/common.scss';
+
+.news-editor-page {
+  padding: 4em 1em 1em 1em;
+  margin: 2em 1em 1em;
+  font-family: TTNormsProRegular, serif;
+  .news-editor-toolbar {
+    background: transparent;
+    border-style: none;
+  }
+}
+.DraftEditor-root {
+  border: 1px solid #000;
+  background-color: white;
+  height: 60vh;
+  overflow-y: auto;
+}
+.DraftEditor-editorContainer,
+.public-DraftEditor-content {
+  height: 100%;
+}
