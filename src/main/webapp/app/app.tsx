@@ -49,7 +49,7 @@ export const App = (props: IAppProps) => {
   return (
     <Router basename={baseHref}>
       <div className="app-container">
-        <Route render={tracker} />
+        {/*<Route render={tracker} />*/}
         <Switch>
           <Route
             path="/survey-chat/"
@@ -64,7 +64,7 @@ export const App = (props: IAppProps) => {
             )}
           />
           <Route
-            path={`(/|/results|/db-tool)`}
+            path={`(/|/results|/db-tool|/news-editor)`}
             render={() => (
               <Header
                 color="gradient"
@@ -93,10 +93,7 @@ export const App = (props: IAppProps) => {
           </ErrorBoundary>
         </Sidebar.Pushable>
       </div>
-      <Route path="/" exact render={() => <Footer />} />
-      <Route path="/db-tool" exact render={() => <Footer />} />
-      <Route path="/menus/" render={() => <Footer />} />
-      <Route path="/results/" render={() => <Footer />} />
+      <Route path={`(/|/results|/menus|/db-tool|/news-editor)`} render={() => <Footer />} />
       <CookieConsent
         location="bottom"
         buttonText="Εντάξει"
