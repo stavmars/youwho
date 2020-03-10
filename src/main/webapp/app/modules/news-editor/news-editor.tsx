@@ -148,8 +148,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
             onChange={this.onChange}
             plugins={this.state.plugins}
           />
-          <Button content="Save post" primary style={{ fontFamily: 'TTNormsProMedium', float: 'right', marginTop: '1em' }} />
         </div>
+        <Button content="Save post" primary style={{ fontFamily: 'TTNormsProMedium', float: 'right', marginTop: '1em' }} />
       </div>
     );
   }
