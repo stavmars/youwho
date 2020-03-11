@@ -22,6 +22,7 @@ import SideBar from 'app/shared/layout/header/side-bar';
 import { hideSidebar, toggleSidebar } from 'app/shared/reducers/header';
 import Footer from 'app/shared/layout/footer/footer';
 import CookieConsent from 'react-cookie-consent';
+import ScrollToTop from './scroll-to-top';
 
 // tslint:disable:jsx-no-lambda
 
@@ -48,67 +49,69 @@ export const App = (props: IAppProps) => {
 
   return (
     <Router basename={baseHref}>
-      <div className="app-container">
-        <Route render={tracker} />
-        <Switch>
-          <Route
-            path="/survey-chat/"
-            render={() => (
-              <Header
-                color="white"
-                isAuthenticated={props.isAuthenticated}
-                isAdmin={props.isAdmin}
-                isSwaggerEnabled={props.isSwaggerEnabled}
-                toggleSidebar={props.toggleSidebar}
-              />
-            )}
-          />
-          <Route
-            path={`(/|/results|/db-tool)`}
-            render={() => (
-              <Header
-                color="gradient"
-                isAuthenticated={props.isAuthenticated}
-                isAdmin={props.isAdmin}
-                isSwaggerEnabled={props.isSwaggerEnabled}
-                toggleSidebar={props.toggleSidebar}
-              />
-            )}
-          />
-        </Switch>
-        <Sidebar
-          as={Menu}
-          vertical
-          onHide={props.hideSidebar}
-          visible={props.isSidebarVisible}
-          animation="overlay"
-          direction="right"
-          className="app-sidebar"
+      <ScrollToTop>
+        <div className="app-container">
+          <Route render={tracker} />
+          <Switch>
+            <Route
+              path="/survey-chat/"
+              render={() => (
+                <Header
+                  color="white"
+                  isAuthenticated={props.isAuthenticated}
+                  isAdmin={props.isAdmin}
+                  isSwaggerEnabled={props.isSwaggerEnabled}
+                  toggleSidebar={props.toggleSidebar}
+                />
+              )}
+            />
+            <Route
+              path={`(/|/results|/db-tool)`}
+              render={() => (
+                <Header
+                  color="gradient"
+                  isAuthenticated={props.isAuthenticated}
+                  isAdmin={props.isAdmin}
+                  isSwaggerEnabled={props.isSwaggerEnabled}
+                  toggleSidebar={props.toggleSidebar}
+                />
+              )}
+            />
+          </Switch>
+          <Sidebar
+            as={Menu}
+            vertical
+            onHide={props.hideSidebar}
+            visible={props.isSidebarVisible}
+            animation="overlay"
+            direction="right"
+            className="app-sidebar"
+          >
+            <SideBar toggleSidebar={props.toggleSidebar} />
+          </Sidebar>
+          <Sidebar.Pushable style={{ transform: 'none' }}>
+            <ErrorBoundary>
+              <AppRoutes />
+            </ErrorBoundary>
+          </Sidebar.Pushable>
+        </div>
+        <Route path="/" exact render={() => <Footer />} />
+        <Route path="/db-tool" exact render={() => <Footer />} />
+        <Route path="/menus/" render={() => <Footer />} />
+        <Route path="/results/" render={() => <Footer />} />
+        <CookieConsent
+          location="bottom"
+          buttonText="Εντάξει"
+          cookieName="myAwesomeCookieName2"
+          style={{ background: '#2B373B' }}
+          buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
+          expires={150}
         >
-          <SideBar toggleSidebar={props.toggleSidebar} />
-        </Sidebar>
-        <Sidebar.Pushable style={{ transform: 'none' }}>
-          <ErrorBoundary>
-            <AppRoutes />
-          </ErrorBoundary>
-        </Sidebar.Pushable>
-      </div>
-      <Route path="/" exact render={() => <Footer />} />
-      <Route path="/db-tool" exact render={() => <Footer />} />
-      <Route path="/menus/" render={() => <Footer />} />
-      <Route path="/results/" render={() => <Footer />} />
-      <CookieConsent
-        location="bottom"
-        buttonText="Εντάξει"
-        cookieName="myAwesomeCookieName2"
-        style={{ background: '#2B373B' }}
-        buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
-        expires={150}
-      >
-        Το YouWho χρησιμοποιεί cookies για να λειτουργεί σωστά. Τα cookies είναι μικρά κομμάτια δεδομένων που αποθηκεύουν οι ιστοσελίδες
-        στον περιηγητή σας για να μας επιτρέψουν να σας προσφέρουμε την καλύτερη δυνατή εμπειρία περιήγησης. Χρησιμοποιώντας τo YouWho
-        αποδέχεστε τη χρήση των cookies. <a href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">Δείτε περισσότερα</a>
-      </CookieConsent>
+          Το YouWho χρησιμοποιεί cookies για να λειτουργεί σωστά. Τα cookies είναι μικρά κομμάτια δεδομένων που αποθηκεύουν οι ιστοσελίδες
+          στον περιηγητή σας για να μας επιτρέψουν να σας προσφέρουμε την καλύτερη δυνατή εμπειρία περιήγησης. Χρησιμοποιώντας τo YouWho
+          αποδέχεστε τη χρήση των cookies. <a href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">Δείτε περισσότερα</a>
+        </CookieConsent>
+      </ScrollToTop>
     </Router>
   );
 };
