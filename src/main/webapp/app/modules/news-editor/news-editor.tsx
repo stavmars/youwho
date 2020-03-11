@@ -93,6 +93,14 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
     this.onChange(RichUtils.toggleLink(newEditorState, selection, entityKey));
   };
 
+  reset = () => {
+    this.setState({
+      ...this.state,
+      editorState: EditorState.createEmpty()
+    });
+    window.localStorage.clear();
+  };
+
   render() {
     const { editorState } = this.state;
 
@@ -149,7 +157,13 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
             plugins={this.state.plugins}
           />
         </div>
-        <Button content="Save post" primary style={{ fontFamily: 'TTNormsProMedium', float: 'right', marginTop: '1em' }} />
+        <Button content="Save post" primary style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }} />
+        <Button
+          content="Reset"
+          color="red"
+          onClick={this.reset}
+          style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 0' }}
+        />
       </div>
     );
   }
