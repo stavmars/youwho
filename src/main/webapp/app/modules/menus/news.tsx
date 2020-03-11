@@ -40,6 +40,28 @@ export class News extends React.Component<INewsProps> {
             </Grid.Column>
           </Grid.Row>
           <div className="news-page-divider" />
+          <Grid.Row>
+            <Grid.Column computer={3} mobile={14} verticalAlign="middle">
+              <Image className="news-page-image" src="content/images/ert.jpg" />
+            </Grid.Column>
+            <Grid.Column computer={5} mobile={14} verticalAlign="middle">
+              <h1 className="news-page-h1">ΕΡΤ: «Εσύ πόσο YouWho είσαι;»</h1>
+              <h3 className="news-page-h3">11.03.2020 • Δημοσιεύσεις</h3>
+              <p className="news-page-p">
+                Το άρθρο δημοσιεύθηκε στις 4 Μαρτίου 2020 στο
+                <a
+                  href="https://www.ert.gr/eidiseis/mono-sto-ertgr/erevna-youwho-neoi/?fbclid=IwAR1oaGXQhd-jcaAsMbMnOQ5qLn7QbTEoHfoYsT-SWsZOEtCYWxi4aX0gLig"
+                  target="_blank"
+                >
+                  {' '}
+                  ERT.gr
+                </a>
+              </p>
+              <Button className="news-page-more-button" as={NavLink} to="news2">
+                Περισσότερα
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
       </div>
     );
