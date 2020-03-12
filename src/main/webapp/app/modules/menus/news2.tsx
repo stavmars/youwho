@@ -35,10 +35,7 @@ const News2 = () => (
             εντεταλμένες ερευνήτριες στο ΕΚΚΕ, συνυπεύθυνες της έρευνας <NavLink to="/">YouWho?</NavLink>.
           </p>
         </Grid.Row>
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <Image />
-          </Grid.Column>
+        <Grid.Row>
           <Grid.Column>
             <p className="news-page-p">
               Με τη συνδρομή εξειδικευμένου προσωπικού από διάφορα πεδία (Κοινωνιολογία, Επικοινωνία, Στατιστική, Μηχανική Υπολογιστών) αλλά
@@ -65,10 +62,7 @@ const News2 = () => (
           </p>
         </Grid.Row>
         <h1 className="news-page-h1">Ανταπόκριση και αποτελέσματα</h1>
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <Image />
-          </Grid.Column>
+        <Grid.Row>
           <Grid.Column>
             <p className="news-page-p">
               Οι κυρίες Ηλιού και Κακεπάκη σημειώνουν πως η ανταπόκριση των νέων στο όλο εγχείρημα είναι ιδιαίτερα θετική. Αναφέρονται
@@ -98,7 +92,7 @@ const News2 = () => (
         <h1 className="news-page-h1">Αξιοποίηση της έρευνας</h1>
         <Grid.Row columns={2}>
           <Grid.Column>
-            <Image />
+            <Image src="content/images/tmp-news/YouWho-Katerina Iliou-Manina Kakepaki-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών.jpg" size="medium" />
           </Grid.Column>
           <Grid.Column>
             <p className="news-page-p">
@@ -131,7 +125,7 @@ const News2 = () => (
             </p>
           </Grid.Column>
           <Grid.Column>
-            <Image />
+            <Image src="content/images/tmp-news/YouWho.gr-Έρευνα-Erevna-Η-ομάδα.JPG" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -167,7 +161,7 @@ const News2 = () => (
           </p>
         </Grid.Row>
         <Grid.Row>
-          <Image />
+          <Image src="content/images/tmp-news/YouWho.gr-Έρευνα-Erevna-Η-ομάδα 2.JPG" />
           <p className="news-page-p">
             Η έρευνα θα διαρκέσει περίπου μέχρι τα μέσα Απριλίου 2020. Αποτελεί μέρος ενός συνολικού έργου που μελετά τους νέους, το οποίο
             ξεκίνησε το 2017 και διαρκεί τρία χρόνια.
