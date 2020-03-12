@@ -18,6 +18,10 @@ import results, { ResultsState } from 'app/modules/results/results.reducer';
 import dbTool, { DbToolState } from 'app/modules/db-tool/db-tool.reducer';
 
 import header, { HeaderState } from 'app/shared/reducers/header';
+// prettier-ignore
+import newsPost, {
+  NewsPostState
+} from 'app/entities/news-post/news-post.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -36,6 +40,7 @@ export interface IRootState {
   readonly results: ResultsState;
   readonly header: HeaderState;
   readonly dbTool: DbToolState;
+  readonly newsPost: NewsPostState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -56,6 +61,7 @@ const rootReducer = combineReducers<IRootState>({
   results,
   header,
   dbTool,
+  newsPost,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
