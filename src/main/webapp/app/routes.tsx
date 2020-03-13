@@ -19,6 +19,7 @@ import Menus from 'app/modules/menus';
 import Results from 'app/modules/results';
 import DbTool from 'app/modules/db-tool/db-tool';
 import NewsEditor from 'app/modules/news-editor/news-editor';
+import NewsDisplay from 'app/modules/news-editor/news-display';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -49,6 +50,7 @@ const Routes = () => (
       <ErrorBoundaryRoute path="/survey-chat/" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute path="/results" component={Results} />
+      <ErrorBoundaryRoute path="/news-display/:id" component={NewsDisplay} />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>

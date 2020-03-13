@@ -6,6 +6,7 @@ import { IRootState } from 'app/shared/reducers';
 import { Button } from 'semantic-ui-react';
 import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
+import { createEntity as createNewsPost } from 'app/entities/news-post/news-post.reducer';
 // tslint:disable-next-line:no-submodule-imports
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
@@ -33,6 +34,11 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
     });
   };
 
+  save = () => {
+    const { editorState } = this.state;
+    this.props.createNewsPost({ content: JSON.stringify(convertToRaw(editorState.getCurrentContent())) });
+  };
+
   reset = () => {
     this.setState({
       editorState: EditorState.createEmpty()
@@ -49,7 +55,12 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <div className="news-editor-container">
           <Editor editorState={editorState} onEditorStateChange={this.onChange} />
         </div>
-        <Button content="Save post" primary style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }} />
+        <Button
+          content="Save post"
+          primary
+          onClick={this.save}
+          style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }}
+        />
         <Button
           content="Reset"
           color="red"
@@ -63,7 +74,9 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
 
 const mapStateToProps = (storeState: IRootState) => ({});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  createNewsPost
+};
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
