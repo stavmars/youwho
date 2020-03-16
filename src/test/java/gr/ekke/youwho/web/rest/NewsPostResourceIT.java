@@ -42,6 +42,9 @@ public class NewsPostResourceIT {
     private static final String DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_PREVIEW_IMAGE_CONTENT_TYPE = "image/png";
 
+    private static final String DEFAULT_PREVIEW_TITLE = "AAAAAAAAAA";
+    private static final String UPDATED_PREVIEW_TITLE = "BBBBBBBBBB";
+
     @Autowired
     private NewsPostRepository newsPostRepository;
 
@@ -86,7 +89,8 @@ public class NewsPostResourceIT {
         NewsPost newsPost = new NewsPost()
             .content(DEFAULT_CONTENT)
             .previewImage(DEFAULT_PREVIEW_IMAGE)
-            .previewImageContentType(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE);
+            .previewImageContentType(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE)
+            .previewTitle(DEFAULT_PREVIEW_TITLE);
         return newsPost;
     }
     /**
@@ -99,7 +103,8 @@ public class NewsPostResourceIT {
         NewsPost newsPost = new NewsPost()
             .content(UPDATED_CONTENT)
             .previewImage(UPDATED_PREVIEW_IMAGE)
-            .previewImageContentType(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE);
+            .previewImageContentType(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE)
+            .previewTitle(UPDATED_PREVIEW_TITLE);
         return newsPost;
     }
 
@@ -126,6 +131,7 @@ public class NewsPostResourceIT {
         assertThat(testNewsPost.getContent()).isEqualTo(DEFAULT_CONTENT);
         assertThat(testNewsPost.getPreviewImage()).isEqualTo(DEFAULT_PREVIEW_IMAGE);
         assertThat(testNewsPost.getPreviewImageContentType()).isEqualTo(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE);
+        assertThat(testNewsPost.getPreviewTitle()).isEqualTo(DEFAULT_PREVIEW_TITLE);
     }
 
     @Test
@@ -176,7 +182,8 @@ public class NewsPostResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(newsPost.getId())))
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT.toString())))
             .andExpect(jsonPath("$.[*].previewImageContentType").value(hasItem(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].previewImage").value(hasItem(Base64Utils.encodeToString(DEFAULT_PREVIEW_IMAGE))));
+            .andExpect(jsonPath("$.[*].previewImage").value(hasItem(Base64Utils.encodeToString(DEFAULT_PREVIEW_IMAGE))))
+            .andExpect(jsonPath("$.[*].previewTitle").value(hasItem(DEFAULT_PREVIEW_TITLE.toString())));
     }
     
     @Test
@@ -191,7 +198,8 @@ public class NewsPostResourceIT {
             .andExpect(jsonPath("$.id").value(newsPost.getId()))
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT.toString()))
             .andExpect(jsonPath("$.previewImageContentType").value(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE))
-            .andExpect(jsonPath("$.previewImage").value(Base64Utils.encodeToString(DEFAULT_PREVIEW_IMAGE)));
+            .andExpect(jsonPath("$.previewImage").value(Base64Utils.encodeToString(DEFAULT_PREVIEW_IMAGE)))
+            .andExpect(jsonPath("$.previewTitle").value(DEFAULT_PREVIEW_TITLE.toString()));
     }
 
     @Test
@@ -213,7 +221,8 @@ public class NewsPostResourceIT {
         updatedNewsPost
             .content(UPDATED_CONTENT)
             .previewImage(UPDATED_PREVIEW_IMAGE)
-            .previewImageContentType(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE);
+            .previewImageContentType(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE)
+            .previewTitle(UPDATED_PREVIEW_TITLE);
 
         restNewsPostMockMvc.perform(put("/api/news-posts")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -227,6 +236,7 @@ public class NewsPostResourceIT {
         assertThat(testNewsPost.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testNewsPost.getPreviewImage()).isEqualTo(UPDATED_PREVIEW_IMAGE);
         assertThat(testNewsPost.getPreviewImageContentType()).isEqualTo(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE);
+        assertThat(testNewsPost.getPreviewTitle()).isEqualTo(UPDATED_PREVIEW_TITLE);
     }
 
     @Test

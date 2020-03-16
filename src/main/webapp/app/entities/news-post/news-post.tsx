@@ -36,6 +36,7 @@ export class NewsPost extends React.Component<INewsPostProps> {
                   <th>ID</th>
                   <th>Content</th>
                   <th>Preview Image</th>
+                  <th>Preview Title</th>
                   <th />
                 </tr>
               </thead>
@@ -64,6 +65,7 @@ export class NewsPost extends React.Component<INewsPostProps> {
                         </div>
                       ) : null}
                     </td>
+                    <td>{newsPost.previewTitle}</td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${newsPost.id}`} color="info" size="sm">

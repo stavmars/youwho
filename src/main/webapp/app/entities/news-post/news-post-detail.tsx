@@ -48,6 +48,10 @@ export class NewsPostDetail extends React.Component<INewsPostDetailProps> {
                 </div>
               ) : null}
             </dd>
+            <dt>
+              <span id="previewTitle">Preview Title</span>
+            </dt>
+            <dd>{newsPostEntity.previewTitle}</dd>
           </dl>
           <Button tag={Link} to="/entity/news-post" replace color="info">
             <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>

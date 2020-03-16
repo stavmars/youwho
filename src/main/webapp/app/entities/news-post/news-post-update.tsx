@@ -136,6 +136,12 @@ export class NewsPostUpdate extends React.Component<INewsPostUpdateProps, INewsP
                     <AvInput type="hidden" name="previewImage" value={previewImage} />
                   </AvGroup>
                 </AvGroup>
+                <AvGroup>
+                  <Label id="previewTitleLabel" for="news-post-previewTitle">
+                    Preview Title
+                  </Label>
+                  <AvField id="news-post-previewTitle" type="text" name="previewTitle" />
+                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/news-post" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;

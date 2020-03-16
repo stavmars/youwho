@@ -27,6 +27,9 @@ public class NewsPost implements Serializable {
     @Field("preview_image_content_type")
     private String previewImageContentType;
 
+    @Field("preview_title")
+    private String previewTitle;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
         return id;
@@ -74,6 +77,19 @@ public class NewsPost implements Serializable {
     public void setPreviewImageContentType(String previewImageContentType) {
         this.previewImageContentType = previewImageContentType;
     }
+
+    public String getPreviewTitle() {
+        return previewTitle;
+    }
+
+    public NewsPost previewTitle(String previewTitle) {
+        this.previewTitle = previewTitle;
+        return this;
+    }
+
+    public void setPreviewTitle(String previewTitle) {
+        this.previewTitle = previewTitle;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -99,6 +115,7 @@ public class NewsPost implements Serializable {
             ", content='" + getContent() + "'" +
             ", previewImage='" + getPreviewImage() + "'" +
             ", previewImageContentType='" + getPreviewImageContentType() + "'" +
+            ", previewTitle='" + getPreviewTitle() + "'" +
             "}";
     }
 }
