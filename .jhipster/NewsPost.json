@@ -19,6 +19,10 @@
             "fieldName": "previewTitle",
             "fieldType": "String",
             "fieldValidateRules": []
+        },
+        {
+            "fieldName": "postDate",
+            "fieldType": "Instant"
         }
     ],
     "dto": "no",

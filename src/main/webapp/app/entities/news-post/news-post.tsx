@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Row, Table } from 'reactstrap';
-import { openFile, byteSize, ICrudGetAllAction } from 'react-jhipster';
+import { openFile, byteSize, ICrudGetAllAction, TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -37,6 +37,7 @@ export class NewsPost extends React.Component<INewsPostProps> {
                   <th>Content</th>
                   <th>Preview Image</th>
                   <th>Preview Title</th>
+                  <th>Post Date</th>
                   <th />
                 </tr>
               </thead>
@@ -66,6 +67,9 @@ export class NewsPost extends React.Component<INewsPostProps> {
                       ) : null}
                     </td>
                     <td>{newsPost.previewTitle}</td>
+                    <td>
+                      <TextFormat type="date" value={newsPost.postDate} format={APP_DATE_FORMAT} />
+                    </td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${newsPost.id}`} color="info" size="sm">

@@ -20,6 +20,8 @@ import org.springframework.util.Base64Utils;
 import org.springframework.validation.Validator;
 
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static gr.ekke.youwho.web.rest.TestUtil.createFormattingConversionService;
@@ -44,6 +46,10 @@ public class NewsPostResourceIT {
 
     private static final String DEFAULT_PREVIEW_TITLE = "AAAAAAAAAA";
     private static final String UPDATED_PREVIEW_TITLE = "BBBBBBBBBB";
+
+    private static final Instant DEFAULT_POST_DATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_POST_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final Instant SMALLER_POST_DATE = Instant.ofEpochMilli(-1L);
 
     @Autowired
     private NewsPostRepository newsPostRepository;
@@ -90,7 +96,8 @@ public class NewsPostResourceIT {
             .content(DEFAULT_CONTENT)
             .previewImage(DEFAULT_PREVIEW_IMAGE)
             .previewImageContentType(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE)
-            .previewTitle(DEFAULT_PREVIEW_TITLE);
+            .previewTitle(DEFAULT_PREVIEW_TITLE)
+            .postDate(DEFAULT_POST_DATE);
         return newsPost;
     }
     /**
@@ -104,7 +111,8 @@ public class NewsPostResourceIT {
             .content(UPDATED_CONTENT)
             .previewImage(UPDATED_PREVIEW_IMAGE)
             .previewImageContentType(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE)
-            .previewTitle(UPDATED_PREVIEW_TITLE);
+            .previewTitle(UPDATED_PREVIEW_TITLE)
+            .postDate(UPDATED_POST_DATE);
         return newsPost;
     }
 
@@ -132,6 +140,7 @@ public class NewsPostResourceIT {
         assertThat(testNewsPost.getPreviewImage()).isEqualTo(DEFAULT_PREVIEW_IMAGE);
         assertThat(testNewsPost.getPreviewImageContentType()).isEqualTo(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE);
         assertThat(testNewsPost.getPreviewTitle()).isEqualTo(DEFAULT_PREVIEW_TITLE);
+        assertThat(testNewsPost.getPostDate()).isEqualTo(DEFAULT_POST_DATE);
     }
 
     @Test
@@ -183,7 +192,8 @@ public class NewsPostResourceIT {
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT.toString())))
             .andExpect(jsonPath("$.[*].previewImageContentType").value(hasItem(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].previewImage").value(hasItem(Base64Utils.encodeToString(DEFAULT_PREVIEW_IMAGE))))
-            .andExpect(jsonPath("$.[*].previewTitle").value(hasItem(DEFAULT_PREVIEW_TITLE.toString())));
+            .andExpect(jsonPath("$.[*].previewTitle").value(hasItem(DEFAULT_PREVIEW_TITLE.toString())))
+            .andExpect(jsonPath("$.[*].postDate").value(hasItem(DEFAULT_POST_DATE.toString())));
     }
     
     @Test
@@ -199,7 +209,8 @@ public class NewsPostResourceIT {
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT.toString()))
             .andExpect(jsonPath("$.previewImageContentType").value(DEFAULT_PREVIEW_IMAGE_CONTENT_TYPE))
             .andExpect(jsonPath("$.previewImage").value(Base64Utils.encodeToString(DEFAULT_PREVIEW_IMAGE)))
-            .andExpect(jsonPath("$.previewTitle").value(DEFAULT_PREVIEW_TITLE.toString()));
+            .andExpect(jsonPath("$.previewTitle").value(DEFAULT_PREVIEW_TITLE.toString()))
+            .andExpect(jsonPath("$.postDate").value(DEFAULT_POST_DATE.toString()));
     }
 
     @Test
@@ -222,7 +233,8 @@ public class NewsPostResourceIT {
             .content(UPDATED_CONTENT)
             .previewImage(UPDATED_PREVIEW_IMAGE)
             .previewImageContentType(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE)
-            .previewTitle(UPDATED_PREVIEW_TITLE);
+            .previewTitle(UPDATED_PREVIEW_TITLE)
+            .postDate(UPDATED_POST_DATE);
 
         restNewsPostMockMvc.perform(put("/api/news-posts")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -237,6 +249,7 @@ public class NewsPostResourceIT {
         assertThat(testNewsPost.getPreviewImage()).isEqualTo(UPDATED_PREVIEW_IMAGE);
         assertThat(testNewsPost.getPreviewImageContentType()).isEqualTo(UPDATED_PREVIEW_IMAGE_CONTENT_TYPE);
         assertThat(testNewsPost.getPreviewTitle()).isEqualTo(UPDATED_PREVIEW_TITLE);
+        assertThat(testNewsPost.getPostDate()).isEqualTo(UPDATED_POST_DATE);
     }
 
     @Test

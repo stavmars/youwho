@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 /**
  * A NewsPost.
@@ -29,6 +30,9 @@ public class NewsPost implements Serializable {
 
     @Field("preview_title")
     private String previewTitle;
+
+    @Field("post_date")
+    private Instant postDate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
@@ -90,6 +94,19 @@ public class NewsPost implements Serializable {
     public void setPreviewTitle(String previewTitle) {
         this.previewTitle = previewTitle;
     }
+
+    public Instant getPostDate() {
+        return postDate;
+    }
+
+    public NewsPost postDate(Instant postDate) {
+        this.postDate = postDate;
+        return this;
+    }
+
+    public void setPostDate(Instant postDate) {
+        this.postDate = postDate;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -116,6 +133,7 @@ public class NewsPost implements Serializable {
             ", previewImage='" + getPreviewImage() + "'" +
             ", previewImageContentType='" + getPreviewImageContentType() + "'" +
             ", previewTitle='" + getPreviewTitle() + "'" +
+            ", postDate='" + getPostDate() + "'" +
             "}";
     }
 }

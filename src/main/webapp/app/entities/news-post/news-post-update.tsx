@@ -49,6 +49,8 @@ export class NewsPostUpdate extends React.Component<INewsPostUpdateProps, INewsP
   };
 
   saveEntity = (event, errors, values) => {
+    values.postDate = convertDateTimeToServer(values.postDate);
+
     if (errors.length === 0) {
       const { newsPostEntity } = this.props;
       const entity = {
@@ -141,6 +143,19 @@ export class NewsPostUpdate extends React.Component<INewsPostUpdateProps, INewsP
                     Preview Title
                   </Label>
                   <AvField id="news-post-previewTitle" type="text" name="previewTitle" />
+                </AvGroup>
+                <AvGroup>
+                  <Label id="postDateLabel" for="news-post-postDate">
+                    Post Date
+                  </Label>
+                  <AvInput
+                    id="news-post-postDate"
+                    type="datetime-local"
+                    className="form-control"
+                    name="postDate"
+                    placeholder={'YYYY-MM-DD HH:mm'}
+                    value={isNew ? null : convertDateTimeFromServer(this.props.newsPostEntity.postDate)}
+                  />
                 </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/news-post" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
