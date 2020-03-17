@@ -7,7 +7,7 @@ import { IRootState } from 'app/shared/reducers';
 import { getEntity, reset } from 'app/entities/news-post/news-post.reducer';
 import { convertFromRaw, EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
-import { Dimmer, Loader } from 'semantic-ui-react';
+import { Dimmer, Loader, Container } from 'semantic-ui-react';
 import { defaultValue } from 'app/shared/model/news-post.model';
 
 export interface INewsDisplayProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
@@ -30,10 +30,12 @@ export class NewsDisplay extends React.Component<INewsDisplayProps> {
       </Dimmer>
     ) : errorMessage === null ? (
       <div className="news-display-page">
-        <Editor readOnly toolbarHidden editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(newsPost.content)))} />
+        <Container>
+          <Editor readOnly toolbarHidden editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(newsPost.content)))} />
+        </Container>
       </div>
     ) : (
-      <div className="news-displaye-page">{errorMessage}</div>
+      <div className="news-display-page">{errorMessage}</div>
     );
   }
 }

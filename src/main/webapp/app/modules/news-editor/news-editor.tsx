@@ -12,6 +12,55 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { setFileData } from 'react-jhipster';
 import moment from 'moment';
 
+const getFileBase64 = (file, callback) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  // Since FileReader is asynchronous,
+  // we need to pass data back.
+  reader.onload = () => callback(reader.result);
+  // catch an error
+  reader.onerror = error => alert(error);
+};
+
+const imageUploadCallback = file => new Promise((resolve, reject) => getFileBase64(file, data => resolve({ data: { link: data } })));
+
+const toolbar = {
+  options: ['inline', 'blockType', 'textAlign', 'fontSize', 'fontFamily', 'link', 'image', 'history'],
+  inline: {
+    options: ['underline', 'strikethrough', 'monospace']
+  },
+  fontFamily: {
+    options: [
+      'TTNormsProBlack',
+      'TTNormsProBlackItalic',
+      'TTNormsProBold',
+      'TTNormsProBoldItalic',
+      'TTNormsProExtraBlack',
+      'TTNormsProExtraBlackItalic',
+      'TTNormsProExtraBold',
+      'TTNormsProExtraBoldItalic',
+      'TTNormsProExtraLight',
+      'TTNormsProExtraLightItalic',
+      'TTNormsProItalic',
+      'TTNormsProLight',
+      'TTNormsProLightItalic',
+      'TTNormsProMedium',
+      'TTNormsProMediumItalic',
+      'TTNormsProRegular',
+      'TTNormsProThin',
+      'TTNormsProThinItalic'
+    ]
+  },
+  image: {
+    uploadCallback: imageUploadCallback,
+    previewImage: true,
+    alt: {
+      present: true,
+      mandatory: true
+    }
+  }
+};
+
 export interface INewsEditorProps extends StateProps, DispatchProps {}
 
 export interface INewsEditorState {
@@ -60,10 +109,10 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
     });
     this.clearBlob('previewImage');
     this.props.reset();
-    this.reset();
+    this.clear();
   };
 
-  reset = () => {
+  clear = () => {
     this.setState({
       editorState: EditorState.createEmpty()
     });
@@ -117,20 +166,23 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Create post below...</span>
         <div className="news-editor-container">
-          <Editor editorState={editorState} onEditorStateChange={this.onChange} />
+          <Editor editorState={editorState} onEditorStateChange={this.onChange} toolbar={toolbar} />
         </div>
         <Button
           content="Save post"
           primary
           onClick={this.save}
           // @ts-ignore
-          disabled={document.getElementById('news-post-previewTitle').value.length === 0}
+          disabled={
+            document.getElementById('news-post-previewTitle') === null ||
+            document.getElementById('news-post-previewTitle').value.length === 0
+          }
           style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }}
         />
         <Button
-          content="Reset"
+          content="Clear"
           color="red"
-          onClick={this.reset}
+          onClick={this.clear}
           style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 0' }}
         />
       </div>
