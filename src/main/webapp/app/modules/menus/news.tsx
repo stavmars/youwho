@@ -1,10 +1,11 @@
+/* tslint:disable:jsx-no-lambda */
 import './news.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
 import { Grid, Menu, Image, Button } from 'semantic-ui-react';
-import { getEntities } from 'app/entities/news-post/news-post.reducer';
+import { getEntities, deleteEntity } from 'app/entities/news-post/news-post.reducer';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment';
 
@@ -17,7 +18,7 @@ export class News extends React.Component<INewsProps> {
   }
 
   render() {
-    const { loading, newsPosts } = this.props;
+    const { loading, newsPosts, isAuthenticated } = this.props;
 
     return (
       <div className="news-page">
@@ -38,7 +39,7 @@ export class News extends React.Component<INewsProps> {
         ) : (
           <Grid centered style={{ marginBottom: '50px' }}>
             {newsPosts.map(newsPost => (
-              <Grid.Row>
+              <Grid.Row className="news-page-row">
                 <Grid.Column computer={3} mobile={14} verticalAlign="middle">
                   {newsPost.previewImage ? (
                     <Image src={`data:${newsPost.previewImageContentType};base64,${newsPost.previewImage}`} size="medium" />
@@ -53,6 +54,9 @@ export class News extends React.Component<INewsProps> {
                     Περισσότερα
                   </Button>
                 </Grid.Column>
+                <Grid.Column only="computer" verticalAlign="middle" computer={2}>
+                  {isAuthenticated && <Button color="red" content="Delete Post" onClick={() => this.props.deleteEntity(newsPost.id)} />}
+                </Grid.Column>
               </Grid.Row>
             ))}
           </Grid>
@@ -63,6 +67,7 @@ export class News extends React.Component<INewsProps> {
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
+  isAuthenticated: storeState.authentication.isAuthenticated,
   isSidebarVisible: storeState.header.isSidebarVisible,
   newsPosts: storeState.newsPost.entities,
   loading: storeState.newsPost.loading
@@ -70,6 +75,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   getEntities,
+  deleteEntity,
   hideSidebar
 };
 
