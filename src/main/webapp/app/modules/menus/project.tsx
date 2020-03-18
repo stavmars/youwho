@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
-import { Container } from 'semantic-ui-react';
+import { Container, Responsive, Image } from 'semantic-ui-react';
 
 export interface IProjectProps extends StateProps, DispatchProps {}
 
@@ -16,6 +16,14 @@ export class Project extends React.Component<IProjectProps> {
     return (
       <Container className="project-page">
         <h1 className="project-page-title">Το έργο</h1>
+        <br />
+        <br />
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Image src="content/images/project-3-surveys-image-desktop.png" size="massive" />
+        </Responsive>
+        <Responsive {...Responsive.onlyMobile}>
+          <Image src="content/images/project-3-surveys-image-mobile.png" />
+        </Responsive>
         <br />
         <h2 className="project-page-subtitle">Γενικά</h2>
         <br />
