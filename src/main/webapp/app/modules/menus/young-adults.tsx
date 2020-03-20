@@ -124,7 +124,10 @@ export class YoungAdults extends React.Component<IYoungAdultsProps> {
           <br />
           <br />
           <br />
-          <Image src="content/images/YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-820X312-Έρευνα-Νέων-Erevna-Neon-Γιουχου Έρευνα.png" />
+          <Image
+            className="young-adults-page-footer-image"
+            src="content/images/YouWho.gr-Yellow-Stripes-Erevna-Neon-Έρευνα-Νέων-Έρευνα-Νέας-Γενιάς-Γιουχιου.png"
+          />
         </Container>
       </div>
     );
