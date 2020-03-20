@@ -75,4 +75,12 @@
       font-family: TTNormsProBold, serif;
     }
   }
+  .young-adults-page-footer-image {
+    @include mobile {
+      margin-top: -20vh;
+    }
+    @include computer {
+      margin-top: -40vh;
+    }
+  }
 }
