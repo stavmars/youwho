@@ -212,9 +212,11 @@ public class SurveyResponseResource {
      * @return the desired list.
      */
     @GetMapping("/survey-responses/all/non-empty")
-    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
-        log.debug("REST request to get count of all non empty SurveyResponses");
-        return surveyResponseService.getAllNonEmptySurveyResponses();
+    public ResponseEntity<List<SurveyResponse>> getAllNonEmptySurveyResponses(Pageable pageable) {
+        log.debug("REST request to get a page of all non empty SurveyResponses");
+        Page<SurveyResponse> page = surveyResponseService.getAllNonEmptySurveyResponses(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**

@@ -25,7 +25,7 @@ const initialState = {
   updating: false,
   updateSuccess: false,
   sendingContactMail: false,
-  successMessage: null,
+  successMessage: '',
   contactMailSent: false
 };
 
@@ -125,9 +125,7 @@ const apiUrl = 'api/surveys';
 export const sendContactMail = (name, email, content) => ({
   type: ACTION_TYPES.SEND_CONTACT_MAIL,
   payload: axios.post(`${apiUrl}/contact`, { contactName: name, contactEmail: email, contactContent: content }),
-  meta: {
-    successMessage: '<strong>Το σχόλιό σας εστάλη επιτυχώς</strong>'
-  }
+  meta: 'Επιτυχής Αποστολή! Θα απαντήσουμε το συντομότερο στο μήνυμά σας'
 });
 
 export const getEntities: ICrudGetAllAction<ISurvey> = (page, size, sort) => ({

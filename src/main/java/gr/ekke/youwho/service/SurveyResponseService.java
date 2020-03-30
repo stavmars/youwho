@@ -111,8 +111,8 @@ public class SurveyResponseService {
         return surveyResponseRepository.getAllByStatusEquals(status);
     }
 
-    public List<SurveyResponse> getAllNonEmptySurveyResponses() {
+    public Page<SurveyResponse> getAllNonEmptySurveyResponses(Pageable pageable) {
         log.debug("Request to get all non empty Survey Responses");
-        return surveyResponseRepository.getAllByQuestionResponsesGreaterThan(new ArrayList<>());
+        return surveyResponseRepository.getAllByQuestionResponsesGreaterThan(new ArrayList<>(), pageable);
     }
 }
