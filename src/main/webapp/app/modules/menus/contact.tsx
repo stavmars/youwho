@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
-import { Button, Form, Grid, Comment } from 'semantic-ui-react';
+import { Button, Form, Grid, Comment, Popup } from 'semantic-ui-react';
 import { sendContactMail } from 'app/entities/survey/survey.reducer';
 
 export interface IContactProps extends StateProps, DispatchProps {}
@@ -79,7 +79,8 @@ export class Contact extends React.Component<IContactProps, IContactState> {
           value={email}
           onChange={this.handleChange}
           error={
-            this.validateEmail() && {
+            this.validateEmail() &&
+            email !== '' && {
               content: 'Please enter a valid email address',
               pointing: 'below'
             }
@@ -96,13 +97,20 @@ export class Contact extends React.Component<IContactProps, IContactState> {
           onChange={this.handleChange}
           required
         />
-        <Button
-          className="contact-page-submit"
-          type="submit"
-          disabled={this.state.content === '' || this.state.email === '' || this.state.name === '' || this.validateEmail()}
-        >
-          Αποστολή
-        </Button>
+        <Popup
+          open={this.props.contactMailSent}
+          content={this.props.successMessage}
+          position="top center"
+          trigger={
+            <Button
+              className="contact-page-submit"
+              type="submit"
+              disabled={this.state.content === '' || this.state.email === '' || this.state.name === '' || this.validateEmail()}
+            >
+              Αποστολή
+            </Button>
+          }
+        />
       </Form>
     );
   }
@@ -126,7 +134,9 @@ export class Contact extends React.Component<IContactProps, IContactState> {
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  isSidebarVisible: storeState.header.isSidebarVisible
+  isSidebarVisible: storeState.header.isSidebarVisible,
+  successMessage: storeState.survey.successMessage,
+  contactMailSent: storeState.survey.contactMailSent
 });
 
 const mapDispatchToProps = {
