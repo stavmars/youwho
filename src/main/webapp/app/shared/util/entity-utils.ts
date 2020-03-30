@@ -1,4 +1,5 @@
 import pick from 'lodash/pick';
+import axios from 'axios';
 import { IQuestionResponse } from 'app/shared/model/question-response.model';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -111,4 +112,18 @@ export const reflatten = items => {
   });
 
   return reflatted.length === items.length ? reflatted : reflatten(reflatted);
+};
+
+export const chainRequests = (reqAmount: number, size: number, requestUrl: string) => {
+  const totalPages = Math.floor(reqAmount / size) + (reqAmount % size > 0 ? 1 : 0);
+  let index = 0;
+  let data = [];
+
+  const request = () =>
+    axios.get(`${requestUrl}?page=${index}&size=${size}`).then(response => {
+      data = data.concat(response.data);
+      index++;
+      return index >= totalPages ? data : request();
+    });
+  return request();
 };
