@@ -8,9 +8,7 @@ import {
   countNonEmptyEntities,
   countCompletedEntities,
   getAverageSurveyResponseTime,
-  getAllNonEmptyEntities,
-  findAndCleanAllCompletedWithDuplicateAnswers,
-  computeResultsOfDuplicateAnswers
+  getAllNonEmptyEntities
 } from 'app/modules/db-tool/db-tool.reducer';
 import { getEntity as getSurvey } from 'app/entities/survey/survey.reducer';
 import moment, { Moment } from 'moment';
@@ -36,7 +34,6 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
     this.props.getSurvey('youWho');
     this.props.countNonEmptyEntities();
     this.props.countCompletedEntities();
-    this.props.findAndCleanAllCompletedWithDuplicateAnswers();
     this.props.getAverageSurveyResponseTime('youWho');
   }
 
@@ -109,14 +106,7 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
   };
 
   render() {
-    const {
-      loading,
-      nonEmptyEntitiesCount,
-      completedEntitiesCount,
-      averageCompletionTime,
-      allNonEmptyEntities,
-      completedWithDuplicateAnswers
-    } = this.props;
+    const { loading, nonEmptyEntitiesCount, completedEntitiesCount, averageCompletionTime, allNonEmptyEntities } = this.props;
 
     const seconds = averageCompletionTime / 1000;
     const minutes = Math.floor(seconds / 60);
@@ -158,31 +148,16 @@ export class DbTool extends React.Component<IDbToolProps, IDbToolState> {
           {/*    ))}*/}
           <Grid.Row>
             {allNonEmptyEntities.length === 0 ? (
-              <Button onClick={this.props.getAllNonEmptyEntities} content="Fetch data" loading={loading} />
+              <Button onClick={this.props.getAllNonEmptyEntities} content="Fetch data" loading={loading} disabled />
             ) : this.state.dataToExport.length === 0 ? (
               <Button onClick={this.exportNonEmptyResponsesToCSV} content="Prepare CSV" />
             ) : (
-              // <CSVLink data={this.state.dataToExport} target="_blank">
-              //   Download
-              // </CSVLink>
-              // <CsvDownloader datas={this.state.dataToExport} filename={`results_${moment().format('DD_MM_YYYY_HH_mm_ss')}`}>
-              //   <Button content="Download CSV" />
-              // </CsvDownloader>
               <Button
                 content="Download CSV"
                 onClick={() => exportToCsv(`results_${moment().format('DD_MM_YYYY_HH_mm_ss')}.csv`, this.state.dataToExport)}
               />
             )}
           </Grid.Row>
-          {completedWithDuplicateAnswers.length > 0 && (
-            <Grid.Row>
-              <Button
-                content="Re-calculate results"
-                color="red"
-                onClick={() => this.props.computeResultsOfDuplicateAnswers(this.props.survey)}
-              />
-            </Grid.Row>
-          )}
         </Grid>
       </div>
     );
@@ -194,7 +169,6 @@ const mapStateToProps = ({ dbTool, survey }: IRootState) => ({
   nonEmptyEntitiesCount: dbTool.nonEmptyEntitiesCount,
   completedEntitiesCount: dbTool.completedEntitiesCount,
   allNonEmptyEntities: dbTool.allNonEmptyEntities,
-  completedWithDuplicateAnswers: dbTool.corruptedEntities,
   averageCompletionTime: dbTool.averageCompletionTime,
   loading: dbTool.loading
 });
@@ -204,9 +178,7 @@ const mapDispatchToProps = {
   countNonEmptyEntities,
   countCompletedEntities,
   getAllNonEmptyEntities,
-  findAndCleanAllCompletedWithDuplicateAnswers,
-  getAverageSurveyResponseTime,
-  computeResultsOfDuplicateAnswers
+  getAverageSurveyResponseTime
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
