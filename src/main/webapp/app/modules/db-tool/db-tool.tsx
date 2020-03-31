@@ -86,7 +86,7 @@ export class DbTool extends React.Component<IDbToolProps> {
           {/*    ))}*/}
           <Grid.Row>
             {allNonEmptyEntities.length === 0 ? (
-              <Button onClick={() => this.props.getAllNonEmptyEntities(20)} content="Fetch data" loading={loading} />
+              <Button onClick={() => this.props.getAllNonEmptyEntities(20)} content="Fetch data" loading={loading} disabled />
             ) : exportData.length === 0 ? (
               <Button onClick={() => this.props.formatDataForCsv(allNonEmptyEntities, survey)} content="Format data" loading={loading} />
             ) : (
