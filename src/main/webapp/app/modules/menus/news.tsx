@@ -29,7 +29,7 @@ export class News extends React.Component<INewsProps> {
         <Grid centered style={{ marginBottom: '50px' }}>
           <Grid.Row>
             <Grid.Column computer={3} mobile={14} verticalAlign="middle">
-              <Image className="news-page-image" src="content/images/news1.png" />
+              <Image className="news-page-image" src="content/images/news1.png" size="medium" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14} verticalAlign="middle">
               <h1 className="news-page-h1">Είσαι 17-29 ετών; Τότε αυτή η έρευνα σε αφορά!</h1>
@@ -42,7 +42,7 @@ export class News extends React.Component<INewsProps> {
           <div className="news-page-divider" />
           <Grid.Row>
             <Grid.Column computer={3} mobile={14} verticalAlign="middle">
-              <Image className="news-page-image" src="content/images/ert.jpg" />
+              <Image className="news-page-image" src="content/images/ert.jpg" size="medium" />
             </Grid.Column>
             <Grid.Column computer={5} mobile={14} verticalAlign="middle">
               <h1 className="news-page-h1">ΕΡΤ: «Εσύ πόσο YouWho είσαι;»</h1>
@@ -58,6 +58,26 @@ export class News extends React.Component<INewsProps> {
                 </a>
               </p>
               <Button className="news-page-more-button" as={NavLink} to="news2">
+                Περισσότερα
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+          <div className="news-page-divider" />
+          <Grid.Row>
+            <Grid.Column computer={3} mobile={14} verticalAlign="middle">
+              <Image src="content/images/tmp-news/Lifo_Logo.jpg" size="medium" />
+            </Grid.Column>
+            <Grid.Column computer={5} mobile={14} verticalAlign="middle">
+              <h1 className="news-page-h1">LIFO: Είσαι 17-29 ετών; Τότε αυτή η έρευνα σε αφορά</h1>
+              <h3 className="news-page-h3">31.03.2020 • Δημοσιεύσεις</h3>
+              <p className="news-page-p">
+                Το άρθρο δημοσιεύθηκε στις 12 Μαρτίου 2020 στο
+                <a href="https://www.lifo.gr/articles/greece_articles/273130/eisai-17-29-eton-tote-ayti-i-ereyna-se-afora" target="_blank">
+                  {' '}
+                  lifo.gr
+                </a>
+              </p>
+              <Button className="news-page-more-button" as={NavLink} to="news3">
                 Περισσότερα
               </Button>
             </Grid.Column>

@@ -16,6 +16,7 @@ import Students from 'app/modules/menus/students';
 import YoungAdults from 'app/modules/menus/young-adults';
 import News1 from './news1';
 import News2 from './news2';
+import News3 from './news3';
 
 export interface IMenusProps extends StateProps, DispatchProps, RouteComponentProps {}
 
@@ -59,6 +60,7 @@ export class Menus extends React.Component<IMenusProps> {
             <Route exact path={`${match.url}/news`} render={() => <News />} />
             <Route exact path={`${match.url}/news1`} render={() => <News1 />} />
             <Route exact path={`${match.url}/news2`} render={() => <News2 />} />
+            <Route exact path={`${match.url}/news3`} render={() => <News3 />} />
             <Route exact path={`${match.url}/project`} render={() => <Project />} />
             <Route exact path={`${match.url}/project-team`} render={() => <ProjectTeam />} />
             <Route exact path={`${match.url}/students`} render={() => <Students />} />
