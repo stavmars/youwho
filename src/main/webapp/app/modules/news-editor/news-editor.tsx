@@ -4,90 +4,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { Button, Dimmer, Loader, Grid, Image } from 'semantic-ui-react';
-import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
 import { createEntity as createNewsPost, setBlob, reset } from 'app/entities/news-post/news-post.reducer';
 // tslint:disable-next-line:no-submodule-imports
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { setFileData } from 'react-jhipster';
 import moment from 'moment';
 
-const getFileBase64 = (file, callback) => {
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  // Since FileReader is asynchronous,
-  // we need to pass data back.
-  reader.onload = () => callback(reader.result);
-  // catch an error
-  reader.onerror = error => alert(error);
-};
-
-const imageUploadCallback = file => new Promise((resolve, reject) => getFileBase64(file, data => resolve({ data: { link: data } })));
-
-const toolbar = {
-  options: ['inline', 'blockType', 'textAlign', 'fontSize', 'fontFamily', 'link', 'image', 'history'],
-  inline: {
-    options: ['underline', 'strikethrough', 'monospace']
-  },
-  fontFamily: {
-    options: [
-      'TTNormsProBlack',
-      'TTNormsProBlackItalic',
-      'TTNormsProBold',
-      'TTNormsProBoldItalic',
-      'TTNormsProExtraBlack',
-      'TTNormsProExtraBlackItalic',
-      'TTNormsProExtraBold',
-      'TTNormsProExtraBoldItalic',
-      'TTNormsProExtraLight',
-      'TTNormsProExtraLightItalic',
-      'TTNormsProItalic',
-      'TTNormsProLight',
-      'TTNormsProLightItalic',
-      'TTNormsProMedium',
-      'TTNormsProMediumItalic',
-      'TTNormsProRegular',
-      'TTNormsProThin',
-      'TTNormsProThinItalic'
-    ]
-  },
-  image: {
-    uploadCallback: imageUploadCallback,
-    previewImage: true,
-    alt: {
-      present: true,
-      mandatory: true
-    }
-  }
-};
+import CKEditor from '@ckeditor/ckeditor5-react';
+import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 export interface INewsEditorProps extends StateProps, DispatchProps {}
 
-export interface INewsEditorState {
-  editorState: EditorState;
-}
+class NewsEditor extends React.Component<INewsEditorProps> {
+  editor = React.createRef<CKEditor>();
 
-class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
   constructor(props) {
     super(props);
-    const content = window.localStorage.getItem('content');
-    this.state = {
-      editorState: content ? EditorState.createWithContent(convertFromRaw(JSON.parse(content))) : EditorState.createEmpty()
-    };
   }
 
   componentDidMount() {
     this.props.reset();
   }
-
-  onChange = editorState => {
-    // Save editorState to localStorage to persist data on refresh.
-    window.localStorage.setItem('content', JSON.stringify(convertToRaw(editorState.getCurrentContent())));
-    this.setState({
-      ...this.state,
-      editorState
-    });
-  };
 
   onBlobChange = (isAnImage, name) => event => {
     setFileData(event, (contentType, data) => this.props.setBlob(name, data, contentType), isAnImage);
@@ -98,29 +35,20 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
   };
 
   save = () => {
-    const { editorState } = this.state;
+    const editorData = this.editor.current.editor.getData();
     const { newsPostEntity } = this.props;
     this.props.createNewsPost({
       ...newsPostEntity,
       // @ts-ignore
       previewTitle: document.getElementById('news-post-previewTitle').value,
       postDate: moment(),
-      content: JSON.stringify(convertToRaw(editorState.getCurrentContent()))
+      content: `${editorData}`
     });
     this.clearBlob('previewImage');
     this.props.reset();
-    this.clear();
-  };
-
-  clear = () => {
-    this.setState({
-      editorState: EditorState.createEmpty()
-    });
-    window.localStorage.clear();
   };
 
   render() {
-    const { editorState } = this.state;
     const { loading, newsPostEntity } = this.props;
 
     const { previewImage, previewImageContentType } = newsPostEntity;
@@ -166,24 +94,25 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Create post below...</span>
         <div className="news-editor-container">
-          <Editor editorState={editorState} onEditorStateChange={this.onChange} toolbar={toolbar} />
+          <CKEditor
+            editor={DecoupledEditor}
+            onInit={editor => {
+              // Inserts the toolbar before the editable area.
+              editor.ui.view.editable.element.parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.view.editable.element);
+            }}
+            ref={this.editor}
+          />
         </div>
         <Button
           content="Save post"
           primary
           onClick={this.save}
-          // @ts-ignore
           disabled={
             document.getElementById('news-post-previewTitle') === null ||
+            // @ts-ignore
             document.getElementById('news-post-previewTitle').value.length === 0
           }
           style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }}
-        />
-        <Button
-          content="Clear"
-          color="red"
-          onClick={this.clear}
-          style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 0' }}
         />
       </div>
     );

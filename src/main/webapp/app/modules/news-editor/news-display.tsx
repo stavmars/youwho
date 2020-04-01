@@ -31,7 +31,7 @@ export class NewsDisplay extends React.Component<INewsDisplayProps> {
     ) : errorMessage === null ? (
       <div className="news-display-page">
         <Container>
-          <Editor readOnly toolbarHidden editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(newsPost.content)))} />
+          <div dangerouslySetInnerHTML={{ __html: newsPost.content }} />
         </Container>
       </div>
     ) : (
