@@ -5,9 +5,27 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IRootState } from 'app/shared/reducers';
 import { Button, Grid, Responsive, Image, Modal } from 'semantic-ui-react';
+import Countdown from 'react-countdown';
 import ReactPlayer from 'react-player';
 
 // tslint:disable:jsx-no-lambda
+
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a complete state
+    return <span className="countdown">Η έρευνα έχει ολοκληρωθεί</span>;
+  } else {
+    // Render a countdown
+    return (
+      <span className="countdown">
+        Η έρευνα λήγει σε...{' '}
+        <span style={{ color: '#ff6666' }}>
+          {days}ημ:{hours}ω:{minutes}λ:{seconds}δ
+        </span>
+      </span>
+    );
+  }
+};
 
 const subtext = () => (
   <div className="home-subtext">
@@ -20,6 +38,7 @@ const subtext = () => (
     <span>Κάνε chat με τη Γιαγιά και μάθε πόσο γιούχου είσαι!</span>
     <br />
     <br />
+    <Countdown date={'2020-04-05T23:59:59'} renderer={renderer} />
   </div>
 );
 
@@ -39,8 +58,8 @@ export class Home extends React.Component<IHomeProp> {
               <Grid.Column width={7}>
                 <Image src="content/images/bubble-purple-landing.png" style={{ left: '-15vw', zIndex: '1', height: '26.35vh' }} />
                 <Image src="content/images/bubble-pink-landing.png" as={Link} to="survey-chat" style={{ top: '2vh', width: '29vw' }} />
-                <div style={{ marginTop: '14vh' }}>
-                  {subtext()}
+                <div style={{ marginTop: '10vh' }}>{subtext()}</div>
+                <div style={{ marginTop: '2vh' }}>
                   <Modal
                     trigger={
                       <Button style={{ background: 'transparent', borderStyle: 'none', marginTop: '-20px' }}>
@@ -80,7 +99,7 @@ export class Home extends React.Component<IHomeProp> {
                 />
                 <Image src="content/images/giagia.png" className="granny" />
                 <Image src="content/images/YellowStripesBg.svg" alt="yellow-stripes" className="stripes" />
-                <div style={{ marginLeft: '60vw', marginTop: '-315px', zIndex: 1 }}>
+                <div style={{ marginLeft: '60vw', marginTop: '-50vh', zIndex: 1 }}>
                   <span className="sponsored-by" style={{ position: 'absolute' }}>
                     Υπό την Αιγίδα
                   </span>
