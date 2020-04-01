@@ -47,6 +47,14 @@ Main page styles
     @include computer {
       font: 2.15vh/2.55vh TTNormsProBoldItalic;
     }
+    .countdown {
+      @include mobile {
+        font: 2.8vh/3.3vh TTNormsProBoldItalic;
+      }
+      @include computer {
+        font: 2.15vh/2.55vh TTNormsProBoldItalic;
+      }
+    }
   }
 
   .sponsored-by {

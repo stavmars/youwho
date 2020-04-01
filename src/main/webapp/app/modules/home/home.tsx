@@ -13,11 +13,11 @@ import ReactPlayer from 'react-player';
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     // Render a complete state
-    return <span>Η έρευνα έχει ολοκληρωθεί</span>;
+    return <span className="countdown">Η έρευνα έχει ολοκληρωθεί</span>;
   } else {
     // Render a countdown
     return (
-      <span>
+      <span className="countdown">
         Η έρευνα λήγει σε...{' '}
         <span style={{ color: '#ff6666' }}>
           {days}ημ:{hours}ω:{minutes}λ:{seconds}δ
