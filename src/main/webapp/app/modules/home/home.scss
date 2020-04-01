@@ -41,7 +41,7 @@ Main page styles
     text-align: left;
     letter-spacing: 0;
     @include mobile {
-      font: 20px/24px TTNormsProBoldItalic;
+      font: 3vh/3.55vh TTNormsProBoldItalic;
       width: 80%;
     }
     @include computer {
