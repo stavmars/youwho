@@ -32,7 +32,8 @@ export class ResultsAverage extends React.Component<IResultsAverageProps> {
               <span className="results-granny-bubble">Συνολικά αποτελέσματα</span>
             </Grid.Row>
             <Grid.Row centered className="results-disclaimer">
-              Τα συνολικά αποτελέσματα είναι προσωρινά και αναδιαμορφώνονται συνεχώς καθώς προστίθενται νέες απαντήσεις.
+              Τα αναλυτικά αποτελέσματα είναι προς επεξεργασία από την επιστημονική ομάδα του έργου και θα παρουσιάζονται σταδιακά όσο
+              προχωρά η ανάλυσή τους
             </Grid.Row>
             <Grid.Row columns={3}>
               <Grid.Column computer={10} mobile={14}>
