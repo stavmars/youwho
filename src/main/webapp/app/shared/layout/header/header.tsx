@@ -26,20 +26,7 @@ const Header = (props: IHeaderProps) => (
         {/*{props.isAuthenticated && <EntitiesMenu />}*/}
         {/*{props.isAuthenticated && props.isAdmin && <AdminMenu showSwagger={props.isSwaggerEnabled} />}*/}
         {props.isAuthenticated && <AccountMenu />}
-        <Menu.Item
-          position="right"
-          style={{
-            marginRight: '100px',
-            fontFamily: 'TTNormsProBoldItalic',
-            color: '#333333',
-            fontSize: '16px'
-          }}
-          as={Link}
-          to="/results/average"
-        >
-          Αποτελέσματα
-        </Menu.Item>
-        <Menu.Item as="a" href="https://www.youtube.com/channel/UCEfMZfe5xokl-CIPGucqBfg" target="_blank">
+        <Menu.Item position="right" as="a" href="https://www.youtube.com/channel/UCEfMZfe5xokl-CIPGucqBfg" target="_blank">
           <Image src="content/images/youtube-black.png" />
         </Menu.Item>
         <Menu.Item as="a" href="https://www.instagram.com/youwho.gr/" target="_blank">
@@ -57,18 +44,6 @@ const Header = (props: IHeaderProps) => (
       <Menu text fixed={props.color === 'gradient' ? 'top' : null} className={`header ${props.color}`}>
         <Menu.Item position="left" fitted style={{ marginLeft: '22px' }} as={Link} to="/">
           <Image src="content/images/MobileLogo.png" style={{ width: '15vw' }} />
-        </Menu.Item>
-        <Menu.Item
-          style={{
-            font: '16px/34px TTNormsProBoldItalic',
-            letterSpacing: '0',
-            opacity: '1',
-            color: '#333333'
-          }}
-          as={Link}
-          to="/results/average"
-        >
-          Αποτελέσματα
         </Menu.Item>
         <Menu.Item position="right" onClick={props.toggleSidebar}>
           <Image src="content/images/dots.svg" style={{ width: '80px', height: '50px' }} />
