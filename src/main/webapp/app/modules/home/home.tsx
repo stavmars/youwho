@@ -24,8 +24,8 @@ export class Home extends React.Component<IHomeProp> {
               <Grid.Column width={7}>
                 <Image
                   src={
-                    'content/images/Purple-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-' +
-                    'Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα.png'
+                    'content/images/Purple-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National' +
+                    '-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα.png'
                   }
                   style={{ left: '-20vw', height: '35vh', zIndex: '1' }}
                 />
@@ -63,15 +63,15 @@ export class Home extends React.Component<IHomeProp> {
               <Grid.Column width={14}>
                 <Image
                   src={
-                    'content/images/Purple-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-' +
-                    'Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα_mobile.png'
+                    'content/images/Purple-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National' +
+                    '-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα_mobile.png'
                   }
                   style={{ left: '15vw', top: '10vh', zIndex: '1' }}
                 />
                 <Image
                   src={
-                    'content/images/Red-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-' +
-                    'Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα_mobile.png'
+                    'content/images/Red-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National' +
+                    '-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα_mobile.png'
                   }
                   as={Link}
                   to="/results/average"
