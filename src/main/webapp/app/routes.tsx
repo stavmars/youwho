@@ -44,7 +44,7 @@ const Routes = () => (
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <PrivateRoute path="/db-tool" component={DbTool} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
-      <ErrorBoundaryRoute path="/survey-chat/" exact component={SurveyChat} />
+      {/*<ErrorBoundaryRoute path="/survey-chat/" exact component={SurveyChat} />*/}
       <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute path="/results" component={Results} />
       <ErrorBoundaryRoute component={PageNotFound} />
