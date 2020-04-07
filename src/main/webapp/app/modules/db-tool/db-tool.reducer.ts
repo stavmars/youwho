@@ -5,7 +5,7 @@ import { computeProfilingResults } from 'app/modules/survey-chat/chatbot.reducer
 import { ISurvey } from 'app/shared/model/survey.model';
 import { chainRequests, reflatten } from 'app/shared/util/entity-utils';
 import _ from 'lodash';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 import * as flat from 'flat';
 
 export const ACTION_TYPES = {
@@ -179,6 +179,12 @@ export const getAverageSurveyResponseTime = surveyId => {
   };
 };
 
+const calculateTimElapsed = (start: Moment, end: Moment) => {
+  const ms = moment(end).diff(start);
+  const d = moment.duration(ms);
+  return `${d.hours() ? d.hours() + 'h' : ''}${d.minutes()}m${d.seconds()}s`;
+};
+
 export const formatDataForCsv = (allNonEmptyEntities: ReadonlyArray<ISurveyResponse>, survey: Readonly<ISurvey>) => async dispatch => {
   const questions = _.keyBy(survey.questions, 'id');
   const dataToExport = [];
@@ -190,12 +196,7 @@ export const formatDataForCsv = (allNonEmptyEntities: ReadonlyArray<ISurveyRespo
       const responseChoices = _.keyBy(questions[questionResponse.questionId].responseChoices, 'id');
       questionResponsesToExport.push({
         question: questions[questionResponse.questionId].text,
-        answerTime: questionResponse.endTime
-          ? moment
-              .duration(moment(questionResponse.endTime).diff(moment(questionResponse.startTime)))
-              .asMinutes()
-              .toString()
-          : '',
+        answerTime: questionResponse.endTime ? calculateTimElapsed(questionResponse.startTime, questionResponse.endTime) : '',
         answer:
           questionResponse.choiceIds.length === 1
             ? [
@@ -216,13 +217,7 @@ export const formatDataForCsv = (allNonEmptyEntities: ReadonlyArray<ISurveyRespo
       id: response.id,
       status: response.status,
       date: moment(response.startTime).format('DD MM YYYY'),
-      totalTime:
-        response.status === 'completed'
-          ? moment
-              .duration(moment(response.endTime).diff(moment(response.startTime)))
-              .asMinutes()
-              .toString()
-          : '',
+      totalTime: response.status === 'completed' ? calculateTimElapsed(response.startTime, response.endTime) : '',
       questionResponses: questionResponsesToExport
     });
   });
