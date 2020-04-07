@@ -29,12 +29,6 @@ export class DbTool extends React.Component<IDbToolProps> {
     this.props.getAverageSurveyResponseTime('youWho');
   }
 
-  calculateTimElapsed = (start: Moment, end: Moment) => {
-    const ms = moment(end).diff(start);
-    const d = moment.duration(ms);
-    return `${d.hours() ? d.hours() + 'h' : ''}${d.minutes()}m${d.seconds()}s`;
-  };
-
   render() {
     const {
       loading,
