@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { IRootState } from 'app/shared/reducers';
 import { getEntity, reset } from 'app/entities/news-post/news-post.reducer';
-import { convertFromRaw, EditorState } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
 import { Dimmer, Loader, Container } from 'semantic-ui-react';
 import { defaultValue } from 'app/shared/model/news-post.model';
 
@@ -31,7 +29,7 @@ export class NewsDisplay extends React.Component<INewsDisplayProps> {
     ) : errorMessage === null ? (
       <div className="news-display-page">
         <Container>
-          <div dangerouslySetInnerHTML={{ __html: newsPost.content }} />
+          <div className="ck-content" dangerouslySetInnerHTML={{ __html: newsPost.content }} />
         </Container>
       </div>
     ) : (
