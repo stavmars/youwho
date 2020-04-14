@@ -18,9 +18,16 @@
 .news-display-page {
   padding: 4em 1em 1em 1em;
   margin: 2em 1em 1em;
-  font-family: TTNormsProMedium sans-serif;
+  font-family: TTNormsProMedium, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: TTNormsProMedium, sans-serif;
+  }
   strong {
-    font-family: TTNormsProBold sans-serif;
+    font-family: TTNormsProBold, sans-serif;
   }
 }
 
