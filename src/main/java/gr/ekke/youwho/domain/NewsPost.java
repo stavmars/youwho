@@ -6,6 +6,7 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Arrays;
 
 /**
  * A NewsPost.
@@ -30,6 +31,9 @@ public class NewsPost implements Serializable {
 
     @Field("preview_title")
     private String previewTitle;
+
+    @Field("published")
+    private Boolean published;
 
     @Field("post_date")
     private Instant postDate;
@@ -95,6 +99,14 @@ public class NewsPost implements Serializable {
         this.previewTitle = previewTitle;
     }
 
+    public Boolean getPublished() {
+        return published;
+    }
+
+    public void setPublished(Boolean published) {
+        this.published = published;
+    }
+
     public Instant getPostDate() {
         return postDate;
     }
@@ -128,12 +140,13 @@ public class NewsPost implements Serializable {
     @Override
     public String toString() {
         return "NewsPost{" +
-            "id=" + getId() +
-            ", content='" + getContent() + "'" +
-            ", previewImage='" + getPreviewImage() + "'" +
-            ", previewImageContentType='" + getPreviewImageContentType() + "'" +
-            ", previewTitle='" + getPreviewTitle() + "'" +
-            ", postDate='" + getPostDate() + "'" +
-            "}";
+            "id='" + id + '\'' +
+            ", content='" + content + '\'' +
+            ", previewImage=" + Arrays.toString(previewImage) +
+            ", previewImageContentType='" + previewImageContentType + '\'' +
+            ", previewTitle='" + previewTitle + '\'' +
+            ", published=" + published +
+            ", postDate=" + postDate +
+            '}';
     }
 }

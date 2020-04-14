@@ -48,42 +48,45 @@ export class News extends React.Component<INewsProps> {
           </h1>
         ) : (
           <Grid centered style={{ marginBottom: '50px' }}>
-            {newsPosts.map(newsPost => (
-              <Grid.Row className="news-page-row" columns={isAuthenticated ? 3 : 2}>
-                <Grid.Column computer={3} mobile={14} verticalAlign="middle">
-                  {newsPost.previewImage ? (
-                    <Image src={`data:${newsPost.previewImageContentType};base64,${newsPost.previewImage}`} size="medium" />
-                  ) : (
-                    <Image className="news-page-image" src="content/images/HeaderLogo.png" />
-                  )}
-                </Grid.Column>
-                <Grid.Column computer={5} mobile={14} verticalAlign="middle">
-                  <h1 className="news-page-h1">{newsPost.previewTitle}</h1>
-                  <h3 className="news-page-h3">{moment(newsPost.postDate).format('DD.MM.YYYY | HH:mm')}</h3>
-                  <Button className="news-page-more-button" floated="right" as={NavLink} to={`/news-display/${newsPost.id}`}>
-                    Περισσότερα
-                  </Button>
-                </Grid.Column>
-                {isAuthenticated && (
-                  <Grid.Column only="computer" verticalAlign="middle" computer={1}>
-                    <Button
-                      icon="edit"
-                      as={NavLink}
-                      to={`/news-editor/${newsPost.id}/edit`}
-                      style={{ backgroundColor: '#777eff', color: 'white' }}
-                    />
-                    <br />
-                    <br />
-                    <Button
-                      icon="delete"
-                      as={NavLink}
-                      to={`/entity/news-post/${newsPost.id}/delete`}
-                      style={{ backgroundColor: '#ff6666', color: 'white' }}
-                    />
-                  </Grid.Column>
-                )}
-              </Grid.Row>
-            ))}
+            {newsPosts.map(
+              newsPost =>
+                (isAuthenticated || newsPost.published) && (
+                  <Grid.Row key={newsPost.id} className="news-page-row" columns={isAuthenticated ? 3 : 2}>
+                    <Grid.Column computer={3} mobile={14} verticalAlign="middle">
+                      {newsPost.previewImage ? (
+                        <Image src={`data:${newsPost.previewImageContentType};base64,${newsPost.previewImage}`} size="medium" />
+                      ) : (
+                        <Image className="news-page-image" src="content/images/HeaderLogo.png" />
+                      )}
+                    </Grid.Column>
+                    <Grid.Column computer={5} mobile={14} verticalAlign="middle">
+                      <h1 className="news-page-h1">{newsPost.previewTitle}</h1>
+                      <h3 className="news-page-h3">{moment(newsPost.postDate).format('DD.MM.YYYY | HH:mm')}</h3>
+                      <Button className="news-page-more-button" floated="right" as={NavLink} to={`/news-display/${newsPost.id}`}>
+                        Περισσότερα
+                      </Button>
+                    </Grid.Column>
+                    {isAuthenticated && (
+                      <Grid.Column only="computer" verticalAlign="middle" computer={1}>
+                        <Button
+                          icon="edit"
+                          as={NavLink}
+                          to={`/news-editor/${newsPost.id}/edit`}
+                          style={{ backgroundColor: '#777eff', color: 'white' }}
+                        />
+                        <br />
+                        <br />
+                        <Button
+                          icon="delete"
+                          as={NavLink}
+                          to={`/entity/news-post/${newsPost.id}/delete`}
+                          style={{ backgroundColor: '#ff6666', color: 'white' }}
+                        />
+                      </Grid.Column>
+                    )}
+                  </Grid.Row>
+                )
+            )}
           </Grid>
         )}
       </div>

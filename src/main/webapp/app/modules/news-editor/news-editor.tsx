@@ -26,6 +26,7 @@ export interface INewsEditorProps extends StateProps, DispatchProps, RouteCompon
 export interface INewsEditorState {
   isNew: boolean;
   title: string;
+  published: boolean;
   date: Moment;
 }
 
@@ -37,7 +38,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
     this.state = {
       isNew: !this.props.match.params || !this.props.match.params.id,
       title: '',
-      date: null
+      date: null,
+      published: false
     };
   }
 
@@ -60,7 +62,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
       this.setState({
         ...this.state,
         title: this.props.newsPostEntity.previewTitle,
-        date: this.props.newsPostEntity.postDate
+        date: this.props.newsPostEntity.postDate,
+        published: this.props.newsPostEntity.published
       });
     }
   }
@@ -87,6 +90,12 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
     this.props.setBlob(name, undefined, undefined);
   };
 
+  changePublish = () =>
+    this.setState({
+      ...this.state,
+      published: !this.state.published
+    });
+
   save = () => {
     const editorData = this.editor.current.editor.getData();
     const { newsPostEntity } = this.props;
@@ -95,6 +104,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         ...newsPostEntity,
         previewTitle: this.state.title,
         postDate: this.state.date,
+        published: this.state.published,
         content: `${editorData}`
       });
     } else {
@@ -102,6 +112,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         ...newsPostEntity,
         previewTitle: this.state.title,
         postDate: this.state.date,
+        published: this.state.published,
         content: `${editorData}`
       });
     }
@@ -113,7 +124,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
 
   render() {
     const { loading, newsPostEntity } = this.props;
-    const { isNew, title } = this.state;
+    const { isNew } = this.state;
 
     const { previewImage, previewImageContentType } = newsPostEntity;
 
@@ -126,7 +137,14 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Add a Preview Title...</span>
         <br />
         <br />
-        <input id="news-post-previewTitle" type="text" name="previewTitle" value={title} onChange={this.onTitleChange} required />
+        <input
+          id="news-post-previewTitle"
+          type="text"
+          name="previewTitle"
+          value={this.state.title}
+          onChange={this.onTitleChange}
+          required
+        />
         <br />
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Add Post Date...</span>
@@ -167,6 +185,10 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
           </Grid>
         ) : null}
         <input id="file_previewImage" type="file" onChange={this.onBlobChange(true, 'previewImage')} accept="image/*" />
+        <br />
+        <br />
+        <span style={{ fontFamily: 'TTNormsProMedium' }}>Check if post should be published...</span>{' '}
+        <input type="checkbox" name="published" checked={this.state.published} onChange={this.changePublish} />
         <br />
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Create post below...</span>
