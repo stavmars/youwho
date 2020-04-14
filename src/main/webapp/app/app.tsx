@@ -51,7 +51,7 @@ export const App = (props: IAppProps) => {
     <Router basename={baseHref}>
       <ScrollToTop>
         <div className="app-container">
-          {/*<Route render={tracker} />*/}
+          <Route render={tracker} />
           <Switch>
             <Route
               path="/survey-chat/"
