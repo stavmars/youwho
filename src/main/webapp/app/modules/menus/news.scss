@@ -27,6 +27,17 @@
     color: #333333;
     opacity: 1;
   }
+  .news-page-row {
+    margin: 10vh 0 0 0;
+  }
+  .news-page-row:after {
+    content: ''; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 55%; /* Change this to whatever width you want. */
+    padding-top: 6vh; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid rgba(112, 112, 112, 0.3); /* This creates the border. Replace black with whatever color you want. */
+  }
   .news-page-h3 {
     text-align: left;
     color: #afafaf;
@@ -47,7 +58,7 @@
     letter-spacing: 0;
     color: #ffffff;
     opacity: 1;
-    background: #ff6666 0% 0% no-repeat padding-box !important;
+    background: #ff6666 0 0 no-repeat padding-box !important;
     border-radius: 200px 151px 0 200px !important;
   }
 }

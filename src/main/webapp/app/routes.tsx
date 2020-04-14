@@ -3,7 +3,6 @@ import { Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import Login from 'app/modules/login/login';
-import Register from 'app/modules/account/register/register';
 import Activate from 'app/modules/account/activate/activate';
 import PasswordResetInit from 'app/modules/account/password-reset/init/password-reset-init';
 import PasswordResetFinish from 'app/modules/account/password-reset/finish/password-reset-finish';
@@ -18,6 +17,8 @@ import SurveyChat from 'app/modules/survey-chat';
 import Menus from 'app/modules/menus';
 import Results from 'app/modules/results';
 import DbTool from 'app/modules/db-tool/db-tool';
+import NewsEditor from 'app/modules/news-editor/news-editor';
+import NewsDisplay from 'app/modules/news-editor/news-display';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -43,10 +44,13 @@ const Routes = () => (
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <PrivateRoute path="/db-tool" component={DbTool} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
+      <PrivateRoute path="/news-editor/new" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
+      <PrivateRoute path="/news-editor/:id/edit" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
       <PrivateRoute path="/survey-chat/" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute path="/results" component={Results} />
+      <ErrorBoundaryRoute path="/news-display/:id" component={NewsDisplay} />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>
