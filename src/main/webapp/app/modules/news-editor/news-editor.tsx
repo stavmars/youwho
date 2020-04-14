@@ -207,11 +207,6 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
           content="Save post"
           primary
           onClick={this.save}
-          disabled={
-            document.getElementById('news-post-previewTitle') === null ||
-            // @ts-ignore
-            document.getElementById('news-post-previewTitle').value.length === 0
-          }
           style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }}
         />
       </div>
