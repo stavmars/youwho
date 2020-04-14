@@ -2,6 +2,8 @@ package gr.ekke.youwho.repository;
 
 import gr.ekke.youwho.domain.QuestionResponse;
 import gr.ekke.youwho.domain.SurveyResponse;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
@@ -22,5 +24,5 @@ public interface SurveyResponseRepository extends MongoRepository<SurveyResponse
 
     List<SurveyResponse> getAllByStatusEquals(String status);
 
-    List<SurveyResponse> getAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
+    Page<SurveyResponse> getAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses, Pageable pageable);
 }

@@ -47,7 +47,7 @@ const Routes = () => (
       <PrivateRoute path="/news-editor/new" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/news-editor/:id/edit" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
-      <ErrorBoundaryRoute path="/survey-chat/" exact component={SurveyChat} />
+      <PrivateRoute path="/survey-chat/" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute path="/results" component={Results} />
       <ErrorBoundaryRoute path="/news-display/:id" component={NewsDisplay} />

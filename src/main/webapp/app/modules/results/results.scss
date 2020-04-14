@@ -45,6 +45,7 @@ results/average page styles
 
   .results-disclaimer {
     text-align: center !important;
+    margin-top: 10px !important;
     @include mobile {
       font: 14px/16px TTNormsProMedium !important;
     }

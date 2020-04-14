@@ -8,12 +8,13 @@ Main page styles
   height: calc(100vh - 80px) !important;
   overflow: auto;
   overflow-y: hidden;
+  overflow-x: hidden;
   .granny {
     position: absolute;
     @include mobile {
-      margin-top: 10vh;
-      height: 35vh;
-      left: -1vw;
+      height: 45vh;
+      left: -10vw;
+      top: 50vh;
     }
     @include computer {
       height: 65vh;
@@ -26,7 +27,7 @@ Main page styles
   .stripes {
     @include mobile {
       left: -70vw !important;
-      top: -6vh !important;
+      top: -16vh !important;
       transform: scale(2.5);
     }
     @include computer {
@@ -41,11 +42,19 @@ Main page styles
     text-align: left;
     letter-spacing: 0;
     @include mobile {
-      font: 20px/24px TTNormsProBoldItalic;
+      font: 3vh/3.55vh TTNormsProBoldItalic;
       width: 80%;
     }
     @include computer {
       font: 2.15vh/2.55vh TTNormsProBoldItalic;
+    }
+    .countdown {
+      @include mobile {
+        font: 2.8vh/3.3vh TTNormsProBoldItalic;
+      }
+      @include computer {
+        font: 2.15vh/2.55vh TTNormsProBoldItalic;
+      }
     }
   }
 

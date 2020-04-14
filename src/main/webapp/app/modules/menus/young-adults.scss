@@ -31,6 +31,9 @@
       color: #333333;
       opacity: 1;
       text-align: left;
+      .bold {
+        font-family: TTNormsProBold, serif;
+      }
     }
     .young-adults-page-top-subtext::first-letter {
       @include mobile {
@@ -47,6 +50,37 @@
       letter-spacing: 0;
       color: #ff6666;
       opacity: 1;
+    }
+  }
+  .young-adults-page-text {
+    text-align: left;
+    color: #333333;
+    opacity: 1;
+    @include mobile {
+      font: 20px/25px TTNormsProRegular;
+      letter-spacing: 0.4px;
+    }
+    @include computer {
+      font: 22px/32px TTNormsProRegular;
+      letter-spacing: 0.44px;
+    }
+    &.purple {
+      color: #777eff;
+      font-family: TTNormsProBold, serif;
+      .red {
+        color: #ff6666;
+      }
+    }
+    .bold {
+      font-family: TTNormsProBold, serif;
+    }
+  }
+  .young-adults-page-footer-image {
+    @include mobile {
+      margin-top: -20vh;
+    }
+    @include computer {
+      margin-top: -40vh;
     }
   }
 }
