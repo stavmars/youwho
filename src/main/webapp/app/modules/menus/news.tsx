@@ -30,6 +30,16 @@ export class News extends React.Component<INewsProps> {
             {/*<Menu.Item className="news-page-menu-secondary" position="right">*/}
             {/*  Όλα Εκδηλώσεις Κείμενα Έρευνες*/}
             {/*</Menu.Item>*/}
+            {isAuthenticated && (
+              <Menu.Item position="right">
+                <Button
+                  content="Create News Post"
+                  as={NavLink}
+                  to="/news-editor/new"
+                  style={{ backgroundColor: '#777eff', color: 'white' }}
+                />
+              </Menu.Item>
+            )}
           </Menu>
         </Grid>
         {loading ? (
@@ -39,7 +49,7 @@ export class News extends React.Component<INewsProps> {
         ) : (
           <Grid centered style={{ marginBottom: '50px' }}>
             {newsPosts.map(newsPost => (
-              <Grid.Row className="news-page-row">
+              <Grid.Row className="news-page-row" columns={isAuthenticated ? 3 : 2}>
                 <Grid.Column computer={3} mobile={14} verticalAlign="middle">
                   {newsPost.previewImage ? (
                     <Image src={`data:${newsPost.previewImageContentType};base64,${newsPost.previewImage}`} size="medium" />
@@ -50,13 +60,28 @@ export class News extends React.Component<INewsProps> {
                 <Grid.Column computer={5} mobile={14} verticalAlign="middle">
                   <h1 className="news-page-h1">{newsPost.previewTitle}</h1>
                   <h3 className="news-page-h3">{moment(newsPost.postDate).format('DD.MM.YYYY | HH:mm')}</h3>
-                  <Button className="news-page-more-button" as={NavLink} to={`/news-display/${newsPost.id}`}>
+                  <Button className="news-page-more-button" floated="right" as={NavLink} to={`/news-display/${newsPost.id}`}>
                     Περισσότερα
                   </Button>
                 </Grid.Column>
-                <Grid.Column only="computer" verticalAlign="middle" computer={2}>
-                  {isAuthenticated && <Button color="red" content="Delete Post" onClick={() => this.props.deleteEntity(newsPost.id)} />}
-                </Grid.Column>
+                {isAuthenticated && (
+                  <Grid.Column only="computer" verticalAlign="middle" computer={1}>
+                    <Button
+                      icon="edit"
+                      as={NavLink}
+                      to={`/news-editor/${newsPost.id}/edit`}
+                      style={{ backgroundColor: '#777eff', color: 'white' }}
+                    />
+                    <br />
+                    <br />
+                    <Button
+                      icon="delete"
+                      as={NavLink}
+                      to={`/entity/news-post/${newsPost.id}/delete`}
+                      style={{ backgroundColor: '#ff6666', color: 'white' }}
+                    />
+                  </Grid.Column>
+                )}
               </Grid.Row>
             ))}
           </Grid>

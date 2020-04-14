@@ -1,13 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { ICrudGetAction, ICrudDeleteAction } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { INewsPost } from 'app/shared/model/news-post.model';
 import { IRootState } from 'app/shared/reducers';
 import { getEntity, deleteEntity } from './news-post.reducer';
+import { Modal, Button } from 'semantic-ui-react';
 
 export interface INewsPostDeleteDialogProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
@@ -29,19 +26,13 @@ export class NewsPostDeleteDialog extends React.Component<INewsPostDeleteDialogP
   render() {
     const { newsPostEntity } = this.props;
     return (
-      <Modal isOpen toggle={this.handleClose}>
-        <ModalHeader toggle={this.handleClose}>Confirm delete operation</ModalHeader>
-        <ModalBody id="youwhoApp.newsPost.delete.question">Are you sure you want to delete this NewsPost?</ModalBody>
-        <ModalFooter>
-          <Button color="secondary" onClick={this.handleClose}>
-            <FontAwesomeIcon icon="ban" />
-            &nbsp; Cancel
-          </Button>
-          <Button id="jhi-confirm-delete-newsPost" color="danger" onClick={this.confirmDelete}>
-            <FontAwesomeIcon icon="trash" />
-            &nbsp; Delete
-          </Button>
-        </ModalFooter>
+      <Modal open toggle={this.handleClose} style={{ fontFamily: 'TTNormsProMedium' }}>
+        <Modal.Header toggle={this.handleClose}>Διαγραγή άρθρου με τίτλο: {newsPostEntity.previewTitle}</Modal.Header>
+        <Modal.Content>Είστε σίγουροι πως θέλετε να το διαγράψετε</Modal.Content>
+        <Modal.Actions>
+          <Button content="Όχι" onClick={this.handleClose} style={{ backgroundColor: '#777eff', color: 'white' }} />
+          <Button content="Ναι" onClick={this.confirmDelete} style={{ backgroundColor: '#ff6666', color: 'white' }} />
+        </Modal.Actions>
       </Modal>
     );
   }
