@@ -4,30 +4,83 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
 import { Button, Dimmer, Loader, Grid, Image } from 'semantic-ui-react';
-import { createEntity as createNewsPost, setBlob, reset } from 'app/entities/news-post/news-post.reducer';
+import {
+  createEntity as createNewsPost,
+  getEntity as getNewsPost,
+  updateEntity as updateNewsPost,
+  setBlob,
+  reset
+} from 'app/entities/news-post/news-post.reducer';
 // tslint:disable-next-line:no-submodule-imports
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { setFileData } from 'react-jhipster';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 
 import CKEditor from '@ckeditor/ckeditor5-react';
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import DecoupledEditor from 'ckeditor5-build-decoupled-document-base64-imageresize';
+import { RouteComponentProps } from 'react-router-dom';
+import { convertDateTimeFromServer } from 'app/shared/util/date-utils';
 
-export interface INewsEditorProps extends StateProps, DispatchProps {}
+export interface INewsEditorProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
-class NewsEditor extends React.Component<INewsEditorProps> {
+export interface INewsEditorState {
+  isNew: boolean;
+  title: string;
+  date: Moment;
+}
+
+class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
   editor = React.createRef<CKEditor>();
 
   constructor(props) {
     super(props);
+    this.state = {
+      isNew: !this.props.match.params || !this.props.match.params.id,
+      title: '',
+      date: null
+    };
   }
 
   componentDidMount() {
-    this.props.reset();
+    if (this.state.isNew) {
+      this.props.reset();
+    } else {
+      this.props.getNewsPost(this.props.match.params.id);
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (nextProps.updateSuccess !== this.props.updateSuccess && nextProps.updateSuccess) {
+      this.handleClose();
+    }
+  }
+
+  componentDidUpdate(prevProps: Readonly<INewsEditorProps>, prevState: Readonly<INewsEditorState>) {
+    if (prevProps.newsPostEntity.id !== this.props.newsPostEntity.id && !this.state.isNew) {
+      this.setState({
+        ...this.state,
+        title: this.props.newsPostEntity.previewTitle,
+        date: this.props.newsPostEntity.postDate
+      });
+    }
   }
 
   onBlobChange = (isAnImage, name) => event => {
     setFileData(event, (contentType, data) => this.props.setBlob(name, data, contentType), isAnImage);
+  };
+
+  onTitleChange = event => {
+    this.setState({
+      ...this.state,
+      title: event.target.value
+    });
+  };
+
+  onDateChange = event => {
+    this.setState({
+      ...this.state,
+      date: moment(event.target.value)
+    });
   };
 
   clearBlob = name => () => {
@@ -37,19 +90,30 @@ class NewsEditor extends React.Component<INewsEditorProps> {
   save = () => {
     const editorData = this.editor.current.editor.getData();
     const { newsPostEntity } = this.props;
-    this.props.createNewsPost({
-      ...newsPostEntity,
-      // @ts-ignore
-      previewTitle: document.getElementById('news-post-previewTitle').value,
-      postDate: moment(),
-      content: `${editorData}`
-    });
-    this.clearBlob('previewImage');
-    this.props.reset();
+    if (this.state.isNew) {
+      this.props.createNewsPost({
+        ...newsPostEntity,
+        previewTitle: this.state.title,
+        postDate: this.state.date,
+        content: `${editorData}`
+      });
+    } else {
+      this.props.updateNewsPost({
+        ...newsPostEntity,
+        previewTitle: this.state.title,
+        postDate: this.state.date,
+        content: `${editorData}`
+      });
+    }
+  };
+
+  handleClose = () => {
+    this.props.history.push('/menus/news');
   };
 
   render() {
     const { loading, newsPostEntity } = this.props;
+    const { isNew, title } = this.state;
 
     const { previewImage, previewImageContentType } = newsPostEntity;
 
@@ -62,7 +126,20 @@ class NewsEditor extends React.Component<INewsEditorProps> {
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Add a Preview Title...</span>
         <br />
         <br />
-        <input id="news-post-previewTitle" type="text" name="previewTitle" required />
+        <input id="news-post-previewTitle" type="text" name="previewTitle" value={title} onChange={this.onTitleChange} required />
+        <br />
+        <br />
+        <span style={{ fontFamily: 'TTNormsProMedium' }}>Add Post Date...</span>
+        <br />
+        <br />
+        <input
+          id="news-post-postDate"
+          type="datetime-local"
+          name="postDate"
+          placeholder={'YYYY-MM-DD HH:mm'}
+          onChange={this.onDateChange}
+          value={convertDateTimeFromServer(this.state.date)}
+        />
         <br />
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Add a Preview Image...</span>
@@ -96,6 +173,7 @@ class NewsEditor extends React.Component<INewsEditorProps> {
         <div className="news-editor-container">
           <CKEditor
             editor={DecoupledEditor}
+            data={!isNew ? newsPostEntity.content : null}
             onInit={editor => {
               // Inserts the toolbar before the editable area.
               editor.ui.view.editable.element.parentElement.insertBefore(editor.ui.view.toolbar.element, editor.ui.view.editable.element);
@@ -121,13 +199,16 @@ class NewsEditor extends React.Component<INewsEditorProps> {
 
 const mapStateToProps = (storeState: IRootState) => ({
   newsPostEntity: storeState.newsPost.entity,
+  updateSuccess: storeState.newsPost.updateSuccess,
   loading: storeState.newsPost.loading
 });
 
 const mapDispatchToProps = {
   setBlob,
   reset,
-  createNewsPost
+  createNewsPost,
+  getNewsPost,
+  updateNewsPost
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
