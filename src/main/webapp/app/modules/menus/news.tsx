@@ -43,9 +43,7 @@ export class News extends React.Component<INewsProps> {
           </Menu>
         </Grid>
         {loading ? (
-          <h1 className="news-page-h1" style={{ textAlign: 'center' }}>
-            Loading...
-          </h1>
+          <div />
         ) : (
           <Grid centered style={{ marginBottom: '50px' }}>
             {newsPosts.map(
