@@ -19,6 +19,32 @@ export class NewsDisplay extends React.Component<INewsDisplayProps> {
     this.props.getEntity(this.props.match.params.id);
   }
 
+  handleEmbedTags = htmlContent => {
+    const oembed = htmlContent.split('</oembed>');
+    let body = '';
+    oembed.forEach((item, index) => {
+      body += oembed[index] + '</oembed>';
+      const oembed1 = item.split('url="')[1];
+      if (oembed1) {
+        const oembed2 = oembed1.split('">')[0];
+        if (oembed2) {
+          const youtube = oembed2.split('https://www.youtube.com/watch?v=')[1];
+          if (youtube) {
+            body +=
+              '<div class="iframe-container">' +
+              '<iframe' +
+              ` width="100%" height="${window.outerHeight * 0.5}px"` +
+              ' src="https://youtube.com/embed/' +
+              youtube +
+              '" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"' +
+              ' allowfullscreen></iframe></div>';
+          }
+        }
+      }
+    });
+    return body;
+  };
+
   render() {
     const { newsPost, loading, errorMessage } = this.props;
 
@@ -29,7 +55,7 @@ export class NewsDisplay extends React.Component<INewsDisplayProps> {
     ) : errorMessage === null ? (
       <div className="news-display-page">
         <Container>
-          <div className="ck-content" dangerouslySetInnerHTML={{ __html: newsPost.content }} />
+          <div className="ck-content" dangerouslySetInnerHTML={{ __html: this.handleEmbedTags(newsPost.content) }} />
         </Container>
       </div>
     ) : (
