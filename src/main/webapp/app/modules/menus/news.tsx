@@ -61,7 +61,7 @@ export class News extends React.Component<INewsProps> {
                     </Grid.Column>
                     <Grid.Column computer={5} mobile={14} verticalAlign="middle">
                       <h1 className="news-page-h1">{newsPost.previewTitle}</h1>
-                      <h3 className="news-page-h3">{moment(newsPost.postDate).format('DD.MM.YYYY | HH:mm')}</h3>
+                      <h3 className="news-page-h3">{moment(newsPost.postDate).format('DD.MM.YYYY')}</h3>
                       <Button className="news-page-more-button" floated="right" as={NavLink} to={`/news-display/${newsPost.id}`}>
                         Περισσότερα
                       </Button>
