@@ -152,9 +152,9 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <br />
         <input
           id="news-post-postDate"
-          type="datetime-local"
+          type="date"
           name="postDate"
-          placeholder={'YYYY-MM-DD HH:mm'}
+          placeholder={'YYYY-MM-DD'}
           onChange={this.onDateChange}
           value={convertDateTimeFromServer(this.state.date)}
         />
