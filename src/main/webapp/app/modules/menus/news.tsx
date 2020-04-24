@@ -1,5 +1,6 @@
 /* tslint:disable:jsx-no-lambda */
 import './news.scss';
+import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
@@ -46,7 +47,7 @@ export class News extends React.Component<INewsProps> {
           <div />
         ) : (
           <Grid centered style={{ marginBottom: '50px' }}>
-            {newsPosts.map(
+            {_.orderBy(newsPosts, post => moment(post.postDate), ['desc']).map(
               newsPost =>
                 (isAuthenticated || newsPost.published) && (
                   <Grid.Row key={newsPost.id} className="news-page-row" columns={isAuthenticated ? 3 : 2}>
