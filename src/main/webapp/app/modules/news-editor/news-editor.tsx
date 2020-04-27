@@ -58,7 +58,10 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
   }
 
   componentDidUpdate(prevProps: Readonly<INewsEditorProps>, prevState: Readonly<INewsEditorState>) {
-    if (prevProps.newsPostEntity.id !== this.props.newsPostEntity.id && !this.state.isNew) {
+    if (
+      prevProps.newsPostEntity.id !== this.props.newsPostEntity.id ||
+      (!this.state.isNew && this.state.published === false && this.state.title === '' && this.state.date === null)
+    ) {
       this.setState({
         ...this.state,
         title: this.props.newsPostEntity.previewTitle,
