@@ -28,6 +28,7 @@ export interface INewsEditorState {
   title: string;
   published: boolean;
   date: Moment;
+  saving: boolean;
 }
 
 class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
@@ -39,7 +40,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
       isNew: !this.props.match.params || !this.props.match.params.id,
       title: '',
       date: null,
-      published: false
+      published: false,
+      saving: false
     };
   }
 
@@ -100,6 +102,10 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
     });
 
   save = () => {
+    this.setState({
+      ...this.state,
+      saving: true
+    });
     const editorData = this.editor.current.editor.getData();
     const { newsPostEntity } = this.props;
     if (this.state.isNew) {
@@ -122,6 +128,10 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
   };
 
   handleClose = () => {
+    this.setState({
+      ...this.state,
+      saving: false
+    });
     this.props.history.push('/menus/news');
   };
 
@@ -210,6 +220,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
           content="Save post"
           primary
           onClick={this.save}
+          loading={this.state.saving}
           style={{ fontFamily: 'TTNormsProMedium', float: 'right', margin: '1em 0 0 1em' }}
         />
       </div>
