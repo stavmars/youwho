@@ -3,7 +3,7 @@ import './news-editor.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from 'app/shared/reducers';
-import { Button, Dimmer, Loader, Grid, Image } from 'semantic-ui-react';
+import { Button, Dimmer, Loader, Grid, Image, Input } from 'semantic-ui-react';
 import {
   createEntity as createNewsPost,
   getEntity as getNewsPost,
@@ -150,12 +150,15 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Add a Preview Title...</span>
         <br />
         <br />
-        <input
+        <Input
           id="news-post-previewTitle"
           type="text"
           name="previewTitle"
           value={this.state.title}
           onChange={this.onTitleChange}
+          style={{
+            width: '50%'
+          }}
           required
         />
         <br />
@@ -163,7 +166,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Add Post Date...</span>
         <br />
         <br />
-        <input
+        <Input
           id="news-post-postDate"
           type="date"
           name="postDate"
@@ -197,7 +200,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
             </Grid.Row>
           </Grid>
         ) : null}
-        <input id="file_previewImage" type="file" onChange={this.onBlobChange(true, 'previewImage')} accept="image/*" />
+        <br />
+        <Input id="file_previewImage" type="file" onChange={this.onBlobChange(true, 'previewImage')} accept="image/*" />
         <br />
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Check if post should be published...</span>{' '}
