@@ -70,6 +70,12 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         date: this.props.newsPostEntity.postDate,
         published: this.props.newsPostEntity.published
       });
+    } else if (prevProps.errorMessage !== this.props.errorMessage && this.props.errorMessage !== null) {
+      alert(this.props.errorMessage);
+      this.setState({
+        ...this.state,
+        saving: false
+      });
     }
   }
 
@@ -235,7 +241,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
 const mapStateToProps = (storeState: IRootState) => ({
   newsPostEntity: storeState.newsPost.entity,
   updateSuccess: storeState.newsPost.updateSuccess,
-  loading: storeState.newsPost.loading
+  loading: storeState.newsPost.loading,
+  errorMessage: storeState.newsPost.errorMessage
 });
 
 const mapDispatchToProps = {
