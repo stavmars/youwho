@@ -24,25 +24,28 @@ export default (props: ISideBarProps) => (
       </Menu.Item>
     </Menu>
     <List className="sidebar-list">
-      <List.Item className="sidebar-item project" as={NavLink} to="/menus/project">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/project">
         <span>Το έργο</span>
       </List.Item>
-      <List.Item className="sidebar-item students" as={NavLink} to="/menus/students">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/students">
         <span>Μαθητές</span>
       </List.Item>
-      <List.Item className="sidebar-item college-students" as={NavLink} to="/menus/college-students">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/college-students">
         <span>Φοιτητές</span>
       </List.Item>
-      <List.Item className="sidebar-item young-adults" as={NavLink} to="/menus/young-adults">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/young-adults">
         <span>Νέοι 17-29</span>
       </List.Item>
-      <List.Item className="sidebar-item project-team" as={NavLink} to="/menus/project-team">
+      <List.Item className="sidebar-item" as={NavLink} to="/results/average">
+        <span>Αποτελέσματα</span>
+      </List.Item>
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/project-team">
         <span>Ομάδα Έργου</span>
       </List.Item>
-      <List.Item className="sidebar-item news" as={NavLink} to="/menus/news">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/news">
         <span>Νέα</span>
       </List.Item>
-      <List.Item className="sidebar-item contact" as={NavLink} to="/menus/contact">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/contact">
         <span>Επικοινωνία</span>
       </List.Item>
     </List>
