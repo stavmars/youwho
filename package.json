@@ -27,7 +27,7 @@
     "highcharts": "^8.0.0",
     "highcharts-react-official": "^2.2.2",
     "loaders.css": "0.1.2",
-    "lodash": "4.17.13",
+    "lodash": "4.17.19",
     "moment": "2.24.0",
     "react": "16.8.5",
     "react-compound-slider": "^2.3.0",
