@@ -5,6 +5,7 @@ import { IRootState } from 'app/shared/reducers';
 import { hideSidebar } from 'app/shared/reducers/header';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+import ResultsAverage from 'app/modules/results/results-average';
 
 export interface IYoungAdultsProps extends StateProps, DispatchProps {}
 
@@ -42,27 +43,10 @@ export class YoungAdults extends React.Component<IYoungAdultsProps> {
                 </p>
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row>
-              <p className="young-adults-page-text">
-                Μπορείς να δες τα συγκεντρωτικά αποτλέσματα <NavLink to="/results/average">εδώ</NavLink>
-              </p>
-            </Grid.Row>
-            <Grid.Row>
-              <p className="young-adults-page-text">
-                Μπορείς να δεις τα αποτελέσματα <NavLink to="/menus/results">εδώ</NavLink>
-              </p>
-            </Grid.Row>
           </Grid>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+        </Container>
+        <ResultsAverage />
+        <Container>
           <Image
             className="young-adults-page-footer-image"
             src="content/images/YouWho.gr-Yellow-Stripes-Erevna-Neon-Έρευνα-Νέων-Έρευνα-Νέας-Γενιάς-Γιουχιου.png"
