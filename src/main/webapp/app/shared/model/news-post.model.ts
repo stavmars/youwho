@@ -7,6 +7,7 @@ export interface INewsPost {
   previewImage?: any;
   previewTitle?: string;
   published?: boolean;
+  resultsPost?: boolean;
   postDate?: Moment;
 }
 

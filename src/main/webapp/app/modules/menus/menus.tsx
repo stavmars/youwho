@@ -54,7 +54,8 @@ export class Menus extends React.Component<IMenusProps> {
           <Switch>
             <Route exact path={`${match.url}/college-students`} render={() => <CollegeStudents />} />
             <Route exact path={`${match.url}/contact`} render={() => <Contact />} />
-            <Route exact path={`${match.url}/news`} render={() => <News />} />
+            <Route exact path={`${match.url}/news`} render={() => <News isResultsPost={false} />} />
+            <Route exact path={`${match.url}/results`} render={() => <News isResultsPost />} />
             <Route exact path={`${match.url}/project`} render={() => <Project />} />
             <Route exact path={`${match.url}/project-team`} render={() => <ProjectTeam />} />
             <Route exact path={`${match.url}/students`} render={() => <Students />} />

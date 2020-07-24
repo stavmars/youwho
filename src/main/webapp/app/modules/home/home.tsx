@@ -25,17 +25,17 @@ export class Home extends React.Component<IHomeProp> {
               <Grid.Column width={7}>
                 <Image
                   src={
-                    'content/images/Purple-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα.png'
+                    'content/images/Purple-YouWho-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Αποτελέσματα.png'
                   }
-                  style={{ left: '-20vw', height: '35vh', zIndex: '1' }}
+                  style={{ left: '-20vw', height: '40vh', zIndex: '1' }}
                 />
                 <Image
                   src={
-                    'content/images/Red-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα.png'
+                    'content/images/Red-YouWho-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Αποτελέσματα.png'
                   }
                   as={Link}
-                  to="/results/average"
-                  style={{ left: '-5vw', width: '60vh' }}
+                  to="/menus/results"
+                  style={{ left: '-5vw', width: '50vh' }}
                 />
                 <div style={{ marginTop: '-45 vh' }}>
                   <Modal
@@ -62,17 +62,17 @@ export class Home extends React.Component<IHomeProp> {
               <Grid.Column width={14}>
                 <Image
                   src={
-                    'content/images/Purple-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα_mobile.png'
+                    'content/images/Purple-YouWho-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Αποτελέσματα-1.png'
                   }
                   style={{ left: '15vw', top: '10vh', zIndex: '1' }}
                 />
                 <Image
                   src={
-                    'content/images/Red-Bubble-YouWho.gr-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Νεοι-Νέες-στην-Ελλάδα_mobile.png'
+                    'content/images/Red-YouWho-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Αποτελέσματα-1.png'
                   }
                   as={Link}
-                  to="/results/average"
-                  style={{ height: '18vh', left: '20vw', top: '-12vh', float: 'right', zIndex: '1' }}
+                  to="/menus/results"
+                  style={{ height: '15vh', left: '20vw', top: '-12vh', float: 'right', zIndex: '1' }}
                 />
                 <Image src="content/images/giagia.png" className="granny" />
                 <Image src="content/images/YellowStripesBg.svg" alt="yellow-stripes" className="stripes" />

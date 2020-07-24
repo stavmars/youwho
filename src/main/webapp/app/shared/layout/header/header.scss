@@ -48,7 +48,7 @@ SideBar styles
 .sidebar-list {
   width: 144px;
   @include mobile {
-    margin: 5vh 0 0 150px !important;
+    margin: 5vh 0 0 46vw !important;
   }
   @include computer {
     margin: 8vh 0 0 252px !important;
@@ -65,25 +65,11 @@ SideBar styles
       color: #ffffff !important;
       opacity: 0.35 !important;
     }
-    &.project,
-    &.students,
-    &.college-students,
-    &.news,
-    &.project-team {
-      @include mobile {
-        margin-bottom: 5vh !important;
-      }
-      @include computer {
-        margin-bottom: 7vh !important;
-      }
+    @include mobile {
+      margin-bottom: 4.5vh !important;
     }
-    &.young-adults {
-      @include mobile {
-        margin-bottom: 4vh !important;
-      }
-      @include computer {
-        margin-bottom: 5vh !important;
-      }
+    @include computer {
+      margin-bottom: 5vh !important;
     }
     a:active {
       color: #ffffff;
