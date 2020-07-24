@@ -35,6 +35,9 @@ public class NewsPost implements Serializable {
     @Field("published")
     private Boolean published;
 
+    @Field("results_post")
+    private Boolean resultsPost;
+
     @Field("post_date")
     private Instant postDate;
 
@@ -105,6 +108,14 @@ public class NewsPost implements Serializable {
 
     public void setPublished(Boolean published) {
         this.published = published;
+    }
+
+    public Boolean getResultsPost() {
+        return resultsPost;
+    }
+
+    public void setResultsPost(Boolean resultsPost) {
+        this.resultsPost = resultsPost;
     }
 
     public Instant getPostDate() {

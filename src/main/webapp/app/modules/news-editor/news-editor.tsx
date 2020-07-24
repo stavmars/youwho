@@ -27,6 +27,7 @@ export interface INewsEditorState {
   isNew: boolean;
   title: string;
   published: boolean;
+  resultsPost: boolean;
   date: Moment;
   saving: boolean;
 }
@@ -41,6 +42,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
       title: '',
       date: null,
       published: false,
+      resultsPost: false,
       saving: false
     };
   }
@@ -68,7 +70,8 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         ...this.state,
         title: this.props.newsPostEntity.previewTitle,
         date: this.props.newsPostEntity.postDate,
-        published: this.props.newsPostEntity.published
+        published: this.props.newsPostEntity.published,
+        resultsPost: this.props.newsPostEntity.resultsPost
       });
     } else if (prevProps.errorMessage !== this.props.errorMessage && this.props.errorMessage !== null) {
       alert(this.props.errorMessage);
@@ -107,6 +110,12 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
       published: !this.state.published
     });
 
+  changeResultsPost = () =>
+    this.setState({
+      ...this.state,
+      resultsPost: !this.state.resultsPost
+    });
+
   save = () => {
     this.setState({
       ...this.state,
@@ -120,6 +129,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         previewTitle: this.state.title,
         postDate: this.state.date,
         published: this.state.published,
+        resultsPost: this.state.resultsPost,
         content: `${editorData}`
       });
     } else {
@@ -128,6 +138,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         previewTitle: this.state.title,
         postDate: this.state.date,
         published: this.state.published,
+        resultsPost: this.state.resultsPost,
         content: `${editorData}`
       });
     }
@@ -138,7 +149,7 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
       ...this.state,
       saving: false
     });
-    this.props.history.push('/menus/news');
+    this.props.history.goBack();
   };
 
   render() {
@@ -212,6 +223,10 @@ class NewsEditor extends React.Component<INewsEditorProps, INewsEditorState> {
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Check if post should be published...</span>{' '}
         <input type="checkbox" name="published" checked={this.state.published} onChange={this.changePublish} />
+        <br />
+        <br />
+        <span style={{ fontFamily: 'TTNormsProMedium' }}>Check if this is not a news post...</span>{' '}
+        <input type="checkbox" name="resultsPost" checked={this.state.resultsPost} onChange={this.changeResultsPost} />
         <br />
         <br />
         <span style={{ fontFamily: 'TTNormsProMedium' }}>Create post below...</span>
