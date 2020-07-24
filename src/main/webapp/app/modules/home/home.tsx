@@ -34,7 +34,7 @@ export class Home extends React.Component<IHomeProp> {
                     'content/images/Red-YouWho-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Αποτελέσματα.png'
                   }
                   as={Link}
-                  to="/results/average"
+                  to="/menus/results"
                   style={{ left: '-5vw', width: '50vh' }}
                 />
                 <div style={{ marginTop: '-45 vh' }}>
@@ -71,7 +71,7 @@ export class Home extends React.Component<IHomeProp> {
                     'content/images/Red-YouWho-Εθνικό-Κέντρο-Κοινωνικών-Ερευνών-Γιουχου-National-Center-For-Social-Research-Erevna-Έρευνα-Νέων-Αποτελέσματα-1.png'
                   }
                   as={Link}
-                  to="/results/average"
+                  to="/menus/results"
                   style={{ height: '15vh', left: '20vw', top: '-12vh', float: 'right', zIndex: '1' }}
                 />
                 <Image src="content/images/giagia.png" className="granny" />

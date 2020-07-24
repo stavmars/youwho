@@ -66,7 +66,7 @@ export const App = (props: IAppProps) => {
               )}
             />
             <Route
-              path={`(/|/results|/db-tool|/news-editor|/news-display)`}
+              path={`(/|/results|/db-tool|/post-editor|/post-display)`}
               render={() => (
                 <Header
                   color="gradient"
@@ -95,7 +95,7 @@ export const App = (props: IAppProps) => {
             </ErrorBoundary>
           </Sidebar.Pushable>
         </div>
-        <Route path={`(/|/results|/menus|/db-tool|/news-editor|/news-display)`} render={() => <Footer />} />
+        <Route path={`(/|/results|/menus|/db-tool|/post-editor|/post-display)`} render={() => <Footer />} />
         <CookieConsent
           location="bottom"
           buttonText="Εντάξει"

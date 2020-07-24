@@ -44,13 +44,13 @@ const Routes = () => (
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <PrivateRoute path="/db-tool" component={DbTool} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
-      <PrivateRoute path="/news-editor/new" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
-      <PrivateRoute path="/news-editor/:id/edit" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
+      <PrivateRoute path="/post-editor/new" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
+      <PrivateRoute path="/post-editor/:id/edit" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
       <PrivateRoute path="/survey-chat/" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute path="/results" component={Results} />
-      <ErrorBoundaryRoute path="/news-display/:id" component={NewsDisplay} />
+      <ErrorBoundaryRoute path="/post-display/:id" component={NewsDisplay} />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>

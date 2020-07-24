@@ -36,7 +36,7 @@ export default (props: ISideBarProps) => (
       <List.Item className="sidebar-item" as={NavLink} to="/menus/young-adults">
         <span>Νέοι 17-29</span>
       </List.Item>
-      <List.Item className="sidebar-item" as={NavLink} to="/results/average">
+      <List.Item className="sidebar-item" as={NavLink} to="/menus/results">
         <span>Αποτελέσματα</span>
       </List.Item>
       <List.Item className="sidebar-item" as={NavLink} to="/menus/project-team">

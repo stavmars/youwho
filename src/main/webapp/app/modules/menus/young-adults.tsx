@@ -49,7 +49,7 @@ export class YoungAdults extends React.Component<IYoungAdultsProps> {
             </Grid.Row>
             <Grid.Row>
               <p className="young-adults-page-text">
-                Μπορείς να δεις τα αποτελέσματα <NavLink to="/results/average">εδώ</NavLink>
+                Μπορείς να δεις τα αποτελέσματα <NavLink to="/menus/results">εδώ</NavLink>
               </p>
             </Grid.Row>
           </Grid>
