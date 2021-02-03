@@ -1,8 +1,5 @@
 import React from 'react';
-
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Alert, Row, Col } from 'reactstrap';
-import { AvForm, AvField, AvGroup, AvInput } from 'availity-reactstrap-validation';
-import { Link } from 'react-router-dom';
+import { Button, Form, Message, Modal } from 'semantic-ui-react';
 
 export interface ILoginModalProps {
   showModal: boolean;
@@ -12,44 +9,59 @@ export interface ILoginModalProps {
 }
 
 class LoginModal extends React.Component<ILoginModalProps> {
-  handleSubmit = (event, errors, { username, password, rememberMe }) => {
+  state = { username: '', password: '' };
+
+  handleChange = (e, { name, value }) => this.setState({ [name]: value });
+
+  handleSubmit = () => {
+    const { username, password } = this.state;
     const { handleLogin } = this.props;
-    handleLogin(username, password, rememberMe);
+    handleLogin(username, password, false);
   };
 
   render() {
     const { loginError, handleClose } = this.props;
 
     return (
-      <Modal isOpen={this.props.showModal} toggle={handleClose} backdrop="static" id="login-page" autoFocus={false}>
-        <AvForm onSubmit={this.handleSubmit}>
-          <ModalHeader id="login-title">Sign in</ModalHeader>
-          <ModalBody>
-            <Row>
-              <Col md="12">
-                {loginError ? (
-                  <Alert color="danger">
-                    <strong>Failed to sign in!</strong> Please check your credentials and try again.
-                  </Alert>
-                ) : null}
-              </Col>
-              <Col md="12">
-                <AvField name="username" label="Username" placeholder="Your username" autoFocus />
-                <AvField name="password" type="password" label="Password" placeholder="Your password" />
-                <AvGroup check inline>
-                  <Label className="form-check-label">
-                    <AvInput type="checkbox" name="rememberMe" /> Remember me
-                  </Label>
-                </AvGroup>
-              </Col>
-            </Row>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" type="submit">
-              Sign in
-            </Button>
-          </ModalFooter>
-        </AvForm>
+      // @ts-ignore
+      <Modal size="tiny" onClose={handleClose} open={this.props.showModal}>
+        <Modal.Header>Σύνδεση</Modal.Header>
+        <Modal.Content image>
+          <Modal.Description>
+            <Form error={loginError} onSubmit={this.handleSubmit}>
+              <Form.Input
+                fluid
+                icon="user"
+                iconPosition="left"
+                name="username"
+                placeholder="Το όνομα χρήστης σας"
+                required
+                errorMessage="Το όνομα χρήστη δεν μπορεί να είναι άδειο!"
+                onChange={this.handleChange}
+                autoFocus
+              />
+              <Form.Input
+                fluid
+                icon="lock"
+                iconPosition="left"
+                name="password"
+                type="password"
+                placeholder="Ο κωδικός σας"
+                required
+                errorMessage="Ο κωδικός δεν μπορεί να είναι άδειος"
+                onChange={this.handleChange}
+              />
+              <Message error size="mini" content="Σφάλμα σύνδεσης Παρακαλούμε ελέγχτε τα στοιχεία σύνδεσής και προσπαθήστε ξανά." />
+              <Button primary type="submit" floated="right">
+                Σύνδεση
+              </Button>
+              {/* tslint:disable-next-line:jsx-no-lambda */}
+              <Button secondary onClick={() => handleClose()} floated="right" tabIndex="1">
+                Ακύρωση
+              </Button>
+            </Form>
+          </Modal.Description>
+        </Modal.Content>
       </Modal>
     );
   }
