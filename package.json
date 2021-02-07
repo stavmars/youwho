@@ -17,7 +17,7 @@
     "@types/draft-js": "^0.10.38",
     "@types/styled-components": "^4.1.19",
     "availity-reactstrap-validation": "2.5.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "4.3.1",
     "bootswatch": "4.3.1",
     "ckeditor5-build-decoupled-document-base64-imageresize": "^17.0.0",
