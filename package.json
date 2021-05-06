@@ -24,7 +24,7 @@
     "draft-js": "^0.11.4",
     "eslint": "^6.4.0",
     "flat": "^5.0.0",
-    "highcharts": "^8.0.0",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^2.2.2",
     "loaders.css": "0.1.2",
     "lodash": "4.17.13",
