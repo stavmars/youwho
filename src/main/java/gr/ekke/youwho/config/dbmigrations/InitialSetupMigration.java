@@ -100,4 +100,12 @@ public class InitialSetupMigration {
             .getClassLoader().getResourceAsStream("youWho.json"), Survey.class);
         mongoTemplate.save(survey);
     }
+
+    @ChangeSet(order = "04", author = "initiator", id = "04-addStudentsSurvey")
+    public void addStudentsSurvey(MongoTemplate mongoTemplate) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        Survey survey = mapper.readValue(getClass()
+            .getClassLoader().getResourceAsStream("students.json"), Survey.class);
+        mongoTemplate.save(survey);
+    }
 }
