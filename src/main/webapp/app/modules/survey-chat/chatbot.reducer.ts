@@ -71,8 +71,8 @@ export const updateLastQuestion = questionId => ({
   payload: questionId
 });
 
-export const initiateSurveyResponse = (initTime: Moment) => async dispatch =>
-  dispatch(getSurvey('youWho')).then(res =>
+export const initiateSurveyResponse = (surveyId: string, initTime: Moment) => async dispatch =>
+  dispatch(getSurvey(surveyId)).then(res =>
     dispatch({
       type: ACTION_TYPES.INITIATE_SURVEY_RESPONSE,
       payload: axios

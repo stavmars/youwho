@@ -13,12 +13,12 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
-import SurveyChat from 'app/modules/survey-chat';
 import Menus from 'app/modules/menus';
 import Results from 'app/modules/results';
 import DbTool from 'app/modules/db-tool/db-tool';
 import NewsEditor from 'app/modules/news-editor/news-editor';
 import NewsDisplay from 'app/modules/news-editor/news-display';
+import SurveyChat from 'app/modules/survey-chat/survey-chat';
 
 // tslint:disable:space-in-parens
 const Account = Loadable({
@@ -47,7 +47,7 @@ const Routes = () => (
       <PrivateRoute path="/post-editor/new" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/post-editor/:id/edit" component={NewsEditor} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
-      <PrivateRoute path="/survey-chat/" exact component={SurveyChat} />
+      <PrivateRoute path="/survey-chat/:id" exact component={SurveyChat} />
       <ErrorBoundaryRoute path="/menus" component={Menus} />
       <ErrorBoundaryRoute path="/results" component={Results} />
       <ErrorBoundaryRoute path="/post-display/:id" component={NewsDisplay} />

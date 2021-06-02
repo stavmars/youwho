@@ -11,9 +11,11 @@ import { ThemeProvider } from 'styled-components';
 import { configureStep } from 'app/modules/survey-chat/configure-steps';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import moment from 'moment';
+import { RouteComponentProps } from 'react-router-dom';
+
 // tslint:disable:jsx-no-lambda
 
-export interface IChatBotProps extends StateProps, DispatchProps {}
+export interface IChatBotProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export interface IChatBotState {
   scenario: number;
@@ -32,7 +34,7 @@ export class SurveyChat extends React.Component<IChatBotProps, IChatBotState> {
       scenario: Math.floor(Math.random() * 2)
     });
     this.props.updateActiveCategory('Εισαγωγή');
-    this.props.initiateSurveyResponse(moment());
+    this.props.initiateSurveyResponse(this.props.match.params.id, moment());
   }
 
   render() {
@@ -57,6 +59,7 @@ export class SurveyChat extends React.Component<IChatBotProps, IChatBotState> {
         >
           <ChatBot
             hideUserAvatar
+            hideBotAvatar
             botAvatar="content/images/granny.jpg"
             footerStyle={{ display: 'none' }}
             hideHeader
