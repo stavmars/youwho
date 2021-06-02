@@ -6,6 +6,7 @@ import SingleSelect from 'app/modules/survey-chat/single-select';
 import MultiSelect from 'app/modules/survey-chat/multi-select';
 import MultiAnswer from 'app/modules/survey-chat/multi-answer';
 import ResultsButton from 'app/modules/survey-chat/results-button';
+
 // tslint:disable:jsx-no-lambda
 
 export interface IComponentProps {
@@ -131,7 +132,15 @@ export const configureStep = (questions, scenario: number) => {
     } else {
       steps.push({
         id: question.id,
-        message: question.text,
+        // message: question.text,
+        component: (
+          <span
+            id={`question-${question.id}`}
+            style={{ fontFamily: 'TTNormsProBold' }}
+            dangerouslySetInnerHTML={{ __html: question.text }}
+          />
+        ),
+        asMessage: true,
         trigger: index === finalQuestions.length - 1 ? 'results-button' : finalQuestions[index + 1].id,
         delay: 1500
       });
