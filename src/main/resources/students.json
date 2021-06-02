@@ -8,15 +8,13 @@
       "id": "1",
       "text": "Γεια σου!",
       "type": "info_text",
-      "category": "Εισαγωγή",
-      "imageURL": "http://gif.4k3.org/wp-content/uploads/2018/08/20180829194220-56.gif"
+      "category": "Εισαγωγή"
     },
     {
       "id": "2",
       "text": "Θα ήθελες να απαντήσεις σε μια έρευνα του Εθνικού Κέντρου Κοινωνικών Ερευνών (ΕΚΚΕ) για  το πως βλέπουν οι φοιτητές/-τριες το παρόν και το μέλλον;",
       "type": "info_text",
-      "category": "Εισαγωγή",
-      "imageURL": "https://media.tenor.com/images/1e24ca5bf41828b0d0983b14ce6351de/tenor.gif"
+      "category": "Εισαγωγή"
     },
     {
       "id": "3",
