@@ -12,6 +12,7 @@ import { configureStep } from 'app/modules/survey-chat/configure-steps';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import moment from 'moment';
 import { RouteComponentProps } from 'react-router-dom';
+import _ from 'lodash';
 
 // tslint:disable:jsx-no-lambda
 
@@ -31,7 +32,7 @@ export class SurveyChat extends React.Component<IChatBotProps, IChatBotState> {
 
   componentDidMount() {
     this.setState({
-      scenario: Math.floor(Math.random() * 2)
+      scenario: 0 // Math.floor(Math.random() * 2)
     });
     this.props.updateActiveCategory('Εισαγωγή');
     this.props.initiateSurveyResponse(this.props.match.params.id, moment());
