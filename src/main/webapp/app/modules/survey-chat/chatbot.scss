@@ -26,12 +26,12 @@
   border-radius: 31px !important;
   border-style: none !important;
   line-break: strict !important;
-  height: 56px !important;
-  width: 140px !important;
+  min-height: 56px !important;
+  width: 165px !important;
   font-size: 15px !important;
   font-family: 'TTNormsProMedium' !important;
   color: #777eff !important;
-  margin: 0 0 5px 0 !important;
+  margin: 0 5px 5px 0 !important;
 }
 
 .answer {
@@ -213,11 +213,12 @@
 
 .check-box {
   width: 245px !important;
-  height: 61px !important;
+  min-height: 61px !important;
   margin: 0 0 5px 15% !important;
   word-wrap: break-word !important;
   line-break: strict !important;
   white-space: normal !important;
   background: #ffffff 0% 0% no-repeat padding-box !important;
   border-radius: 6px !important;
+  padding: 10px;
 }
