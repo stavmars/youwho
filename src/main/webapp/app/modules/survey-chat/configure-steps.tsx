@@ -6,6 +6,9 @@ import SingleSelect from 'app/modules/survey-chat/single-select';
 import MultiSelect from 'app/modules/survey-chat/multi-select';
 import MultiAnswer from 'app/modules/survey-chat/multi-answer';
 import ResultsButton from 'app/modules/survey-chat/results-button';
+import survey from 'app/entities/survey/survey';
+import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 // tslint:disable:jsx-no-lambda
 
@@ -29,7 +32,7 @@ export interface IOption {
   trigger: string;
 }
 
-export const configureStep = (questions, scenario: number) => {
+export const configureStep = (questions, scenario: number, hasResults: boolean) => {
   const steps = [];
   let finalQuestions = [];
 
@@ -53,7 +56,16 @@ export const configureStep = (questions, scenario: number) => {
       steps.push({
         id: 'results-button',
         // @ts-ignore
-        component: <ResultsButton />,
+        component: hasResults ? (
+          <ResultsButton />
+        ) : (
+          <div>
+            <Button className="results-button" as={Link} to={`/`}>
+              <p className="results-button-emoji">🚪🚶</p>
+              <p className="results-button-text">Επιστροφή</p>
+            </Button>
+          </div>
+        ),
         end: true
       });
     }

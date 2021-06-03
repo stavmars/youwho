@@ -65,7 +65,7 @@ export class SurveyChat extends React.Component<IChatBotProps, IChatBotState> {
             footerStyle={{ display: 'none' }}
             hideHeader
             handleEnd={() => this.props.storeSurveyResponse(survey)}
-            steps={configureStep(survey.questions, this.state.scenario)}
+            steps={configureStep(survey.questions, this.state.scenario, survey.id === 'youWho')}
             style={{
               height: 'calc(100vh - 132px)',
               userSelect: 'none',
