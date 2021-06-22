@@ -9,8 +9,9 @@
       padding: 25% 0 50% 0;
     }
     @include computer {
+      padding-bottom: 20px;
       padding-top: 180px;
-      height: 754px;
+      // height: 754px;
     }
     .young-adults-page-top-title {
       text-align: left;
