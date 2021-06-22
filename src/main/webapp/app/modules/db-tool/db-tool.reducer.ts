@@ -115,16 +115,17 @@ export default (state: DbToolState = initialState, action): DbToolState => {
 
 // Actions
 
-export const countNonEmptyEntities = () => {
-  const requestUrl = 'api/survey-responses/non-empty';
+export const countNonEmptyEntities = surveyId => {
+  const requestUrl = `api/survey-responses/${surveyId}/non-empty`;
+
   return {
     type: ACTION_TYPES.COUNT_NON_EMPTY_SURVEYRESPONSE_LIST,
     payload: axios.get(requestUrl)
   };
 };
 
-export const countCompletedEntities = () => {
-  const requestUrl = 'api/survey-responses/completed';
+export const countCompletedEntities = surveyId => {
+  const requestUrl = `api/survey-responses/${surveyId}/completed/`;
   return {
     type: ACTION_TYPES.COUNT_COMPLETED_SURVEYRESPONSE_LIST,
     payload: axios.get(requestUrl)
@@ -136,27 +137,27 @@ export const getAllNonEmptyEntities = (size: number) => async (dispatch, getStat
 
   return dispatch({
     type: ACTION_TYPES.FETCH_ALL_NON_EMPTY_SURVEYRESPONSE_LIST,
-    payload: chainRequests(nonEmptyEntitiesCount, size, 'api/survey-responses/all/non-empty')
+    payload: chainRequests(nonEmptyEntitiesCount, size, 'api/survey-responses/students/all/non-empty')
   });
 };
 
-export const getAllCompletedEntities = () => {
-  const requestUrl = 'api/survey-responses/all/completed';
+export const getAllCompletedEntities = surveyId => {
+  const requestUrl = `api/survey-responses/${surveyId}/all/completed`;
   return {
     type: ACTION_TYPES.FETCH_ALL_COMPLETED_SURVEYRESPONSE_LIST,
     payload: axios.get(requestUrl)
   };
 };
 
-export const findAndCleanAllCompletedWithDuplicateAnswers = () => {
+/*export const findAndCleanAllCompletedWithDuplicateAnswers = () => {
   const requestUrl = 'api/survey-responses/duplicate/answers/completed';
   return {
     type: ACTION_TYPES.FETCH_ALL_COMPLETED_WITH_DUPLICATE_ANSWERS,
     payload: axios.get(requestUrl)
   };
-};
+};*/
 
-export const computeResultsOfDuplicateAnswers = (survey: ISurvey) => (dispatch, getState) => {
+/*export const computeResultsOfDuplicateAnswers = (survey: ISurvey) => (dispatch, getState) => {
   const { corruptedEntities } = getState().dbTool;
   return {
     type: ACTION_TYPES.UPDATE_RESPONSES_WITH_DUPLICATE_ANSWERS,
@@ -169,13 +170,13 @@ export const computeResultsOfDuplicateAnswers = (survey: ISurvey) => (dispatch, 
       .then(() => dispatch(findAndCleanAllCompletedWithDuplicateAnswers()))
       .catch(e => e)
   };
-};
+};*/
 
 export const getAverageSurveyResponseTime = surveyId => {
-  const requestUrl = 'api/survey-responses/avgTime/';
+  const requestUrl = `api/survey-responses/${surveyId}/avgTime/`;
   return {
     type: ACTION_TYPES.FETCH_AVERAGE_COMPLETION_TIME,
-    payload: axios.get(requestUrl + surveyId)
+    payload: axios.get(requestUrl)
   };
 };
 

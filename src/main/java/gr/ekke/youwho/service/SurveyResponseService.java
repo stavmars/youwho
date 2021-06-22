@@ -91,14 +91,14 @@ public class SurveyResponseService {
         return surveyResponseRepository.getAverageProfilingResults(survey, questionFilters);
     }
 
-    public Integer countAllNonEmptySurveyResponses() {
+    public Integer countAllNonEmptySurveyResponses(String surveyId) {
         log.debug("Request to get count of non empty Survey Responses");
-        return surveyResponseRepository.countAllByQuestionResponsesGreaterThan(new ArrayList<>());
+        return surveyResponseRepository.countAllBySurveyIdAndQuestionResponsesGreaterThan(surveyId, new ArrayList<>());
     }
 
-    public Integer countAllCompletedSurveyResponses() {
+    public Integer countAllCompletedSurveyResponses(String surveyId) {
         log.debug("Request to get count of all completed Survey Responses");
-        return surveyResponseRepository.countAllByStatusEquals("completed");
+        return surveyResponseRepository.countAllBySurveyIdAndStatusEquals(surveyId, "completed");
     }
 
     public Double getAverageSurveyResponseTime(Survey survey) {
@@ -106,13 +106,13 @@ public class SurveyResponseService {
         return surveyResponseRepository.getAverageSurveyResponseTime(survey);
     }
 
-    public List<SurveyResponse> getAllSurveyResponseByStatus(String status) {
+    public List<SurveyResponse> getAllSurveyResponseByStatus(String surveyId, String status) {
         log.debug("Request to get all survey responses with status: {}", status);
-        return surveyResponseRepository.getAllByStatusEquals(status);
+        return surveyResponseRepository.getAllBySurveyIdAndStatusEquals(surveyId, status);
     }
 
-    public Page<SurveyResponse> getAllNonEmptySurveyResponses(Pageable pageable) {
+    public Page<SurveyResponse> getAllNonEmptySurveyResponses(String surveyId, Pageable pageable) {
         log.debug("Request to get all non empty Survey Responses");
-        return surveyResponseRepository.getAllByQuestionResponsesGreaterThan(new ArrayList<>(), pageable);
+        return surveyResponseRepository.getAllBySurveyIdAndQuestionResponsesGreaterThan(surveyId, new ArrayList<>(), pageable);
     }
 }

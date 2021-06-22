@@ -18,11 +18,11 @@ import java.util.List;
 @Repository
 public interface SurveyResponseRepository extends MongoRepository<SurveyResponse, String>, SurveyResponseRepositoryCustom {
 
-    Integer countAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses);
+    Integer countAllBySurveyIdAndQuestionResponsesGreaterThan(String surveyId, List<QuestionResponse> questionResponses);
 
-    Integer countAllByStatusEquals(String status);
+    Integer countAllBySurveyIdAndStatusEquals(String surveyId, String status);
 
-    List<SurveyResponse> getAllByStatusEquals(String status);
+    List<SurveyResponse> getAllBySurveyIdAndStatusEquals(String surveyId, String status);
 
-    Page<SurveyResponse> getAllByQuestionResponsesGreaterThan(List<QuestionResponse> questionResponses, Pageable pageable);
+    Page<SurveyResponse> getAllBySurveyIdAndQuestionResponsesGreaterThan(String surveyId, List<QuestionResponse> questionResponses, Pageable pageable);
 }

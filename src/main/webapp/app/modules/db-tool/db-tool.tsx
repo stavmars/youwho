@@ -23,10 +23,10 @@ export class DbTool extends React.Component<IDbToolProps> {
   }
 
   componentDidMount(): void {
-    this.props.getSurvey('youWho');
-    this.props.countNonEmptyEntities();
-    this.props.countCompletedEntities();
-    this.props.getAverageSurveyResponseTime('youWho');
+    this.props.getSurvey('students');
+    this.props.countNonEmptyEntities('students');
+    this.props.countCompletedEntities('students');
+    this.props.getAverageSurveyResponseTime('students');
   }
 
   render() {

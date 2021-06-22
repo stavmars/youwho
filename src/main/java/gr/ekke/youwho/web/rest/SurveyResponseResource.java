@@ -1,7 +1,6 @@
 package gr.ekke.youwho.web.rest;
 
 import gr.ekke.youwho.domain.QuestionResponse;
-import gr.ekke.youwho.domain.Survey;
 import gr.ekke.youwho.domain.SurveyResponse;
 import gr.ekke.youwho.service.SurveyResponseService;
 import gr.ekke.youwho.service.SurveyService;
@@ -22,7 +21,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * REST controller for managing {@link gr.ekke.youwho.domain.SurveyResponse}.
@@ -152,7 +154,7 @@ public class SurveyResponseResource {
     /**
      * {@code POST  /survey-responses/:surveyId/results} : get the average profiling results for survey responses with "questionFilters" included in QuestionResponses.
      *
-     * @param surveyId the id of the survey to get average profiling results for
+     * @param surveyId        the id of the survey to get average profiling results for
      * @param questionFilters the list of questionFilters
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the profiling results, or with status {@code 404 (Not Found)}.
      */
@@ -167,10 +169,10 @@ public class SurveyResponseResource {
      *
      * @return the amount.
      */
-    @GetMapping("/survey-responses/non-empty")
-    public Integer countAllNonEmptySurveyResponses() {
+    @GetMapping("/survey-responses/{surveyId}/non-empty")
+    public Integer countAllNonEmptySurveyResponses(@PathVariable String surveyId) {
         log.debug("REST request to get count of all non empty SurveyResponses");
-        return surveyResponseService.countAllNonEmptySurveyResponses();
+        return surveyResponseService.countAllNonEmptySurveyResponses(surveyId);
     }
 
     /**
@@ -178,32 +180,33 @@ public class SurveyResponseResource {
      *
      * @return the amount.
      */
-    @GetMapping("/survey-responses/completed")
-    public Integer countAllCompletedSurveyResponses() {
+    @GetMapping("/survey-responses/{surveyId}/completed")
+    public Integer countAllCompletedSurveyResponses(@PathVariable String surveyId) {
         log.debug("REST request to get count of all completed SurveyResponses");
-        return surveyResponseService.countAllCompletedSurveyResponses();
+        return surveyResponseService.countAllCompletedSurveyResponses(surveyId);
     }
+
     /**
      * {@code GET  /survey-responses/avgTime/:surveyId} : get average completion time of survey.
      *
      * @param surveyId the id of the survey to get average completion time for
      * @return the total time.
      */
-    @GetMapping("/survey-responses/avgTime/{surveyId}")
+    @GetMapping("/survey-responses/{surveyId}/avgTime")
     public Double getAverageSurveyResponseTime(@PathVariable String surveyId) {
         log.debug("REST request to get count of all completed SurveyResponses");
         return surveyResponseService.getAverageSurveyResponseTime(surveyService.findOne(surveyId).get());
     }
 
     /**
-     * {@code GET  /survey-responses/all/completed} : get all completed surveyResponses.
+     * {@code GET  /survey-responses/all/completed/:surveyId} : get all completed surveyResponses.
      *
      * @return the desired list.
      */
-    @GetMapping("/survey-responses/all/completed")
-    public List<SurveyResponse> getAllCompletedSurveyResponse() {
+    @GetMapping("/survey-responses/{surveyId}/all/completed")
+    public List<SurveyResponse> getAllCompletedSurveyResponse(@PathVariable String surveyId) {
         log.debug("REST request to get all completed SurveyResponses");
-        return surveyResponseService.getAllSurveyResponseByStatus("completed");
+        return surveyResponseService.getAllSurveyResponseByStatus(surveyId, "completed");
     }
 
     /**
@@ -211,19 +214,19 @@ public class SurveyResponseResource {
      *
      * @return the desired list.
      */
-    @GetMapping("/survey-responses/all/non-empty")
-    public ResponseEntity<List<SurveyResponse>> getAllNonEmptySurveyResponses(Pageable pageable) {
+    @GetMapping("/survey-responses/{surveyId}/all/non-empty")
+    public ResponseEntity<List<SurveyResponse>> getAllNonEmptySurveyResponses(@PathVariable String surveyId, Pageable pageable) {
         log.debug("REST request to get a page of all non empty SurveyResponses");
-        Page<SurveyResponse> page = surveyResponseService.getAllNonEmptySurveyResponses(pageable);
+        Page<SurveyResponse> page = surveyResponseService.getAllNonEmptySurveyResponses(surveyId, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
+   /* *//**
      * {@code GET /survey-responses/duplicate/answers/completed} : find and fix all completed responses with duplicated answers.
      *
      * @return the desired list.
-     */
+     *//*
     @GetMapping("/survey-responses/duplicate/answers/completed")
     public List<SurveyResponse> findAndFixAllCompletedSurveyResponseWithDuplicateAnswers() {
         log.debug("REST request to get all completed SurveyResponses with duplicated answers");
@@ -257,5 +260,5 @@ public class SurveyResponseResource {
         }
         // Finally return this list so it can be updated to the database.
         return completedSurveys;
-    }
+    }*/
 }

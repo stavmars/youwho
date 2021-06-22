@@ -53,10 +53,11 @@ export const configureStep = (questions, scenario: number, hasResults: boolean) 
     // Creating a step for each question.
     if (index === finalQuestions.length - 1) {
       // Add the button to results page if last step.
+      // @ts-ignore
       steps.push({
         id: 'results-button',
-        // @ts-ignore
         component: hasResults ? (
+          // @ts-ignore
           <ResultsButton />
         ) : (
           <div>
