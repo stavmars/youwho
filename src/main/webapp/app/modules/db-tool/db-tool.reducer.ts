@@ -1,7 +1,6 @@
-import { REQUEST, SUCCESS, FAILURE } from 'app/shared/reducers/action-type.util';
+import { FAILURE, REQUEST, SUCCESS } from 'app/shared/reducers/action-type.util';
 import axios from 'axios';
 import { ISurveyResponse } from 'app/shared/model/survey-response.model';
-import { computeProfilingResults } from 'app/modules/survey-chat/chatbot.reducer';
 import { ISurvey } from 'app/shared/model/survey.model';
 import { chainRequests, reflatten } from 'app/shared/util/entity-utils';
 import _ from 'lodash';
@@ -192,6 +191,7 @@ export const formatDataForCsv = (allNonEmptyEntities: ReadonlyArray<ISurveyRespo
 
   allNonEmptyEntities.forEach(response => {
     const questionResponses = response.questionResponses;
+
     const questionResponsesToExport = [];
     questionResponses.forEach(questionResponse => {
       const responseChoices = _.keyBy(questions[questionResponse.questionId].responseChoices, 'id');
@@ -228,9 +228,11 @@ export const formatDataForCsv = (allNonEmptyEntities: ReadonlyArray<ISurveyRespo
     const flatted = [flat.flatten(item)];
     rows.push(...reflatten(flatted));
   }
-  const a = rows[99];
-  rows[99] = rows[0];
-  rows[0] = a;
+  /*
+    const a = rows[99];
+    rows[99] = rows[0];
+    rows[0] = a;
+  */
 
   return dispatch({
     type: ACTION_TYPES.FORMAT_DATA_FOR_CSV,
