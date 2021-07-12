@@ -92,8 +92,8 @@ export class Home extends React.Component<IHomeProp> {
                     backgroundImage: 'url("content/images/Purple-bubble.png")',
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
-                    width: '40vh',
-                    height: '30vh',
+                    width: '30vh',
+                    height: '20vh',
                     marginLeft: '25vw',
                     marginTop: '25vh',
                     zIndex: 1
@@ -115,9 +115,9 @@ export class Home extends React.Component<IHomeProp> {
                     backgroundImage: 'url("content/images/Red-bubble.png")',
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
-                    width: '35vh',
-                    height: '25vh',
-                    marginLeft: '35vw',
+                    width: '25vh',
+                    height: '15vh',
+                    marginLeft: '45vw',
                     zIndex: 1
                   }}
                 >
