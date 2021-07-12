@@ -36,6 +36,20 @@ Main page styles
       transform: scale(1.5);
     }
   }
+  .bubble-text {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 0;
+    font: 3vh/4vh TTNormsProBoldItalic;
+    @include mobile {
+      font: 2.5vh/3.55vh TTNormsProBoldItalic;
+      width: 70%;
+    }
+  }
 
   .home-subtext {
     color: #333333;
