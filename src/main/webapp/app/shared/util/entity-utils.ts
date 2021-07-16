@@ -1,4 +1,4 @@
-import pick from 'lodash/pick';
+import _ from 'lodash';
 import axios from 'axios';
 import { IQuestionResponse } from 'app/shared/model/question-response.model';
 import cloneDeep from 'lodash/cloneDeep';
@@ -14,7 +14,7 @@ import cloneDeep from 'lodash/cloneDeep';
 export const cleanEntity = entity => {
   const keysToKeep = Object.keys(entity).filter(k => !(entity[k] instanceof Object) || (entity[k]['id'] !== '' && entity[k]['id'] !== -1));
 
-  return pick(entity, keysToKeep);
+  return _.pick(entity, keysToKeep);
 };
 
 /**
@@ -41,7 +41,8 @@ export const exportToCsv = (filename: string, rows: object[]) => {
     return;
   }
   const separator = ',';
-  const keys = Object.keys(rows[0]);
+  const maxRow = _.maxBy(rows, row => Object.keys(row).length);
+  const keys = Object.keys(maxRow);
   const csvContent =
     keys.join(separator) +
     '\n' +
