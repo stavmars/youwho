@@ -201,14 +201,13 @@ export const formatDataForCsv = (allNonEmptyEntities: ReadonlyArray<ISurveyRespo
         answer:
           questionResponse.choiceIds.length === 1
             ? [
-                parseInt(responseChoices[questionResponse.choiceIds[0]].text, 10) !== 0 &&
-                parseInt(responseChoices[questionResponse.choiceIds[0]].text, 10) < 100
+                questions[questionResponse.questionId].type === 'scale'
                   ? responseChoices[questionResponse.choiceIds[0]].description
                   : responseChoices[questionResponse.choiceIds[0]].text,
                 ''
               ]
             : questionResponse.choiceIds.map(choiceId =>
-                parseInt(responseChoices[choiceId].text, 10) !== 0 && parseInt(responseChoices[choiceId].text, 10) < 100
+                questions[questionResponse.questionId].type === 'scale'
                   ? responseChoices[choiceId].description
                   : responseChoices[choiceId].text
               )
