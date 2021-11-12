@@ -97,9 +97,7 @@ export class Home extends React.Component<IHomeProp> {
                     zIndex: 1
                   }}
                 >
-                  <a href="/survey-chat/students" className="bubble-text">
-                    Είσαι φοιτητής/τρια; Πάρε μέρος στην νέα έρευνα YouWho? Students
-                  </a>
+                  <span className="bubble-text">Γνωρίστε εδώ το ερευνητικό έργο του ΕΚΚΕ αφιερωμένο στους νέους στην Ελλάδα...</span>
                 </div>
                 {/*                <Image
                   src={
